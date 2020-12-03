@@ -178,6 +178,7 @@ public class AgentToolBarLoginPageTest extends TestBase{
 	public void ATBloginTest() {
 		//ATBloginpage.LoginintoATB(cus, id, ph, pwd)
 		ATBHomePage = ATBloginpage.LoginintoATB(Testutil.Readexcel("AgentLogin",1 ).get(0), Testutil.Readexcel("AgentLogin",2 ).get(0), Testutil.Readexcel("AgentLogin",3 ).get(0), Testutil.Readexcel("AgentLogin",4 ).get(0));
+		Assert.assertEquals(driver.getTitle(), Testutil.Exp_ATBhomePageTitle);
 		//System.out.println("login passed");
 	}
 	
