@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-03T19:00:53 IST" name="Default suite" finished-at="2020-12-03T19:04:59 IST" duration-ms="245733">
+    <groups>
+    </groups>
+    <test started-at="2020-12-03T19:00:53 IST" name="Default test" finished-at="2020-12-03T19:04:59 IST" duration-ms="245733">
+      <class name="com.CA.qa.TestCases.AgentToolBarHomePageTest">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:00:53 IST" name="setup" finished-at="2020-12-03T19:01:08 IST" duration-ms="14672" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyATBHomePage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:08 IST" name="verifyATBHomePage_TitleTest" finished-at="2020-12-03T19:01:08 IST" duration-ms="14" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyATBHomePage_TitleTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:08 IST" name="teardown" finished-at="2020-12-03T19:01:13 IST" duration-ms="5573" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=verifyATBHomePage_TitleTest status=SUCCESS method=AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:13 IST" name="setup" finished-at="2020-12-03T19:01:27 IST" duration-ms="14089" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyAgentStatusTestAtStart()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:27 IST" name="verifyAgentStatusTestAtStart" finished-at="2020-12-03T19:01:27 IST" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAgentStatusTestAtStart -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:27 IST" name="teardown" finished-at="2020-12-03T19:01:33 IST" duration-ms="5201" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=verifyAgentStatusTestAtStart status=SUCCESS method=AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:33 IST" name="setup" finished-at="2020-12-03T19:01:56 IST" duration-ms="23353" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToPause()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentStatusToPause()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:56 IST" name="VerifyAgentStatusToPause" finished-at="2020-12-03T19:02:00 IST" duration-ms="4400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentStatusToPause -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:00 IST" name="teardown" finished-at="2020-12-03T19:02:05 IST" duration-ms="4482" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToPause()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentStatusToPause status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentStatusToPause()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:05 IST" name="setup" finished-at="2020-12-03T19:02:17 IST" duration-ms="12226" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToReady()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentStatusToReady()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:17 IST" name="VerifyAgentStatusToReady" finished-at="2020-12-03T19:02:19 IST" duration-ms="1604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentStatusToReady -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:19 IST" name="teardown" finished-at="2020-12-03T19:02:24 IST" duration-ms="5091" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToReady()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentStatusToReady status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentStatusToReady()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:24 IST" name="setup" finished-at="2020-12-03T19:02:36 IST" duration-ms="11798" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAtStart()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAtStart()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:36 IST" name="VerifyAgentModeAtStart" finished-at="2020-12-03T19:02:36 IST" duration-ms="23" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAtStart -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:36 IST" name="teardown" finished-at="2020-12-03T19:02:41 IST" duration-ms="5109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAtStart()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAtStart status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAtStart()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:41 IST" name="setup" finished-at="2020-12-03T19:02:53 IST" duration-ms="12666" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterManual()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAfterManual()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:53 IST" name="VerifyAgentModeAfterManual" finished-at="2020-12-03T19:02:56 IST" duration-ms="2214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAfterManual -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:56 IST" name="teardown" finished-at="2020-12-03T19:03:02 IST" duration-ms="6213" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterManual()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAfterManual status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterManual()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:02 IST" name="setup" finished-at="2020-12-03T19:03:14 IST" duration-ms="12598" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAfterInbound()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:14 IST" name="VerifyAgentModeAfterInbound" finished-at="2020-12-03T19:03:17 IST" duration-ms="2221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAfterInbound -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:17 IST" name="teardown" finished-at="2020-12-03T19:03:23 IST" duration-ms="5948" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAfterInbound status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:23 IST" name="setup" finished-at="2020-12-03T19:03:33 IST" duration-ms="10836" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAfterPreview()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:33 IST" name="VerifyAgentModeAfterPreview" finished-at="2020-12-03T19:03:36 IST" duration-ms="2700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAfterPreview -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:36 IST" name="teardown" finished-at="2020-12-03T19:03:42 IST" duration-ms="5600" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAfterPreview status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:42 IST" name="setup" finished-at="2020-12-03T19:03:54 IST" duration-ms="12677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAfterProgressive()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:54 IST" name="VerifyAgentModeAfterProgressive" finished-at="2020-12-03T19:03:57 IST" duration-ms="2206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAfterProgressive -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:57 IST" name="teardown" finished-at="2020-12-03T19:04:01 IST" duration-ms="4669" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAfterProgressive status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:01 IST" name="setup" finished-at="2020-12-03T19:04:17 IST" duration-ms="15413" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentModeAfterBlended()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:17 IST" name="VerifyAgentModeAfterBlended" finished-at="2020-12-03T19:04:19 IST" duration-ms="2244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentModeAfterBlended -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:19 IST" name="teardown" finished-at="2020-12-03T19:04:24 IST" duration-ms="4749" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentModeAfterBlended status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:24 IST" name="setup" finished-at="2020-12-03T19:04:34 IST" duration-ms="10281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBForceRelease()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentATBForceRelease()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:34 IST" name="VerifyAgentATBForceRelease" finished-at="2020-12-03T19:04:37 IST" duration-ms="2649" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentATBForceRelease -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:37 IST" name="teardown" finished-at="2020-12-03T19:04:41 IST" duration-ms="4714" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBForceRelease()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentATBForceRelease status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentATBForceRelease()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:41 IST" name="setup" finished-at="2020-12-03T19:04:53 IST" duration-ms="11740" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBLogout()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyAgentATBLogout()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:53 IST" name="VerifyAgentATBLogout" finished-at="2020-12-03T19:04:58 IST" duration-ms="4985" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAgentATBLogout -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:58 IST" name="teardown" finished-at="2020-12-03T19:04:59 IST" duration-ms="701" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBLogout()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=VerifyAgentATBLogout status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentATBLogout()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.CA.qa.TestCases.AgentToolBarHomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

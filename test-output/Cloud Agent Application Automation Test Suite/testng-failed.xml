@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Cloud Agent Application Automation Test Suite]">
+  <listeners>
+    <listener class-name="com.CA.qa.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test name="Cloud Agent Application test cases(failed)">
+    <classes>
+      <class name="com.CA.qa.TestCases.TryTest">
+        <methods>
+          <include name="VerifyAgentStatusToPause"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.CA.qa.TestCases.TryTest -->
+    </classes>
+  </test> <!-- Cloud Agent Application test cases(failed) -->
+</suite> <!-- Failed suite [Cloud Agent Application Automation Test Suite] -->
