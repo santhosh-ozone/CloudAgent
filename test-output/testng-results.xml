@@ -2,384 +2,384 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-03T19:00:53 IST" name="Default suite" finished-at="2020-12-03T19:04:59 IST" duration-ms="245733">
+  <suite started-at="2020-12-08T11:09:51 IST" name="Default suite" finished-at="2020-12-08T11:12:07 IST" duration-ms="136200">
     <groups>
     </groups>
-    <test started-at="2020-12-03T19:00:53 IST" name="Default test" finished-at="2020-12-03T19:04:59 IST" duration-ms="245733">
-      <class name="com.CA.qa.TestCases.AgentToolBarHomePageTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:00:53 IST" name="setup" finished-at="2020-12-03T19:01:08 IST" duration-ms="14672" status="PASS">
+    <test started-at="2020-12-08T11:09:51 IST" name="Default test" finished-at="2020-12-08T11:12:07 IST" duration-ms="136200">
+      <class name="com.CA.qa.TestCases.AgentToolBarLoginPageTest">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:09:51 IST" name="setup" finished-at="2020-12-08T11:10:00 IST" duration-ms="9370" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.VerifyATBLoginPage_TitleTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyATBHomePage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:08 IST" name="verifyATBHomePage_TitleTest" finished-at="2020-12-03T19:01:08 IST" duration-ms="14" status="PASS">
+        <test-method signature="VerifyATBLoginPage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:00 IST" name="VerifyATBLoginPage_TitleTest" finished-at="2020-12-08T11:10:00 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyATBHomePage_TitleTest -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:08 IST" name="teardown" finished-at="2020-12-03T19:01:13 IST" duration-ms="5573" status="PASS">
+        </test-method> <!-- VerifyATBLoginPage_TitleTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:00 IST" name="teardown" finished-at="2020-12-08T11:10:01 IST" duration-ms="591" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.VerifyATBLoginPage_TitleTest()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=verifyATBHomePage_TitleTest status=SUCCESS method=AgentToolBarHomePageTest.verifyATBHomePage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyATBLoginPage_TitleTest status=SUCCESS method=AgentToolBarLoginPageTest.VerifyATBLoginPage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:13 IST" name="setup" finished-at="2020-12-03T19:01:27 IST" duration-ms="14089" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:01 IST" name="setup" finished-at="2020-12-08T11:10:08 IST" duration-ms="6865" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_logoTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyAgentStatusTestAtStart()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:27 IST" name="verifyAgentStatusTestAtStart" finished-at="2020-12-03T19:01:27 IST" duration-ms="23" status="PASS">
+        <test-method signature="verifyATBLoginpage_logoTest()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:08 IST" name="verifyATBLoginpage_logoTest" finished-at="2020-12-08T11:10:08 IST" duration-ms="150" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAgentStatusTestAtStart -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:27 IST" name="teardown" finished-at="2020-12-03T19:01:33 IST" duration-ms="5201" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_logoTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:08 IST" name="teardown" finished-at="2020-12-08T11:10:08 IST" duration-ms="624" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_logoTest()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=verifyAgentStatusTestAtStart status=SUCCESS method=AgentToolBarHomePageTest.verifyAgentStatusTestAtStart()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_logoTest status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_logoTest()[pri:2, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:33 IST" name="setup" finished-at="2020-12-03T19:01:56 IST" duration-ms="23353" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:08 IST" name="setup" finished-at="2020-12-08T11:10:16 IST" duration-ms="7534" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToPause()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptycustomerErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentStatusToPause()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:01:56 IST" name="VerifyAgentStatusToPause" finished-at="2020-12-03T19:02:00 IST" duration-ms="4400" status="PASS">
+        <test-method signature="verifyATBLoginpage_EmptycustomerErrMsg()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:16 IST" name="verifyATBLoginpage_EmptycustomerErrMsg" finished-at="2020-12-08T11:10:16 IST" duration-ms="106" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentStatusToPause -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:00 IST" name="teardown" finished-at="2020-12-03T19:02:05 IST" duration-ms="4482" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_EmptycustomerErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:16 IST" name="teardown" finished-at="2020-12-08T11:10:17 IST" duration-ms="604" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToPause()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptycustomerErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentStatusToPause status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentStatusToPause()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_EmptycustomerErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_EmptycustomerErrMsg()[pri:3, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:05 IST" name="setup" finished-at="2020-12-03T19:02:17 IST" duration-ms="12226" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:17 IST" name="setup" finished-at="2020-12-08T11:10:23 IST" duration-ms="6814" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToReady()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyAgentIdErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentStatusToReady()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:17 IST" name="VerifyAgentStatusToReady" finished-at="2020-12-03T19:02:19 IST" duration-ms="1604" status="PASS">
+        <test-method signature="verifyATBLoginpage_EmptyAgentIdErrMsg()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:23 IST" name="verifyATBLoginpage_EmptyAgentIdErrMsg" finished-at="2020-12-08T11:10:23 IST" duration-ms="119" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentStatusToReady -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:19 IST" name="teardown" finished-at="2020-12-03T19:02:24 IST" duration-ms="5091" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_EmptyAgentIdErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:23 IST" name="teardown" finished-at="2020-12-08T11:10:24 IST" duration-ms="612" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentStatusToReady()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyAgentIdErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentStatusToReady status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentStatusToReady()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_EmptyAgentIdErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyAgentIdErrMsg()[pri:4, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:24 IST" name="setup" finished-at="2020-12-03T19:02:36 IST" duration-ms="11798" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:24 IST" name="setup" finished-at="2020-12-08T11:10:31 IST" duration-ms="6585" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAtStart()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPhoneNoErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAtStart()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:36 IST" name="VerifyAgentModeAtStart" finished-at="2020-12-03T19:02:36 IST" duration-ms="23" status="PASS">
+        <test-method signature="verifyATBLoginpage_EmptyPhoneNoErrMsg()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:31 IST" name="verifyATBLoginpage_EmptyPhoneNoErrMsg" finished-at="2020-12-08T11:10:31 IST" duration-ms="111" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAtStart -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:36 IST" name="teardown" finished-at="2020-12-03T19:02:41 IST" duration-ms="5109" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_EmptyPhoneNoErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:31 IST" name="teardown" finished-at="2020-12-08T11:10:31 IST" duration-ms="624" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAtStart()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPhoneNoErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAtStart status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAtStart()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_EmptyPhoneNoErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPhoneNoErrMsg()[pri:5, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:41 IST" name="setup" finished-at="2020-12-03T19:02:53 IST" duration-ms="12666" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:31 IST" name="setup" finished-at="2020-12-08T11:10:41 IST" duration-ms="9328" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterManual()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPinErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAfterManual()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:53 IST" name="VerifyAgentModeAfterManual" finished-at="2020-12-03T19:02:56 IST" duration-ms="2214" status="PASS">
+        <test-method signature="verifyATBLoginpage_EmptyPinErrMsg()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:41 IST" name="verifyATBLoginpage_EmptyPinErrMsg" finished-at="2020-12-08T11:10:41 IST" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAfterManual -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:02:56 IST" name="teardown" finished-at="2020-12-03T19:03:02 IST" duration-ms="6213" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_EmptyPinErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:41 IST" name="teardown" finished-at="2020-12-08T11:10:41 IST" duration-ms="607" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterManual()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPinErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAfterManual status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterManual()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_EmptyPinErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_EmptyPinErrMsg()[pri:6, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:02 IST" name="setup" finished-at="2020-12-03T19:03:14 IST" duration-ms="12598" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:41 IST" name="setup" finished-at="2020-12-08T11:10:49 IST" duration-ms="7634" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_invalidAgentErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAfterInbound()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:14 IST" name="VerifyAgentModeAfterInbound" finished-at="2020-12-03T19:03:17 IST" duration-ms="2221" status="PASS">
+        <test-method signature="verifyATBLoginpage_invalidAgentErrMsg()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:49 IST" name="verifyATBLoginpage_invalidAgentErrMsg" finished-at="2020-12-08T11:10:51 IST" duration-ms="2166" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAfterInbound -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:17 IST" name="teardown" finished-at="2020-12-03T19:03:23 IST" duration-ms="5948" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_invalidAgentErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:51 IST" name="teardown" finished-at="2020-12-08T11:10:53 IST" duration-ms="1409" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_invalidAgentErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAfterInbound status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterInbound()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_invalidAgentErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_invalidAgentErrMsg()[pri:7, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:23 IST" name="setup" finished-at="2020-12-03T19:03:33 IST" duration-ms="10836" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:10:53 IST" name="setup" finished-at="2020-12-08T11:11:01 IST" duration-ms="8245" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_invalidUserErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAfterPreview()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:33 IST" name="VerifyAgentModeAfterPreview" finished-at="2020-12-03T19:03:36 IST" duration-ms="2700" status="PASS">
+        <test-method signature="verifyATBLoginpage_invalidUserErrMsg()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:01 IST" name="verifyATBLoginpage_invalidUserErrMsg" finished-at="2020-12-08T11:11:03 IST" duration-ms="2369" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAfterPreview -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:36 IST" name="teardown" finished-at="2020-12-03T19:03:42 IST" duration-ms="5600" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_invalidUserErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:03 IST" name="teardown" finished-at="2020-12-08T11:11:04 IST" duration-ms="908" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_invalidUserErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAfterPreview status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterPreview()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_invalidUserErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_invalidUserErrMsg()[pri:8, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:42 IST" name="setup" finished-at="2020-12-03T19:03:54 IST" duration-ms="12677" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:04 IST" name="setup" finished-at="2020-12-08T11:11:12 IST" duration-ms="7715" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAfterProgressive()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:54 IST" name="VerifyAgentModeAfterProgressive" finished-at="2020-12-03T19:03:57 IST" duration-ms="2206" status="PASS">
+        <test-method signature="verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:12 IST" name="verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg" finished-at="2020-12-08T11:11:14 IST" duration-ms="1985" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAfterProgressive -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:03:57 IST" name="teardown" finished-at="2020-12-03T19:04:01 IST" duration-ms="4669" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:14 IST" name="teardown" finished-at="2020-12-08T11:11:15 IST" duration-ms="1221" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAfterProgressive status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterProgressive()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberDoesnotexistErrMsg()[pri:9, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:01 IST" name="setup" finished-at="2020-12-03T19:04:17 IST" duration-ms="15413" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:15 IST" name="setup" finished-at="2020-12-08T11:11:23 IST" duration-ms="8049" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberInvalidErrMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentModeAfterBlended()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:17 IST" name="VerifyAgentModeAfterBlended" finished-at="2020-12-03T19:04:19 IST" duration-ms="2244" status="PASS">
+        <test-method signature="verifyATBLoginpage_PhoneNumberInvalidErrMsg()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:23 IST" name="verifyATBLoginpage_PhoneNumberInvalidErrMsg" finished-at="2020-12-08T11:11:24 IST" duration-ms="452" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentModeAfterBlended -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:19 IST" name="teardown" finished-at="2020-12-03T19:04:24 IST" duration-ms="4749" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_PhoneNumberInvalidErrMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:24 IST" name="teardown" finished-at="2020-12-08T11:11:24 IST" duration-ms="621" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberInvalidErrMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentModeAfterBlended status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentModeAfterBlended()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_PhoneNumberInvalidErrMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_PhoneNumberInvalidErrMsg()[pri:10, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:24 IST" name="setup" finished-at="2020-12-03T19:04:34 IST" duration-ms="10281" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:24 IST" name="setup" finished-at="2020-12-08T11:11:31 IST" duration-ms="7051" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBForceRelease()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_wrong_password_errMsg()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentATBForceRelease()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:34 IST" name="VerifyAgentATBForceRelease" finished-at="2020-12-03T19:04:37 IST" duration-ms="2649" status="PASS">
+        <test-method signature="verifyATBLoginpage_wrong_password_errMsg()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:31 IST" name="verifyATBLoginpage_wrong_password_errMsg" finished-at="2020-12-08T11:11:35 IST" duration-ms="3214" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentATBForceRelease -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:37 IST" name="teardown" finished-at="2020-12-03T19:04:41 IST" duration-ms="4714" status="PASS">
+        </test-method> <!-- verifyATBLoginpage_wrong_password_errMsg -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:35 IST" name="teardown" finished-at="2020-12-08T11:11:35 IST" duration-ms="624" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBForceRelease()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.verifyATBLoginpage_wrong_password_errMsg()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentATBForceRelease status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentATBForceRelease()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyATBLoginpage_wrong_password_errMsg status=SUCCESS method=AgentToolBarLoginPageTest.verifyATBLoginpage_wrong_password_errMsg()[pri:11, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:41 IST" name="setup" finished-at="2020-12-03T19:04:53 IST" duration-ms="11740" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:35 IST" name="setup" finished-at="2020-12-08T11:11:43 IST" duration-ms="7422" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBLogout()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.ATBloginTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyAgentATBLogout()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:53 IST" name="VerifyAgentATBLogout" finished-at="2020-12-03T19:04:58 IST" duration-ms="4985" status="PASS">
+        <test-method signature="ATBloginTest()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:11:43 IST" name="ATBloginTest" finished-at="2020-12-08T11:12:06 IST" duration-ms="23660" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAgentATBLogout -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419]" started-at="2020-12-03T19:04:58 IST" name="teardown" finished-at="2020-12-03T19:04:59 IST" duration-ms="701" status="PASS">
+        </test-method> <!-- ATBloginTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419]" started-at="2020-12-08T11:12:06 IST" name="teardown" finished-at="2020-12-08T11:12:07 IST" duration-ms="643" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarHomePageTest.VerifyAgentATBLogout()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AgentToolBarLoginPageTest.ATBloginTest()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=VerifyAgentATBLogout status=SUCCESS method=AgentToolBarHomePageTest.VerifyAgentATBLogout()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarHomePageTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=ATBloginTest status=SUCCESS method=AgentToolBarLoginPageTest.ATBloginTest()[pri:12, instance:com.CA.qa.TestCases.AgentToolBarLoginPageTest@1aafa419] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.CA.qa.TestCases.AgentToolBarHomePageTest -->
+      </class> <!-- com.CA.qa.TestCases.AgentToolBarLoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

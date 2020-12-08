@@ -16,7 +16,7 @@ public class APITesting extends TestBase {
 		return data;
 	}
 
-	@Test(priority=1,dataProvider = "APIdata")
+	@Test(priority=1,dataProvider = "APIdata",invocationCount=55)
 	public void API_TESTING_with_Automation(String ApiServer, String API_URL,String ApiKey, String UserName, String AgentId, String cam_name, String cus_no, String ucid, String Ph_name, String DID,String uui, String format, String NMA_avai, String NMC_avail, String Exp_res, String res )  {
 		String Responce = Testutil.sendGET(ApiServer, API_URL, ApiKey, UserName, AgentId, cam_name, cus_no, ucid, Ph_name,  DID, uui, format, NMA_avai, NMC_avail, Exp_res, res);
 		System.out.println("response is: "+Responce);
@@ -24,7 +24,9 @@ public class APITesting extends TestBase {
 			Testutil.ClearDataInResultColumn("API AUTOMATION");	 
 		Testutil.WriteDataToexcel("API AUTOMATION", c, Responce.substring(4));
 		c++;
-		if (Responce.contains("queued") || Responce.contains("uccess") ||(Responce.substring(4)).contentEquals(Exp_res))
+		if (Responce.contains("error"))
+			flag =false ;
+			else if (Responce.contains("queued") || Responce.contains("uccess") ||(Responce.substring(4)).contentEquals(Exp_res))
 			flag = true;
 		Assert.assertTrue(flag, "Api not worked");
 	}

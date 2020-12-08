@@ -108,8 +108,8 @@ public class ConfigurationPageTest extends TestBase {
 			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
 			Assert.assertTrue(m1.contains("success"),id+" Agent not able to delete");
 		}
-//		Agents_count++;
-//		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+		Agents_count++;
+		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
 	}
 	
 //	@Test (priority=2,dataProvider = "PhoneNodata")

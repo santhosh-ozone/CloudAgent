@@ -83,6 +83,15 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "agentForm_agent_agentData")
 	WebElement Agent_Data;
 	
+	@FindBy(className="select2-selection__arrow")
+	WebElement Auto_answer_sip_calls;
+	
+	@FindBy(xpath= "//*[@id='select2-agentForm_agent_autoAnswer-results']/li")
+	List<WebElement> AutoAnswer_options;
+	
+	@FindBy(id= "skill_table")
+	WebElement skill_table;
+	
 	@FindBy(xpath= "//*[@id='wwctrl_agentForm_agentSkills']//input[@type='search']")
 	WebElement Skills;
 	
@@ -252,6 +261,12 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public String GetConfigHeader() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return configurations_heading.getText();
 	}
 	

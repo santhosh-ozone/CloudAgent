@@ -12,9 +12,9 @@ public class HttpURLConnectionExample {
 
 	private static final String USER_AGENT = "Mozilla/5.0";
 
-	private static final String GET_URL = "https://api1.cloudagent.in/CAServices/AgentManualDial.php?api_key=KK11820a702e043973e935fe8e2ef9f457&username=mdinesh_qa&agentID=santosh1&campaignName=NewInbound2&customerNumber=9553578721&UCID=true&uui=Test Automation&format=Json";
+	//private static final String GET_URL = "https://api1.cloudagent.in/CAServices/AgentManualDial.php?api_key=KK11820a702e043973e935fe8e2ef9f457&username=mdinesh_qa&agentID=santosh1&campaignName=NewInbound2&customerNumber=9553578721&UCID=true&uui=Test Automation&format=Json";
 
-	private static final String POST_URL = "http://172.16.15.210/CAServices/CDR/fetchCdrByUCID.php?userName=&apiKey=&ucid=&reportType=";
+	private static final String POST_URL = "https://api1.cloudagent.in/CAServices/DID/RunningDIDs.php?userName=mdinesh_qA&apiKey=KK7ae953b8897d956127d5fa84878f6a4f";
 
 	private static final String POST_PARAMS = "https://api1.cloudagent.in/";
 

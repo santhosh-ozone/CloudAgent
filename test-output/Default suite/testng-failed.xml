@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.AgentToolBarHomePageTest">
+      <class name="com.CA.qa.TestCases.APITesting">
         <methods>
-          <include name="VerifyAgentModeAfterPreview"/>
-          <include name="setup"/>
-          <include name="teardown"/>
+          <include name="API_TESTING_with_Automation" invocation-numbers="0 0 0 0 0"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.AgentToolBarHomePageTest -->
+      </class> <!-- com.CA.qa.TestCases.APITesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
