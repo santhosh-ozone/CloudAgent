@@ -122,22 +122,22 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "agentForm_agent_blended")
 	WebElement Agent_Blended;
 	
-	@FindBy(id= "parsley-id-5")
+	@FindBy(xpath ="//*[@id='wwctrl_agentForm_agent_agentId']/ul/li")
 	WebElement Agent_Id_Err;
 	
-	@FindBy(id= "parsley-id-10")
+	@FindBy(xpath ="//*[@id='wwctrl_agentForm_agent_password']/ul/li")
 	WebElement Agent_pwd_Err;
 	
-	@FindBy(id= "parsley-id-12")
+	@FindBy(xpath ="//*[@id='wwctrl_agentForm_agent_agentName']/ul/li")
 	WebElement Agent_name_Err;
 	
 	@FindBy(id= "parsley-id-14")
 	WebElement Agent_priority_Err;
 	
-	@FindBy(id= "parsley-id-16")
+	@FindBy(xpath ="//*[@id='wwctrl_agentForm_agent_email']/ul/li")
 	WebElement Agent_email_Err;
 	
-	@FindBy(id= "parsley-id-18")
+	@FindBy(xpath ="//*[@id='wwctrl_agentForm_agent_agentData']/ul/li")
 	WebElement Agent_data_Err;
 	
 	@FindBy(id= "parsley-id-multiple-agentModes")
@@ -149,10 +149,10 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "agentGroupForm_agentGroup_description")
 	WebElement AgentGroup_description;
 
-	@FindBy(id= "parsley-id-5")
+	@FindBy(xpath ="//*[@id='wwctrl_agentGroupForm_agentGroup_name']/ul/li")
 	WebElement AgentGroup_Name_err;
 
-	@FindBy(id= "parsley-id-7")
+	@FindBy(xpath ="//*[@id='wwctrl_agentGroupForm_agentGroup_description']/ul/li")
 	WebElement AgentGroup_description_err;
 	
 	@FindBy(id= "parsley-id-multiple-assignedAgents")
@@ -176,13 +176,13 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwlbl_fwpNumberForm_fwpNumber_sip' ] [@for='fwpNumberForm_fwpNumber_sip']")
 	WebElement Number_sip1;
 	
-	@FindBy(id= "parsley-id-5")
+	@FindBy(xpath= "//*[@id='wwctrl_fwpNumberForm_fwpNumber_name']/ul/li")
 	WebElement Phone_name_err;
 	
-	@FindBy(id= "parsley-id-7")
+	@FindBy(xpath= "//*[@id='wwctrl_fwpNumberForm_fwpNumber_phoneNumber']/ul/li")
 	WebElement Phone_Number_err;
 	
-	@FindBy(id= "parsley-id-9")
+	@FindBy(xpath= "//*[@id='wwctrl_fwpNumberForm_fwpNumber_priority']/ul/li")
 	WebElement Phone_priority_err;
 		
 	@FindBy(id= "transferNumberForm_transferNumber_transferName")
@@ -197,18 +197,16 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwlbl_transferNumberForm_transferNumber_sip' ] [@for='transferNumberForm_transferNumber_sip']")
 	WebElement transferNumber_sip1;
 	
-	@FindBy(id= "parsley-id-5")
+	@FindBy(xpath= "//*[@id='wwctrl_transferNumberForm_transferNumber_transferName']/ul/li")
 	WebElement transferName_Err;
 	
-	@FindBy(id= "parsley-id-7")
+	@FindBy(xpath= "//*[@id='wwctrl_transferNumberForm_transferNumber_transferNumber']/ul/li")
 	WebElement transferNumber_err;
-	
-	
 		
 	@FindBy(id= "dispositionForm_disposition_reason")
 	WebElement disposition_reason;
 	
-	@FindBy(id= "parsley-id-5")
+	@FindBy(xpath= "//*[@id='wwctrl_dispositionForm_disposition_reason']/ul/li")
 	WebElement disposition_err;
 	
 		@FindBy(id= "pauseReasonForm_pauseReason_reason")
@@ -256,6 +254,12 @@ public class ConfigurationsPage extends TestBase{
 	  }
 	
 	public void ClickOnAgentMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ConfigurationMenu.click();
 		Agentmenu.click();
 	}
@@ -595,6 +599,7 @@ public class ConfigurationsPage extends TestBase{
 	public String AddAgent(Object id, Object nid, Object lock, Object pwd, Object name,Object pr,Object mail,Object data,Object Skill,Object in, Object man, Object pre, Object prog,Object blend) {
 	//String id, Object lock, String pwd, String name,String pr,Object mail,Object data,Object Skill,
 	//String in, String man, String pre, String prog,String blend
+		
 		System.out.println("Agent details for adding: id: "+id);
 		ClickOnAgentMenu();
 		String H =GetConfigHeader();
@@ -795,6 +800,12 @@ public class ConfigurationsPage extends TestBase{
 	}
 	public String addPhoneNo(Object name, Object phno,Object pr,Object sip) {
 		System.out.println("Adding phone no details: name: "+name+"   Phno: "+phno);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ConfigurationMenu.click();
 		ph_no_menu.click();
 		String H =GetConfigHeader();
@@ -806,16 +817,16 @@ public class ConfigurationsPage extends TestBase{
 				EnterNoForPhone(phno);
 				EnterPriorityForPhone(pr);
 				
-				try {
-					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-7\"]/li")).isDisplayed()) 
-						return "Passed: Ph no already exist";
-						}catch(NoSuchElementException e) {
-					}
-				try {
-					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-5\"]/li")).isDisplayed()) 
-						return "Passed: name for Ph no already exist";
-						}catch(NoSuchElementException e) {
-					}
+//				try {
+//					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-7\"]/li")).isDisplayed()) 
+//						return "Passed: Ph no already exist";
+//						}catch(NoSuchElementException e) {
+//					}
+//				try {
+//					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-5\"]/li")).isDisplayed()) 
+//						return "Passed: name for Ph no already exist";
+//						}catch(NoSuchElementException e) {
+//					}
 				
 				
 				EnterSIPforPhone(sip) ;

@@ -16,6 +16,11 @@ public class AdminLoginPageTest extends TestBase{
 	AdminLoginPage Adminloginpage;
 	AdminHomePage AdminHomepage;
 	
+	String Empty_username_error ="Username is required";
+	String Empty_password_error ="Password is required";
+	String invalid_username_password ="Invalid username and/or password, please try again.";
+	
+	
 	public AdminLoginPageTest() {
 		super();
 	}
@@ -52,6 +57,29 @@ public class AdminLoginPageTest extends TestBase{
 //	}
 	
 	@Test (priority = 3)
+	public void verifyAdminEmptyUserNameErrorMessageTest() {
+		Adminloginpage.clickLogInSubmit();
+		String msg =Adminloginpage.UsernameError();
+		Assert.assertEquals(msg,Empty_username_error);
+	}
+
+	@Test (priority = 4)
+	public void verifyAdminEmptyPasswordErrorMessageTest() {
+		Adminloginpage.clickLogInSubmit();
+		String msg =Adminloginpage.passwordError();
+		 Assert.assertEquals(msg,Empty_password_error);
+	}
+	
+	@Test (priority = 5)
+	public void verifyAdminInvalidUserErrorMessageTest() {
+		Adminloginpage.sendUserName("UN");
+		Adminloginpage.sendPassword("pwd");
+		Adminloginpage.clickLogInSubmit();
+		String msg =Adminloginpage.InvalidError();
+		Assert.assertEquals(msg,invalid_username_password);
+	}
+	
+	@Test (priority = 6)
 	public void verifyAdminloginTest() {
 		//AdminHomepage = Adminloginpage.LoginAsAdmin(prop.getProperty("Admin_UserName"), prop.getProperty("Admin_password"));
 		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));

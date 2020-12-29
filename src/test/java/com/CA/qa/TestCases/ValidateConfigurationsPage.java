@@ -19,22 +19,22 @@ public class ValidateConfigurationsPage extends TestBase{
 	static int cou=1;
 	
 	String Agent_id_Empty_err ="Agent Id is required.";
-	String Agent_id_Range_err ="Agent Id should be between 2 to 50 characters.";
-	String Agent_id_SplRange_err ="Agent Id should be between 2 to 50 alphanumeric characters long and allows special characters like .,@,_,-";
+	String Agent_id_Range_err ="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -";
+	String Agent_id_SplRange_err ="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -";
 	String Agent_pwd_empty_err ="Password is required.";
-	String Agent_pwd_Range_err ="Password should be between 3 to 50 characters.";
+	String Agent_pwd_Range_err ="The password must not contain spaces. The password must be 7 characters, including an uppercase letter, a lowercase letter, and alphanumeric characters.";
 	String Agent_name_Empty_err ="Agent Name is required.";
-	String Agent_name_Range_err ="Agent Name should be between 2 to 50 characters.";
-	String Agent_name_SplRange_err ="Agent Name should be between 2 to 50 alphanumeric characters long and allows special characters like .,@,_,-";
+	String Agent_name_Range_err ="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -.";
+	String Agent_name_SplRange_err ="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -.";
 	String Agent_priority_Empty_err ="Priority is required.";
 	String Agent_priority_range_err ="Priority should be between 1 and 999.";
 	String Agent_email_err ="Email should be a valid email.";
-	String Agent_Data_range_err ="Agent Data should be between 2 to 100 characters.";
-	String Agent_Data_Splrange_err ="Agent Data should be between 2 to 100 alphanumeric characters long and allows special characters like .,@,_,-";
+	String Agent_Data_range_err ="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, -.";
+	String Agent_Data_Splrange_err = Agent_Data_range_err;
 	String Agent_mode_empty_err ="Agent Modes is required.";
 	
 	String Phone_name_Empty_error = "Name is required.";
-	String Phone_name_Range_error = "Name should be between 2 to 50 characters.";
+	String Phone_name_Range_error = "Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,-";
 	String Phone_name_SplRange_error = "Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,-";
 	String Phone_number_Empty_error = "Phone Number is required.";
 	String Phone_number_Range_error = "Phone Number should be between 3 to 17 characters.";
@@ -43,14 +43,14 @@ public class ValidateConfigurationsPage extends TestBase{
 	String Phone_Priority_Range_error = "Priority should be between 1 and 20.";
 	
 	String Transfer_Name_Empty_err ="Transfer Name is required.";
-	String Transfer_Name_Range_err ="Transfer Name should be between 2 to 50 characters.";
+	String Transfer_Name_Range_err ="Transfer Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,space,-";
 	String Transfer_Name_SplRange_err ="Transfer Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,space,-";
 	String Transfer_Number_Empty_err ="Transfer Number is required.";
 	String Transfer_Number_Range_err ="Transfer Number should be between 3 to 16 characters.";
 	String Transfer_Number_SplRange_err ="Transfer Number should be between 3 to 16 digits long and allows prefix +";
 	
 	String Disp_empty_err ="Reason is required.";
-	String Disp_Range_err ="Reason should be between 3 to 150 characters.";
+	String Disp_Range_err ="Reason should be between 3 to 150 alphanumeric characters long and allows special characters like _,space";
 	String Disp_SplRange_err ="Reason should be between 3 to 150 alphanumeric characters long and allows special characters like _,space";
 	
 	String AgentGroup_name_empty_err="Group Name is required.";
@@ -181,26 +181,26 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_name_SplRange_err);
 	}
 	
-	@Test (priority=9)
-	public void ValidateAgentPriorityEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
-	}
-	
-	@Test (priority=10)
-	public void ValidateAgentPriorityRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityforAgent("0");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_range_err);
-	}
+//	@Test (priority=9)
+//	public void ValidateAgentPriorityEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+//	}
+//	
+//	@Test (priority=10)
+//	public void ValidateAgentPriorityRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterPriorityforAgent("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+//	}
 	
 	@Test (priority=11)
 	public void ValidateAgentEmailErrorMsg() {

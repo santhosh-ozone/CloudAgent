@@ -21,7 +21,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	
 	
 	String campaign_name_empty_error = "Campaign Name is required.";
-	String campaign_range_error = "Campaign Name should be between 2 to 255 characters.";
+	//String campaign_range_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
 	String campaign_range1_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
 	String campaign_type_empty_error = "Campaign Type is required.";
 	String campaign_DID_empty_error = "DID is required.";
@@ -45,7 +45,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	String concurrentcalls_error = "Max Concurrent Calls is required.";
 	String concurrentcalls_range_error = "Max Concurrent Calls should be between 1 and 99.";
 	String cust_ringTime_error ="Customer Ringing Time is required.";
-	String cust_ringTimeRange_error ="Customer Ringing Time should be between 1 and 60.";
+	String cust_ringTimeRange_error ="Customer Ringing Time should be between 1 and 90.";
 	String pacing_ratio_empty_error ="Pacing Ratio(Calls:Agent) is required.";
 	String pacing_ratio_validity_error ="Pacing Ratio(Calls:Agent) seems to be invalid.";
 	String drop_ratio_empty_error ="Max Drop Ratio (%) is required.";
@@ -91,7 +91,7 @@ public class ValidateCampaignPageTest extends TestBase{
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg =AddCampaignPage.getCampaignNameError();
 		//System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, campaign_range_error);
+		Assert.assertEquals(Err_msg, campaign_range1_error);
 	}
 	
 	@Test (priority=3)
@@ -334,7 +334,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	@Test (priority=30)
 	public void ValidateCustomerRingTimeRangeMaxErrorMsg() {
 		AddCampaignPage.SelectCampaignType("IVR");
-		AddCampaignPage.enterCustomerRingTime("61");
+		AddCampaignPage.enterCustomerRingTime("91");
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getCustomerRingingTimeError();
 		//System.out.println("err msg is: "+Err_msg);

@@ -304,11 +304,12 @@ public void clearExcelDatainRes() {
 		AddCampaignPage.EnableDND(dnd);
 		AddCampaignPage.EnableSTD(std);
 		AddCampaignPage.EnableDialCustomerFirst(d_cus_1st);
-		AddCampaignPage.EnterWrapupTime(WT);
+		
 		AddCampaignPage.EnableDialbyholdingAgent(hold_agent);
 		AddCampaignPage.EnableRecentFirst(rec_1st);
 		AddCampaignPage.EnableACWforUnAnsweredCalls(acw);
 		AddCampaignPage.EnableDNC(DNC);
+		AddCampaignPage.EnterWrapupTime(WT);
 		
 		AddCampaignPage.EnterAppURL(appURL);
 		AddCampaignPage.EnterMaxConcurrentCalls(calls);

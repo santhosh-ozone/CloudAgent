@@ -227,28 +227,28 @@ public class AddCampaignPage extends TestBase{
 	@FindBy(id= "campaignForm_button_save")
 	WebElement Save_button;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-5']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_campignName']/ul/li")
 	WebElement CampaignName_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-7']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_campaignType']/ul/li")
 	WebElement CampaignType_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-11']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_did']/ul/li")
 	WebElement DID_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-21']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_runtimeStart']/ul/li")
 	WebElement StartTime_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-23']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_runtimeEnd']/ul/li")
 	WebElement EndTime_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-31']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_priority']/ul/li")
 	WebElement Priority_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-43']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_ruleNot']/ul/li")
 	WebElement Tries_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-79']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_sla']/ul/li")
 	WebElement Wrapup_error;
 	
 	@FindBy(xpath= "//*[@id='parsley-id-multiple-assignedDispositions']/*")
@@ -257,31 +257,31 @@ public class AddCampaignPage extends TestBase{
 	@FindBy(xpath= "//*[@id='parsley-id-multiple-assignedSkills']/*")
 	WebElement Skills_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-93']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_previewDataMap_id']/ul/li")
 	WebElement Mapping_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-29']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_dialInterval']/ul/li")
 	WebElement DialInterval_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-95']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_file']/ul/li")
 	WebElement Upload_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-17']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_appURL']/ul/li")
 	WebElement AppURL_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-19']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_dataLimit']/ul/li")
 	WebElement ConcurrentCalls_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-75']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_customerRingingTime']/ul/li")
 	WebElement CustomerRingingTime_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-15']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_dropRatio']/ul/li")
 	WebElement MaxDropRatio_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-39']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_pluginId']/ul/li")
 	WebElement PluginName_error;
 
-	@FindBy(xpath= "//*[@id='parsley-id-13']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_ruleNac']/ul/li")
 	WebElement PacingRatio_error;
 
 	@FindBy(id= "campaignForm_campaign_customerRingingTime")
@@ -290,10 +290,10 @@ public class AddCampaignPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_previewDataMap_id']//*[@onclick='createDataMap()']")
 	WebElement map_create;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-5']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_previewDataMapForm_name']/ul/li")
 	WebElement map_Name_error;
 	
-	@FindBy(xpath= "//*[@id='parsley-id-7']/*")
+	@FindBy(xpath= "//*[@id='wwctrl_previewDataMapForm_previewDataMap_sheet']/ul/li")
 	WebElement map_File_error;
 	
 	@FindBy(id= "previewDataMapForm_name")
@@ -807,8 +807,8 @@ public class AddCampaignPage extends TestBase{
 	
 	public void SelectDisposition(String D) {
 		if(!D.equals("")) {
-			Dispositions.click();
-			UnselectAll.click();
+			//Dispositions.click();
+			//UnselectAll.click();
 		if(D.contains(",")) {
 			String words[]=D.split(",");
 			for (String u: words) {
@@ -844,7 +844,10 @@ public class AddCampaignPage extends TestBase{
 	}
 	
 	public void SelectSkills(String S) {
+			
 		if(!S.equals("")) {
+			((JavascriptExecutor) driver1).executeScript("arguments[0].scrollIntoView(true);", Skills);
+			
 			Skills.click();
 			UnselectAll.click();
 		if(S.contains(",")) {

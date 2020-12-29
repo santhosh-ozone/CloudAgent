@@ -53,25 +53,31 @@ public class AdminHomePageTest extends TestBase{
 //		
 //	}
 	
-	@Test()
+	@Test(priority = 2)
 	public void verifyclickingoninbound() {
 		AdminHomepage.ClickOnInbound();
 		Assert.assertEquals(driver1.getTitle(), "Campaigns");
 	}
 	
-	@Test()
+	@Test(priority = 3)
 	public void verifyclickingonOutbound() {
 		AdminHomepage.ClickOnOutbound();
 		Assert.assertEquals(driver1.getTitle(), "Campaigns");
 	}
 	
-	@Test()
+	@Test(priority = 4)
 	public void verifyAdminLogout() {
 		AdminHomepage.admin_logout();
 		Assert.assertEquals(driver1.getTitle(), "Login");
 	}
-	@Test()
+	@Test(priority = 5)
 	public void verifyOutboundAddCampaignButton() {
+		AdminHomepage.clickOnAddCampaignButton("outbound");
+		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
+	}
+	
+	@Test(priority = 6)
+	public void verifyInboundAddCampaignButton() {
 		AdminHomepage.clickOnAddCampaignButton("inbound");
 		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
 	}

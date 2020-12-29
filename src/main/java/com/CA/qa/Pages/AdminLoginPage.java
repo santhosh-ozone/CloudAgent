@@ -15,8 +15,17 @@ public class AdminLoginPage extends TestBase{
 	@FindBy(id= "j_username")
 	WebElement Admin_username;
 	
+	@FindBy(xpath = "//*[@id='wwgrp_username']/ul/li")
+	WebElement Admin_userName_error;
+	
 	@FindBy(id= "j_password")
 	WebElement Admin_password;
+	
+	@FindBy(xpath = "//*[@id='wwgrp_password']/ul/li")
+	WebElement Admin_password_error;
+	
+	@FindBy(id= "error_message")
+	WebElement invalid_error;
 	
 	@FindBy(xpath = "//*[contains(@type,'submit')]")
 	WebElement Admin_submit;
@@ -41,6 +50,29 @@ public class AdminLoginPage extends TestBase{
 //		
 //	}
 	
+	public void sendUserName(String UN) {
+		Admin_username.sendKeys(UN);
+	}
+	
+	public void sendPassword(String pwd) {
+		Admin_password.sendKeys(pwd);
+	}
+	
+	public void clickLogInSubmit() {
+		Admin_submit.click();
+	}
+	
+	public String UsernameError() {
+		return Admin_userName_error.getText();
+	}
+	
+	public String passwordError() {
+		return Admin_password_error.getText();
+	}
+	
+	public String InvalidError() {
+		 return invalid_error.getText();
+	}
 	public AdminHomePage LoginAsAdmin( String uname, String pwd) {
 		//Testutil.flash(Admin_username, driver1);
 		//System.out.println("n:"+uname+":");
