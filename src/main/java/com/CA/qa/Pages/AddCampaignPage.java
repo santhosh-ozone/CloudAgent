@@ -139,7 +139,7 @@ public class AddCampaignPage extends TestBase{
 //	@FindBy(id= "campaignForm_campaign_customerRingingTime")
 //	WebElement customer_ring_time;
 	
-	@FindBy(id= "select2-campaignForm_campaign_dispositionType-container")
+	@FindBy(id= "campaignForm_campaign_dispositionType")
 	WebElement dispositionType;
 
 	@FindBy(xpath ="//li[@title='Toolbar']")
@@ -774,14 +774,18 @@ public class AddCampaignPage extends TestBase{
 		if(!DispType.equals("")) {
 //		JavascriptExecutor js = (JavascriptExecutor)driver1;
 //		js.executeScript("arguments[0].click();", dispositionType);
-		dispositionType.click();
-		if(DispType.contains("Toolbar") || DispType.equalsIgnoreCase("toolbar")) 
-			dispositionType_ToolBar.click();
-		else if(DispType.contains("API")|| DispType.equalsIgnoreCase("api"))
-			dispositionType_API.click();
-		else if(DispType.contains("NONE") || DispType.equalsIgnoreCase("none"))
-			dispositionType_NONE.click();
-		else dispositionType_ToolBar.click();
+//		dispositionType.click();
+//		if(DispType.contains("Toolbar") || DispType.equalsIgnoreCase("toolbar")) 
+//			dispositionType_ToolBar.click();
+//		else if(DispType.contains("API")|| DispType.equalsIgnoreCase("api"))
+//			dispositionType_API.click();
+//		else if(DispType.contains("NONE") || DispType.equalsIgnoreCase("none"))
+//			dispositionType_NONE.click();
+//		else dispositionType_ToolBar.click();
+			
+			
+			Select dtype = new Select(dispositionType);
+			dtype.selectByVisibleText(DispType);
 	}}
 	
 	public void EnterCustomerRingTime(Object crt) {
@@ -827,14 +831,14 @@ public class AddCampaignPage extends TestBase{
 			}
 		}
 			else if(D.equalsIgnoreCase("all")){
-				//Dispositions.sendKeys(" ");
-			//Dispositions.click();
-//			for (WebElement w:AllDispositionsList) {
-//				if(!w.getText().equals(""))
-//				w.click();
-//			Dispositions.clear();}
 				Dispositions.sendKeys(" ");
-				SelectAllDispositions.click();		
+			//Dispositions.click();
+			for (WebElement w:AllDispositionsList) {
+				if(!w.getText().equals(""))
+				w.click();
+			Dispositions.clear();}
+//				Dispositions.sendKeys(" ");
+//				SelectAllDispositions.click();		
 		}
 		else {
 			Dispositions.sendKeys(D);
@@ -846,8 +850,9 @@ public class AddCampaignPage extends TestBase{
 	public void SelectSkills(String S) {
 			
 		if(!S.equals("")) {
-			((JavascriptExecutor) driver1).executeScript("arguments[0].scrollIntoView(true);", Skills);
-			
+			//((JavascriptExecutor) driver1).executeScript("arguments[0].scrollIntoView(true);", Skills);
+			Actions act= new Actions(driver1);
+			act.moveToElement(Skills).click();
 			Skills.click();
 			UnselectAll.click();
 		if(S.contains(",")) {
@@ -935,7 +940,7 @@ public class AddCampaignPage extends TestBase{
 					//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", moveRight1);	
 					System.out.println("scroll over");
 					w.click();
-					System.out.println("skill click over");
+					//System.out.println("skill click over");
 					((JavascriptExecutor) driver1).executeScript("window.scrollBy(0,-2000)", "");
 					moveRight1.click();
 					System.out.println("move right over");
@@ -991,9 +996,16 @@ public class AddCampaignPage extends TestBase{
 		if(!M.equals("")) {
 			try {
 				if(Mapping.isDisplayed()) {
-		Mapping.click();
+					Testutil.flash(Mapping, driver1);	
+					JavascriptExecutor js = (JavascriptExecutor)driver1;
+					js.executeScript("arguments[0].click();", Mapping);
+					
+		//Mapping.click();
 		MappingText.sendKeys(M.toString());
-		select_highlighted.click();}
+		
+		//Testutil.flash(MappingText, driver1);	
+		select_highlighted.click();
+		}
 	}catch(NoSuchElementException e) {
 	}
 		}			

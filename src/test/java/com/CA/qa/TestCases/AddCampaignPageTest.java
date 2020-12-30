@@ -249,8 +249,8 @@ public void clearExcelDatainRes() {
 		
 		
 		if(Bound.trim().equalsIgnoreCase("inbound")) {
-			if(action.contains("Edit") && !NewCampName.equals("") ) 
-				AddCampaignPage.enterCampaignName(NewCampName.toString());
+			if(action.contains("Edit") && !NewCampName.equals("") ) {
+				AddCampaignPage.enterCampaignName(NewCampName.toString()); }
 				
 			else AddCampaignPage.enterCampaignName(cname);
 			
@@ -316,24 +316,25 @@ public void clearExcelDatainRes() {
 		AddCampaignPage.EnterPacingRatio(pr);
 		AddCampaignPage.EnterMaxDropRatio(dr);
 		AddCampaignPage.EnterDialInterval(d_int);
-		AddCampaignPage.EnterPriority(prio);
 		
+		
+		if(driver1.getCurrentUrl().contains("http://10.1.2.88:8080"))
+			AddCampaignPage.EnterSkillsforStaging88(skills);
+		else AddCampaignPage.SelectSkills(skills);
+		
+		AddCampaignPage.enterCustomerRingTime(CRT);
+		AddCampaignPage.SelectDisposition(disp);
+		
+		AddCampaignPage.EnterPriority(prio);
 		AddCampaignPage.EnterURLtoPush(URl2P);
 		AddCampaignPage.SelectHitScreenPopURlAt(URLat, pluginName);
 		AddCampaignPage.EnterScreenPopURL(popURL);
 		AddCampaignPage.EnterScript(Script);
 		AddCampaignPage.EnterNoOfTries(tries);
 		
-		AddCampaignPage.enterCustomerRingTime(CRT);
-		AddCampaignPage.SelectDisposition(disp);
-		
-		if(driver1.getCurrentUrl().contains("http://10.1.2.88:8080"))
-			AddCampaignPage.EnterSkillsforStaging88(skills);
-		else AddCampaignPage.SelectSkills(skills);
-		
 		AddCampaignPage.SelectUsers(users);
-		AddCampaignPage.SelectMapping(m_name);
 		AddCampaignPage.FiletoUpload(path);
+		AddCampaignPage.SelectMapping(m_name);
 		
 		AddCampaignPage.SelectHoldMusic(hm);
 		AddCampaignPage.SelectTransferMusic(tm);

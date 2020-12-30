@@ -153,6 +153,7 @@ public class Testutil extends TestBase{
 	    	 for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)
 	    		 {
 	    		 cell1=sheet.getRow(i+1).getCell(j,org.apache.poi.ss.usermodel.Row.CREATE_NULL_AS_BLANK );
+	    		 //System.out.println(cell1.getDateCellValue());
 	    		 switch (cell1.getCellType()) {
 
 	             case Cell.CELL_TYPE_STRING:
