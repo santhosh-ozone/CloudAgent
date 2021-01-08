@@ -334,10 +334,12 @@ public void clearExcelDatainRes() {
 		
 		AddCampaignPage.SelectUsers(users);
 		AddCampaignPage.FiletoUpload(path);
+			
 		AddCampaignPage.SelectMapping(m_name);
 		
 		AddCampaignPage.SelectHoldMusic(hm);
 		AddCampaignPage.SelectTransferMusic(tm);
+		
 		}
 		
 		AddCampaignPage.ClickOnSaveCampaign();

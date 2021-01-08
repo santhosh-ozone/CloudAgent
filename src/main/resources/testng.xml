@@ -11,10 +11,13 @@
   
   <test name="Cloud Agent Application test cases" >
     <classes>
-       <class name="com.CA.qa.TestCases.AgentToolBarLoginPageTest" />
-       <class name="com.CA.qa.TestCases.AgentToolBarHomePageTest" />
+       <class name="com.CA.qa.TestCases.AdminLoginPageTest" />
+       <class name="com.CA.qa.TestCases.AdminHomePageTest" />
+       <class name="com.CA.qa.TestCases.ValidateCampaignPageTest" />
+       <class name="com.CA.qa.TestCases.ValidateConfigurationsPage" />
+       <class name="com.CA.qa.TestCases.AddCampaignPageTest" />
       
-        />
+        
     </classes>
   </test>
  
