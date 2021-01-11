@@ -43,7 +43,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	String AppUrl_empty_err="App. URL is required.";
 	String AppUrl_invalid_err="App. URL seems to be invalid.";
 	String concurrentcalls_error = "Max Concurrent Calls is required.";
-	String concurrentcalls_range_error = "Max Concurrent Calls should be between 1 and 99.";
+	String concurrentcalls_range_error = "Max Concurrent Calls should be between 1 and 9999.";
 	String cust_ringTime_error ="Customer Ringing Time is required.";
 	String cust_ringTimeRange_error ="Customer Ringing Time should be between 1 and 90.";
 	String pacing_ratio_empty_error ="Pacing Ratio(Calls:Agent) is required.";
@@ -51,7 +51,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	String drop_ratio_empty_error ="Max Drop Ratio (%) is required.";
 	String drop_ratio_range_error ="Max Drop Ratio (%) should be between 1 and 99.";
 	String Map_name_error ="Map Name is required.";
-	String Map_name_range_error ="Map Name should be between 2 to 50 characters.";
+	String Map_name_range_error ="Map Name should be between 2 to 50 alphanumeric characters long and allows special characters like _";
 	String Map_name_Spl_error ="Map Name allows alphanumeric characters with Underscore";
 	String Map_file_error ="Mapping File is required.";
 	String Map_sample_tooltip ="Download Sample";
@@ -305,7 +305,7 @@ public class ValidateCampaignPageTest extends TestBase{
 	@Test (priority=27)
 	public void ValidateConcurrentCallsMaxRangeErrorMsg() {
 		AddCampaignPage.SelectCampaignType("IVR");
-		AddCampaignPage.EnterMaxConcurrentCalls("100");
+		AddCampaignPage.EnterMaxConcurrentCalls("10000");
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getConcurrentCallsError();
 		//System.out.println("err msg is: "+Err_msg);
@@ -415,7 +415,7 @@ public class ValidateCampaignPageTest extends TestBase{
 		Err_msg=AddCampaignPage.getMappingNameError();
 		AddCampaignPage.CloseOnADDMapping();
 		//System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Map_name_Spl_error);
+		Assert.assertEquals(Err_msg, Map_name_range_error);
 	}
 	
 	@Test (priority=38)

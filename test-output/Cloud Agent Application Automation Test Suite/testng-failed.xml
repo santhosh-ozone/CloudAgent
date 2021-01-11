@@ -6,21 +6,10 @@
   </listeners>
   <test thread-count="5" name="Cloud Agent Application test cases(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
-        <methods>
-          <include name="AddCampaign" invocation-numbers="0"/>
-          <include name="setup"/>
-          <include name="nteardown"/>
-          <include name="clearExcelDatainRes"/>
-        </methods>
-      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
       <class name="com.CA.qa.TestCases.ValidateCampaignPageTest">
         <methods>
           <include name="ValidateConcurrentCallsMaxRangeErrorMsg"/>
-          <include name="ValidateMapNameSplRangeErrorMsg"/>
           <include name="setup"/>
-          <include name="ValidateMapNameRangeErrorMsg"/>
-          <include name="ValidateConcurrentCallsRangeErrorMsg"/>
           <include name="nteardown"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.ValidateCampaignPageTest -->

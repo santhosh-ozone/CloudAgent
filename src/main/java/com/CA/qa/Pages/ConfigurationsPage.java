@@ -176,6 +176,7 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwlbl_fwpNumberForm_fwpNumber_sip' ] [@for='fwpNumberForm_fwpNumber_sip']")
 	WebElement Number_sip1;
 	
+	
 	@FindBy(xpath= "//*[@id='wwctrl_fwpNumberForm_fwpNumber_name']/ul/li")
 	WebElement Phone_name_err;
 	
@@ -792,12 +793,63 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void EnterSIPforPhone(Object S) {
 		if(!S.equals("")) {
-			if(S.toString().trim().equalsIgnoreCase("yes") && !Number_sip.isSelected())
+			System.out.println("-------------------------------------------------1");
+			if(S.toString().trim().equalsIgnoreCase("yes") && !Number_sip.isSelected()) {
+				System.out.println("-------------------------------------------------2");
 				Number_sip1.click();
-			if(S.toString().trim().equalsIgnoreCase("no") && Number_sip.isSelected())
-				Number_sip1.click();
+				System.out.println("-------------------------------------------------clicked");
+			}
+			if(S.toString().trim().equalsIgnoreCase("no") && Number_sip.isSelected()) {
+				System.out.println("-------------------------------------------------3");
+				JavascriptExecutor js = (JavascriptExecutor)driver1;
+				js.executeScript("arguments[0].click();", Number_sip1);
+				//Number_sip1.click();
+				System.out.println("-------------------------------------------------clicked");
+			}
 		}
 	}
+	
+	public String DetailsOfPhoneNo(Object name, Object phno,Object pr,Object sip) {
+		boolean esip =false;
+		if(sip.toString().equalsIgnoreCase("yes"))
+			 esip =true;
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		ph_no_menu.click();
+		String H =GetConfigHeader();
+		if(H.contains("Phone Numbers")) {
+			EnterSerachItem(phno);
+			//ClickOnShowAllButton();
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				String H1 =GetConfigHeader();
+				if(H1.contains("Edit Phone Number") && Number_name.getAttribute("value").equals(name.toString().trim()) && Number_phoneNumber.getAttribute("value").equals(phno.toString().trim())) {
+					String act_name = Number_name.getAttribute("value");
+					String act_no = Number_phoneNumber.getAttribute("value");
+					
+					String act_prio =Number_priority.getAttribute("value");
+					boolean act_sip = Number_sip.isSelected();		
+					
+//					System.out.println("---------------------------------------------------------");
+//					System.out.println("act_name: "+act_name+"  act_no : "+act_no+"  act_prio: "+act_prio+" act_sip");
+//					System.out.println("---------------------------------------------------------");
+
+					if(act_name.equals(name) && act_no.equals(phno) && act_prio.equals(pr) && esip==act_sip) 
+						return "verified";	
+					
+					
+		
+		
+	}}}return "No details found";}
+	
+	
+	
 	public String addPhoneNo(Object name, Object phno,Object pr,Object sip) {
 		System.out.println("Adding phone no details: name: "+name+"   Phno: "+phno);
 		try {
@@ -817,16 +869,16 @@ public class ConfigurationsPage extends TestBase{
 				EnterNoForPhone(phno);
 				EnterPriorityForPhone(pr);
 				
-//				try {
-//					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-7\"]/li")).isDisplayed()) 
-//						return "Passed: Ph no already exist";
-//						}catch(NoSuchElementException e) {
-//					}
-//				try {
-//					if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-5\"]/li")).isDisplayed()) 
-//						return "Passed: name for Ph no already exist";
-//						}catch(NoSuchElementException e) {
-//					}
+				try {
+					if (driver1.findElement(By.xpath("//*[@id='wwctrl_fwpNumberForm_fwpNumber_name']/ul/li")).isDisplayed()) 
+						return "Passed: Ph no already exist";
+						}catch(NoSuchElementException e) {
+					}
+				try {
+					if (driver1.findElement(By.xpath("//*[@id='wwctrl_fwpNumberForm_fwpNumber_name']/ul/li")).isDisplayed()) 
+						return "Passed: name for Ph no already exist";
+						}catch(NoSuchElementException e) {
+					}
 				
 				
 				EnterSIPforPhone(sip) ;
@@ -846,6 +898,12 @@ public class ConfigurationsPage extends TestBase{
 		else np=phno.toString();
 		
 		System.out.println("Editing phone no details: name: "+name+"  New name: "+nn+"   Phno: "+phno+" new phno: "+np);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ConfigurationMenu.click();
 		ph_no_menu.click();
 		String H =GetConfigHeader();
@@ -859,6 +917,14 @@ public class ConfigurationsPage extends TestBase{
 					EnterNameForPhoneNo(Nname);
 					EnterNoForPhone(Nphno);
 					EnterPriorityForPhone(pr);
+					
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
 					EnterSIPforPhone(sip) ;
 					ClickOnSaveforConfig();
 					return Getmessagediv();
@@ -869,6 +935,12 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String deletePhoneNo(String name, String phno) {
 		System.out.println("Deleting phone no details: name: "+name+"   Phno: "+phno);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ConfigurationMenu.click();
 		ph_no_menu.click();
 		String H =GetConfigHeader();
