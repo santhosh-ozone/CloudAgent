@@ -1000,7 +1000,12 @@ public class AddCampaignPage extends TestBase{
 		System.out.println("selected hilighted");
 		select_highlighted.click();
 		}
-	}catch(NoSuchElementException e) {
+	}catch(Exception e) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver1;
+		jse.executeScript("scroll(0,-1000)");
+		Mapping.click();
+		MappingText.sendKeys(M.toString());
+		select_highlighted.click();
 	}
 		}			
 }

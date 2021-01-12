@@ -285,7 +285,7 @@ public void clearExcelDatainRes() {
 			
 		} else {
 			
-			if(action.contains("Edit")) 
+			if(action.contains("Edit") && !NewCampName.equals("")) 
 				AddCampaignPage.enterCampaignName(NewCampName.toString());
 				
 			else AddCampaignPage.enterCampaignName(cname);

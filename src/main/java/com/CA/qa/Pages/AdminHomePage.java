@@ -259,7 +259,7 @@ public class AdminHomePage extends TestBase{
 				} else return "not able to reset: "+res;
 			}
 			if(GetCampaignPosition(result_row).equals("READY")) {
-				WebElement element=driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Start']"));
+				WebElement element=driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[contains(@onclick,'start')]" ));
 				scrollandclick(element);
 				return Getmessagediv();
 				
@@ -274,7 +274,7 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 			
 			if(GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")) {
+				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16")) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*"));
 					//System.out.println(":"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("Reset"))
@@ -282,7 +282,7 @@ public class AdminHomePage extends TestBase{
 
 				} else {
 	
-			WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']"));
+			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Reset']")));
 			scrollandclick(element);
 				}
 			Campaign_reset_button.click();
@@ -298,7 +298,7 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 		
 			if(GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")) {
+				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16")) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*"));
 					//System.out.println(":"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("Reset"))
@@ -306,7 +306,7 @@ public class AdminHomePage extends TestBase{
 
 				} else {
 	
-			WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']"));
+			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Reset']")));
 			scrollandclick(element);
 				}
 			
@@ -324,13 +324,13 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 			
 			if(!GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")) {
+				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16")) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*/*"));
 					if(element.getAttribute("value").contains("ForceComplete"))
 					scrollandclick(element);
 
 				} else {
-			WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='ForceComplete']"));
+			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='ForceComplete']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Force Complete']")));
 				
 			scrollandclick(element);
 				}
@@ -391,12 +391,12 @@ public class AdminHomePage extends TestBase{
 		
 		if(result_row>0) {
 			if(GetCampaignPosition(result_row).equals("RUNNING")) {
-				WebElement element=driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Stop']"));
+				WebElement element=driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[contains(@onclick,'stop')]") ) );
 				scrollandclick(element);
 				return Getmessagediv();
 			}
-			return "campaign is not running to stop it";
-		}return "campaign is not found to stop it";
+			return "success: campaign is not running to stop it";
+		}return "success: campaign is not found to stop it";
 	}
 
 	public void scrollandclick(WebElement webelement) {
@@ -434,7 +434,7 @@ public class AdminHomePage extends TestBase{
 		int result_row = IdentifyCampaignRow(bound,cName, Di);
 		if(result_row>0) {
 			if(!GetCampaignPosition(result_row).equals("RUNNING")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")) {
+				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16")) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*/*"));
 					//System.out.println("1:"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("AddData"))
@@ -450,7 +450,7 @@ public class AdminHomePage extends TestBase{
 						
 				} else {
 
-				WebElement element=driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='AddData']"));
+				WebElement element=driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='AddData']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Add Campaign Data']")));
 				scrollandclick(element);
 				}
 				return true;
