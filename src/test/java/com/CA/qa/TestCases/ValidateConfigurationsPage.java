@@ -32,9 +32,9 @@ public class ValidateConfigurationsPage extends TestBase{
 	String Agent_Data_range_err ="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, -.";
 	String Agent_Data_Splrange_err = Agent_Data_range_err;
 	String Agent_mode_empty_err ="Agent Modes is required.";
-	
+		
 	String Phone_name_Empty_error = "Name is required.";
-	String Phone_name_Range_error = "Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,-";
+	String Phone_name_Range_error = "Name should be between 2 to 50 alphanumeric characters long allows prefix + and special characters like .,@,_,- and Name cannot start and end with Special characters.";
 	String Phone_name_SplRange_error = "Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,-";
 	String Phone_number_Empty_error = "Phone Number is required.";
 	String Phone_number_Range_error = "Phone Number should be between 3 to 17 characters.";
@@ -43,11 +43,28 @@ public class ValidateConfigurationsPage extends TestBase{
 	String Phone_Priority_Range_error = "Priority should be between 1 and 20.";
 	
 	String Transfer_Name_Empty_err ="Transfer Name is required.";
-	String Transfer_Name_Range_err ="Transfer Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,space,-";
+	String Transfer_Name_Range_err ="Transfer Name should be between 2 to 50 alphanumeric characters long allows prefix + and special characters like .,@,_,space,- and Name cannot start and end with Special characters.";
 	String Transfer_Name_SplRange_err ="Transfer Name should be between 2 to 50 alphanumeric characters long and allows prefix + and allows special characters like .,@,_,space,-";
 	String Transfer_Number_Empty_err ="Transfer Number is required.";
 	String Transfer_Number_Range_err ="Transfer Number should be between 3 to 16 characters.";
 	String Transfer_Number_SplRange_err ="Transfer Number should be between 3 to 16 digits long and allows prefix +";
+	
+	String skill_empty_err ="Skill Name is required.";
+	String SkillName_range_error = "Skill Name should be between 2 to 50 alphanumeric characters long and allows special characters like _ and Name cannot start and end with Special characters.";
+	String Skill_loc_empty_err ="Skill Location is required.";
+	String Queue_Size_empty_err = "Queue Size is required.";
+	String queue_range_err = "Queue Size should be between 1 and 999.";
+	String skillDetail1_err = "Skill Detail1 should be between 2 to 200 alphanumeric characters long and allows special characters like .,@,_,space,-";
+	String skillDetail2_err = "Skill Detail2 should be between 2 to 200 alphanumeric characters long and allows special characters like .,@,_,space,-";
+	String skillDetail3_err = "Skill Detail3 should be between 2 to 200 alphanumeric characters long and allows special characters like .,@,_,space,-";
+	String Skill_Assigned_agents_empty_err="Assign Agents is required.";
+	String skill_hunting_no_empty_err ="Assign Phone Numbers for Hunting(offline) is required.";
+	String skill_dial_out_empty_err ="Dial Out Name is required.";
+	String Skill_transfer_skill_Empty_err ="Transfer to Skill is required.";
+	String Skill_transfer_Ivr_Empty_err ="Transfer to IVR App. URL is required.";
+	String calldrop_url_empty_err = "URL is required.";
+	String calldrop_tries_empty_err= "Tries is required.";
+	String calldrop_tries_range_err= "Tries should be between 1 and 99.";
 	
 	String Disp_empty_err ="Reason is required.";
 	String Disp_Range_err ="Reason should be between 3 to 150 alphanumeric characters long and allows special characters like _,space";
@@ -96,7 +113,7 @@ public class ValidateConfigurationsPage extends TestBase{
 	}
 	
 	@Test (priority=1)
-	public void ValidateAgentIdErrorMsg() {
+	public void ValidateEmptyAgentIdErrorMsg1_1() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.ClickOnSaveforConfig();
@@ -106,7 +123,7 @@ public class ValidateConfigurationsPage extends TestBase{
 	}
 	
 	@Test (priority=2)
-	public void ValidateAgentIdRAngeErrorMsg() {
+	public void ValidateAgentIdRAngeErrorMsg1_11() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.EnterAgentId("s");
@@ -125,10 +142,32 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_SplRange_err);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
 	}
 	
 	@Test (priority=4)
+	public void ValidateAgentIdStartWithsplcharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("@agent");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+	@Test (priority=5)
+	public void ValidateAgentIdEndWithSplCharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("agent@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+	@Test (priority=6)
 	public void ValidateAgentPasswordEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -138,7 +177,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_pwd_empty_err);
 	}
 	
-	@Test (priority=5)
+	@Test (priority=7)
 	public void ValidateAgentPasswordRAngeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -149,7 +188,39 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
 	}
 	
-	@Test (priority=6)
+	@Test (priority=8)
+	public void ValidateAgentPasswordAllLowerCaseErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("ozonetel");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	
+	@Test (priority=9)
+	public void ValidateAgentPasswordUpperCaseErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("OZONETEL");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	
+	@Test (priority=10)
+	public void ValidateAgentPasswordAllSplCharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("@!#$%^&");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	@Test (priority=11)
 	public void ValidateAgentNameEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -159,7 +230,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_name_Empty_err);
 	}
 	
-	@Test (priority=7)
+	@Test (priority=12)
 	public void ValidateAgentNameRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -170,7 +241,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_name_Range_err);
 	}
 	
-	@Test (priority=8)
+	@Test (priority=13)
 	public void ValidateAgentNameSplRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -178,31 +249,31 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_name_SplRange_err);
+		Assert.assertEquals(Err_msg, Agent_name_Range_err);
 	}
 	
-//	@Test (priority=9)
-//	public void ValidateAgentPriorityEmptyErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
-//	}
-//	
-//	@Test (priority=10)
-//	public void ValidateAgentPriorityRangeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterPriorityforAgent("0");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_priority_range_err);
-//	}
+	@Test (priority=14)
+	public void ValidateAgentPriorityEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+	}
 	
-	@Test (priority=11)
+	@Test (priority=15)
+	public void ValidateAgentPriorityRangeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterPriorityforAgent("0");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+	}
+	
+	@Test (priority=16)
 	public void ValidateAgentEmailErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -213,7 +284,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_email_err);
 	}
 	
-	@Test (priority=12)
+	@Test (priority=17)
 	public void ValidateAgentDataErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -224,19 +295,18 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Agent_Data_range_err);
 	}
 	
-
-	@Test (priority=13)
+	@Test (priority=18)
 	public void ValidateAgentDataSplRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentDataforAgent("@");
+		ConfigurationsPage.EnterAgentDataforAgent("@@");
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_Data_Splrange_err);
+		Assert.assertEquals(Err_msg, Agent_Data_range_err);
 	}
 	
-	@Test (priority=14)
+	@Test (priority=19)
 	public void ValidateAgentModeNotEnabledErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -247,200 +317,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
 	}
-
-	@Test (priority=15)
-	public void ValidatePhoneNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_Empty_error);
-	}
-	
-	@Test (priority=16)
-	public void ValidatePhoneNameRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNameForPhoneNo("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_Range_error);
-	}
-	
-	@Test (priority=17)
-	public void ValidatePhoneNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNameForPhoneNo("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_SplRange_error);
-	}
-	
-	@Test (priority=18)
-	public void ValidatePhoneNumberEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_Empty_error);
-	}
-	
-	@Test (priority=19)
-	public void ValidatePhoneNumberRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNoForPhone("1");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_Range_error);
-	}
-	
 	@Test (priority=20)
-	public void ValidatePhoneNumberSplRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNoForPhone("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_SplRange_error);
-	}
-	
-	@Test (priority=21)
-	public void ValidatePriorityEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Empty_error);
-	}
-	
-	@Test (priority=22)
-	public void ValidatePriorityRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityForPhone("0");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
-	}
-
-	@Test (priority=23)
-	public void ValidatePriorityMaxRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityForPhone("21");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
-	}
-	
-	@Test (priority=24)
-	public void ValidateTransferNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_Empty_err);
-	}
-	
-	@Test (priority=25)
-	public void ValidateTransferNameRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransfername("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
-	}
-	
-	@Test (priority=26)
-	public void ValidateTransferNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransfername("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_SplRange_err);
-	}
-	
-	@Test (priority=27)
-	public void ValidateTransferNumberEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_Empty_err);
-	}
-	
-	@Test (priority=28)
-	public void ValidateTransferNumberRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransferNo("1");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_Range_err);
-	}
-	
-	@Test (priority=29)
-	public void ValidateTransferNumberSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransferNo("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
-	}
-	
-	@Test (priority=30)
-	public void ValidatedispositionEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnDispositionMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetDipositionError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Disp_empty_err);
-	}
-	
-	@Test (priority=31)
-	public void ValidatedispositionRangeErrorMsg() {
-		ConfigurationsPage.ClickOnDispositionMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.Enterdispositions("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetDipositionError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Disp_Range_err);
-	}
-	
-	@Test (priority=32)
-	public void ValidatedispositionSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnDispositionMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.Enterdispositions("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetDipositionError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Disp_SplRange_err);
-	}
-	
-	@Test (priority=33)
 	public void ValidateAgentGroupNameEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -449,8 +326,18 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, AgentGroup_name_empty_err);
 	}
+	@Test (priority=21)
+	public void ValidateAgentGroupNameNumberErrorMsg() {
+		ConfigurationsPage.ClickOnAgentGroupMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentGroupName("11");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+	}
 	
-	@Test (priority=34)
+	@Test (priority=22)
 	public void ValidateAgentGroupNameRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -461,7 +348,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_name_Range_err);
 	}
 	
-	@Test (priority=35)
+	@Test (priority=23)
 	public void ValidateAgentGroupNameSplRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -471,8 +358,18 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
 	}
+	@Test (priority=24)
+	public void ValidateAgentGroupNameSplErrorMsg() {
+		ConfigurationsPage.ClickOnAgentGroupMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentGroupName("s@n");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+	}
 	
-	@Test (priority=36)
+	@Test (priority=25)
 	public void ValidateAgentGroupDesriptionEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -482,7 +379,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_description_empty_err);
 	}
 	
-	@Test (priority=37)
+	@Test (priority=26)
 	public void ValidateAgentGroupDesriptionRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -493,7 +390,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_description_range_err);
 	}
 	
-	@Test (priority=38)
+	@Test (priority=27)
 	public void ValidateAgentGroupAssignedAgentsEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -503,7 +400,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_AssignedAgnets_empty_err);
 	}
 	
-	@Test (priority=39)
+	@Test (priority=28)
 	public void ValidateAgentGroupAssignedUsersEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -512,6 +409,223 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, AgentGroup_AssignedUsers_empty_err);
 	}
+	
+
+	@Test (priority=29)
+	public void ValidatePhoneNameEmptyErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_name_Empty_error);
+	}
+	
+	@Test (priority=30)
+	public void ValidatePhoneNameRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterNameForPhoneNo("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_name_Range_error);
+	}
+	
+	@Test (priority=31)
+	public void ValidatePhoneNameSplRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterNameForPhoneNo("@@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_name_Range_error);
+	}
+	
+	@Test (priority=32)
+	public void ValidatePhoneNumberEmptyErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_number_Empty_error);
+	}
+	
+	@Test (priority=33)
+	public void ValidatePhoneNumberRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterNoForPhone("1");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_number_Range_error);
+	}
+	
+	@Test (priority=34)
+	public void ValidatePhoneNumberSplRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterNoForPhone("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_number_SplRange_error);
+	}
+	
+	@Test (priority=35)
+	public void ValidatePriorityEmptyErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_Priority_Empty_error);
+	}
+	
+	@Test (priority=36)
+	public void ValidatePriorityRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterPriorityForPhone("0");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
+	}
+
+	@Test (priority=37)
+	public void ValidatePriorityMaxRangeErrorMsg() {
+		ConfigurationsPage.ClickonPhoneNumberMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterPriorityForPhone("21");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
+	}
+	
+	@Test (priority=38)
+	public void ValidateTransferNameEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNameError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Name_Empty_err);
+	}
+	
+	@Test (priority=39)
+	public void ValidateTransferNameRangeErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterTransfername("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNameError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
+	}
+	
+	@Test (priority=40)
+	public void ValidateTransferNameSplRangeErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterTransfername("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNameError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
+	}
+	
+	@Test (priority=41)
+	public void ValidateTransferNumberEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNumberError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Number_Empty_err);
+	}
+	
+	@Test (priority=42)
+	public void ValidateTransferNumberRangeErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterTransferNo("+1");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNumberError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Number_Range_err);
+	}
+	
+	@Test (priority=43)
+	public void ValidateTransferNumberSplRangeErrorMsg() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterTransferNo("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNumberError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
+	}
+	
+	@Test (priority=44)
+	public void ValidateTransferNumberSplRangeErrorMsg1() {
+		ConfigurationsPage.ClickOnTransferNoMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterTransferNo("ozonetel");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetTransferNumberError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
+	}
+	
+	@Test (priority=44)
+	public void ValidateSkillNameEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnSkillMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, skill_empty_err);
+	}
+	
+	
+	
+	@Test (priority=45)
+	public void ValidatedispositionEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnDispositionMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetDipositionError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Disp_empty_err);
+	}
+	
+	@Test (priority=46)
+	public void ValidatedispositionRangeErrorMsg() {
+		ConfigurationsPage.ClickOnDispositionMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.Enterdispositions("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetDipositionError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Disp_Range_err);
+	}
+	
+	@Test (priority=47)
+	public void ValidatedispositionSplRangeErrorMsg() {
+		ConfigurationsPage.ClickOnDispositionMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.Enterdispositions("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetDipositionError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Disp_SplRange_err);
+	}
+	
 	
 	
 	

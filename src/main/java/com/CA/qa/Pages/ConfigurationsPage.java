@@ -203,7 +203,76 @@ public class ConfigurationsPage extends TestBase{
 	
 	@FindBy(xpath= "//*[@id='wwctrl_transferNumberForm_transferNumber_transferNumber']/ul/li")
 	WebElement transferNumber_err;
-		
+	
+	@FindBy(id= "skillForm_skill_skillName")
+	WebElement skillName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_skillName']/ul/li")
+	WebElement SkillName_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_location_id']/ul/li")
+	WebElement Skill_loc_err;
+	
+	@FindBy(id= "skillForm_skill_queueSize")
+	WebElement skillQueueSize;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_queueSize']/ul/li")
+	WebElement skill_queueSize_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_assignedAgents']/ul/li")
+	WebElement skillForm_assignedAgents_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_assignedFwpNumbers']/ul/li")
+	WebElement Skill_hunting_err;
+	
+	@FindBy(id= "skillForm_skill_skillDetail1")
+	WebElement skill_skillDetail1;
+	
+	@FindBy(id= "skillForm_skill_skillDetail2")
+	WebElement skill_skillDetail2;
+	
+	@FindBy(id= "skillForm_skill_skillDetail3")
+	WebElement skill_skillDetail3;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_skillDetail1']/ul/li")
+	WebElement skillDetail1_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_skillDetail2']/ul/li")
+	WebElement skillDetail2_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_skillDetail3']/ul/li")
+	WebElement skillDetail3_err;
+
+	@FindBy(id= "skillForm_min")
+	WebElement skillForm_queueTimeout_minutes;
+	
+	@FindBy(id= "skillForm_sec")
+	WebElement skillForm_queueTimeout_seconds;
+
+	@FindBy(id= "skillForm_skill_fallBackRule")
+	WebElement skillForm_skill_fallBackRule;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_dialOutNumber_id']/ul/li")
+	WebElement skill_dialOutNumber_err;
+
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_queueIvrTransfer']/ul/li")
+	WebElement queueIvrTransfer_err;
+
+	@FindBy(id= "skillForm_skill_dropAction")
+	WebElement skillForm_skill_dropAction;
+	
+	@FindBy(xpath= "//*[@id='wwgrp_skillForm_callDropActions_0__actionUrl']/ul/li")
+	WebElement callDropActions_Url_err;
+
+	@FindBy(id= "skillForm_callDropActions_0__actionValue")
+	WebElement skillForm_callDropActions_tries;
+	
+	@FindBy(xpath= "//*[@id='wwgrp_skillForm_callDropActions_0__actionValue']/ul/li")
+	WebElement callDropActions_tries_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_queueSkillTransfer_id']/ul/li")
+	WebElement queueSkillTransfer_err;
+	
 	@FindBy(id= "dispositionForm_disposition_reason")
 	WebElement disposition_reason;
 	
@@ -550,6 +619,13 @@ public class ConfigurationsPage extends TestBase{
 		return con_agent_err_msg;
 		
 	}
+	public String GetAgentGroupEmptyErrorMessage() {
+		try{
+			if(Agent_data_Err.isDisplayed())
+				return	Agent_data_Err.getText();
+		}catch(NoSuchElementException e) {}
+		return "";
+	}
 	
 	public String GetPhoneNameErrorMessage() {
 		try{
@@ -808,6 +884,7 @@ public class ConfigurationsPage extends TestBase{
 			}
 		}
 	}
+	
 	
 	public String DetailsOfPhoneNo(Object name, Object phno,Object pr,Object sip) {
 		boolean esip =false;
@@ -1209,6 +1286,201 @@ public class ConfigurationsPage extends TestBase{
 			} return "no data found with deatils "+reason;
 	}return " header is not matching";
 	}
+	
+	public void ClickOnSkillMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		SkillMenu.click();
+	}
+	
+	public String GetSkillNameErrorMsg() {
+		try{
+			if(SkillName_err.isDisplayed())
+				return SkillName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillQueueSizeErrorMsg() {
+		try{
+			if(skill_queueSize_err.isDisplayed())
+				return skill_queueSize_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillAgentsErrorMsg() {
+		try{
+			if(skillForm_assignedAgents_err.isDisplayed())
+				return skillForm_assignedAgents_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillLocationErrorMsg() {
+		try{
+			if(Skill_loc_err.isDisplayed())
+				return Skill_loc_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillHuntingErrorMsg() {
+		try{
+			if(Skill_hunting_err.isDisplayed())
+				return Skill_hunting_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetSkillSkillDetail1ErrorMsg() {
+		try{
+			if(skillDetail1_err.isDisplayed())
+				return skillDetail1_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetSkillSkillDetail2ErrorMsg() {
+		try{
+			if(skillDetail2_err.isDisplayed())
+				return skillDetail2_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetSkillSkillDetail3ErrorMsg() {
+		try{
+			if(skillDetail3_err.isDisplayed())
+				return skillDetail3_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillQueueIvrTransferErrorMsg() {
+		try{
+			if(queueIvrTransfer_err.isDisplayed())
+				return queueIvrTransfer_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillQueueSkillTransferErrorMsg() {
+		try{
+			if(queueSkillTransfer_err.isDisplayed())
+				return queueSkillTransfer_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillDialOutErrorMsg() {
+		try{
+			if(skill_dialOutNumber_err.isDisplayed())
+				return skill_dialOutNumber_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillCallDropURLErrorMsg() {
+		try{
+			if(callDropActions_Url_err.isDisplayed())
+				return callDropActions_Url_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetSkillCallDropTriesErrorMsg() {
+		try{
+			if(callDropActions_tries_err.isDisplayed())
+				return callDropActions_tries_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void EnterSkillName(Object name) {
+		if(!name.equals(""))
+			skillName.clear();
+		skillName.sendKeys(name.toString().trim());
+	}
+	
+	public void EnterSkillQueueSize(Object size) {
+		if(!size.equals(""))
+			skillQueueSize.clear();
+		skillQueueSize.sendKeys(size.toString().trim());
+	}
+	
+	public void EnterSkillDetail1(Object details) {
+		if(!details.equals(""))
+			skill_skillDetail1.clear();
+		skill_skillDetail1.sendKeys(details.toString().trim());
+	}
+	
+	public void EnterSkillDetail2(Object details) {
+		if(!details.equals(""))
+			skill_skillDetail2.clear();
+		skill_skillDetail2.sendKeys(details.toString().trim());
+	}
+	
+	public void EnterSkillDetail3(Object details) {
+		if(!details.equals(""))
+			skill_skillDetail3.clear();
+		skill_skillDetail3.sendKeys(details.toString().trim());
+	}
+	
+	public void SelectQueueTimeOut(Object Min, Object sec) {
+		if(!Min.equals("") || !sec.equals("")) {
+			Select Mins = new Select (skillForm_queueTimeout_minutes);
+			Mins.selectByValue((String) Min);
+			
+			Select seconds = new Select (skillForm_queueTimeout_seconds);
+			seconds.selectByValue((String) sec);
+			
+		}
+	}
+	
+	public void SelectFallBackRule(Object text) {
+		if(!text.equals("")) {
+			SelectQueueTimeOut(1,0);
+			Select fallback = new Select(skillForm_skill_fallBackRule);
+			fallback.selectByVisibleText(text.toString());
+		}
+	}
+	
+	public void EnableCallDrop() {
+		skillForm_skill_dropAction.click();
+	}
+	
+	public void EnterTriesForCallDrop(Object Tries) {
+		if(!Tries.equals(""))
+			skillForm_callDropActions_tries.clear();
+		skillForm_callDropActions_tries.sendKeys(Tries.toString().trim());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

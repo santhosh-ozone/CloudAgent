@@ -34,7 +34,7 @@ public class ColorXLSX {
 	    cell2.setCellValue("ivr");
 	    cell2.setCellStyle(style);
 
-	    FileOutputStream fos =new FileOutputStream(new File("/home/santosh/Documents/cp.xlsx"));
+	    FileOutputStream fos =new FileOutputStream(new File("C:\\Users\\santosh\\Documents\\cp.xlsx"));
 	    workbook.write(fos);
 	    fos.close();
 	    System.out.println("Done");

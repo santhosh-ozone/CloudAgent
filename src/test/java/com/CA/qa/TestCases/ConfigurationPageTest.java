@@ -83,79 +83,79 @@ public class ConfigurationPageTest extends TestBase {
 	}
 	
 	
-//	@Test (priority=1,dataProvider = "Agentsdata")
-//	public void AddAgents(String act,String id,Object nid, Object lock, Object pwd, Object name,Object pr,Object mail,Object data,Object Skill,Object in, Object man, Object pre, Object prog,Object blend,Object res) {
-//		String m1="";
-//		if (act.trim().equalsIgnoreCase("ADD")) {
-//		Agents_count++;
-//		m1=ConfigurationsPage.AddAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
-//		System.out.println(m1);
-//		
-//		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-//		Assert.assertTrue(m1.contains("success"),"Agent "+id +" not added");
-//		}
-//		else if (act.trim().equalsIgnoreCase("EDIT")) {
-//		Agents_count++;
-//			m1=ConfigurationsPage.EditAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
-//			System.out.println(m1);
-//			
-//			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-//			Assert.assertTrue(m1.contains("success"),"Agent "+id +" not able to edit");
-//			}
-//		
-//		else if(act.trim().equalsIgnoreCase("DELETE")) {
-//		Agents_count++;	
-//			m1=ConfigurationsPage.deleteAgent(id);
-//			System.out.println(m1);
-//			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-//			Assert.assertTrue(m1.contains("success"),id+" Agent not able to delete");
-//		}
-//		Agents_count++;
-//		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-//	}
-//	
-	@Test (priority=2,dataProvider = "PhoneNodata")
-	public void AddPhoneNos(String act,Object name, Object Nname,Object pno, Object Nph, Object pr, Object sip, Object res) {
-			if (act.trim().equalsIgnoreCase("ADD")) {
-				Phno_count++;
-				String m1=ConfigurationsPage.addPhoneNo(name, pno, pr, sip);
-				System.out.println(m1);
-				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
-				Assert.assertTrue(m1.contains("success"),"Phone No "+pno +" not added");
-				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name, pno, pr, sip);
-				//System.out.println("-------------------------"+m2);
-				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m2+": "+m1);
-			}
-			else if (act.trim().equalsIgnoreCase("EDIT")) {
-				Phno_count++;
-				String m1=ConfigurationsPage.EditPhoneNo(name, Nname, pno, Nph, pr, sip);
-				System.out.println(m1);
-				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
-				Assert.assertTrue(m1.contains("success"),"phone no "+pno+"  not able to edit");
-				String name1=name.toString();
-				String ph1=pno.toString();
-				if(!Nname.toString().isEmpty())
-					name1=Nname.toString();
-				if(!Nph.toString().isEmpty())
-					ph1=Nph.toString();
-					
-				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name1, ph1, pr, sip);
-				//System.out.println("-------------------------"+m2);
-				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m2+": "+m1);
-			}
+	@Test (priority=1,dataProvider = "Agentsdata")
+	public void AddAgents(String act,String id,Object nid, Object lock, Object pwd, Object name,Object pr,Object mail,Object data,Object Skill,Object in, Object man, Object pre, Object prog,Object blend,Object res) {
+		String m1="";
+		if (act.trim().equalsIgnoreCase("ADD")) {
+		Agents_count++;
+		m1=ConfigurationsPage.AddAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
+		System.out.println(m1);
+		
+		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+		Assert.assertTrue(m1.contains("success"),"Agent "+id +" not added");
+		}
+		else if (act.trim().equalsIgnoreCase("EDIT")) {
+		Agents_count++;
+			m1=ConfigurationsPage.EditAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
+			System.out.println(m1);
 			
-			else if(act.trim().equalsIgnoreCase("DELETE")) {
-				Phno_count++;
-				String m1=ConfigurationsPage.deletePhoneNo(name.toString(), pno.toString());
-				System.out.println(m1);
-				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
-				Assert.assertTrue(m1.contains("success"),pno+" Phone No not able to delete");
-				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name, pno, pr, sip);
-				if(m2.equalsIgnoreCase("No details found"))
-					Testutil.WriteDataToexcel("PhoneNumber", Phno_count,"verified: "+m1);
+			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+			Assert.assertTrue(m1.contains("success"),"Agent "+id +" not able to edit");
 			}
-			
+		
+		else if(act.trim().equalsIgnoreCase("DELETE")) {
+		Agents_count++;	
+			m1=ConfigurationsPage.deleteAgent(id);
+			System.out.println(m1);
+			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+			Assert.assertTrue(m1.contains("success"),id+" Agent not able to delete");
+		}
+		Agents_count++;
+		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
 	}
+	
+//	@Test (priority=2,dataProvider = "PhoneNodata")
+//	public void AddPhoneNos(String act,Object name, Object Nname,Object pno, Object Nph, Object pr, Object sip, Object res) {
+//			if (act.trim().equalsIgnoreCase("ADD")) {
+//				Phno_count++;
+//				String m1=ConfigurationsPage.addPhoneNo(name, pno, pr, sip);
+//				System.out.println(m1);
+//				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
+//				Assert.assertTrue(m1.contains("success"),"Phone No "+pno +" not added");
+//				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name, pno, pr, sip);
+//				//System.out.println("-------------------------"+m2);
+//				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m2+": "+m1);
+//			}
+//			else if (act.trim().equalsIgnoreCase("EDIT")) {
+//				Phno_count++;
+//				String m1=ConfigurationsPage.EditPhoneNo(name, Nname, pno, Nph, pr, sip);
+//				System.out.println(m1);
+//				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
+//				Assert.assertTrue(m1.contains("success"),"phone no "+pno+"  not able to edit");
+//				String name1=name.toString();
+//				String ph1=pno.toString();
+//				if(!Nname.toString().isEmpty())
+//					name1=Nname.toString();
+//				if(!Nph.toString().isEmpty())
+//					ph1=Nph.toString();
+//					
+//				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name1, ph1, pr, sip);
+//				//System.out.println("-------------------------"+m2);
+//				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m2+": "+m1);
+//			}
+//			
+//			else if(act.trim().equalsIgnoreCase("DELETE")) {
+//				Phno_count++;
+//				String m1=ConfigurationsPage.deletePhoneNo(name.toString(), pno.toString());
+//				System.out.println(m1);
+//				Testutil.WriteDataToexcel("PhoneNumber", Phno_count,m1);
+//				Assert.assertTrue(m1.contains("success"),pno+" Phone No not able to delete");
+//				String m2 =ConfigurationsPage.DetailsOfPhoneNo(name, pno, pr, sip);
+//				if(m2.equalsIgnoreCase("No details found"))
+//					Testutil.WriteDataToexcel("PhoneNumber", Phno_count,"verified: "+m1);
+//			}
+//			
+//	}
 	
 //	@Test (priority=3,dataProvider = "TransferNodata")
 //	public void AddTransferNos(String act,Object name, Object Nname,Object pno, Object Nph, Object sip, Object res) {
