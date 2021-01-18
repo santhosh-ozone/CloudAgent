@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-12T19:27:56 IST" name="Default suite" finished-at="2021-01-12T19:35:22 IST" duration-ms="445603">
+  <suite started-at="2021-01-18T12:34:33 IST" name="Default suite" finished-at="2021-01-18T12:38:26 IST" duration-ms="233684">
     <groups>
     </groups>
-    <test started-at="2021-01-12T19:27:56 IST" name="Default test" finished-at="2021-01-12T19:35:22 IST" duration-ms="445603">
+    <test started-at="2021-01-18T12:34:33 IST" name="Default test" finished-at="2021-01-18T12:38:26 IST" duration-ms="233684">
       <class name="com.CA.qa.TestCases.AddCampaignPageTest">
-        <test-method is-config="true" signature="clearExcelDatainRes()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:27:56 IST" name="clearExcelDatainRes" finished-at="2021-01-12T19:27:57 IST" duration-ms="783" status="PASS">
+        <test-method is-config="true" signature="clearExcelDatainRes()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:34:33 IST" name="clearExcelDatainRes" finished-at="2021-01-18T12:34:33 IST" duration-ms="661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearExcelDatainRes -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:27:57 IST" name="setup" finished-at="2021-01-12T19:28:21 IST" duration-ms="24440" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:34:33 IST" name="setup" finished-at="2021-01-18T12:34:43 IST" duration-ms="9671" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:28:21 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:29:21 IST" duration-ms="59173" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:34:43 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:35:36 IST" duration-ms="53168" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -243,11 +243,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:29:21 IST" name="nteardown" finished-at="2021-01-12T19:29:26 IST" duration-ms="5531" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:35:36 IST" name="nteardown" finished-at="2021-01-18T12:35:38 IST" duration-ms="1556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:29:26 IST" name="setup" finished-at="2021-01-12T19:29:49 IST" duration-ms="22563" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:35:38 IST" name="setup" finished-at="2021-01-18T12:35:47 IST" duration-ms="8895" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -258,7 +258,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:29:49 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:30:16 IST" duration-ms="27825" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:35:47 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:35:59 IST" duration-ms="12320" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -479,11 +479,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:30:16 IST" name="nteardown" finished-at="2021-01-12T19:30:23 IST" duration-ms="6337" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:35:59 IST" name="nteardown" finished-at="2021-01-18T12:36:01 IST" duration-ms="1628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:30:23 IST" name="setup" finished-at="2021-01-12T19:30:45 IST" duration-ms="22002" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:36:01 IST" name="setup" finished-at="2021-01-18T12:36:09 IST" duration-ms="8666" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -494,7 +494,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:30:45 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:31:20 IST" duration-ms="35284" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:36:09 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:36:42 IST" duration-ms="32392" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -715,11 +715,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:31:20 IST" name="nteardown" finished-at="2021-01-12T19:31:26 IST" duration-ms="6158" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:36:42 IST" name="nteardown" finished-at="2021-01-18T12:36:43 IST" duration-ms="1519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:31:26 IST" name="setup" finished-at="2021-01-12T19:31:48 IST" duration-ms="21867" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:36:43 IST" name="setup" finished-at="2021-01-18T12:36:53 IST" duration-ms="9224" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -730,7 +730,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:31:48 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:32:06 IST" duration-ms="17993" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:36:53 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:37:01 IST" duration-ms="8955" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -951,11 +951,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:32:06 IST" name="nteardown" finished-at="2021-01-12T19:32:12 IST" duration-ms="5583" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:01 IST" name="nteardown" finished-at="2021-01-18T12:37:03 IST" duration-ms="1512" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:32:12 IST" name="setup" finished-at="2021-01-12T19:32:34 IST" duration-ms="21910" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:03 IST" name="setup" finished-at="2021-01-18T12:37:12 IST" duration-ms="8874" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -966,7 +966,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:32:34 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:32:34 IST" duration-ms="158" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:12 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:37:12 IST" duration-ms="66" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1187,11 +1187,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:32:34 IST" name="nteardown" finished-at="2021-01-12T19:32:40 IST" duration-ms="6235" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:12 IST" name="nteardown" finished-at="2021-01-18T12:37:18 IST" duration-ms="5973" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:32:40 IST" name="setup" finished-at="2021-01-12T19:33:02 IST" duration-ms="21889" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:18 IST" name="setup" finished-at="2021-01-18T12:37:31 IST" duration-ms="12654" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1202,7 +1202,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:02 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:33:02 IST" duration-ms="156" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:31 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:37:31 IST" duration-ms="68" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1423,11 +1423,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:02 IST" name="nteardown" finished-at="2021-01-12T19:33:08 IST" duration-ms="5989" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:31 IST" name="nteardown" finished-at="2021-01-18T12:37:32 IST" duration-ms="1622" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:08 IST" name="setup" finished-at="2021-01-12T19:33:30 IST" duration-ms="21930" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:32 IST" name="setup" finished-at="2021-01-18T12:37:41 IST" duration-ms="8734" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1438,7 +1438,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:30 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:33:30 IST" duration-ms="137" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:41 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:37:41 IST" duration-ms="55" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1659,11 +1659,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:30 IST" name="nteardown" finished-at="2021-01-12T19:33:36 IST" duration-ms="6083" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:41 IST" name="nteardown" finished-at="2021-01-18T12:37:43 IST" duration-ms="1606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:36 IST" name="setup" finished-at="2021-01-12T19:33:59 IST" duration-ms="22780" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:43 IST" name="setup" finished-at="2021-01-18T12:37:53 IST" duration-ms="9923" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1674,7 +1674,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:59 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:33:59 IST" duration-ms="126" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:53 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:37:53 IST" duration-ms="75" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1895,11 +1895,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:33:59 IST" name="nteardown" finished-at="2021-01-12T19:34:05 IST" duration-ms="5504" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:53 IST" name="nteardown" finished-at="2021-01-18T12:37:54 IST" duration-ms="1640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:34:05 IST" name="setup" finished-at="2021-01-12T19:34:26 IST" duration-ms="21757" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:37:54 IST" name="setup" finished-at="2021-01-18T12:38:04 IST" duration-ms="9345" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1910,7 +1910,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:34:26 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:34:26 IST" duration-ms="170" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:38:04 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:38:04 IST" duration-ms="63" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2131,11 +2131,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:34:26 IST" name="nteardown" finished-at="2021-01-12T19:34:33 IST" duration-ms="6202" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:38:04 IST" name="nteardown" finished-at="2021-01-18T12:38:05 IST" duration-ms="1607" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:34:33 IST" name="setup" finished-at="2021-01-12T19:34:55 IST" duration-ms="21961" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:38:05 IST" name="setup" finished-at="2021-01-18T12:38:15 IST" duration-ms="9812" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2146,7 +2146,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:34:55 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-12T19:35:16 IST" duration-ms="21547" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:38:15 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-01-18T12:38:25 IST" duration-ms="9757" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -2367,7 +2367,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddCampaign -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-12T19:35:16 IST" name="nteardown" finished-at="2021-01-12T19:35:22 IST" duration-ms="5340" status="PASS">
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@55182842]" started-at="2021-01-18T12:38:25 IST" name="nteardown" finished-at="2021-01-18T12:38:26 IST" duration-ms="1471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
