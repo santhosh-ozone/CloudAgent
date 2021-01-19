@@ -35,8 +35,17 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "TransferNumberMenu")
 	WebElement TransferNumberMenu;
 	
+	@FindBy(id= "LocationMenu")
+	WebElement LocationMenu;
+	
+	@FindBy(id= "UrlMapMenu")
+	WebElement UrlMapMenu;
+	
 	@FindBy(id= "SkillMenu")
 	WebElement SkillMenu;
+	
+	@FindBy(id= "SmsTemplateMenu")
+	WebElement SmsTemplateMenu;
 	
 	@FindBy(id= "DispositionMenu")
 	WebElement DispositionMenu;
@@ -273,13 +282,49 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_queueSkillTransfer_id']/ul/li")
 	WebElement queueSkillTransfer_err;
 	
+	@FindBy(id= "locationForm_location_name")
+	WebElement LocationName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_locationForm_location_name']/ul/li")
+	WebElement LocationName_err;
+	
+	@FindBy(id= "urlMapForm_urlMap_name")
+	WebElement UrlMappingName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_urlMapForm_urlMap_name']/ul/li")
+	WebElement URLMappingName_err;
+	
+	@FindBy(id= "urlMapForm_urlMap_domainName")
+	WebElement urlMapForm_urlMap_domainName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_urlMapForm_urlMap_domainName']/ul/li")
+	WebElement URLMappingDomainName_err;
+	
+	@FindBy(id= "urlMapForm_urlMap_localIp")
+	WebElement urlMapForm_urlMap_localIp;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_urlMapForm_urlMap_localIp']/ul/li")
+	WebElement URLMappingLocalIP_err;
+	
+	@FindBy(id= "smsTemplateForm_smsTemplate_name")
+	WebElement smsTemplateForm_smsTemplate_name;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_smsTemplateForm_smsTemplate_name']/ul/li")
+	WebElement smsTemplate_name_err;
+	
+	@FindBy(id= "smsTemplateForm_smsTemplate_text")
+	WebElement smsTemplateForm_smsTemplate_text;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_smsTemplateForm_smsTemplate_text']/ul/li")
+	WebElement smsTemplate_text_err;
+	
 	@FindBy(id= "dispositionForm_disposition_reason")
 	WebElement disposition_reason;
 	
 	@FindBy(xpath= "//*[@id='wwctrl_dispositionForm_disposition_reason']/ul/li")
 	WebElement disposition_err;
 	
-		@FindBy(id= "pauseReasonForm_pauseReason_reason")
+	@FindBy(id= "pauseReasonForm_pauseReason_reason")
 	WebElement pauseReason_reason;
 	
 	@FindBy(id= "moveAllLeft1")
@@ -1455,14 +1500,19 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void SelectFallBackRule(Object text) {
 		if(!text.equals("")) {
-			SelectQueueTimeOut(1,0);
+			SelectQueueTimeOut("1","0");
 			Select fallback = new Select(skillForm_skill_fallBackRule);
 			fallback.selectByVisibleText(text.toString());
 		}
 	}
 	
 	public void EnableCallDrop() {
+		try {
 		skillForm_skill_dropAction.click();
+		}catch(Exception e) {
+			JavascriptExecutor js = (JavascriptExecutor)driver1;
+			js.executeScript("arguments[0].click();", skillForm_skill_dropAction);
+		}
 	}
 	
 	public void EnterTriesForCallDrop(Object Tries) {
@@ -1471,8 +1521,112 @@ public class ConfigurationsPage extends TestBase{
 		skillForm_callDropActions_tries.sendKeys(Tries.toString().trim());
 	}
 	
+	public void ClickOnLocationMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		LocationMenu.click();
+	}
 	
+	public void EnterLocationName(String str) {
+		LocationName.sendKeys(str);
+	}
 	
+	public String GetLocationNameErr() {
+		try{
+			if(LocationName_err.isDisplayed())
+				return LocationName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void ClickOnURLMappingMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		UrlMapMenu.click();
+	}
+	
+	public void EnterURLMappingName(String str) {
+		UrlMappingName.sendKeys(str);
+	}
+	
+	public void EnterURLMappingDomain(String str) {
+		urlMapForm_urlMap_domainName.sendKeys(str);
+	}
+	
+	public void EnterURLMappingLocalIP(String str) {
+		urlMapForm_urlMap_localIp.sendKeys(str);
+	}
+	
+	public String GetURLMappingDomainNameErr() {
+		try{
+			if(URLMappingDomainName_err.isDisplayed())
+				return URLMappingDomainName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetURLMappingNameErr() {
+		try{
+			if(URLMappingName_err.isDisplayed())
+				return URLMappingName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetURLMappingLocalIPErr() {
+		try{
+			if(URLMappingLocalIP_err.isDisplayed())
+				return URLMappingLocalIP_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void ClickOnSmsTemplateMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		SmsTemplateMenu.click();
+	}
+	
+	public void EnterSmsTemplateName(String str) {
+		smsTemplateForm_smsTemplate_name.sendKeys(str);
+	}
+	public String GetSmsTemplateNameErr() {
+		try{
+			if(smsTemplate_name_err.isDisplayed())
+				return smsTemplate_name_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void EnterSmsTemplateText(String str) {
+		smsTemplateForm_smsTemplate_text.sendKeys(str);
+	}
+	public String GetSmsTemplateTextErr() {
+		try{
+			if(smsTemplate_text_err.isDisplayed())
+				return smsTemplate_text_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
 	
 	
 	

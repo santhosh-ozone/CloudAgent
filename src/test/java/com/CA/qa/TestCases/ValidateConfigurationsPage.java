@@ -66,9 +66,21 @@ public class ValidateConfigurationsPage extends TestBase{
 	String calldrop_tries_empty_err= "Tries is required.";
 	String calldrop_tries_range_err= "Tries should be between 1 and 99.";
 	
+	String loc_name_empty = "Name is required.";
+	String loc_range_err ="Name should be between 3 to 50 alphanumeric characters long allows special characters like _ and Name cannot start and end with Special characters.";
+	
+	String urlMapping_Name_err ="Name is required.";
+	String urlMapping_NameRange_err ="Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.";
+	String urlMapping_domianName_err = "Domain Name is required.";
+	String urlMapping_domianName_Range_err ="Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.";
+	String urlMapping_LocalIpName_err = "Local IP is required.";
+	
+	String smsTemplate_name_empty_err="Template Name is required.";
+	String smsTemplate_name_range_err="Template Name should be between 2 to 50 alphanumeric characters long and allows special characters like _ and Name cannot start and end with Special characters.";
+	String smsTemplate_Text_empty_err="Template Text is required.";
+	
 	String Disp_empty_err ="Reason is required.";
-	String Disp_Range_err ="Reason should be between 3 to 150 alphanumeric characters long and allows special characters like _,space";
-	String Disp_SplRange_err ="Reason should be between 3 to 150 alphanumeric characters long and allows special characters like _,space";
+	String Disp_Range_err ="Reason should be between 3 to 150 alphanumeric characters long allows special characters like _,space and Reason cannot start and end with Special characters.";
 	
 	String AgentGroup_name_empty_err="Group Name is required.";
 	String AgentGroup_name_Range_err="Group Name should be between 2 to 50 characters.";
@@ -112,490 +124,958 @@ public class ValidateConfigurationsPage extends TestBase{
 		Printhyphens();
 	}
 	
-	@Test (priority=1)
-	public void ValidateEmptyAgentIdErrorMsg1_1() {
-		ConfigurationsPage.ClickOnAgentMenu();
+//	@Test (priority=1)
+//	public void ValidateEmptyAgentIdErrorMsg1_1() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_id_Empty_err);
+//	}
+//	
+//	@Test (priority=2)
+//	public void ValidateAgentIdRAngeErrorMsg1_11() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentId("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+//	}
+//	
+//
+//	@Test (priority=3)
+//	public void ValidateAgentIdSplRAngeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentId("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+//	}
+//	
+//	@Test (priority=4)
+//	public void ValidateAgentIdStartWithsplcharErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentId("@agent");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+//	}
+//	
+//	@Test (priority=5)
+//	public void ValidateAgentIdEndWithSplCharErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentId("agent@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+//	}
+//	
+//	@Test (priority=6)
+//	public void ValidateAgentPasswordEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_pwd_empty_err);
+//	}
+//	
+//	@Test (priority=7)
+//	public void ValidateAgentPasswordRAngeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentPassword("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+//	}
+//	
+//	@Test (priority=8)
+//	public void ValidateAgentPasswordAllLowerCaseErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentPassword("ozonetel");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+//	}
+//	
+//	@Test (priority=9)
+//	public void ValidateAgentPasswordUpperCaseErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentPassword("OZONETEL");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+//	}
+//	
+//	@Test (priority=10)
+//	public void ValidateAgentPasswordAllSplCharErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentPassword("@!#$%^&");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+//	}
+//	@Test (priority=11)
+//	public void ValidateAgentNameEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_name_Empty_err);
+//	}
+//	
+//	@Test (priority=12)
+//	public void ValidateAgentNameRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentName("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+//	}
+//	
+//	@Test (priority=13)
+//	public void ValidateAgentNameSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentName("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+//	}
+//	
+//	@Test (priority=14)
+//	public void ValidateAgentPriorityEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+//	}
+//	
+//	@Test (priority=15)
+//	public void ValidateAgentPriorityRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterPriorityforAgent("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+//	}
+//	
+//	@Test (priority=16)
+//	public void ValidateAgentEmailErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterEmailforAgent("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentEmailErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_email_err);
+//	}
+//	
+//	@Test (priority=17)
+//	public void ValidateAgentDataErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentDataforAgent("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+//	}
+//	
+//	@Test (priority=18)
+//	public void ValidateAgentDataSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentDataforAgent("@@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+//	}
+//	
+//	@Test (priority=19)
+//	public void ValidateAgentModeNotEnabledErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnableInboundforAgent("no");
+//		ConfigurationsPage.EnableManualforAgent("no");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentModeErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
+//	}
+//	@Test (priority=20)
+//	public void ValidateAgentGroupNameEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_name_empty_err);
+//	}
+//	@Test (priority=21)
+//	public void ValidateAgentGroupNameNumberErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentGroupName("11");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+//	}
+//	
+//	@Test (priority=22)
+//	public void ValidateAgentGroupNameRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentGroupName("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_name_Range_err);
+//	}
+//	
+//	@Test (priority=23)
+//	public void ValidateAgentGroupNameSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentGroupName("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+//	}
+//	@Test (priority=24)
+//	public void ValidateAgentGroupNameSplErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentGroupName("s@n");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+//	}
+//	
+//	@Test (priority=25)
+//	public void ValidateAgentGroupDesriptionEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupDescriptionError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_description_empty_err);
+//	}
+//	
+//	@Test (priority=26)
+//	public void ValidateAgentGroupDesriptionRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterAgentGroupDecription("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupDescriptionError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_description_range_err);
+//	}
+//	
+//	@Test (priority=27)
+//	public void ValidateAgentGroupAssignedAgentsEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupAssignedAgentsError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_AssignedAgnets_empty_err);
+//	}
+//	
+//	@Test (priority=28)
+//	public void ValidateAgentGroupAssignedUsersEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentGroupAssignedUsersError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, AgentGroup_AssignedUsers_empty_err);
+//	}
+//	
+//
+//	@Test (priority=29)
+//	public void ValidatePhoneNameEmptyErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_name_Empty_error);
+//	}
+//	
+//	@Test (priority=30)
+//	public void ValidatePhoneNameRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterNameForPhoneNo("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_name_Range_error);
+//	}
+//	
+//	@Test (priority=31)
+//	public void ValidatePhoneNameSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterNameForPhoneNo("@@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_name_Range_error);
+//	}
+//	
+//	@Test (priority=32)
+//	public void ValidatePhoneNumberEmptyErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_number_Empty_error);
+//	}
+//	
+//	@Test (priority=33)
+//	public void ValidatePhoneNumberRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterNoForPhone("1");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_number_Range_error);
+//	}
+//	
+//	@Test (priority=34)
+//	public void ValidatePhoneNumberSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterNoForPhone("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_number_SplRange_error);
+//	}
+//	
+//	@Test (priority=35)
+//	public void ValidatePriorityEmptyErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_Priority_Empty_error);
+//	}
+//	
+//	@Test (priority=36)
+//	public void ValidatePriorityRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterPriorityForPhone("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
+//	}
+//
+//	@Test (priority=37)
+//	public void ValidatePriorityMaxRangeErrorMsg() {
+//		ConfigurationsPage.ClickonPhoneNumberMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterPriorityForPhone("21");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
+//	}
+//	
+//	@Test (priority=38)
+//	public void ValidateTransferNameEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Name_Empty_err);
+//	}
+//	
+//	@Test (priority=39)
+//	public void ValidateTransferNameRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterTransfername("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
+//	}
+//	
+//	@Test (priority=40)
+//	public void ValidateTransferNameSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterTransfername("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNameError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
+//	}
+//	
+//	@Test (priority=41)
+//	public void ValidateTransferNumberEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNumberError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Number_Empty_err);
+//	}
+//	
+//	@Test (priority=42)
+//	public void ValidateTransferNumberRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterTransferNo("+1");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNumberError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Number_Range_err);
+//	}
+//	
+//	@Test (priority=43)
+//	public void ValidateTransferNumberSplRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterTransferNo("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNumberError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
+//	}
+//	
+//	@Test (priority=44)
+//	public void ValidateTransferNumberSplRangeErrorMsg1() {
+//		ConfigurationsPage.ClickOnTransferNoMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterTransferNo("ozonetel");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetTransferNumberError();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
+//	}
+//	
+//	@Test (priority=45)
+//	public void ValidateSkillNameEmptyErrorMsg5_1() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skill_empty_err);
+//	}
+//	
+//	@Test (priority=46)
+//	public void ValidateSkillNameRangeErrorMsg5_11() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillName("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, SkillName_range_error);
+//	}
+//	
+//	@Test (priority=47)
+//	public void ValidateSkillNameSplRangeErrorMsg5_12() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillName("@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, SkillName_range_error);
+//	}
+//	
+//	@Test (priority=48)
+//	public void ValidateSkillNameSplRangeErrorMsg5_13() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillName("_sant");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, SkillName_range_error);
+//	}
+//	
+//	@Test (priority=49)
+//	public void ValidateSkillLocationEmptyErrorMsg5_2() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillLocationErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Skill_loc_empty_err);
+//	}
+//	
+//	@Test (priority=50)
+//	public void ValidateSkillQueueSizeEmptyErrorMsg5_3() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillQueueSizeErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Queue_Size_empty_err);
+//	}
+//	
+//	@Test (priority=51)
+//	public void ValidateSkillQueueSizeRangeErrorMsg5_31() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillQueueSize("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillQueueSizeErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, queue_range_err);
+//	}
+//	
+//	@Test (priority=52)
+//	public void ValidateSkilldetail1RangeErrorMsg5_4() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail1("1");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail1ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail1_err);
+//	}
+//	
+//	@Test (priority=53)
+//	public void ValidateSkilldetail1RangeErrorMsg5_41() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail1("@s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail1ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail1_err);
+//	}
+//	
+//	@Test (priority=54)
+//	public void ValidateSkilldetail1RangeErrorMsg5_42() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail1("S@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail1ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail1_err);
+//	}
+//	
+//	@Test (priority=55)
+//	public void ValidateSkilldetail2RangeErrorMsg5_5() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail2("S");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail2ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail2_err);
+//	}
+//	
+//	@Test (priority=56)
+//	public void ValidateSkilldetail2RangeErrorMsg5_51() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail2("@S");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail2ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail2_err);
+//	}
+//	
+//	@Test (priority=57)
+//	public void ValidateSkilldetail2RangeErrorMsg5_52() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail2("S@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail2ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail2_err);
+//	}
+//	
+//	@Test (priority=58)
+//	public void ValidateSkilldetail3RangeErrorMsg5_6() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail3("S");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail3ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail3_err);
+//	}
+//	
+//	@Test (priority=59)
+//	public void ValidateSkilldetail3RangeErrorMsg5_61() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail3("@S");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail3ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail3_err);
+//	}
+//	
+//	@Test (priority=60)
+//	public void ValidateSkilldetail3RangeErrorMsg5_62() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterSkillDetail3("S@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillSkillDetail3ErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skillDetail3_err);
+//	}
+//	
+//	@Test (priority=61)
+//	public void ValidateSkillAssignedAgentsEmptyErrorMsg5_7() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillAgentsErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Skill_Assigned_agents_empty_err);
+//	}
+//	
+//	@Test (priority=62)
+//	public void ValidateSkillHuntingNoEmptyErrorMsg5_8() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillHuntingErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skill_hunting_no_empty_err);
+//	}
+//	
+//	//Dialout   Skill     IVR
+//	
+//	@Test (priority=63)
+//	public void ValidateSkillFallbackDialOutEmptyErrorMsg5_9() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.SelectFallBackRule("Dialout");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillDialOutErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, skill_dial_out_empty_err);
+//	}
+//	
+//	@Test (priority=64)
+//	public void ValidateSkillFallbackSkillTransferEmptyErrorMsg5_11() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.SelectFallBackRule("Skill");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillQueueSkillTransferErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Skill_transfer_skill_Empty_err);
+//	}
+//	
+//	@Test (priority=65)
+//	public void ValidateSkillFallbackIvrTransferEmptyErrorMsg5_12() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.SelectFallBackRule("IVR");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillQueueIvrTransferErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Skill_transfer_Ivr_Empty_err);
+//	}
+//	
+//	@Test (priority=66)
+//	public void ValidateSkillCallDropURLEmptyErrorMsg5_13() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnableCallDrop();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillCallDropURLErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, calldrop_url_empty_err);
+//	}
+//	
+//	@Test (priority=67)
+//	public void ValidateSkillCallDropTriesEmptyErrorMsg5_14() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnableCallDrop();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillCallDropTriesErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, calldrop_tries_empty_err);
+//	}
+//	
+//	@Test (priority=68)
+//	public void ValidateSkillCallDropTriesRangeErrorMsg5_15() {
+//		ConfigurationsPage.ClickOnSkillMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnableCallDrop();
+//		ConfigurationsPage.EnterTriesForCallDrop("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSkillCallDropTriesErrorMsg();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, calldrop_tries_range_err);
+//	}
+	
+	@Test (priority=69)
+	public void ValidateLocationNameEmptyErrorMsg6_1() {
+		ConfigurationsPage.ClickOnLocationMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		Err_msg =ConfigurationsPage.GetLocationNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_Empty_err);
+		Assert.assertEquals(Err_msg, loc_name_empty);
 	}
 	
-	@Test (priority=2)
-	public void ValidateAgentIdRAngeErrorMsg1_11() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=70)
+	public void ValidateLocationRangeErrorMsg6_11() {
+		ConfigurationsPage.ClickOnLocationMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentId("s");
+		ConfigurationsPage.EnterLocationName("s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		Err_msg =ConfigurationsPage.GetLocationNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+		Assert.assertEquals(Err_msg, loc_range_err);
 	}
 	
-
-	@Test (priority=3)
-	public void ValidateAgentIdSplRAngeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=71)
+	public void ValidateLocationRangeErrorMsg6_12() {
+		ConfigurationsPage.ClickOnLocationMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentId("@");
+		ConfigurationsPage.EnterLocationName("_san");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		Err_msg =ConfigurationsPage.GetLocationNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+		Assert.assertEquals(Err_msg, loc_range_err);
 	}
 	
-	@Test (priority=4)
-	public void ValidateAgentIdStartWithsplcharErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=72)
+	public void ValidateLocationRangeErrorMsg6_13() {
+		ConfigurationsPage.ClickOnLocationMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentId("@agent");
+		ConfigurationsPage.EnterLocationName("san_");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		Err_msg =ConfigurationsPage.GetLocationNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+		Assert.assertEquals(Err_msg, loc_range_err);
 	}
 	
-	@Test (priority=5)
-	public void ValidateAgentIdEndWithSplCharErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=73)
+	public void ValidateURLMappingNameEmptyErrorMsg7_1() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentId("agent@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_Name_err);
 	}
 	
-	@Test (priority=6)
-	public void ValidateAgentPasswordEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=74)
+	public void ValidateURLMappingNameRangeErrorMsg7_11() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterURLMappingName("1");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_pwd_empty_err);
+		Assert.assertEquals(Err_msg, urlMapping_NameRange_err);
 	}
 	
-	@Test (priority=7)
-	public void ValidateAgentPasswordRAngeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=75)
+	public void ValidateURLMappingNameRangeErrorMsg7_12() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentPassword("s");
+		ConfigurationsPage.EnterURLMappingName("_s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_NameRange_err);
 	}
 	
-	@Test (priority=8)
-	public void ValidateAgentPasswordAllLowerCaseErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=76)
+	public void ValidateURLMappingNameRangeErrorMsg7_13() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentPassword("ozonetel");
+		ConfigurationsPage.EnterURLMappingName("s@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_NameRange_err);
 	}
 	
-	@Test (priority=9)
-	public void ValidateAgentPasswordUpperCaseErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=77)
+	public void ValidateURLMappingDomainNameEmptyErrorMsg7_21() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentPassword("OZONETEL");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingDomainNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_err);
 	}
 	
-	@Test (priority=10)
-	public void ValidateAgentPasswordAllSplCharErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=78)
+	public void ValidateURLMappingDomainNameRangeErrorMsg7_22() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentPassword("@!#$%^&");
+		ConfigurationsPage.EnterURLMappingDomain("1");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingDomainNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
-	@Test (priority=11)
-	public void ValidateAgentNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=79)
+	public void ValidateURLMappingDomainNameRangeErrorMsg7_23() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterURLMappingDomain("_s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingDomainNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_name_Empty_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
-	
-	@Test (priority=12)
-	public void ValidateAgentNameRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=80)
+	public void ValidateURLMappingDomainNameRangeErrorMsg7_24() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentName("s");
+		ConfigurationsPage.EnterURLMappingDomain("s@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingDomainNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
-	
-	@Test (priority=13)
-	public void ValidateAgentNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=81)
+	public void ValidateURLMappingLocalIpEmptyErrorMsg7_3() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentName("@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingLocalIPErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+		Assert.assertEquals(Err_msg, urlMapping_LocalIpName_err);
 	}
-	
-	@Test (priority=14)
-	public void ValidateAgentPriorityEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=82)
+	public void ValidateURLMappingLocalIpRangeErrorMsg7_31() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterURLMappingLocalIP("1");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingLocalIPErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
-	
-	@Test (priority=15)
-	public void ValidateAgentPriorityRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=83)
+	public void ValidateURLMappingLocalIpRangeErrorMsg7_32() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityforAgent("0");
+		ConfigurationsPage.EnterURLMappingLocalIP("_s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingLocalIPErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
-	
-	@Test (priority=16)
-	public void ValidateAgentEmailErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=84)
+	public void ValidateURLMappingLocalIpRangeErrorMsg7_33() {
+		ConfigurationsPage.ClickOnURLMappingMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterEmailforAgent("s");
+		ConfigurationsPage.EnterURLMappingLocalIP("s@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentEmailErrorMessage();
+		Err_msg =ConfigurationsPage.GetURLMappingLocalIPErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_email_err);
+		Assert.assertEquals(Err_msg, urlMapping_domianName_Range_err);
 	}
 	
-	@Test (priority=17)
-	public void ValidateAgentDataErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=85)
+	public void ValidateSmsTemplateNameEmptyErrorMsg8_1() {
+		ConfigurationsPage.ClickOnSmsTemplateMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentDataforAgent("s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+		Err_msg =ConfigurationsPage.GetSmsTemplateNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+		Assert.assertEquals(Err_msg, smsTemplate_name_empty_err);
 	}
 	
-	@Test (priority=18)
-	public void ValidateAgentDataSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=86)
+	public void ValidateSmsTemplateNameRangeErrorMsg8_11() {
+		ConfigurationsPage.ClickOnSmsTemplateMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentDataforAgent("@@");
+		ConfigurationsPage.EnterSmsTemplateName("s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+		Err_msg =ConfigurationsPage.GetSmsTemplateNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+		Assert.assertEquals(Err_msg, smsTemplate_name_range_err);
 	}
 	
-	@Test (priority=19)
-	public void ValidateAgentModeNotEnabledErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
+	@Test (priority=87)
+	public void ValidateSmsTemplateNameRangeErrorMsg8_12() {
+		ConfigurationsPage.ClickOnSmsTemplateMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnableInboundforAgent("no");
-		ConfigurationsPage.EnableManualforAgent("no");
+		ConfigurationsPage.EnterSmsTemplateName("_s");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentModeErrorMessage();
+		Err_msg =ConfigurationsPage.GetSmsTemplateNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
-	}
-	@Test (priority=20)
-	public void ValidateAgentGroupNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_empty_err);
-	}
-	@Test (priority=21)
-	public void ValidateAgentGroupNameNumberErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentGroupName("11");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+		Assert.assertEquals(Err_msg, smsTemplate_name_range_err);
 	}
 	
-	@Test (priority=22)
-	public void ValidateAgentGroupNameRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
+	@Test (priority=88)
+	public void ValidateSmsTemplateNameRangeErrorMsg8_13() {
+		ConfigurationsPage.ClickOnSmsTemplateMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentGroupName("s");
+		ConfigurationsPage.EnterSmsTemplateName("s@");
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
+		Err_msg =ConfigurationsPage.GetSmsTemplateNameErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_Range_err);
+		Assert.assertEquals(Err_msg, smsTemplate_name_range_err);
 	}
-	
-	@Test (priority=23)
-	public void ValidateAgentGroupNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentGroupName("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
-	}
-	@Test (priority=24)
-	public void ValidateAgentGroupNameSplErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentGroupName("s@n");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
-	}
-	
-	@Test (priority=25)
-	public void ValidateAgentGroupDesriptionEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
+	@Test (priority=89)
+	public void ValidateSmsTemplateTextErrorMsg8_2() {
+		ConfigurationsPage.ClickOnSmsTemplateMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupDescriptionError();
+		Err_msg =ConfigurationsPage.GetSmsTemplateTextErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_description_empty_err);
+		Assert.assertEquals(Err_msg, smsTemplate_Text_empty_err);
 	}
 	
-	@Test (priority=26)
-	public void ValidateAgentGroupDesriptionRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterAgentGroupDecription("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupDescriptionError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_description_range_err);
-	}
-	
-	@Test (priority=27)
-	public void ValidateAgentGroupAssignedAgentsEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupAssignedAgentsError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_AssignedAgnets_empty_err);
-	}
-	
-	@Test (priority=28)
-	public void ValidateAgentGroupAssignedUsersEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentGroupAssignedUsersError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_AssignedUsers_empty_err);
-	}
-	
-
-	@Test (priority=29)
-	public void ValidatePhoneNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_Empty_error);
-	}
-	
-	@Test (priority=30)
-	public void ValidatePhoneNameRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNameForPhoneNo("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_Range_error);
-	}
-	
-	@Test (priority=31)
-	public void ValidatePhoneNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNameForPhoneNo("@@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNameErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_name_Range_error);
-	}
-	
-	@Test (priority=32)
-	public void ValidatePhoneNumberEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_Empty_error);
-	}
-	
-	@Test (priority=33)
-	public void ValidatePhoneNumberRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNoForPhone("1");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_Range_error);
-	}
-	
-	@Test (priority=34)
-	public void ValidatePhoneNumberSplRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterNoForPhone("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhoneNumberErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_number_SplRange_error);
-	}
-	
-	@Test (priority=35)
-	public void ValidatePriorityEmptyErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Empty_error);
-	}
-	
-	@Test (priority=36)
-	public void ValidatePriorityRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityForPhone("0");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
-	}
-
-	@Test (priority=37)
-	public void ValidatePriorityMaxRangeErrorMsg() {
-		ConfigurationsPage.ClickonPhoneNumberMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityForPhone("21");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetPhonePriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Phone_Priority_Range_error);
-	}
-	
-	@Test (priority=38)
-	public void ValidateTransferNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_Empty_err);
-	}
-	
-	@Test (priority=39)
-	public void ValidateTransferNameRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransfername("s");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
-	}
-	
-	@Test (priority=40)
-	public void ValidateTransferNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransfername("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNameError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Name_Range_err);
-	}
-	
-	@Test (priority=41)
-	public void ValidateTransferNumberEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_Empty_err);
-	}
-	
-	@Test (priority=42)
-	public void ValidateTransferNumberRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransferNo("+1");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_Range_err);
-	}
-	
-	@Test (priority=43)
-	public void ValidateTransferNumberSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransferNo("@");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
-	}
-	
-	@Test (priority=44)
-	public void ValidateTransferNumberSplRangeErrorMsg1() {
-		ConfigurationsPage.ClickOnTransferNoMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterTransferNo("ozonetel");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetTransferNumberError();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Transfer_Number_SplRange_err);
-	}
-	
-	@Test (priority=44)
-	public void ValidateSkillNameEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnSkillMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetSkillNameErrorMsg();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, skill_empty_err);
-	}
-	
-	
-	
-	@Test (priority=45)
-	public void ValidatedispositionEmptyErrorMsg() {
+	@Test (priority=90)
+	public void ValidatedispositionEmptyErrorMsg9_1() {
 		ConfigurationsPage.ClickOnDispositionMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.ClickOnSaveforConfig();
@@ -604,8 +1084,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Disp_empty_err);
 	}
 	
-	@Test (priority=46)
-	public void ValidatedispositionRangeErrorMsg() {
+	@Test (priority=91)
+	public void ValidatedispositionRangeErrorMsg9_11() {
 		ConfigurationsPage.ClickOnDispositionMenu();
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.Enterdispositions("s");
@@ -615,35 +1095,26 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, Disp_Range_err);
 	}
 	
-	@Test (priority=47)
-	public void ValidatedispositionSplRangeErrorMsg() {
+	@Test (priority=92)
+	public void ValidatedispositionSplRangeErrorMsg9_12() {
 		ConfigurationsPage.ClickOnDispositionMenu();
 		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.Enterdispositions("@");
+		ConfigurationsPage.Enterdispositions("_sa");
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetDipositionError();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Disp_SplRange_err);
+		Assert.assertEquals(Err_msg, Disp_Range_err);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Test (priority=93)
+	public void ValidatedispositionSplRangeErrorMsg9_13() {
+		ConfigurationsPage.ClickOnDispositionMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.Enterdispositions("sa@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetDipositionError();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Disp_Range_err);
+	}
 	
 	
 	
