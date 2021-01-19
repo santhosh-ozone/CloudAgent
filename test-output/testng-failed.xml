@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.ConfigurationPageTest">
+      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
         <methods>
           <include name="nteardown"/>
-          <include name="AddAgents" invocation-numbers="0 1 2"/>
-          <include name="clearExcelDatainRes"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_31"/>
           <include name="setup"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_32"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_33"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.ConfigurationPageTest -->
+      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
