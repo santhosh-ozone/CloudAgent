@@ -50,8 +50,26 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "DispositionMenu")
 	WebElement DispositionMenu;
 	
+	@FindBy(id= "DialOutNumberMenu")
+	WebElement DialOutNumberMenu;
+	
 	@FindBy(id= "PauseReasonMenu")
 	WebElement PauseReasonMenu;
+	
+	@FindBy(id= "BlockNumbersMenu")
+	WebElement BlockNumbersMenu;
+	
+	@FindBy(id= "BlockNumbersGroupMenu")
+	WebElement BlockNumbersGroupMenu;
+	
+	@FindBy(id= "IvrFlowMenu")
+	WebElement IvrFlowMenu;
+	
+	@FindBy(id= "FeedBackMenu")
+	WebElement FeedBackMenu;
+	
+	@FindBy(id= "FeedBackMasterMenu")
+	WebElement FeedBackMasterMenu;
 	
 	@FindBy(xpath= "//*[contains(@class,'main-heading')]")
 	WebElement configurations_heading;
@@ -185,7 +203,6 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwlbl_fwpNumberForm_fwpNumber_sip' ] [@for='fwpNumberForm_fwpNumber_sip']")
 	WebElement Number_sip1;
 	
-	
 	@FindBy(xpath= "//*[@id='wwctrl_fwpNumberForm_fwpNumber_name']/ul/li")
 	WebElement Phone_name_err;
 	
@@ -282,6 +299,18 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwctrl_skillForm_skill_queueSkillTransfer_id']/ul/li")
 	WebElement queueSkillTransfer_err;
 	
+	@FindBy(id= "moveAllLeft1")
+	WebElement moveAllLeft1;
+	
+	@FindBy(id= "moveAllRight1")
+	WebElement moveAllRight1;
+	
+	@FindBy(id= "moveRight1")
+	WebElement moveRight1;
+	
+	@FindBy(xpath= "//*[@id='availableSkills']/option")
+	List<WebElement> skills_stage88;
+	
 	@FindBy(id= "locationForm_location_name")
 	WebElement LocationName;
 	
@@ -324,26 +353,86 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwctrl_dispositionForm_disposition_reason']/ul/li")
 	WebElement disposition_err;
 	
+	@FindBy(id= "dialOutNumberForm_dialOutNumber_dialOutName")
+	WebElement dialOutName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_dialOutNumberForm_dialOutNumber_dialOutName']/ul/li")
+	WebElement dialOutName_err;
+	
+	@FindBy(id= "dialOutNumberForm_dialOutNumber_dialOutNumber")
+	WebElement dialOutNumber;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_dialOutNumberForm_dialOutNumber_dialOutNumber']/ul/li")
+	WebElement dialOutNumber_err;
+	
+	@FindBy(id= "dialOutNumberForm_dialOutNumber_sip")
+	WebElement dialOutNumber_sip;
+	
 	@FindBy(id= "pauseReasonForm_pauseReason_reason")
 	WebElement pauseReason_reason;
 	
-	@FindBy(id= "moveAllLeft1")
-	WebElement moveAllLeft1;
-	
-	@FindBy(id= "moveAllRight1")
-	WebElement moveAllRight1;
-	
-	@FindBy(id= "moveRight1")
-	WebElement moveRight1;
-	
-	@FindBy(xpath= "//*[@id='availableSkills']/option")
-	List<WebElement> skills_stage88;
+	@FindBy(xpath= "//*[@id='wwctrl_pauseReasonForm_pauseReason_reason']/ul/li")
+	WebElement pauseReason_reason_err;
 	
 	@FindBy(id= "pauseReasonForm_pauseReason_formattedTimeLimit")
 	WebElement pauseReason_Time;
 	
 	@FindBy(xpath= "//*[@id='wwctrl_pauseReasonForm_pauseReason_formattedTimeLimit']//a")
 	WebElement pauseReasonTime_clear;
+	
+	@FindBy(id= "blockNumberForm_blockNumber_blockedNumber")
+	WebElement blockNumber_blockedNumber;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_blockNumberForm_blockNumber_blockedNumber']/ul/li")
+	WebElement blockNumber_reason_err;
+	
+	@FindBy(xpath= "//*[contains(@type,'submit')]")
+	WebElement BlockNo_Block_button;
+	
+	@FindBy(id= "blockNumberGroupForm_blockNumberGroup_name")
+	WebElement blockNumberGroup_name;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_blockNumberGroupForm_blockNumberGroup_name']/ul/li")
+	WebElement blockNumberGroup_name_err;
+	
+	@FindBy(id= "blockNumberGroupForm_blockNumberGroup_description")
+	WebElement blockNumberGroup_description;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_blockNumberGroupForm_blockNumberGroup_description']/ul/li")
+	WebElement blockNumberGroup_desc_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_blockNumberGroupForm_assignedBlockNumbers']/ul/li")
+	WebElement blockNumberGroup_number_err;
+	
+	@FindBy(id= "ivrFlowForm_ivrFlow_flowName")
+	WebElement ivrFlowForm_ivrFlow_flowName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_ivrFlowForm_ivrFlow_flowName']/ul/li")
+	WebElement ivrFlowForm_ivrFlow_flowName_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_ivrFlowForm_ivrFlow_type']/ul/li")
+	WebElement ivrFlowForm_ivrFlow_type_err;
+	
+	@FindBy(id= "feedBackForm_feedBack_feedbackName")
+	WebElement feedBackForm_feedBack_feedbackName;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_feedBackForm_feedBack_feedbackName']/ul/li")
+	WebElement feedbackName_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_feedBackMasterForm_feedBackMaster_feedback_id']/ul/li")
+	WebElement feedbackmasterName_err;
+	
+	@FindBy(id= "feedBackMasterForm_feedBackMaster_feedBack")
+	WebElement feedBackMasterForm_feedBackMaster_feedBack;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_feedBackMasterForm_feedBackMaster_feedBack']/ul/li")
+	WebElement feedBackMaster_feedBack_err;
+	
+	@FindBy(id= "feedBackMasterForm_feedBackMaster_audioFile")
+	WebElement feedBackMasterForm_feedBackMaster_audioFile;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_feedBackMasterForm_feedBackMaster_audioFile']/ul/li")
+	WebElement feedBackMaster_audioFile_err;
 	
 	@FindBy(xpath= "//*[contains(@id,'save')]")
 	WebElement config_save_button;
@@ -588,6 +677,13 @@ public class ConfigurationsPage extends TestBase{
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", config_save_button);
+		}
+	
+	public void ClickOnBlockForBlockNumbers() {
+		//Testutil.flash(config_save_button, driver1);
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver1;
+		js.executeScript("arguments[0].click();", BlockNo_Block_button);
 		}
 	
 	public String GetAgentIdErrorMessage() {
@@ -1266,6 +1362,15 @@ public class ConfigurationsPage extends TestBase{
 			pauseReason_reason.sendKeys(Preason.toString().trim());
 		}}
 	
+	public String GetPauseReasonError() {
+		try{
+			if(pauseReason_reason_err.isDisplayed())
+				return pauseReason_reason_err.getText();
+		}catch(NoSuchElementException e) {}
+			return "";
+	}
+	
+	
 	public void EnterPauseTime(Object rTime) {
 		if(!rTime.equals("")) {
 			pauseReasonTime_clear.click();
@@ -1273,10 +1378,17 @@ public class ConfigurationsPage extends TestBase{
 			pauseReason_Time.sendKeys(rTime.toString().trim());
 		}}
 	
+	public void ClickOnPauseReasonMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(PauseReasonMenu);
+		
+	}
 	public String AddPauseReason(String reason, Object time) {
 		System.out.println("Adding Pause reason details: reason: "+reason);
-		ConfigurationMenu.click();
-		PauseReasonMenu.click();
+		ClickOnPauseReasonMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Pause Reasons")) {
 			ClickOnAddConfig();
@@ -1295,8 +1407,7 @@ public class ConfigurationsPage extends TestBase{
 		if(!reason1.equals(""))
 			str="  new reason is: "+reason1.toString();
 		System.out.println("Editing Pause reason details: reason: "+reason+str);
-		ConfigurationMenu.click();
-		PauseReasonMenu.click();
+		ClickOnPauseReasonMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Pause Reasons")) {
 			EnterSerachItem(reason);
@@ -1315,8 +1426,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String deletePauseReason(String reason) {
 		System.out.println("Deleting Pause reason details: reason: "+reason);
-		ConfigurationMenu.click();
-		PauseReasonMenu.click();
+		ClickOnPauseReasonMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Pause Reasons")) {
 			EnterSerachItem(reason);
@@ -1627,6 +1737,194 @@ public class ConfigurationsPage extends TestBase{
 		
 		return "";
 	}
+	
+	public void ClickOnDialOutNumberMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ConfigurationMenu.click();
+		DialOutNumberMenu.click();
+	}
+	
+	public void EnterEnterDialOutName(String str) {
+		dialOutName.sendKeys(str);
+	}
+	public void EnterEnterDialOutNumber(String str) {
+		dialOutNumber.sendKeys(str);
+	}
+	public String GetDialOutNameErr() {
+		try{
+			if(dialOutName_err.isDisplayed())
+				return dialOutName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetDialOutNumberErr() {
+		try{
+			if(dialOutNumber_err.isDisplayed())
+				return dialOutNumber_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EnableSipforDialOutNo() {
+		try {
+			dialOutNumber_sip.click();
+		}catch(Exception e) {
+			JavascriptExecutor js = (JavascriptExecutor)driver1;
+			js.executeScript("arguments[0].click();", dialOutNumber_sip);
+		}
+	}
+	
+	public void ClickOnBlockNumbersMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(BlockNumbersMenu);	
+	}
+	
+	public void EnterBlockNumber(String str) {
+		blockNumber_blockedNumber.sendKeys(str);
+	}
+	public String GetBlockNumberErr() {
+		try{
+			if(blockNumber_reason_err.isDisplayed())
+				return blockNumber_reason_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void ClickOnBlockNumbersGroupMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(BlockNumbersGroupMenu);	
+	}
+	
+	public void EnterBlockNumberGroupName(String str) {
+		blockNumberGroup_name.sendKeys(str);
+	}
+	public String GetBlockNumbergroupNameErr() {
+		try{
+			if(blockNumberGroup_name_err.isDisplayed())
+				return blockNumberGroup_name_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EnterBlockNumberGroupDescription(String str) {
+		blockNumberGroup_description.sendKeys(str);
+	}
+	public String GetBlockNumbergroupDescriptionErr() {
+		try{
+			if(blockNumberGroup_desc_err.isDisplayed())
+				return blockNumberGroup_desc_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetBlockNumbergroupNumberErr() {
+		try{
+			if(blockNumberGroup_number_err.isDisplayed())
+				return blockNumberGroup_number_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public void ClickOnIvrFlowMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(IvrFlowMenu);	
+	}
+	public void EnterIvrFlowName(String str) {
+		ivrFlowForm_ivrFlow_flowName.sendKeys(str);
+	}
+	public String GetIvrFlowNameErr() {
+		try{
+			if(ivrFlowForm_ivrFlow_flowName_err.isDisplayed())
+				return ivrFlowForm_ivrFlow_flowName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
+	public String GetIvrFlowTypeErr() {
+		try{
+			if(ivrFlowForm_ivrFlow_type_err.isDisplayed())
+				return ivrFlowForm_ivrFlow_type_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void ClickOnFeedBackMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(FeedBackMenu);	
+	}
+	
+	public String GetfeedbackNameErr() {
+		try{
+			if(feedbackName_err.isDisplayed())
+				return feedbackName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EnterFeedbackName(String str) {
+		feedBackForm_feedBack_feedbackName.sendKeys(str);
+	}
+	public void ClickOnFeedBackMasterMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(FeedBackMasterMenu);	
+	}
+	
+	public String GetfeedbackMasterNameErr() {
+		try{
+			if(feedbackmasterName_err.isDisplayed())
+				return feedbackmasterName_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EnterFeedBackMasterFeedback(String str) {
+		feedBackMasterForm_feedBackMaster_feedBack.sendKeys(str);
+	}
+	public void EnterFeedBackMasterAudioFile(String str) {
+		feedBackMasterForm_feedBackMaster_audioFile.sendKeys(str);
+	}
+	public String GetfeedbackMasterAudioFileErr() {
+		try{
+			if(feedBackMaster_audioFile_err.isDisplayed())
+				return feedBackMaster_audioFile_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetfeedbackMasterFeedbackErr() {
+		try{
+			if(feedBackMaster_feedBack_err.isDisplayed())
+				return feedBackMaster_feedBack_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	
 	
 	
 	

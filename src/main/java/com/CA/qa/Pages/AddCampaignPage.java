@@ -702,7 +702,7 @@ public class AddCampaignPage extends TestBase{
 		
 	}
 	
-	public void JavaScriptClick(WebElement element) {
+	public static void JavaScriptClick(WebElement element) {
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", element);
