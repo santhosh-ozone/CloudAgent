@@ -5,11 +5,10 @@
     <classes>
       <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
         <methods>
+          <include name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_23"/>
           <include name="nteardown"/>
-          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_31"/>
+          <include name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_22"/>
           <include name="setup"/>
-          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_32"/>
-          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_33"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
     </classes>

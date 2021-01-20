@@ -1,249 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="25" passed="22" failed="3" skipped="0">
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T18:23:03 IST" name="Default suite" finished-at="2021-01-19T18:24:03 IST" duration-ms="60049">
+  <suite started-at="2021-01-20T22:11:13 IST" name="Default suite" finished-at="2021-01-20T22:11:49 IST" duration-ms="35953">
     <groups>
     </groups>
-    <test started-at="2021-01-19T18:23:03 IST" name="Default test" finished-at="2021-01-19T18:24:03 IST" duration-ms="60049">
+    <test started-at="2021-01-20T22:11:13 IST" name="Default test" finished-at="2021-01-20T22:11:49 IST" duration-ms="35953">
       <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:03 IST" name="setup" finished-at="2021-01-19T18:23:14 IST" duration-ms="11239" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:13 IST" name="setup" finished-at="2021-01-20T22:11:23 IST" duration-ms="9790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ValidateLocationNameEmptyErrorMsg6_1()[pri:69, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:14 IST" name="ValidateLocationNameEmptyErrorMsg6_1" finished-at="2021-01-19T18:23:16 IST" duration-ms="2178" status="PASS">
+        <test-method signature="ValidateFeedBackNameEmptyErrorMsg15_1()[pri:125, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:23 IST" name="ValidateFeedBackNameEmptyErrorMsg15_1" finished-at="2021-01-20T22:11:24 IST" duration-ms="1757" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLocationNameEmptyErrorMsg6_1 -->
-        <test-method signature="ValidateLocationRangeErrorMsg6_11()[pri:70, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:16 IST" name="ValidateLocationRangeErrorMsg6_11" finished-at="2021-01-19T18:23:18 IST" duration-ms="2060" status="PASS">
+        </test-method> <!-- ValidateFeedBackNameEmptyErrorMsg15_1 -->
+        <test-method signature="ValidateFeedBackNameRangeErrorMsg15_12()[pri:126, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:24 IST" name="ValidateFeedBackNameRangeErrorMsg15_12" finished-at="2021-01-20T22:11:26 IST" duration-ms="1645" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLocationRangeErrorMsg6_11 -->
-        <test-method signature="ValidateLocationRangeErrorMsg6_12()[pri:71, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:18 IST" name="ValidateLocationRangeErrorMsg6_12" finished-at="2021-01-19T18:23:20 IST" duration-ms="1971" status="PASS">
+        </test-method> <!-- ValidateFeedBackNameRangeErrorMsg15_12 -->
+        <test-method signature="ValidateFeedBackNameRangeErrorMsg15_13()[pri:127, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:26 IST" name="ValidateFeedBackNameRangeErrorMsg15_13" finished-at="2021-01-20T22:11:28 IST" duration-ms="1634" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLocationRangeErrorMsg6_12 -->
-        <test-method signature="ValidateLocationRangeErrorMsg6_13()[pri:72, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:20 IST" name="ValidateLocationRangeErrorMsg6_13" finished-at="2021-01-19T18:23:22 IST" duration-ms="2082" status="PASS">
+        </test-method> <!-- ValidateFeedBackNameRangeErrorMsg15_13 -->
+        <test-method signature="ValidateFeedBackNameRangeErrorMsg15_14()[pri:128, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:28 IST" name="ValidateFeedBackNameRangeErrorMsg15_14" finished-at="2021-01-20T22:11:29 IST" duration-ms="1661" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLocationRangeErrorMsg6_13 -->
-        <test-method signature="ValidateURLMappingNameEmptyErrorMsg7_1()[pri:73, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:22 IST" name="ValidateURLMappingNameEmptyErrorMsg7_1" finished-at="2021-01-19T18:23:24 IST" duration-ms="2069" status="PASS">
+        </test-method> <!-- ValidateFeedBackNameRangeErrorMsg15_14 -->
+        <test-method signature="ValidateFeedBackNameRangeErrorMsg15_15()[pri:129, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:29 IST" name="ValidateFeedBackNameRangeErrorMsg15_15" finished-at="2021-01-20T22:11:31 IST" duration-ms="1736" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingNameEmptyErrorMsg7_1 -->
-        <test-method signature="ValidateURLMappingNameRangeErrorMsg7_11()[pri:74, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:24 IST" name="ValidateURLMappingNameRangeErrorMsg7_11" finished-at="2021-01-19T18:23:26 IST" duration-ms="2002" status="PASS">
+        </test-method> <!-- ValidateFeedBackNameRangeErrorMsg15_15 -->
+        <test-method signature="ValidateFeedBackMasterNameEmptyErrorMsg16_1()[pri:130, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:31 IST" name="ValidateFeedBackMasterNameEmptyErrorMsg16_1" finished-at="2021-01-20T22:11:33 IST" duration-ms="1657" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingNameRangeErrorMsg7_11 -->
-        <test-method signature="ValidateURLMappingNameRangeErrorMsg7_12()[pri:75, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:26 IST" name="ValidateURLMappingNameRangeErrorMsg7_12" finished-at="2021-01-19T18:23:29 IST" duration-ms="2192" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterNameEmptyErrorMsg16_1 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRangeErrorMsg16_11()[pri:131, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:33 IST" name="ValidateFeedBackMasterFeedbackRangeErrorMsg16_11" finished-at="2021-01-20T22:11:35 IST" duration-ms="2135" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingNameRangeErrorMsg7_12 -->
-        <test-method signature="ValidateURLMappingNameRangeErrorMsg7_13()[pri:76, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:29 IST" name="ValidateURLMappingNameRangeErrorMsg7_13" finished-at="2021-01-19T18:23:31 IST" duration-ms="2057" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRangeErrorMsg16_11 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRangeErrorMsg16_12()[pri:132, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:35 IST" name="ValidateFeedBackMasterFeedbackRangeErrorMsg16_12" finished-at="2021-01-20T22:11:37 IST" duration-ms="1705" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingNameRangeErrorMsg7_13 -->
-        <test-method signature="ValidateURLMappingDomainNameEmptyErrorMsg7_21()[pri:77, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:31 IST" name="ValidateURLMappingDomainNameEmptyErrorMsg7_21" finished-at="2021-01-19T18:23:33 IST" duration-ms="1934" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRangeErrorMsg16_12 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_13()[pri:133, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:37 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_13" finished-at="2021-01-20T22:11:38 IST" duration-ms="1701" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingDomainNameEmptyErrorMsg7_21 -->
-        <test-method signature="ValidateURLMappingDomainNameRangeErrorMsg7_22()[pri:78, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:33 IST" name="ValidateURLMappingDomainNameRangeErrorMsg7_22" finished-at="2021-01-19T18:23:35 IST" duration-ms="2079" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_13 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_14()[pri:134, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:38 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_14" finished-at="2021-01-20T22:11:40 IST" duration-ms="1702" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingDomainNameRangeErrorMsg7_22 -->
-        <test-method signature="ValidateURLMappingDomainNameRangeErrorMsg7_23()[pri:79, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:35 IST" name="ValidateURLMappingDomainNameRangeErrorMsg7_23" finished-at="2021-01-19T18:23:37 IST" duration-ms="2050" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_14 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_2()[pri:135, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:40 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_2" finished-at="2021-01-20T22:11:42 IST" duration-ms="1969" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingDomainNameRangeErrorMsg7_23 -->
-        <test-method signature="ValidateURLMappingDomainNameRangeErrorMsg7_24()[pri:80, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:37 IST" name="ValidateURLMappingDomainNameRangeErrorMsg7_24" finished-at="2021-01-19T18:23:39 IST" duration-ms="2012" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_2 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_21()[pri:136, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:42 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_21" finished-at="2021-01-20T22:11:44 IST" duration-ms="1754" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingDomainNameRangeErrorMsg7_24 -->
-        <test-method signature="ValidateURLMappingLocalIpEmptyErrorMsg7_3()[pri:81, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:39 IST" name="ValidateURLMappingLocalIpEmptyErrorMsg7_3" finished-at="2021-01-19T18:23:41 IST" duration-ms="1980" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_21 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_23()[pri:136, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:44 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_23" finished-at="2021-01-20T22:11:45 IST" duration-ms="1710" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingLocalIpEmptyErrorMsg7_3 -->
-        <test-method signature="ValidateURLMappingLocalIpRangeErrorMsg7_31()[pri:82, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:41 IST" name="ValidateURLMappingLocalIpRangeErrorMsg7_31" finished-at="2021-01-19T18:23:43 IST" duration-ms="2067" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.CA.qa.TestCases.ValidateConfigurationsPage.ValidateURLMappingLocalIpRangeErrorMsg7_31(ValidateConfigurationsPage.java:1002)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_23 -->
+        <test-method signature="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_22()[pri:137, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:45 IST" name="ValidateFeedBackMasterFeedbackRange1ErrorMsg16_22" finished-at="2021-01-20T22:11:47 IST" duration-ms="1746" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateURLMappingLocalIpRangeErrorMsg7_31 -->
-        <test-method signature="ValidateURLMappingLocalIpRangeErrorMsg7_32()[pri:83, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:43 IST" name="ValidateURLMappingLocalIpRangeErrorMsg7_32" finished-at="2021-01-19T18:23:45 IST" duration-ms="2046" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.CA.qa.TestCases.ValidateConfigurationsPage.ValidateURLMappingLocalIpRangeErrorMsg7_32(ValidateConfigurationsPage.java:1012)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateURLMappingLocalIpRangeErrorMsg7_32 -->
-        <test-method signature="ValidateURLMappingLocalIpRangeErrorMsg7_33()[pri:84, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:45 IST" name="ValidateURLMappingLocalIpRangeErrorMsg7_33" finished-at="2021-01-19T18:23:47 IST" duration-ms="2099" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Domain Name should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and Name cannot start and end with Special characters.] but found [Local IP should be between 2 to 50 alphanumeric characters long allows special characters like .,@,_,space,- and IP cannot start and end with Special characters.]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.CA.qa.TestCases.ValidateConfigurationsPage.ValidateURLMappingLocalIpRangeErrorMsg7_33(ValidateConfigurationsPage.java:1022)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateURLMappingLocalIpRangeErrorMsg7_33 -->
-        <test-method signature="ValidateSmsTemplateNameEmptyErrorMsg8_1()[pri:85, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:47 IST" name="ValidateSmsTemplateNameEmptyErrorMsg8_1" finished-at="2021-01-19T18:23:49 IST" duration-ms="1955" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateSmsTemplateNameEmptyErrorMsg8_1 -->
-        <test-method signature="ValidateSmsTemplateNameRangeErrorMsg8_11()[pri:86, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:49 IST" name="ValidateSmsTemplateNameRangeErrorMsg8_11" finished-at="2021-01-19T18:23:51 IST" duration-ms="1946" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateSmsTemplateNameRangeErrorMsg8_11 -->
-        <test-method signature="ValidateSmsTemplateNameRangeErrorMsg8_12()[pri:87, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:51 IST" name="ValidateSmsTemplateNameRangeErrorMsg8_12" finished-at="2021-01-19T18:23:53 IST" duration-ms="2070" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateSmsTemplateNameRangeErrorMsg8_12 -->
-        <test-method signature="ValidateSmsTemplateNameRangeErrorMsg8_13()[pri:88, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:53 IST" name="ValidateSmsTemplateNameRangeErrorMsg8_13" finished-at="2021-01-19T18:23:55 IST" duration-ms="2000" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateSmsTemplateNameRangeErrorMsg8_13 -->
-        <test-method signature="ValidateSmsTemplateTextErrorMsg8_2()[pri:89, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:55 IST" name="ValidateSmsTemplateTextErrorMsg8_2" finished-at="2021-01-19T18:23:57 IST" duration-ms="1912" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateSmsTemplateTextErrorMsg8_2 -->
-        <test-method signature="ValidatedispositionEmptyErrorMsg9_1()[pri:90, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:57 IST" name="ValidatedispositionEmptyErrorMsg9_1" finished-at="2021-01-19T18:23:58 IST" duration-ms="1053" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatedispositionEmptyErrorMsg9_1 -->
-        <test-method signature="ValidatedispositionRangeErrorMsg9_11()[pri:91, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:58 IST" name="ValidatedispositionRangeErrorMsg9_11" finished-at="2021-01-19T18:23:59 IST" duration-ms="1134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatedispositionRangeErrorMsg9_11 -->
-        <test-method signature="ValidatedispositionSplRangeErrorMsg9_12()[pri:92, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:23:59 IST" name="ValidatedispositionSplRangeErrorMsg9_12" finished-at="2021-01-19T18:24:00 IST" duration-ms="1031" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatedispositionSplRangeErrorMsg9_12 -->
-        <test-method signature="ValidatedispositionSplRangeErrorMsg9_13()[pri:93, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:24:00 IST" name="ValidatedispositionSplRangeErrorMsg9_13" finished-at="2021-01-19T18:24:01 IST" duration-ms="1084" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatedispositionSplRangeErrorMsg9_13 -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@14cd1699]" started-at="2021-01-19T18:24:01 IST" name="nteardown" finished-at="2021-01-19T18:24:03 IST" duration-ms="1660" status="PASS">
+        </test-method> <!-- ValidateFeedBackMasterFeedbackRange1ErrorMsg16_22 -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.ValidateConfigurationsPage@7b2bbc3]" started-at="2021-01-20T22:11:47 IST" name="nteardown" finished-at="2021-01-20T22:11:49 IST" duration-ms="1608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nteardown -->
