@@ -123,8 +123,19 @@ public class ValidateConfigurationsPage extends TestBase{
 	String feedback_master_Audiofile__err="AudioFile should be between 2 to 50 alphanumeric characters long and allows special characters like _";
 	String feedback_master_Audiofile1__err="AudioFile should be between 5 to 50 characters.";
 	
+	String sip_location_empty_err="Location Name is required.";
+	String sip_location_range_err="Location Name should be between 3 to 50 characters.";
+	String sip_location_range1_err="Location Name should be between 3 to 50 alphanumeric characters only";
+	String sip_serverUrl_empty_err="SIP Server URL is required.";
+	String sip_serviceURL_range_err="SIP Server URL should be between 3 to 500 characters.";
+	String sip_serviceURL_space_err="SIP Server URL should not allow spaces";
+	String sip_assigned_agents_err="Assign Agents is required.";
 	
-	
+	String music_name_empty_err ="Name is required.";
+	String music_name_range_err ="Name should be between 3 to 50 characters.";
+	String music_name_range1_err ="The Name should be between 3 to 30 alphanumeric characters and allow special characters like underscore only.";
+	String music_URL_empty_err="Audio URL is required.";
+	String music_URL_Range_err="Audio URL Should start with http|https and Ends with .wav/.mp3 and atleast one character to be contain in between and allows Max Length of 100 characters";
 	
 	
 	
@@ -153,211 +164,211 @@ public class ValidateConfigurationsPage extends TestBase{
 		Printhyphens();
 	}
 	
-//	@Test (priority=1)
-//	public void ValidateEmptyAgentIdErrorMsg1_1() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_id_Empty_err);
-//	}
-//	
-//	@Test (priority=2)
-//	public void ValidateAgentIdRAngeErrorMsg1_11() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentId("s");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
-//	}
-//	
-//
-//	@Test (priority=3)
-//	public void ValidateAgentIdSplRAngeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentId("@");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
-//	}
-//	
-//	@Test (priority=4)
-//	public void ValidateAgentIdStartWithsplcharErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentId("@agent");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
-//	}
-//	
-//	@Test (priority=5)
-//	public void ValidateAgentIdEndWithSplCharErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentId("agent@");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_id_Range_err);
-//	}
-//	
-//	@Test (priority=6)
-//	public void ValidateAgentPasswordEmptyErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_pwd_empty_err);
-//	}
-//	
-//	@Test (priority=7)
-//	public void ValidateAgentPasswordRAngeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentPassword("s");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
-//	}
-//	
-//	@Test (priority=8)
-//	public void ValidateAgentPasswordAllLowerCaseErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentPassword("ozonetel");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
-//	}
-//	
-//	@Test (priority=9)
-//	public void ValidateAgentPasswordUpperCaseErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentPassword("OZONETEL");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
-//	}
-//	
-//	@Test (priority=10)
-//	public void ValidateAgentPasswordAllSplCharErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentPassword("@!#$%^&");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
-//	}
-//	@Test (priority=11)
-//	public void ValidateAgentNameEmptyErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_name_Empty_err);
-//	}
-//	
-//	@Test (priority=12)
-//	public void ValidateAgentNameRangeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentName("s");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_name_Range_err);
-//	}
-//	
-//	@Test (priority=13)
-//	public void ValidateAgentNameSplRangeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentName("@");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_name_Range_err);
-//	}
-//	
-//	@Test (priority=14)
-//	public void ValidateAgentPriorityEmptyErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
-//	}
-//	
-//	@Test (priority=15)
-//	public void ValidateAgentPriorityRangeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterPriorityforAgent("0");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_priority_range_err);
-//	}
-//	
-//	@Test (priority=16)
-//	public void ValidateAgentEmailErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterEmailforAgent("s");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentEmailErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_email_err);
-//	}
-//	
-//	@Test (priority=17)
-//	public void ValidateAgentDataErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentDataforAgent("s");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_Data_range_err);
-//	}
-//	
-//	@Test (priority=18)
-//	public void ValidateAgentDataSplRangeErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnterAgentDataforAgent("@@");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_Data_range_err);
-//	}
-//	
-//	@Test (priority=19)
-//	public void ValidateAgentModeNotEnabledErrorMsg() {
-//		ConfigurationsPage.ClickOnAgentMenu();
-//		ConfigurationsPage.ClickOnAddConfig();
-//		ConfigurationsPage.EnableInboundforAgent("no");
-//		ConfigurationsPage.EnableManualforAgent("no");
-//		ConfigurationsPage.ClickOnSaveforConfig();
-//		Err_msg =ConfigurationsPage.GetAgentModeErrorMessage();
-//		System.out.println("err msg is: "+Err_msg);
-//		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
-//	}
+	@Test (priority=1)
+	public void ValidateEmptyAgentIdErrorMsg1_1() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Empty_err);
+	}
+	
+	@Test (priority=2)
+	public void ValidateAgentIdRAngeErrorMsg1_11() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+
+	@Test (priority=3)
+	public void ValidateAgentIdSplRAngeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+	@Test (priority=4)
+	public void ValidateAgentIdStartWithsplcharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("@agent");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+	@Test (priority=5)
+	public void ValidateAgentIdEndWithSplCharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentId("agent@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_id_Range_err);
+	}
+	
+	@Test (priority=6)
+	public void ValidateAgentPasswordEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_empty_err);
+	}
+	
+	@Test (priority=7)
+	public void ValidateAgentPasswordRAngeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	
+	@Test (priority=8)
+	public void ValidateAgentPasswordAllLowerCaseErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("ozonetel");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	
+	@Test (priority=9)
+	public void ValidateAgentPasswordUpperCaseErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("OZONETEL");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	
+	@Test (priority=10)
+	public void ValidateAgentPasswordAllSplCharErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentPassword("@!#$%^&");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPasswordErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_pwd_Range_err);
+	}
+	@Test (priority=11)
+	public void ValidateAgentNameEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_name_Empty_err);
+	}
+	
+	@Test (priority=12)
+	public void ValidateAgentNameRangeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentName("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+	}
+	
+	@Test (priority=13)
+	public void ValidateAgentNameSplRangeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentName("@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_name_Range_err);
+	}
+	
+	@Test (priority=14)
+	public void ValidateAgentPriorityEmptyErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+	}
+	
+	@Test (priority=15)
+	public void ValidateAgentPriorityRangeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterPriorityforAgent("0");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+	}
+	
+	@Test (priority=16)
+	public void ValidateAgentEmailErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterEmailforAgent("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentEmailErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_email_err);
+	}
+	
+	@Test (priority=17)
+	public void ValidateAgentDataErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentDataforAgent("s");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+	}
+	
+	@Test (priority=18)
+	public void ValidateAgentDataSplRangeErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnterAgentDataforAgent("@@");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_Data_range_err);
+	}
+	
+	@Test (priority=19)
+	public void ValidateAgentModeNotEnabledErrorMsg() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnAddConfig();
+		ConfigurationsPage.EnableInboundforAgent("no");
+		ConfigurationsPage.EnableManualforAgent("no");
+		ConfigurationsPage.ClickOnSaveforConfig();
+		Err_msg =ConfigurationsPage.GetAgentModeErrorMessage();
+		System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
+	}
 //	@Test (priority=20)
 //	public void ValidateAgentGroupNameEmptyErrorMsg() {
 //		ConfigurationsPage.ClickOnAgentGroupMenu();
@@ -1578,7 +1589,8 @@ public class ValidateConfigurationsPage extends TestBase{
 //		Err_msg =ConfigurationsPage.GetfeedbackMasterAudioFileErr();
 //		System.out.println("err msg is: "+Err_msg);
 //		Assert.assertEquals(Err_msg, feedback_master_Audiofile__err);
-//	}@Test (priority=138)
+//	}
+//	@Test (priority=138)
 //	public void ValidateFeedBackMasterFeedbackRange1ErrorMsg16_23() {
 //		ConfigurationsPage.ClickOnFeedBackMasterMenu();
 //		ConfigurationsPage.ClickOnAddConfig();
@@ -1587,17 +1599,223 @@ public class ValidateConfigurationsPage extends TestBase{
 //		Err_msg =ConfigurationsPage.GetfeedbackMasterAudioFileErr();
 //		System.out.println("err msg is: "+Err_msg);
 //		Assert.assertEquals(Err_msg, feedback_master_Audiofile__err);
+//	}	
+//	@Test (priority=139)
+//	public void ValidateSipLOcationNameemptyErrorMsg17_1() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_location_empty_err);
 //	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//	@Test (priority=140)
+//	public void ValidateSipLOcationNameRangeErrorMsg17_12() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_location("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_location_range_err);
+//	}
+//	@Test (priority=141)
+//	public void ValidateSipLOcationNameRangeErrorMsg17_13() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_location("s@n");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_location_range1_err);
+//	}
+//	@Test (priority=142)
+//	public void ValidateSipLOcationNameRangeErrorMsg17_14() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_location("@ns");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_location_range1_err);
+//	}
+//	@Test (priority=143)
+//	public void ValidateSipLOcationNameRangeErrorMsg17_15() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_location("sa@");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_location_range1_err);
+//	}
+//	@Test (priority=144)
+//	public void ValidateSipServerURLEmptyErrorMsg17_2() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_serverUrl_empty_err);
+//	}
+//	@Test (priority=145)
+//	public void ValidateSipServerURLRangeErrorMsg17_21() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_sipUrl("S");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_serviceURL_range_err);
+//	}
+//
+//	@Test (priority=146)
+//	public void ValidateSipServerURLRangeErrorMsg17_22() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_sipUrl(" San");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_serviceURL_space_err);
+//	}
+//	@Test (priority=147)
+//	public void ValidateSipServerURLRangeErrorMsg17_23() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EntersipLocation_sipUrl("San ");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_serviceURL_space_err);
+//	}
+//	@Test (priority=148)
+//	public void ValidateSipAssignedAgentsEmptyErrorMsg17_3() {
+//		ConfigurationsPage.ClickOnSipLocationsMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetsipLocation_assignedAgents_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, sip_assigned_agents_err);
+//	}
+//	@Test (priority=149)
+//	public void ValidateMusicNameEmptyErrorMsg18_1() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_name_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_name_empty_err);
+//	}
+//	@Test (priority=150)
+//	public void ValidateMusicNameRangeErrorMsg18_12() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_name("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_name_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_name_range_err);
+//	}
+//	@Test (priority=151)
+//	public void ValidateMusicNameRangeErrorMsg18_13() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_name("s@n");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_name_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_name_range1_err);
+//	}
+//	@Test (priority=152)
+//	public void ValidateMusicNameRangeErrorMsg18_14() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_name(" sn");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_name_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_name_range1_err);
+//	}
+//	@Test (priority=153)
+//	public void ValidateMusicNameRangeErrorMsg18_15() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_name("sn ");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_name_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_name_range1_err);
+//	}
+//	@Test (priority=154)
+//	public void ValidateMusicUrlEmptyErrorMsg18_2() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_empty_err);
+//	}
+//	@Test (priority=155)
+//	public void ValidateMusicUrlRangeErrorMsg18_21() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("s");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
+//	@Test (priority=156)
+//	public void ValidateMusicUrlRangeErrorMsg18_22() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("http://");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
+//	@Test (priority=157)
+//	public void ValidateMusicUrlRangeErrorMsg18_23() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("https://");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
+//	@Test (priority=158)
+//	public void ValidateMusicUrlRangeErrorMsg18_24() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("m.wav");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
+//	@Test (priority=159)
+//	public void ValidateMusicUrlRangeErrorMsg18_25() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("m.mp3");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
+//	@Test (priority=160)
+//	public void ValidateMusicUrlRangeErrorMsg18_26() {
+//		ConfigurationsPage.ClickOncampaignHoldMusicMenu();
+//		ConfigurationsPage.ClickOnAddConfig1();
+//		ConfigurationsPage.EnterHold_music_URL("http:m.wav");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetHold_music_URL_Err();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, music_URL_Range_err);
+//	}
 	
 	
 	

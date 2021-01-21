@@ -70,12 +70,21 @@ public class ConfigurationsPage extends TestBase{
 	
 	@FindBy(id= "FeedBackMasterMenu")
 	WebElement FeedBackMasterMenu;
+
+	@FindBy(id= "SipLocations")
+	WebElement SipLocations;
+	
+	@FindBy(id= "campaignHoldMusicMenu")
+	WebElement campaignHoldMusicMenu;
 	
 	@FindBy(xpath= "//*[contains(@class,'main-heading')]")
 	WebElement configurations_heading;
 	
-	@FindBy(xpath= "//*[contains(@data-original-title,'Add')]")
+	@FindBy(xpath= "//*[contains(@data-original-title,'Add')] ")
 	WebElement Config_Add_Button;
+	
+	@FindBy(xpath= "//*[@class='tools']")
+	WebElement Config_Add_Button1;
 	
 	@FindBy(xpath= "//*[contains(@name,'search')]")
 	WebElement Config_search_button;
@@ -434,6 +443,33 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[@id='wwctrl_feedBackMasterForm_feedBackMaster_audioFile']/ul/li")
 	WebElement feedBackMaster_audioFile_err;
 	
+	@FindBy(id= "sipLocationForm_sipLocation_location")
+	WebElement sipLocationForm_sipLocation_location;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_sipLocationForm_sipLocation_location']/ul/li")
+	WebElement sipLocation_location_err;
+	
+	@FindBy(id= "sipLocationForm_sipLocation_sipUrl")
+	WebElement sipLocationForm_sipLocation_sipUrl;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_sipLocationForm_sipLocation_sipUrl']/ul/li")
+	WebElement sipLocation_sipUrl_err;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_sipLocationForm_assignedAgents']/ul/li")
+	WebElement sipLocationForm_assignedAgents_err;
+	
+	@FindBy(id= "appAudioFilesForm_appAudioFile_name")
+	WebElement Hold_music_name;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_appAudioFilesForm_appAudioFile_name']/ul/li")
+	WebElement Hold_music_name_err;
+	
+	@FindBy(id= "appAudioFilesForm_appAudioFile_audioUrl")
+	WebElement Hold_music_URL;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_appAudioFilesForm_appAudioFile_audioUrl']/ul/li")
+	WebElement Hold_music_URL_err;
+	
 	@FindBy(xpath= "//*[contains(@id,'save')]")
 	WebElement config_save_button;
 	
@@ -481,7 +517,9 @@ public class ConfigurationsPage extends TestBase{
 	public void ClickOnAddConfig() {
 		Config_Add_Button.click();
 	}
-	
+	public void ClickOnAddConfig1() {
+		Config_Add_Button1.click();
+	}
 	public void EnterSerachItem(Object S) {
 		if(!S.equals("")) {
 		Config_search_button.sendKeys(S.toString().trim());
@@ -1925,12 +1963,76 @@ public class ConfigurationsPage extends TestBase{
 		return "";
 	}
 	
+	public void ClickOnSipLocationsMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(SipLocations);	
+	}
+	
+	public void EntersipLocation_location(String str) {
+		sipLocationForm_sipLocation_location.sendKeys(str);
+	}
+	public String GetSipLocationErr() {
+		try{
+			if(sipLocation_location_err.isDisplayed())
+				return sipLocation_location_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EntersipLocation_sipUrl(String str) {
+		sipLocationForm_sipLocation_sipUrl.sendKeys(str);
+	}
+	public String GetSipLocationURLErr() {
+		try{
+			if(sipLocation_sipUrl_err.isDisplayed())
+				return sipLocation_sipUrl_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public String GetsipLocation_assignedAgents_Err() {
+		try{
+			if(sipLocationForm_assignedAgents_err.isDisplayed())
+				return sipLocationForm_assignedAgents_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
 	
 	
+	public void ClickOncampaignHoldMusicMenu() {
+		try {
+			Thread.sleep(1000);
+			} catch (Exception e) {
+				}
+		AddCampaignPage.JavaScriptClick(campaignHoldMusicMenu);	
+	}
 	
-	
-	
-	
+	public void EnterHold_music_name(String str) {
+		Hold_music_name.sendKeys(str);
+	}
+	public String GetHold_music_name_Err() {
+		try{
+			if(Hold_music_name_err.isDisplayed())
+				return Hold_music_name_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
+	public void EnterHold_music_URL(String str) {
+		Hold_music_URL.sendKeys(str);
+	}
+	public String GetHold_music_URL_Err() {
+		try{
+			if(Hold_music_URL_err.isDisplayed())
+				return Hold_music_URL_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
 	
 	
 	
