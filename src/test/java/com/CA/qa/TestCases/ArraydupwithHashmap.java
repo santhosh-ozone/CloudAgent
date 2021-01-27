@@ -26,7 +26,7 @@ public class ArraydupwithHashmap {
 	         
 	    for (Entry<Integer, Integer> entry : entrySet) 
 	    {               
-	        if(entry.getValue() == 3)
+	        if(entry.getValue() > 1)
 	            System.out.print(entry.getKey()+ " ");
 	        	//System.out.println("Duplicate Element : "+entry.getKey()+" - found "+entry.getValue()+" times.");
 	    }
@@ -36,5 +36,28 @@ public class ArraydupwithHashmap {
 		int[] a = {10,20,30,40,10,20,40,20,40,50,11,15,15};
 		findDuplicatesUsingHashMap(a);
 	}
-}
-
+}/*
+public class DuplicateCharFinder {  
+    public void findIt(String str) {  
+        Map<Character, Integer> baseMap = new HashMap<Character, Integer>();  
+        char[] charArray = str.toCharArray();  
+        for (Character ch : charArray) {  
+            if (baseMap.containsKey(ch)) {  
+                baseMap.put(ch, baseMap.get(ch) + 1);  
+            } else {  
+                baseMap.put(ch, 1);  
+            }  
+        }  
+        Set<Character> keys = baseMap.keySet();  
+        for (Character ch : keys) {  
+            if (baseMap.get(ch) > 1) {  
+                System.out.println(ch + "  is " + baseMap.get(ch) + " times");  
+            }  
+        }  
+    }  
+   
+    public static void main(String a[]) {  
+        DuplicateCharFinder dcf = new DuplicateCharFinder();  
+        dcf.findIt("India is my country");  
+    }  
+}  */

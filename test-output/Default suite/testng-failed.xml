@@ -3,20 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
+      <class name="com.CA.qa.TestCases.ValidateCampaignPageTest">
         <methods>
-          <include name="ValidateAgentIdStartWithsplcharErrorMsg"/>
-          <include name="ValidateAgentIdSplRAngeErrorMsg"/>
-          <include name="ValidateAgentIdEndWithSplCharErrorMsg"/>
-          <include name="nteardown"/>
+          <include name="ValidateConcurrentCallsMaxRangeErrorMsg"/>
           <include name="setup"/>
-          <include name="ValidateAgentNameRangeErrorMsg"/>
-          <include name="ValidateAgentDataErrorMsg"/>
-          <include name="ValidateAgentIdRAngeErrorMsg1_11"/>
-          <include name="ValidateAgentDataSplRangeErrorMsg"/>
-          <include name="ValidateAgentNameSplRangeErrorMsg"/>
+          <include name="nteardown"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
+      </class> <!-- com.CA.qa.TestCases.ValidateCampaignPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -15,7 +15,7 @@
        <class name="com.CA.qa.TestCases.AdminHomePageTest" />
        <class name="com.CA.qa.TestCases.ValidateCampaignPageTest" />
        <class name="com.CA.qa.TestCases.ValidateConfigurationsPage" />
-       <class name="com.CA.qa.TestCases.AddCampaignPageTest" />
+       
       
         
     </classes>

@@ -13,6 +13,20 @@
           <include name="nteardown"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.ValidateCampaignPageTest -->
+      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
+        <methods>
+          <include name="ValidateAgentIdStartWithsplcharErrorMsg"/>
+          <include name="ValidateAgentIdSplRAngeErrorMsg"/>
+          <include name="ValidateAgentIdEndWithSplCharErrorMsg"/>
+          <include name="nteardown"/>
+          <include name="setup"/>
+          <include name="ValidateAgentNameRangeErrorMsg"/>
+          <include name="ValidateAgentDataErrorMsg"/>
+          <include name="ValidateAgentIdRAngeErrorMsg1_11"/>
+          <include name="ValidateAgentDataSplRangeErrorMsg"/>
+          <include name="ValidateAgentNameSplRangeErrorMsg"/>
+        </methods>
+      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
     </classes>
   </test> <!-- Cloud Agent Application test cases(failed) -->
 </suite> <!-- Failed suite [Cloud Agent Application Automation Test Suite] -->
