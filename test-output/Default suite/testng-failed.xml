@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.ValidateCampaignPageTest">
+      <class name="com.CA.qa.TestCases.ValidateUserPageTest">
         <methods>
-          <include name="ValidateConcurrentCallsMaxRangeErrorMsg"/>
+          <include name="ValidateUserNameErrorMsg27_11"/>
           <include name="setup"/>
-          <include name="nteardown"/>
+          <include name="ValidatePasswordEmptyErrorMsg27_2"/>
+          <include name="ValidatePasswordRangeErrorMsg27_21"/>
+          <include name="ValidateUserNameErrorMsg27_14"/>
+          <include name="ValidateUserNameEmptyErrorMsg27_1"/>
+          <include name="ValidateUserNameErrorMsg27_12"/>
+          <include name="ValidateUserNameErrorMsg27_13"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.ValidateCampaignPageTest -->
+      </class> <!-- com.CA.qa.TestCases.ValidateUserPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
