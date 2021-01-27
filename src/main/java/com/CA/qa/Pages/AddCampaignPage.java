@@ -55,6 +55,12 @@ public class AddCampaignPage extends TestBase{
 	@FindBy(id= "campaignForm_campaign_did")
 	WebElement DID;
 	
+	@FindBy(id= "campaignForm_campaign_fallbackDID")
+	WebElement fallbackDID;
+	
+	@FindBy(id= "campaignForm_campaign_callPrefix")
+	WebElement Prefix;
+	
 	@FindBy(id= "campaignForm_campaign_ruleNac")
 	WebElement PacingRatio;
 	
@@ -205,6 +211,9 @@ public class AddCampaignPage extends TestBase{
 	@FindBy(id= "select2-campaignForm_campaign_previewDataMap_id-container")
 	WebElement Mapping;
 
+	@FindBy(id= "campaignForm_campaign_blockNumber")
+	WebElement campaignform_blockNumber;
+
 	@FindBy(xpath= "//span/input[@class='select2-search__field']")
 	WebElement MappingText;
 	
@@ -237,6 +246,12 @@ public class AddCampaignPage extends TestBase{
 	
 	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_did']/ul/li")
 	WebElement DID_error;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_fallbackDID']/ul/li")
+	WebElement fallbackDID_error;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_callPrefix']/ul/li")
+	WebElement Prefix_err;
 	
 	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaign_runtimeStart']/ul/li")
 	WebElement StartTime_error;
@@ -297,6 +312,9 @@ public class AddCampaignPage extends TestBase{
 	
 	@FindBy(xpath= "//*[@id='wwctrl_previewDataMapForm_previewDataMap_sheet']/ul/li")
 	WebElement map_File_error;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_campaignForm_campaignBlockNumberGroups']/ul/li")
+	WebElement camPaign_blockNo_error;
 	
 	@FindBy(id= "previewDataMapForm_name")
 	WebElement Map_Name;
@@ -386,6 +404,12 @@ public class AddCampaignPage extends TestBase{
 		if(!did.equals("")) {
 		DID.clear();
 		DID.sendKeys(did);
+	}}
+	
+	public void EnterfallbackDID(String did) {
+		if(!did.equals("")) {
+			fallbackDID.clear();
+			fallbackDID.sendKeys(did);
 	}}
 	
 	public void ClickOnADDMapping() {
@@ -580,6 +604,19 @@ public class AddCampaignPage extends TestBase{
 				if(No_Of_Tries.isDisplayed()) {
 					No_Of_Tries.clear();
 		No_Of_Tries.sendKeys(T.toString().trim());}
+	}catch(NoSuchElementException e) {
+	}
+	}		
+	}
+	
+	//Prefix
+	
+	public void EnterPrefix(Object T) {
+		if(!T.equals("")) {
+			try {
+				if(Prefix.isDisplayed()) {
+					Prefix.clear();
+					Prefix.sendKeys(T.toString().trim());}
 	}catch(NoSuchElementException e) {
 	}
 	}		
@@ -1018,6 +1055,13 @@ public class AddCampaignPage extends TestBase{
 		}
 	}
 	
+	public void SelectBlockNumber(Object str) {
+		if(!str.equals("")) {
+			Select sel =new Select(campaignform_blockNumber);
+			sel.selectByVisibleText(str.toString());
+		}
+	}
+	
 	public void FiletoUpload(Object path) {
 		if(!path.equals("")) {
 			try {
@@ -1102,6 +1146,13 @@ public class AddCampaignPage extends TestBase{
 		}catch(NoSuchElementException e) {
 		}return "";
 	}
+	public String getfallbackDidError() {
+		try {
+			if(fallbackDID_error.isDisplayed())
+				return fallbackDID_error.getText();
+		}catch(NoSuchElementException e) {
+		}return "";
+	}
 	
 	public String getStartTimeError() {
 		try {
@@ -1134,6 +1185,15 @@ public class AddCampaignPage extends TestBase{
 		}catch(NoSuchElementException e) {
 		}return "";
 	}
+	
+
+	public String getPrefixError() {
+		try {
+			if(Prefix_err.isDisplayed())
+				return Prefix_err.getText();
+		}catch(NoSuchElementException e) {
+		}return "";
+	}
 
 	public String getWrapupError() {
 		try {
@@ -1147,8 +1207,11 @@ public class AddCampaignPage extends TestBase{
 		try {
 			if(Dispositions_error.isDisplayed())
 				return Dispositions_error.getText();
-		}catch(NoSuchElementException e) {
-		}return "";
+		}
+		catch(NoSuchElementException e) {		}
+		finally{}
+		
+		return "";
 	}
 	
 	public String getSkillsError() {
@@ -1159,6 +1222,13 @@ public class AddCampaignPage extends TestBase{
 		}return "";
 	}
 	
+	public String getBlocknoError() {
+		try {
+			if(camPaign_blockNo_error.isDisplayed())
+				return camPaign_blockNo_error.getText();
+		}catch(NoSuchElementException e) {
+		}return "";
+	}
 	public String getMappingError() {
 		try {
 			if(Mapping_error.isDisplayed())

@@ -192,7 +192,12 @@ public class AdminHomePage extends TestBase{
 		//System.out.println("CLICKED ON ADD BUTTON");
 		return new AddCampaignPage();
 	}
-	
+	public AdminUsersPage clickOnUsersMenu() {
+		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Users));
+		Users.click();
+		return new AdminUsersPage();
+				
+	}
 	public String Getmessagediv() {
 		try {
 			//new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(div_message));
