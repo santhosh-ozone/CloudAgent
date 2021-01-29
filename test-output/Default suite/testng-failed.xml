@@ -5,14 +5,9 @@
     <classes>
       <class name="com.CA.qa.TestCases.ValidateUserPageTest">
         <methods>
-          <include name="ValidateUserNameErrorMsg27_11"/>
+          <include name="ValidateLastNameRangeErrorMsg27_62"/>
           <include name="setup"/>
-          <include name="ValidatePasswordEmptyErrorMsg27_2"/>
-          <include name="ValidatePasswordRangeErrorMsg27_21"/>
-          <include name="ValidateUserNameErrorMsg27_14"/>
-          <include name="ValidateUserNameEmptyErrorMsg27_1"/>
-          <include name="ValidateUserNameErrorMsg27_12"/>
-          <include name="ValidateUserNameErrorMsg27_13"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.ValidateUserPageTest -->
     </classes>
