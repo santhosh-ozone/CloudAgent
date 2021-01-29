@@ -89,6 +89,10 @@ public class TestBase {
 //			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 //			options.addArguments("--no-sandbox"); // Bypass OS security model
 			driver = new ChromeDriver(options);
+			
+			//Robot robotobj = new robot();
+			//Robotobj.keypress(keyevent.vk_tab);
+
 		}
 		
 		e_driver = new EventFiringWebDriver(driver);

@@ -13,8 +13,7 @@
     <classes>
        <class name="com.CA.qa.TestCases.AdminLoginPageTest" />
        <class name="com.CA.qa.TestCases.AdminHomePageTest" />
-       <class name="com.CA.qa.TestCases.ValidateCampaignPageTest" />
-       <class name="com.CA.qa.TestCases.ValidateConfigurationsPage" />
+       
        
       
         

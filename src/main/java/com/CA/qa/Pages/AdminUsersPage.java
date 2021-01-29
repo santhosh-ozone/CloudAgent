@@ -125,6 +125,12 @@ public class AdminUsersPage  extends TestBase {
 	@FindBy(xpath= "//*[@id='wwctrl_saveUser_user_address_country']/ul/li")
 	WebElement Select_user_address_country_err;
 	
+	@FindBy(id= "saveUser_user_allowedIp")
+	WebElement saveUser_user_allowedIp;
+	
+	@FindBy(xpath= "//*[@id='wwctrl_saveUser_user_allowedIp']/ul/li")
+	WebElement saveUser_user_allowedIp_err;
+	
 	@FindBy(xpath= "//*[@id='saveUser']/div[1]/ul/li[2]//span")
 	WebElement Select_user_module_tab;
 	
@@ -335,6 +341,17 @@ public class AdminUsersPage  extends TestBase {
 		return "";
 	}
 	
-	
+	public void EnterUserAllowedIP(String str) {
+		saveUser_user_allowedIp.clear();
+		saveUser_user_allowedIp.sendKeys(str);
+	}
+	public String GetUserAllowedIPErr() {
+		try{
+			if(saveUser_user_allowedIp_err.isDisplayed())
+				return saveUser_user_allowedIp_err.getText();
+		}catch(NoSuchElementException e) {}
+		
+		return "";
+	}
 	
 }

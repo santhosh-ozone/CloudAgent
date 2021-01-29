@@ -195,6 +195,8 @@ public class AdminHomePage extends TestBase{
 	public AdminUsersPage clickOnUsersMenu() {
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Users));
 		Users.click();
+		JavascriptExecutor js = (JavascriptExecutor)driver1;
+		js.executeScript("arguments[0].click();", Users);
 		return new AdminUsersPage();
 				
 	}
