@@ -1113,6 +1113,13 @@ public class AddCampaignPage extends TestBase{
 
 		js.executeScript("arguments[0].style.height = '50px'", script);
 		JavaScriptClick(Save_button);
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//Save_button.click();
 		//document.getElementById(script).style.height = "50px";
 		//System.out.println("clicked save");

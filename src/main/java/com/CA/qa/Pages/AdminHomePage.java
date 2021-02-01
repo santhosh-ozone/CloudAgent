@@ -49,6 +49,15 @@ public class AdminHomePage extends TestBase{
 	@FindBy(xpath="//*[@id='am-navbar-collapse']/ul")
 	WebElement Admin_usericon;
 	
+	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[2]")
+	WebElement FirstCampaignName_inbound;
+	
+	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[1]")
+	WebElement FirstCampaignName_Outbound;
+	
+	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[3]")
+	WebElement FirstCampaignDID_inbound;
+	
 	@FindBy(xpath="//*[contains(@data-original-title,'Add Campaign')]")
 	WebElement Add_Campaign;
 	
@@ -162,6 +171,47 @@ public class AdminHomePage extends TestBase{
 		Admin_signout.click();
 		
 	}
+//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[2]")
+//	WebElement FirstCampaignName_inbound;
+//	
+//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[1]")
+//	WebElement FirstCampaignName_Outbound;
+//	
+//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[3]")
+//	WebElement FirstCampaignDID_inbound;
+	
+	public String GetFirstCampaign_nameForInbound() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Main Menu"));
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
+		javascriptClickforAdmin(CampaignMenu);
+		//CampaignMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
+		javascriptClickforAdmin(Inboundcampaign);
+		//Inboundcampaign.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
+		return FirstCampaignName_inbound.getText().trim();	
+	}
+	public String GetFirstCampaign_DidForInbound() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
+		javascriptClickforAdmin(CampaignMenu);
+		//CampaignMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
+		javascriptClickforAdmin(Inboundcampaign);
+		//Inboundcampaign.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
+		return FirstCampaignDID_inbound.getText().trim();	
+	}
+	public String GetFirstCampaign_nameForOutbound() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
+		javascriptClickforAdmin(CampaignMenu);
+		//CampaignMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
+		javascriptClickforAdmin(outboundcampaign);
+		//outboundcampaign.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
+		return FirstCampaignName_Outbound.getText().trim();	
+	}
+	
 	public AddCampaignPage clickOnAddCampaignButton(String C) {
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
 		Testutil.flash(CampaignMenu, driver1);

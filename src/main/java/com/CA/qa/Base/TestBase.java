@@ -10,10 +10,11 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
+import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 //import org.openqa.selenium.firefox.FirefoxDriver;
@@ -133,6 +134,12 @@ public class TestBase {
 		
 		//driver1.get(prop.getProperty("Admin_url"));
 		
+		
+	}
+	
+	public void javascriptClickforAdmin(WebElement element) {
+		JavascriptExecutor js= (JavascriptExecutor)driver1;
+		js.executeScript("arguments[0].click();", element);
 		
 	}
 	

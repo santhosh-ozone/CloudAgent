@@ -23,9 +23,11 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 	String campaign_name_empty_error = "Campaign Name is required.";
 	//String campaign_range_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
 	String campaign_range1_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
+	String camp_already_exist="Campaign Name Already exists";
 	String campaign_type_empty_error = "Campaign Type is required.";
 	String campaign_DID_empty_error = "DID is required.";
 	String campaign_DID_range_error = "DID must be between 3 and 16 digits and allows the + prefix";
+	String did_duplicate_err="DID Already exists";
 	String campaign_fallbackDID_range_error ="FallBack DID must be between 3 and 16 digits and allows the + prefix";
 	
 	String campign_prefix_err="Call Prefix should be between 1 to 6 digits long and allows prefix +";
@@ -63,6 +65,8 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 	String Map_xls_tooltip ="Upload file should be in XLS format only, Download the XLS for sample.";
 	String mapping_tooltip ="Add Mapping";
 	
+	String Existing_Incamp_Name ;//=AdminHomepage.GetFirstCampaign_nameForInbound();
+	String existing_DID ;//=AdminHomepage.GetFirstCampaign_DidForInbound();
 	
 	public ValidateInboundCampaignPageTest() {
 		super();
@@ -76,6 +80,13 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		Adminloginpage = new AdminLoginPage();
 		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
 		//AddOutBoundCampaignPage = AdminHomepage.clickOnOutboundAddCampaignButton("");
+		Existing_Incamp_Name =AdminHomepage.GetFirstCampaign_nameForInbound();
+		System.out.println("----------------------------------------------");
+		System.out.println("Existing_Incamp_Name: "+Existing_Incamp_Name);
+		existing_DID=AdminHomepage.GetFirstCampaign_DidForInbound();
+		System.out.println("existing_DID: "+existing_DID);
+		System.out.println("----------------------------------------------");
+
 		AddCampaignPage =AdminHomepage.clickOnAddCampaignButton("inBound");
 //		JavascriptExecutor jse = (JavascriptExecutor)driver1;
 //		jse.executeScript("return document.getElementsByClassName('am-scroll-top')[0].remove();");
@@ -89,7 +100,14 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_name_empty_error);
 	}
-	
+	@Test (priority=2)
+	public void ValidateCampaignNameDuplicateErrorMsg25_11() {
+		AddCampaignPage.enterCampaignName(Existing_Incamp_Name);
+		AddCampaignPage.ClickOnSaveCampaign();
+		Err_msg =AddCampaignPage.getCampaignNameError();
+		//System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, camp_already_exist);
+	}
 	@Test (priority=2)
 	public void ValidateCampaignNameRangeErrorMsg25_12() {
 		AddCampaignPage.enterCampaignName("c");
@@ -134,7 +152,14 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_DID_range_error);
 	}
-
+	@Test (priority=7)
+	public void ValidateDidDuplicateErrorMsg25_22() {
+		AddCampaignPage.EnterDID(existing_DID);
+		AddCampaignPage.ClickOnSaveCampaign();
+		Err_msg=AddCampaignPage.getDidError();
+		//System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, did_duplicate_err);
+	}
 	
 	@Test (priority=7)
 	public void ValidateDidRangeErrorMsg25_23() {

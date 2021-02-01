@@ -23,6 +23,7 @@ public class ValidateOutboundCampaignPageTest extends TestBase{
 	String campaign_name_empty_error = "Campaign Name is required.";
 	//String campaign_range_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
 	String campaign_range1_error = "Campaign Name should be between 2 to 255 alphanumeric characters long and allows special characters like .,@,_,-";
+	String camp_already_exist="Campaign Name Already exists";
 	String campaign_type_empty_error = "Campaign Type is required.";
 	String campaign_DID_empty_error = "DID is required.";
 	String campaign_DID_range_error = "DID should be between 3 to 16 digits long and allows prefix +";
@@ -63,6 +64,8 @@ public class ValidateOutboundCampaignPageTest extends TestBase{
 	String Map_xls_tooltip ="Upload file should be in XLS format only, Download the XLS for sample.";
 	String mapping_tooltip ="Add Mapping";
 	
+	String Existing_Outcamp_Name ;//=AdminHomepage.GetFirstCampaign_nameForInbound();
+	
 	
 	public ValidateOutboundCampaignPageTest() {
 		super();
@@ -76,6 +79,8 @@ public class ValidateOutboundCampaignPageTest extends TestBase{
 		Adminloginpage = new AdminLoginPage();
 		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
 		//AddOutBoundCampaignPage = AdminHomepage.clickOnOutboundAddCampaignButton("");
+		
+		Existing_Outcamp_Name =AdminHomepage.GetFirstCampaign_nameForOutbound();
 		AddCampaignPage =AdminHomepage.clickOnAddCampaignButton("outBound");
 //		JavascriptExecutor jse = (JavascriptExecutor)driver1;
 //		jse.executeScript("return document.getElementsByClassName('am-scroll-top')[0].remove();");
@@ -89,7 +94,14 @@ public class ValidateOutboundCampaignPageTest extends TestBase{
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_name_empty_error);
 	}
-	
+	@Test (priority=2)
+	public void ValidateCampaignNameDuplicateErrorMsg25_11() {
+		AddCampaignPage.enterCampaignName(Existing_Outcamp_Name);
+		AddCampaignPage.ClickOnSaveCampaign();
+		Err_msg =AddCampaignPage.getCampaignNameError();
+		//System.out.println("err msg is: "+Err_msg);
+		Assert.assertEquals(Err_msg, camp_already_exist);
+	}
 	@Test (priority=2)
 	public void ValidateCampaignNameRangeErrorMsg26_12() {
 		AddCampaignPage.enterCampaignName("c");
