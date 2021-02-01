@@ -1,161 +1,1669 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="35" passed="35" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-29T22:21:34 IST" name="Default suite" finished-at="2021-01-29T22:22:10 IST" duration-ms="35919">
+  <suite started-at="2021-02-01T13:47:50 IST" name="Default suite" finished-at="2021-02-01T13:53:56 IST" duration-ms="365674">
     <groups>
     </groups>
-    <test started-at="2021-01-29T22:21:34 IST" name="Default test" finished-at="2021-01-29T22:22:10 IST" duration-ms="35919">
-      <class name="com.CA.qa.TestCases.ValidateUserPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:34 IST" name="setup" finished-at="2021-01-29T22:21:52 IST" duration-ms="17084" status="PASS">
+    <test started-at="2021-02-01T13:47:50 IST" name="Default test" finished-at="2021-02-01T13:53:56 IST" duration-ms="365674">
+      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
+        <test-method is-config="true" signature="clearExcelDatainRes()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:47:50 IST" name="clearExcelDatainRes" finished-at="2021-02-01T13:47:51 IST" duration-ms="915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearExcelDatainRes -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:47:51 IST" name="setup" finished-at="2021-02-01T13:48:02 IST" duration-ms="10358" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ValidateUserNameEmptyErrorMsg27_1()[pri:1, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:52 IST" name="ValidateUserNameEmptyErrorMsg27_1" finished-at="2021-01-29T22:21:52 IST" duration-ms="524" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:48:02 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:49:02 IST" duration-ms="60590" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Add_Campaign]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Preview]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Nonagentwise]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[12345678910]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[09:10:11]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[12:13:14]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Server side]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[None]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[phone]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[C:\Users\santosh\Documents\CloudAgent\src\main\java\com\CA\qa\TestData\data_upload_sample_nonagent.xls]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateUserNameEmptyErrorMsg27_1 -->
-        <test-method signature="ValidateUserNameErrorMsg27_11()[pri:2, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:52 IST" name="ValidateUserNameErrorMsg27_11" finished-at="2021-01-29T22:21:53 IST" duration-ms="560" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:02 IST" name="nteardown" finished-at="2021-02-01T13:49:04 IST" duration-ms="1757" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateUserNameErrorMsg27_11 -->
-        <test-method signature="ValidateUserNameErrorMsg27_12()[pri:3, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:53 IST" name="ValidateUserNameErrorMsg27_12" finished-at="2021-01-29T22:21:53 IST" duration-ms="515" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:04 IST" name="setup" finished-at="2021-02-01T13:49:14 IST" duration-ms="10160" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateUserNameErrorMsg27_12 -->
-        <test-method signature="ValidateUserNameErrorMsg27_13()[pri:4, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:53 IST" name="ValidateUserNameErrorMsg27_13" finished-at="2021-01-29T22:21:54 IST" duration-ms="505" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:14 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:49:41 IST" duration-ms="27021" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[helloooo]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateUserNameErrorMsg27_13 -->
-        <test-method signature="ValidateUserNameErrorMsg27_14()[pri:5, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:54 IST" name="ValidateUserNameErrorMsg27_14" finished-at="2021-01-29T22:21:54 IST" duration-ms="498" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:41 IST" name="nteardown" finished-at="2021-02-01T13:49:43 IST" duration-ms="1668" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateUserNameErrorMsg27_14 -->
-        <test-method signature="ValidatePasswordEmptyErrorMsg27_2()[pri:6, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:54 IST" name="ValidatePasswordEmptyErrorMsg27_2" finished-at="2021-01-29T22:21:55 IST" duration-ms="428" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:43 IST" name="setup" finished-at="2021-02-01T13:49:53 IST" duration-ms="10544" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatePasswordEmptyErrorMsg27_2 -->
-        <test-method signature="ValidatePasswordRangeErrorMsg27_21()[pri:7, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:55 IST" name="ValidatePasswordRangeErrorMsg27_21" finished-at="2021-01-29T22:21:55 IST" duration-ms="504" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:49:53 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:50:48 IST" duration-ms="54803" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Run]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatePasswordRangeErrorMsg27_21 -->
-        <test-method signature="ValidateConfirmPasswordRangeErrorMsg27_3()[pri:8, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:55 IST" name="ValidateConfirmPasswordRangeErrorMsg27_3" finished-at="2021-01-29T22:21:56 IST" duration-ms="425" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:50:48 IST" name="nteardown" finished-at="2021-02-01T13:50:54 IST" duration-ms="5976" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateConfirmPasswordRangeErrorMsg27_3 -->
-        <test-method signature="ValidateConfirmPasswordRangeErrorMsg27_31()[pri:9, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:56 IST" name="ValidateConfirmPasswordRangeErrorMsg27_31" finished-at="2021-01-29T22:21:56 IST" duration-ms="592" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:50:54 IST" name="setup" finished-at="2021-02-01T13:51:05 IST" duration-ms="10906" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateConfirmPasswordRangeErrorMsg27_31 -->
-        <test-method signature="ValidatePasswordHintMtErrorMsg27_4()[pri:10, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:56 IST" name="ValidatePasswordHintMtErrorMsg27_4" finished-at="2021-01-29T22:21:57 IST" duration-ms="431" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:51:05 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:52:01 IST" duration-ms="55525" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatePasswordHintMtErrorMsg27_4 -->
-        <test-method signature="ValidatePasswordHintErrorMsg27_41()[pri:11, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:57 IST" name="ValidatePasswordHintErrorMsg27_41" finished-at="2021-01-29T22:21:57 IST" duration-ms="515" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:01 IST" name="nteardown" finished-at="2021-02-01T13:52:02 IST" duration-ms="1631" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidatePasswordHintErrorMsg27_41 -->
-        <test-method signature="ValidateFirstNameMtErrorMsg27_5()[pri:12, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:57 IST" name="ValidateFirstNameMtErrorMsg27_5" finished-at="2021-01-29T22:21:57 IST" duration-ms="426" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:02 IST" name="setup" finished-at="2021-02-01T13:52:12 IST" duration-ms="10086" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateFirstNameMtErrorMsg27_5 -->
-        <test-method signature="ValidateFirstNameRangeErrorMsg27_51()[pri:13, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:57 IST" name="ValidateFirstNameRangeErrorMsg27_51" finished-at="2021-01-29T22:21:58 IST" duration-ms="531" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:12 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:52:43 IST" duration-ms="30528" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Stop]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateFirstNameRangeErrorMsg27_51 -->
-        <test-method signature="ValidateFirstNameRangeErrorMsg27_52()[pri:14, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:58 IST" name="ValidateFirstNameRangeErrorMsg27_52" finished-at="2021-01-29T22:21:59 IST" duration-ms="486" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:43 IST" name="nteardown" finished-at="2021-02-01T13:52:45 IST" duration-ms="1632" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateFirstNameRangeErrorMsg27_52 -->
-        <test-method signature="ValidateFirstNameRangeErrorMsg27_53()[pri:15, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:59 IST" name="ValidateFirstNameRangeErrorMsg27_53" finished-at="2021-01-29T22:21:59 IST" duration-ms="472" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:45 IST" name="setup" finished-at="2021-02-01T13:52:55 IST" duration-ms="10263" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateFirstNameRangeErrorMsg27_53 -->
-        <test-method signature="ValidateFirstNameRangeErrorMsg27_54()[pri:16, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:59 IST" name="ValidateFirstNameRangeErrorMsg27_54" finished-at="2021-01-29T22:21:59 IST" duration-ms="494" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:52:55 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:53:21 IST" duration-ms="25756" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[hiiiiiii]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateFirstNameRangeErrorMsg27_54 -->
-        <test-method signature="ValidateLastNameRangeMtMsg27_6()[pri:17, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:21:59 IST" name="ValidateLastNameRangeMtMsg27_6" finished-at="2021-01-29T22:22:00 IST" duration-ms="436" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:53:21 IST" name="nteardown" finished-at="2021-02-01T13:53:22 IST" duration-ms="1712" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLastNameRangeMtMsg27_6 -->
-        <test-method signature="ValidateLastNameRangeErrorMsg27_61()[pri:18, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:00 IST" name="ValidateLastNameRangeErrorMsg27_61" finished-at="2021-01-29T22:22:00 IST" duration-ms="481" status="PASS">
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:53:22 IST" name="setup" finished-at="2021-02-01T13:53:33 IST" duration-ms="10428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLastNameRangeErrorMsg27_61 -->
-        <test-method signature="ValidateLastNameRangeErrorMsg27_62()[pri:19, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:00 IST" name="ValidateLastNameRangeErrorMsg27_62" finished-at="2021-01-29T22:22:01 IST" duration-ms="498" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:53:33 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-01T13:53:54 IST" duration-ms="21380" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Delete_Campaign]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLastNameRangeErrorMsg27_62 -->
-        <test-method signature="ValidateLastNameRangeErrorMsg27_63()[pri:20, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:01 IST" name="ValidateLastNameRangeErrorMsg27_63" finished-at="2021-01-29T22:22:01 IST" duration-ms="512" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-01T13:53:54 IST" name="nteardown" finished-at="2021-02-01T13:53:56 IST" duration-ms="1835" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateLastNameRangeErrorMsg27_63 -->
-        <test-method signature="ValidateLastNameRangeErrorMsg27_64()[pri:21, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:01 IST" name="ValidateLastNameRangeErrorMsg27_64" finished-at="2021-01-29T22:22:02 IST" duration-ms="542" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateLastNameRangeErrorMsg27_64 -->
-        <test-method signature="ValidateEmailMtErrorMsg27_7()[pri:22, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:02 IST" name="ValidateEmailMtErrorMsg27_7" finished-at="2021-01-29T22:22:02 IST" duration-ms="424" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateEmailMtErrorMsg27_7 -->
-        <test-method signature="ValidateEmailRangeErrorMsg27_71()[pri:23, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:02 IST" name="ValidateEmailRangeErrorMsg27_71" finished-at="2021-01-29T22:22:03 IST" duration-ms="511" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateEmailRangeErrorMsg27_71 -->
-        <test-method signature="ValidateExtnMtErrorMsg27_8()[pri:24, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:03 IST" name="ValidateExtnMtErrorMsg27_8" finished-at="2021-01-29T22:22:03 IST" duration-ms="433" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateExtnMtErrorMsg27_8 -->
-        <test-method signature="ValidateExtnRangeErrorMsg27_81()[pri:25, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:03 IST" name="ValidateExtnRangeErrorMsg27_81" finished-at="2021-01-29T22:22:04 IST" duration-ms="501" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateExtnRangeErrorMsg27_81 -->
-        <test-method signature="ValidatePhNoMtErrorMsg27_9()[pri:26, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:04 IST" name="ValidatePhNoMtErrorMsg27_9" finished-at="2021-01-29T22:22:04 IST" duration-ms="405" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatePhNoMtErrorMsg27_9 -->
-        <test-method signature="ValidatePhNoRangeErrorMsg27_91()[pri:27, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:04 IST" name="ValidatePhNoRangeErrorMsg27_91" finished-at="2021-01-29T22:22:05 IST" duration-ms="508" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatePhNoRangeErrorMsg27_91 -->
-        <test-method signature="ValidatePhNoRangeErrorMsg27_92()[pri:28, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:05 IST" name="ValidatePhNoRangeErrorMsg27_92" finished-at="2021-01-29T22:22:05 IST" duration-ms="518" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatePhNoRangeErrorMsg27_92 -->
-        <test-method signature="ValidatePhNoRangeErrorMsg27_93()[pri:29, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:05 IST" name="ValidatePhNoRangeErrorMsg27_93" finished-at="2021-01-29T22:22:06 IST" duration-ms="493" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidatePhNoRangeErrorMsg27_93 -->
-        <test-method signature="ValidateCityMtErrorMsg27_10()[pri:30, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:06 IST" name="ValidateCityMtErrorMsg27_10" finished-at="2021-01-29T22:22:06 IST" duration-ms="438" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateCityMtErrorMsg27_10 -->
-        <test-method signature="ValidateStateMtErrorMsg27_10_1()[pri:31, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:06 IST" name="ValidateStateMtErrorMsg27_10_1" finished-at="2021-01-29T22:22:07 IST" duration-ms="432" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateStateMtErrorMsg27_10_1 -->
-        <test-method signature="ValidateZipMtErrorMsg27_10_2()[pri:32, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:07 IST" name="ValidateZipMtErrorMsg27_10_2" finished-at="2021-01-29T22:22:07 IST" duration-ms="416" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateZipMtErrorMsg27_10_2 -->
-        <test-method signature="ValidateCountryMtErrorMsg27_10_3()[pri:33, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:07 IST" name="ValidateCountryMtErrorMsg27_10_3" finished-at="2021-01-29T22:22:07 IST" duration-ms="419" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateCountryMtErrorMsg27_10_3 -->
-        <test-method signature="ValidateAllowedIPErrorMsg27_10_4()[pri:34, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:07 IST" name="ValidateAllowedIPErrorMsg27_10_4" finished-at="2021-01-29T22:22:08 IST" duration-ms="175" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateAllowedIPErrorMsg27_10_4 -->
-        <test-method signature="ValidateAdminModulesErrorMsg27_10_5()[pri:35, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:08 IST" name="ValidateAdminModulesErrorMsg27_10_5" finished-at="2021-01-29T22:22:08 IST" duration-ms="550" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateAdminModulesErrorMsg27_10_5 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.ValidateUserPageTest@1bb5a082]" started-at="2021-01-29T22:22:08 IST" name="teardown" finished-at="2021-01-29T22:22:10 IST" duration-ms="2184" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.CA.qa.TestCases.ValidateUserPageTest -->
+        </test-method> <!-- nteardown -->
+      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.ValidateUserPageTest">
+      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
         <methods>
-          <include name="ValidateLastNameRangeErrorMsg27_62"/>
+          <include name="AddCampaign" invocation-numbers="3"/>
           <include name="setup"/>
-          <include name="teardown"/>
+          <include name="nteardown"/>
+          <include name="clearExcelDatainRes"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.ValidateUserPageTest -->
+      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
