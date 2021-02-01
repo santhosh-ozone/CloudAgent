@@ -20,6 +20,7 @@ public class AdminHomePage extends TestBase{
 
 //	@FindBy(xpath = "//*[contains(@class,'brand')]")
 //	WebElement Admin_CAlogo;
+	AddCampaignPage AddCampaignPage;
 	String first ="//*[@id='campaignList']/tbody/tr[";
 	String second = "]/td[";
 	String third = "]";
@@ -57,6 +58,12 @@ public class AdminHomePage extends TestBase{
 	
 	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[3]")
 	WebElement FirstCampaignDID_inbound;
+	
+	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[4]")
+	WebElement FirstInboundCampaign_Position;
+	
+	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[12]")
+	WebElement FirstInboundCampaign_Start;
 	
 	@FindBy(xpath="//*[contains(@data-original-title,'Add Campaign')]")
 	WebElement Add_Campaign;
@@ -171,45 +178,58 @@ public class AdminHomePage extends TestBase{
 		Admin_signout.click();
 		
 	}
-//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[2]")
-//	WebElement FirstCampaignName_inbound;
-//	
-//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[1]")
-//	WebElement FirstCampaignName_Outbound;
-//	
-//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[3]")
-//	WebElement FirstCampaignDID_inbound;
 	
 	public String GetFirstCampaign_nameForInbound() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Main Menu"));
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
-		javascriptClickforAdmin(CampaignMenu);
-		//CampaignMenu.click();
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
-		javascriptClickforAdmin(Inboundcampaign);
-		//Inboundcampaign.click();
+		
+		ClickOnInbound();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
 		return FirstCampaignName_inbound.getText().trim();	
 	}
 	public String GetFirstCampaign_DidForInbound() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
-		javascriptClickforAdmin(CampaignMenu);
-		//CampaignMenu.click();
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
-		javascriptClickforAdmin(Inboundcampaign);
-		//Inboundcampaign.click();
+		ClickOnInbound();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
 		return FirstCampaignDID_inbound.getText().trim();	
 	}
 	public String GetFirstCampaign_nameForOutbound() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
-		javascriptClickforAdmin(CampaignMenu);
-		//CampaignMenu.click();
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
-		javascriptClickforAdmin(outboundcampaign);
-		//outboundcampaign.click();
+		ClickOnOutbound();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleIs("Campaigns"));
 		return FirstCampaignName_Outbound.getText().trim();	
+	}
+	
+//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[4]")
+//	WebElement FirstInboundCampaign_Position;
+//	
+//	@FindBy(xpath="//*[@id='campaignList']/tbody/tr[1]/td[12]")
+//	WebElement FirstInboundCampaign_Start;
+//	
+	public String EditDidForRunnungInboundCampaign() {
+		String cam_name=GetFirstCampaign_nameForInbound();
+		//String cam_position=GetCampaignPosition(1);
+		RunCampaign("Inbound", cam_name);
+		AddCampaignPage = ClickOnSelectedCampaign("InBound", cam_name,"" );
+		return AddCampaignPage.EnterDID("10000001");
+	}
+	public String EditDidForRunnungOutboundCampaign() {
+		String cam_name=GetFirstCampaign_nameForOutbound();
+		//String cam_position=GetCampaignPosition(1);
+		RunCampaign("Outbound", cam_name);
+		AddCampaignPage = ClickOnSelectedCampaign("outBound", cam_name,"" );
+		return AddCampaignPage.EnterDID("10000001");
+	}
+	public String DeleteRunnungOutboundCampaign() {
+		String cam_name=GetFirstCampaign_nameForOutbound();
+		String msg=RunCampaign("Outbound", cam_name);
+		if(msg.contains("started"))
+		return DeleteCampaign1("Outbound", cam_name);
+		
+		return "Campaign not Running";
+	}
+	public String DeleteRunnungInboundCampaign() {
+		String cam_name=GetFirstCampaign_nameForInbound();
+		String msg=RunCampaign("Inbound", cam_name);
+		if(msg.contains("started"))
+		return DeleteCampaign1("Inbound", cam_name);
+		return "Campaign not Running";
 	}
 	
 	public AddCampaignPage clickOnAddCampaignButton(String C) {
@@ -319,9 +339,10 @@ public class AdminHomePage extends TestBase{
 				WebElement element=driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*[contains(@onclick,'start')]" ));
 				scrollandclick(element);
 				return Getmessagediv();
-				
 				}
-			return "success: campaign is already running";
+			//if(GetCampaignPosition(result_row).equals("RUNNING")) {
+			
+			return "success: no need to started: campaign is already running";
 		}
 		return "Campaign not found to run it";
 		
@@ -573,7 +594,11 @@ public class AdminHomePage extends TestBase{
 				System.out.println("campaign name: "+ cName+" deleting: "+CampaignName.getAttribute("value"));
 				
 				if(CampaignName.getAttribute("value").trim().equals(cName.trim())) {
-				Campaign_delete_button.click();
+					try {
+				Campaign_delete_button.click();}
+					catch(Exception e) {
+						return "delete is not available";
+					}
 				driver1.switchTo().alert().accept();
 				//driver1.switchTo().alert().dismiss();
 				//return "correct";
@@ -582,7 +607,37 @@ public class AdminHomePage extends TestBase{
 			} return "program error, not deleting correct campaign so stopped2";
 		}return "campaign not identified to delete";
 		}
+	public String DeleteCampaign1(String bound,String cName) {
+		return DeleteCampaign1( bound, cName,"");
 		
+	}
+	public String DeleteCampaign1(String bound,String cName, String Di) {
+		System.out.println("Campaign details for deletion: Name:"+cName+"  Type:"+bound);
+		int result_row = IdentifyCampaignRow(bound,cName, Di);
+		//System.out.println("result_row is: "+result_row);
+		int cam_name_col = returnColumnNoOfTableHeader("Campaign Name");
+		//System.out.println("cam_name_col is : "+cam_name_col);
+		
+		if(result_row>0) {
+			System.out.println("Campaign position: "+GetCampaignPosition(result_row));
+			if(GetCampaignPosition(result_row).equals("RUNNING")) {
+				driver1.findElement(By.xpath(first+result_row+second+cam_name_col+third)).click();
+				System.out.println("campaign name: "+ cName+" deleting: "+CampaignName.getAttribute("value"));
+				
+				if(CampaignName.getAttribute("value").trim().equals(cName.trim())) {
+					try {
+				Campaign_delete_button.click();}
+					catch(Exception e) {
+						return "delete is not available";
+					}
+				//driver1.switchTo().alert().accept();
+				driver1.switchTo().alert().dismiss();
+				return "incorrect";
+				//return Getmessagediv();
+				}return "program error, not deleting correct campaign so stopped1";
+			} return "program error, not deleting correct campaign so stopped2";
+		}return "campaign not identified to delete";
+		}
 			
 	
 	public int returnColumnNoOfTableHeader(String H) {

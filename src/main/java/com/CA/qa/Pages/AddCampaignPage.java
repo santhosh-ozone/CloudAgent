@@ -400,11 +400,17 @@ public class AddCampaignPage extends TestBase{
 		}
 		}
 	
-	public void EnterDID(String did) {
+	public String EnterDID(String did) {
+		try {
 		if(!did.equals("")) {
 		DID.clear();
 		DID.sendKeys(did);
-	}}
+	}}catch(Exception e) {
+		return "not able to edit";
+	}
+		
+		return "success";
+		}
 	
 	public void EnterfallbackDID(String did) {
 		if(!did.equals("")) {
@@ -641,7 +647,14 @@ public class AddCampaignPage extends TestBase{
 		
 	}
 		
-	
+	public boolean IsAllowedForManualDialingEnabled() {
+		try {
+			if(allowedManual.isDisplayed() && !allowedManual.isSelected() )
+				return true;
+			else return false;
+	}catch(NoSuchElementException e) {}
+	return false;	
+	}
 	public void EnableAllowedForManualDialing(String E) {
 		if(E.equalsIgnoreCase("YES"))
 		try {
