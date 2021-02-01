@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
+      <class name="com.CA.qa.TestCases.AdminHomePageTest">
         <methods>
-          <include name="AddCampaign" invocation-numbers="3"/>
           <include name="setup"/>
-          <include name="nteardown"/>
-          <include name="clearExcelDatainRes"/>
+          <include name="verifywhetherRunningOutboundCampaignDeletable"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
+      </class> <!-- com.CA.qa.TestCases.AdminHomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

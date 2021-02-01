@@ -81,6 +81,24 @@ public class AdminHomePageTest extends TestBase{
 		AdminHomepage.clickOnAddCampaignButton("inbound");
 		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
 	}
+	@Test(priority = 7)
+	public void verifywhetherRunningInboundCampaignDIDEditable() {
+		String msg =AdminHomepage.EditDidForRunnungInboundCampaign();
+		Assert.assertEquals(msg, "not able to edit");
+	}
+	@Test(priority = 8)
+	public void verifywhetherRunningOutboundCampaignDIDEditable() {
+	}
+	@Test(priority = 9)
+	public void verifywhetherRunningOutboundCampaignDeletable() {
+		String msg =AdminHomepage.DeleteRunnungOutboundCampaign();
+		Assert.assertEquals(msg, "delete is not available");
+	}
+	@Test(priority = 10)
+	public void verifywhetherRunningInboundCampaignDeletable() {
+		String msg =AdminHomepage.DeleteRunnungInboundCampaign();
+		Assert.assertEquals(msg, "delete is not available");
+	}
 	
 	@AfterMethod
 	public void teardown() {

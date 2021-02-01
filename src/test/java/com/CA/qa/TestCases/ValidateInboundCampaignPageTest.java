@@ -296,6 +296,13 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		Assert.assertEquals(Err_msg, plugin_Name_error);
 	}
 	
+	@Test (priority=22)
+	public void ValidateDefaultManualDialDisabledOrNot() {
+		boolean b=AddCampaignPage.IsAllowedForManualDialingEnabled();
+		
+		Assert.assertTrue(b, "default AllowedForManualDialing selected");
+		//Assert.assertEquals(Err_msg, plugin_Name_error);
+	}
 //	@Test (priority=44)
 //	public void ValidateConsolidatedErrMsg() {
 //		Err_msg=AddCampaignPage.ConsolidatedErrorMessage();
