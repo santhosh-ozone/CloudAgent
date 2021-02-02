@@ -1,203 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-01T21:41:12 IST" name="Default suite" finished-at="2021-02-01T21:44:31 IST" duration-ms="199633">
+  <suite started-at="2021-02-02T11:41:35 IST" name="Default suite" finished-at="2021-02-02T11:43:31 IST" duration-ms="116509">
     <groups>
     </groups>
-    <test started-at="2021-02-01T21:41:12 IST" name="Default test" finished-at="2021-02-01T21:44:31 IST" duration-ms="199633">
-      <class name="com.CA.qa.TestCases.AdminHomePageTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:12 IST" name="setup" finished-at="2021-02-01T21:41:22 IST" duration-ms="10054" status="PASS">
+    <test started-at="2021-02-02T11:41:35 IST" name="Default test" finished-at="2021-02-02T11:43:31 IST" duration-ms="116509">
+      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
+        <test-method is-config="true" signature="clearExcelDatainRes()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:41:35 IST" name="clearExcelDatainRes" finished-at="2021-02-02T11:41:36 IST" duration-ms="663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearExcelDatainRes -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:41:36 IST" name="setup" finished-at="2021-02-02T11:41:48 IST" duration-ms="11994" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyAdminHomePage_TitleTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyAdminHomePage_TitleTest()[pri:1, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:22 IST" name="verifyAdminHomePage_TitleTest" finished-at="2021-02-01T21:41:22 IST" duration-ms="17" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAdminHomePage_TitleTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:22 IST" name="teardown" finished-at="2021-02-01T21:41:23 IST" duration-ms="978" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:23 IST" name="setup" finished-at="2021-02-01T21:41:31 IST" duration-ms="8594" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:41:48 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-02T11:42:53 IST" duration-ms="65680" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyclickingoninbound()]]>
+                <![CDATA[Delete_Campaign]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[outbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Preview]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Nonagentwise]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[12345678910]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[09:10:11]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[12:13:14]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Server side]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[None]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[phone]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[C:\Users\santosh\Documents\CloudAgent\src\main\java\com\CA\qa\TestData\data_upload_sample_nonagent.xls]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:42:53 IST" name="nteardown" finished-at="2021-02-02T11:42:55 IST" duration-ms="1688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nteardown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:42:55 IST" name="setup" finished-at="2021-02-02T11:43:04 IST" duration-ms="9115" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.AddCampaignPageTest.AddCampaign(java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.String,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyclickingoninbound()[pri:2, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:31 IST" name="verifyclickingoninbound" finished-at="2021-02-01T21:41:34 IST" duration-ms="2295" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyclickingoninbound -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:34 IST" name="teardown" finished-at="2021-02-01T21:41:35 IST" duration-ms="1311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:35 IST" name="setup" finished-at="2021-02-01T21:41:44 IST" duration-ms="9528" status="PASS">
+        <test-method signature="AddCampaign(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)[pri:2, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:43:04 IST" name="AddCampaign" data-provider="CampaignCreationdata" finished-at="2021-02-02T11:43:30 IST" duration-ms="25736" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyclickingonOutbound()]]>
+                <![CDATA[Delete_Campaign]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[inbound]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sannn1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1111111]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[padma]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[sdnv jsj]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3.0]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[3:2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[50.0]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[01:02:03]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[04:05:06]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[sans]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Client&Server]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[urlll]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[sans]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[NO]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[YES]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[API]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[all]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[phone]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[path]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[sant]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[sant]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyclickingonOutbound()[pri:3, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:44 IST" name="verifyclickingonOutbound" finished-at="2021-02-01T21:41:49 IST" duration-ms="4428" status="PASS">
+        </test-method> <!-- AddCampaign -->
+        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.AddCampaignPageTest@14cd1699]" started-at="2021-02-02T11:43:30 IST" name="nteardown" finished-at="2021-02-02T11:43:31 IST" duration-ms="1499" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyclickingonOutbound -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:49 IST" name="teardown" finished-at="2021-02-01T21:41:50 IST" duration-ms="658" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:50 IST" name="setup" finished-at="2021-02-01T21:41:58 IST" duration-ms="8856" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyAdminLogout()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyAdminLogout()[pri:4, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:41:58 IST" name="verifyAdminLogout" finished-at="2021-02-01T21:42:00 IST" duration-ms="1617" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAdminLogout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:00 IST" name="teardown" finished-at="2021-02-01T21:42:01 IST" duration-ms="665" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:01 IST" name="setup" finished-at="2021-02-01T21:42:10 IST" duration-ms="9319" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyOutboundAddCampaignButton()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyOutboundAddCampaignButton()[pri:5, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:10 IST" name="verifyOutboundAddCampaignButton" finished-at="2021-02-01T21:42:19 IST" duration-ms="8611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyOutboundAddCampaignButton -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:19 IST" name="teardown" finished-at="2021-02-01T21:42:19 IST" duration-ms="672" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:19 IST" name="setup" finished-at="2021-02-01T21:42:28 IST" duration-ms="8761" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifyInboundAddCampaignButton()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyInboundAddCampaignButton()[pri:6, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:28 IST" name="verifyInboundAddCampaignButton" finished-at="2021-02-01T21:42:35 IST" duration-ms="6910" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInboundAddCampaignButton -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:35 IST" name="teardown" finished-at="2021-02-01T21:42:36 IST" duration-ms="646" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:36 IST" name="setup" finished-at="2021-02-01T21:42:44 IST" duration-ms="8713" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifywhetherRunningInboundCampaignDIDEditable()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifywhetherRunningInboundCampaignDIDEditable()[pri:7, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:44 IST" name="verifywhetherRunningInboundCampaignDIDEditable" finished-at="2021-02-01T21:42:56 IST" duration-ms="12051" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifywhetherRunningInboundCampaignDIDEditable -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:56 IST" name="teardown" finished-at="2021-02-01T21:42:57 IST" duration-ms="682" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:42:57 IST" name="setup" finished-at="2021-02-01T21:43:06 IST" duration-ms="8481" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifywhetherRunningOutboundCampaignDIDEditable()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifywhetherRunningOutboundCampaignDIDEditable()[pri:8, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:43:06 IST" name="verifywhetherRunningOutboundCampaignDIDEditable" finished-at="2021-02-01T21:43:06 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifywhetherRunningOutboundCampaignDIDEditable -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:43:06 IST" name="teardown" finished-at="2021-02-01T21:43:06 IST" duration-ms="649" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:43:06 IST" name="setup" finished-at="2021-02-01T21:43:15 IST" duration-ms="8614" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifywhetherRunningOutboundCampaignDeletable()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifywhetherRunningOutboundCampaignDeletable()[pri:9, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:43:15 IST" name="verifywhetherRunningOutboundCampaignDeletable" finished-at="2021-02-01T21:43:59 IST" duration-ms="44194" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifywhetherRunningOutboundCampaignDeletable -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:43:59 IST" name="teardown" finished-at="2021-02-01T21:44:00 IST" duration-ms="644" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:44:00 IST" name="setup" finished-at="2021-02-01T21:44:08 IST" duration-ms="8485" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.CA.qa.TestCases.AdminHomePageTest.verifywhetherRunningInboundCampaignDeletable()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifywhetherRunningInboundCampaignDeletable()[pri:10, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:44:08 IST" name="verifywhetherRunningInboundCampaignDeletable" finished-at="2021-02-01T21:44:31 IST" duration-ms="22491" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifywhetherRunningInboundCampaignDeletable -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.CA.qa.TestCases.AdminHomePageTest@55182842]" started-at="2021-02-01T21:44:31 IST" name="teardown" finished-at="2021-02-01T21:44:31 IST" duration-ms="656" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.CA.qa.TestCases.AdminHomePageTest -->
+        </test-method> <!-- nteardown -->
+      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

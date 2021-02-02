@@ -197,27 +197,27 @@ public class ConfigurationPageTest extends TestBase {
 //				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
 //			}
 //		}
-//	
-//	@Test (priority=5,dataProvider = "PauseReasondata")
-//	public void AddpauseReasons(String act,String reason, Object reason1, Object time, Object res) {
-//			if (act.trim().equalsIgnoreCase("ADD")) {
-//				String m1=ConfigurationsPage.AddPauseReason(reason, time);
-//				System.out.println(m1);
-//				Assert.assertTrue(m1.contains("success"),reason +" not added");
-//			}
-//			else if (act.trim().equalsIgnoreCase("EDIT")) {
-//				String m1=ConfigurationsPage.EditPausereason(reason, reason1, time);
-//				System.out.println(m1);
-//				Assert.assertTrue(m1.contains("success"),reason+"  not able to edit");
-//			}
-//			
-//			else if(act.trim().equalsIgnoreCase("DELETE")) {
-//				String m2=ConfigurationsPage.deletePauseReason(reason);
-//				System.out.println(m2);
-//				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
-//			}
-//		}
-//	
+	
+	@Test (priority=5,dataProvider = "PauseReasondata")
+	public void AddpauseReasons(String act,String reason, Object reason1, Object time, Object res) {
+			if (act.trim().equalsIgnoreCase("ADD")) {
+				String m1=ConfigurationsPage.AddPauseReason(reason, time);
+				System.out.println(m1);
+				Assert.assertTrue(m1.contains("success"),reason +" not added");
+			}
+			else if (act.trim().equalsIgnoreCase("EDIT")) {
+				String m1=ConfigurationsPage.EditPausereason(reason, reason1, time);
+				System.out.println(m1);
+				Assert.assertTrue(m1.contains("success"),reason+"  not able to edit");
+			}
+			
+			else if(act.trim().equalsIgnoreCase("DELETE")) {
+				String m2=ConfigurationsPage.deletePauseReason(reason);
+				System.out.println(m2);
+				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
+			}
+		}
+	
 	
 	
 }

@@ -88,6 +88,9 @@ public class AdminHomePageTest extends TestBase{
 	}
 	@Test(priority = 8)
 	public void verifywhetherRunningOutboundCampaignDIDEditable() {
+		String msg =AdminHomepage.EditDidForRunnungOutboundCampaign();
+		Assert.assertEquals(msg, "not able to edit");
+		
 	}
 	@Test(priority = 9)
 	public void verifywhetherRunningOutboundCampaignDeletable() {
