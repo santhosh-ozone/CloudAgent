@@ -6,7 +6,7 @@
       <class name="com.CA.qa.TestCases.AdminHomePageTest">
         <methods>
           <include name="setup"/>
-          <include name="verifywhetherRunningOutboundCampaignDeletable"/>
+          <include name="verifyoutBoundCampaignIcon"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.AdminHomePageTest -->
