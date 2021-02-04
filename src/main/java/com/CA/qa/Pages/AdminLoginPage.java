@@ -3,6 +3,8 @@ package com.CA.qa.Pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.CA.qa.Base.TestBase;
 import com.CA.qa.Util.Testutil;
@@ -29,6 +31,14 @@ public class AdminLoginPage extends TestBase{
 	
 	@FindBy(xpath = "//*[contains(@type,'submit')]")
 	WebElement Admin_submit;
+	
+	@FindBy(partialLinkText = "Forgot")
+	WebElement Forgot_Password;
+	
+	@FindBy(id= "remember")
+	WebElement remember_me_checkBox;
+	
+	
 	
 	public AdminLoginPage() {
 		PageFactory.initElements(driver1, this);
@@ -58,6 +68,22 @@ public class AdminLoginPage extends TestBase{
 		Admin_password.sendKeys(pwd);
 	}
 	
+	public void clickForgotPassword() {
+		Forgot_Password.click();
+	}
+	public boolean EnableRememberMe() {
+		try {
+			//System.out.println("============"+remember_me_checkBox.isSelected());
+		if(!remember_me_checkBox.isSelected())
+			javascriptClickforAdmin(remember_me_checkBox);
+		//remember_me_checkBox.click();
+		Thread.sleep(500);
+		return remember_me_checkBox.isSelected();
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
 	public void clickLogInSubmit() {
 		Admin_submit.click();
 	}
@@ -65,7 +91,12 @@ public class AdminLoginPage extends TestBase{
 	public String UsernameError() {
 		return Admin_userName_error.getText();
 	}
-	
+	public String GetUserName() {
+		return Admin_username.getAttribute("value");
+	}
+	public String GetPassword() {
+		return Admin_password.getAttribute("value");
+	}
 	public String passwordError() {
 		return Admin_password_error.getText();
 	}
@@ -82,6 +113,7 @@ public class AdminLoginPage extends TestBase{
 		Admin_password.sendKeys(pwd);
 		Testutil.flash(Admin_submit, driver1);
 		Admin_submit.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.not(ExpectedConditions.titleContains(Testutil.Exp_AdminloginPageTitle)));
 		return new AdminHomePage();
 		
 	}

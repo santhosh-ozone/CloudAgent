@@ -1,5 +1,9 @@
 package com.CA.qa.Pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -139,6 +143,14 @@ public class AgentToolBarLoginPage extends TestBase {
 			ATBpin.clear();
 			ATBpin.sendKeys(pwd);
 			ATBLogin_Btn.click();
+			
+			try {
+				Robot robotobj = new Robot();
+				robotobj.keyPress(KeyEvent.VK_ESCAPE);
+				} catch (AWTException e) {
+					// TODO Auto-generated catch block
+					//e.printStackTrace();
+				}
 		}
 		
 //		}catch(NoSuchElementException e) {

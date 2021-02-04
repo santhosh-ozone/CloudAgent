@@ -1,5 +1,8 @@
 package com.CA.qa.Base;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 //import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -91,8 +94,8 @@ public class TestBase {
 //			options.addArguments("--no-sandbox"); // Bypass OS security model
 			driver = new ChromeDriver(options);
 			
-			//Robot robotobj = new robot();
-			//Robotobj.keypress(keyevent.vk_tab);
+			
+			
 
 		}
 		

@@ -119,12 +119,53 @@ public class AdminHomePage extends TestBase{
 	@FindBy(id= "campaignForm_button_save")
 	WebElement Save_button;
 	
+	@FindBy(xpath= "//div/*[@id='EditProfileMenu']")
+	WebElement EditProfileIcon;
+	
+	@FindBy(xpath= "//div/*[@id='EditProfileMenu']//following-sibling::*[@class='class']")
+	WebElement EditProfileIcon_text;
+	
+	@FindBy(xpath= "//div/*[@id='InBoundCampaignMenu']")
+	WebElement InBoundCampaignIcon;
+	
+	@FindBy(xpath= "//div/*[@id='InBoundCampaignMenu']//following-sibling::*[@class='class']")
+	WebElement InBoundCampaignIcon_text;
+	
+	@FindBy(xpath= "//div/*[@id='outBoundCampaignMenu']")
+	WebElement outBoundCampaignIcon;
+	
+	@FindBy(xpath= "//div/*[@id='outBoundCampaignMenu']//following-sibling::*[@class='class']")
+	WebElement outBoundCampaignIcon_text;
+	
+	@FindBy(xpath= "//div/*[@id='AgentMenu']")
+	WebElement AgentsIcon;
+	
+	@FindBy(xpath= "//div/*[@id='AgentMenu']//following-sibling::*[@class='class']")
+	WebElement AgentsIcon_text;
+	
+	@FindBy(id= "MainMenu")
+	WebElement Admin_home;
+	
+	@FindBy(id= "saveUser_user_username")
+	WebElement user_username;
+	
+	@FindBy(xpath="//*[contains(@class,'main-heading')]")
+	WebElement main_header;
+	
+	
+	
+	
+	
+	
+	
+	
 	public AdminHomePage() {
 		PageFactory.initElements(driver1, this);
 				
 	  }
 	
 	public String AdminHomePageTitle() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.titleContains(Testutil.Exp_AdminhomePageTitle));
 		return driver1.getTitle();
 	}
 	
@@ -652,7 +693,77 @@ public class AdminHomePage extends TestBase{
 		return 0;
 	}
 	
+//	@FindBy(id= "EditProfileMenu")
+//	WebElement EditProfileMenu;
+//	
+//	@FindBy(id= "MainMenu")
+//	WebElement Admin_home;
+//	
+//	@FindBy(id= "saveUser_user_username")
+//	WebElement user_username;
+//	
+//	@FindBy(xpath="//*[contains(@class,'main-heading')]")
+//	WebElement main_header;
 	
+	public void ClickEditProfileMenu() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		EditProfileIcon.click();
+	}
+	public String GetTitle() {
+		//new WebDriverWait(driver1, 20).until(ExpectedConditions.stalenessOf(EditProfileMenu));
+		return driver1.getTitle();
+	}
+	public String GetHeader() {
+		return main_header.getText();
+	}
+	
+	public String getToolTipOfProfileIcon() {
+		return EditProfileIcon.getAttribute("title");
+	}
+	public String getTextUnderProfileIcon() {
+		Testutil.flash(EditProfileIcon_text, driver1);
+		return EditProfileIcon_text.getText().trim();
+	}
+	public String GetSavedUserName() {
+		return user_username.getAttribute("value").trim();
+	}
+	public void ClickOnInBoundCampaignIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		InBoundCampaignIcon.click();
+	}
+	public String getToolTipOfInBoundCampaignIcon() {
+		return InBoundCampaignIcon.getAttribute("title");
+	}
+	public String getTextUnderInBoundCampaignIcon() {
+		Testutil.flash(InBoundCampaignIcon_text, driver1);
+		return InBoundCampaignIcon_text.getText().trim();
+	}
+	public void ClickOnoutBoundCampaignIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		outBoundCampaignIcon.click();
+	}
+	public String getToolTipOfoutBoundCampaignIcon() {
+		return outBoundCampaignIcon.getAttribute("title");
+	}
+	public String getTextUnderoutBoundCampaignIcon() {
+		Testutil.flash(outBoundCampaignIcon_text, driver1);
+		return outBoundCampaignIcon_text.getText().trim();
+	}
+	public void ClickOnAgentsIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		AgentsIcon.click();
+	}
+	public String getToolTipOfAgentsIcon() {
+		return AgentsIcon.getAttribute("title");
+	}
+	public String getTextUnderAgentsIcon() {
+		Testutil.flash(AgentsIcon_text, driver1);
+		return AgentsIcon_text.getText().trim();
+	}
 	
 	
 	
