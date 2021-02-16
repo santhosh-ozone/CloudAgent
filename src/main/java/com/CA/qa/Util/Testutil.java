@@ -269,7 +269,7 @@ public class Testutil extends TestBase{
 	     
     }
     
-public static String sendGET(String ApiServer, String API_URL,Object ApiKey, Object UserName, Object AgentId, Object cam_name, Object cus_no, Object ucid, Object ph_name, Object DID, Object uui, Object format, Object NMA_avai, Object NMC_avail, String Exp_res, String res )  {
+public static String sendGET(String ApiServer, String API_URL,Object ApiKey, Object UserName, Object AgentId, Object cam_name, Object cus_no, Object ucid, Object ph_name, Object DID,Object skill, Object uui, Object format, Object NMA_avai, Object NMC_avail, String Exp_res, String res )  {
 		
 //CAServices/AgentManualDial.php?api_key=&username=&agentID=&campaignName=&customerNumber=&UCID=&uui=&format=
 	
@@ -355,6 +355,7 @@ public static String sendGET(String ApiServer, String API_URL,Object ApiKey, Obj
 		con.setRequestMethod("GET");
 		con.setRequestProperty("User-Agent", USER_AGENT);
 		int responseCode = con.getResponseCode();
+		con.getResponseMessage();
 		
 		StringBuffer response = new StringBuffer();
 		

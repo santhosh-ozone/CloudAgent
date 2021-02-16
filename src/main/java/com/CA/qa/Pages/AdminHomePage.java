@@ -143,6 +143,24 @@ public class AdminHomePage extends TestBase{
 	@FindBy(xpath= "//div/*[@id='AgentMenu']//following-sibling::*[@class='class']")
 	WebElement AgentsIcon_text;
 	
+	@FindBy(xpath= "//div/*[@id='FwpNumberMenu']")
+	WebElement FwpNumberIcon;
+	
+	@FindBy(xpath= "//div/*[@id='FwpNumberMenu']//following-sibling::*[@class='class']")
+	WebElement FwpNumberIcon_text;
+	
+	@FindBy(xpath= "//div/*[@id='SkillMenu']")
+	WebElement SkillIcon;
+	
+	@FindBy(xpath= "//div/*[@id='SkillMenu']//following-sibling::*[@class='class']")
+	WebElement SkillIcon_text;
+	
+	@FindBy(xpath= "//div/*[@id='PauseReasonMenu']")
+	WebElement PauseReasonIcon;
+	
+	@FindBy(xpath= "//div/*[@id='PauseReasonMenu']//following-sibling::*[@class='class']")
+	WebElement PauseReasonIcon_text;
+	
 	@FindBy(id= "MainMenu")
 	WebElement Admin_home;
 	
@@ -693,25 +711,14 @@ public class AdminHomePage extends TestBase{
 		return 0;
 	}
 	
-//	@FindBy(id= "EditProfileMenu")
-//	WebElement EditProfileMenu;
-//	
-//	@FindBy(id= "MainMenu")
-//	WebElement Admin_home;
-//	
-//	@FindBy(id= "saveUser_user_username")
-//	WebElement user_username;
-//	
-//	@FindBy(xpath="//*[contains(@class,'main-heading')]")
-//	WebElement main_header;
-	
 	public void ClickEditProfileMenu() {
 		Admin_home.click();
 		AdminHomePageTitle();
-		EditProfileIcon.click();
+		javascriptClickforAdmin(EditProfileIcon);
+		//EditProfileIcon.click();
 	}
 	public String GetTitle() {
-		//new WebDriverWait(driver1, 20).until(ExpectedConditions.stalenessOf(EditProfileMenu));
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.not(ExpectedConditions.titleIs(Testutil.Exp_AdminhomePageTitle)));
 		return driver1.getTitle();
 	}
 	public String GetHeader() {
@@ -722,7 +729,7 @@ public class AdminHomePage extends TestBase{
 		return EditProfileIcon.getAttribute("title");
 	}
 	public String getTextUnderProfileIcon() {
-		Testutil.flash(EditProfileIcon_text, driver1);
+		//Testutil.flash(EditProfileIcon_text, driver1);
 		return EditProfileIcon_text.getText().trim();
 	}
 	public String GetSavedUserName() {
@@ -731,42 +738,81 @@ public class AdminHomePage extends TestBase{
 	public void ClickOnInBoundCampaignIcon() {
 		Admin_home.click();
 		AdminHomePageTitle();
-		InBoundCampaignIcon.click();
+		javascriptClickforAdmin(InBoundCampaignIcon);
+		//InBoundCampaignIcon.click();
 	}
 	public String getToolTipOfInBoundCampaignIcon() {
 		return InBoundCampaignIcon.getAttribute("title");
 	}
 	public String getTextUnderInBoundCampaignIcon() {
-		Testutil.flash(InBoundCampaignIcon_text, driver1);
+		//Testutil.flash(InBoundCampaignIcon_text, driver1);
 		return InBoundCampaignIcon_text.getText().trim();
 	}
 	public void ClickOnoutBoundCampaignIcon() {
 		Admin_home.click();
 		AdminHomePageTitle();
-		outBoundCampaignIcon.click();
+		javascriptClickforAdmin(outBoundCampaignIcon);
+		//outBoundCampaignIcon.click();
 	}
 	public String getToolTipOfoutBoundCampaignIcon() {
 		return outBoundCampaignIcon.getAttribute("title");
 	}
 	public String getTextUnderoutBoundCampaignIcon() {
-		Testutil.flash(outBoundCampaignIcon_text, driver1);
+		//Testutil.flash(outBoundCampaignIcon_text, driver1);
 		return outBoundCampaignIcon_text.getText().trim();
 	}
 	public void ClickOnAgentsIcon() {
 		Admin_home.click();
 		AdminHomePageTitle();
-		AgentsIcon.click();
+		javascriptClickforAdmin(AgentsIcon);
+		//AgentsIcon.click();
 	}
 	public String getToolTipOfAgentsIcon() {
 		return AgentsIcon.getAttribute("title");
 	}
 	public String getTextUnderAgentsIcon() {
-		Testutil.flash(AgentsIcon_text, driver1);
+		//Testutil.flash(AgentsIcon_text, driver1);
 		return AgentsIcon_text.getText().trim();
 	}
-	
-	
-	
+	public void ClickOnFwpNumberIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		javascriptClickforAdmin(FwpNumberIcon);
+		//FwpNumberIcon.click();
+	}
+	public String getToolTipOfFwpNumberIcon() {
+		return FwpNumberIcon.getAttribute("title");
+	}
+	public String getTextUnderFwpNumberIcon() {
+		//Testutil.flash(FwpNumberIcon, driver1);
+		return FwpNumberIcon_text.getText().trim();
+	}
+	public void ClickOnSkillIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		javascriptClickforAdmin(SkillIcon);
+		//SkillIcon.click();
+	}
+	public String getToolTipOfSkillIcon() {
+		return SkillIcon.getAttribute("title");
+	}
+	public String getTextUnderSkillIcon() {
+		//Testutil.flash(SkillIcon, driver1);
+		return SkillIcon_text.getText().trim();
+	}
+	public void ClickOnPauseReasonIcon() {
+		Admin_home.click();
+		AdminHomePageTitle();
+		javascriptClickforAdmin(PauseReasonIcon);
+		//PauseReasonIcon.click();
+	}
+	public String getToolTipOfPauseReasonIcon() {
+		return PauseReasonIcon.getAttribute("title");
+	}
+	public String getTextUnderPauseReasonIcon() {
+		//Testutil.flash(SkillIcon, driver1);
+		return PauseReasonIcon_text.getText().trim();
+	}
 	
 	
 	

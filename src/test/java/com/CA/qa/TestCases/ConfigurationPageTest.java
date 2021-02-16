@@ -83,37 +83,39 @@ public class ConfigurationPageTest extends TestBase {
 	}
 	
 	
-	@Test (priority=1,dataProvider = "Agentsdata")
-	public void AddAgents(String act,String id,Object nid, Object lock, Object pwd, Object name,Object pr,Object mail,Object data,Object Skill,Object in, Object man, Object pre, Object prog,Object blend,Object res) {
-		String m1="";
-		if (act.trim().equalsIgnoreCase("ADD")) {
-		Agents_count++;
-		m1=ConfigurationsPage.AddAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
-		System.out.println(m1);
-		
-		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-		Assert.assertTrue(m1.contains("success"),"Agent "+id +" not added");
-		}
-		else if (act.trim().equalsIgnoreCase("EDIT")) {
-		Agents_count++;
-			m1=ConfigurationsPage.EditAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
-			System.out.println(m1);
-			
-			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-			Assert.assertTrue(m1.contains("success"),"Agent "+id +" not able to edit");
-			}
-		
-		else if(act.trim().equalsIgnoreCase("DELETE")) {
-		Agents_count++;	
-			m1=ConfigurationsPage.deleteAgent(id);
-			System.out.println(m1);
-			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-			Assert.assertTrue(m1.contains("success"),id+" Agent not able to delete");
-		}
-		Agents_count++;
-		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
-	}
-	
+//	@Test (priority=1,dataProvider = "Agentsdata")
+//	public void AddAgents(String act,String id,Object nid, Object lock, Object pwd, Object name,Object pr,Object mail,Object data,Object Skill,Object in, Object man, Object pre, Object prog,Object blend,Object res) {
+//		String m1="";
+//		if (act.trim().equalsIgnoreCase("ADD")) {
+//		Agents_count++;
+//		m1=ConfigurationsPage.AddAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
+//		System.out.println(m1);
+//		
+//		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+//		Assert.assertTrue(m1.contains("success"),"Agent "+id +" not added");
+//		}
+//		else if (act.trim().equalsIgnoreCase("EDIT")) {
+//		Agents_count++;
+//			m1=ConfigurationsPage.EditAgent(id,nid, lock, pwd, name, pr, mail, data, Skill, in, man, pre, prog, blend);
+//			System.out.println(m1);
+//			
+//			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+//			Assert.assertTrue(m1.contains("success"),"Agent "+id +" not able to edit");
+//			}
+//		
+//		else if(act.trim().equalsIgnoreCase("DELETE")) {
+//		Agents_count++;	
+//			m1=ConfigurationsPage.deleteAgent(id);
+//			System.out.println(m1);
+//			Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+//			Assert.assertTrue(m1.contains("success"),id+" Agent not able to delete");
+//		}
+//		else { 
+//		Agents_count++;
+//		Testutil.WriteDataToexcel("Agents", Agents_count,m1);
+//		}
+//	}
+//	
 //	@Test (priority=2,dataProvider = "PhoneNodata")
 //	public void AddPhoneNos(String act,Object name, Object Nname,Object pno, Object Nph, Object pr, Object sip, Object res) {
 //			if (act.trim().equalsIgnoreCase("ADD")) {
@@ -156,7 +158,7 @@ public class ConfigurationPageTest extends TestBase {
 //			}
 //			
 //	}
-	
+//	
 //	@Test (priority=3,dataProvider = "TransferNodata")
 //	public void AddTransferNos(String act,Object name, Object Nname,Object pno, Object Nph, Object sip, Object res) {
 //			if (act.trim().equalsIgnoreCase("ADD")) {
@@ -180,43 +182,60 @@ public class ConfigurationPageTest extends TestBase {
 //	
 //	@Test (priority=4,dataProvider = "Dispositionsdata")
 //	public void AddDispositions(String act,String reason, Object reason1, Object res) {
+//		Disp_count++;
 //			if (act.trim().equalsIgnoreCase("ADD")) {
 //				String m1=ConfigurationsPage.AddDispositions(reason);
 //				System.out.println(m1);
+//				Testutil.WriteDataToexcel("Dispositions", Disp_count,m1);
 //				Assert.assertTrue(m1.contains("success"),reason +" not added");
 //			}
 //			else if (act.trim().equalsIgnoreCase("EDIT")) {
 //				String m1=ConfigurationsPage.EditDispositions(reason, reason1.toString());
 //				System.out.println(m1);
+//				Testutil.WriteDataToexcel("Dispositions", Disp_count,m1);
 //				Assert.assertTrue(m1.contains("success"),reason+"  not able to edit");
 //			}
 //			
 //			else if(act.trim().equalsIgnoreCase("DELETE")) {
 //				String m2=ConfigurationsPage.deleteDisposition(reason);
 //				System.out.println(m2);
+//				Testutil.WriteDataToexcel("Dispositions", Disp_count,m2);
 //				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
 //			}
 //		}
-	
-	@Test (priority=5,dataProvider = "PauseReasondata")
-	public void AddpauseReasons(String act,String reason, Object reason1, Object time, Object res) {
-			if (act.trim().equalsIgnoreCase("ADD")) {
-				String m1=ConfigurationsPage.AddPauseReason(reason, time);
-				System.out.println(m1);
-				Assert.assertTrue(m1.contains("success"),reason +" not added");
-			}
-			else if (act.trim().equalsIgnoreCase("EDIT")) {
-				String m1=ConfigurationsPage.EditPausereason(reason, reason1, time);
-				System.out.println(m1);
-				Assert.assertTrue(m1.contains("success"),reason+"  not able to edit");
-			}
+	@Test (priority=5)
+	public void ShowFunctionalityOfDispositions() {
+		ConfigurationsPage.ClickOnDispositionMenu();
+		ConfigurationsPage.ClickOnShowAllButton();
+		int count=ConfigurationsPage.getDispositionsCount();
+		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"pagination displayed");
+		ConfigurationsPage.ClickOnShow10Button();
+		int count10=ConfigurationsPage.getDispositionsCount();
+		if(count>10) {
 			
-			else if(act.trim().equalsIgnoreCase("DELETE")) {
-				String m2=ConfigurationsPage.deletePauseReason(reason);
-				System.out.println(m2);
-				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
-			}
 		}
+		System.out.println(count);
+	}
+	
+//	@Test (priority=5,dataProvider = "PauseReasondata")
+//	public void AddpauseReasons(String act,String reason, Object reason1, Object time, Object res) {
+//			if (act.trim().equalsIgnoreCase("ADD")) {
+//				String m1=ConfigurationsPage.AddPauseReason(reason, time);
+//				System.out.println(m1);
+//				Assert.assertTrue(m1.contains("success"),reason +" not added");
+//			}
+//			else if (act.trim().equalsIgnoreCase("EDIT")) {
+//				String m1=ConfigurationsPage.EditPausereason(reason, reason1, time);
+//				System.out.println(m1);
+//				Assert.assertTrue(m1.contains("success"),reason+"  not able to edit");
+//			}
+//			
+//			else if(act.trim().equalsIgnoreCase("DELETE")) {
+//				String m2=ConfigurationsPage.deletePauseReason(reason);
+//				System.out.println(m2);
+//				Assert.assertTrue(m2.contains("success"),reason+" not able to delete");
+//			}
+//		}
 	
 	
 	

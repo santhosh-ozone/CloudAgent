@@ -98,6 +98,12 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(id= "pageSize")
 	WebElement show_button;
 	
+	@FindBy(xpath="//*[@id='dispositionList']/tbody/tr")
+	List<WebElement> disp_table_list;
+	
+	@FindBy(className= "pagination")
+	WebElement pagination;
+	
 	@FindBy(id= "agentForm_agent_agentId")
 	WebElement Agent_ID;
 	
@@ -494,23 +500,14 @@ public class ConfigurationsPage extends TestBase{
 	  }
 	
 	public void ClickOnAgentMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(Agentmenu));
 		Agentmenu.click();
 	}
 	
 	public String GetConfigHeader() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(configurations_heading));
 		return configurations_heading.getText();
 	}
 	
@@ -569,6 +566,7 @@ public class ConfigurationsPage extends TestBase{
 	public void EnterSkillsforAgent(Object S) {
 		if(!S.equals("")) {
 			if(Selected_Skills.size()>1) {
+				//System.out.println("========================"+Selected_Skills.size());
 				while(removing_Skills.size()>0) 
 				driver1.findElement(By.className("select2-selection__choice__remove")).click();
 			}
@@ -598,7 +596,15 @@ public class ConfigurationsPage extends TestBase{
 				for (WebElement w:AllSkillsList)
 					if(!w.getText().equals(""))
 					w.click();
-			} else {
+			} else if(S.toString().trim().equalsIgnoreCase("EMPTY")) {
+				if(Selected_Skills.size()>1) {
+					//System.out.println("========================"+Selected_Skills.size());
+					while(removing_Skills.size()>0) 
+					driver1.findElement(By.className("select2-selection__choice__remove")).click();
+				}
+			}
+				
+			else {
 				Skills.sendKeys(S.toString());
 				for (WebElement w:AllSkillsList)
 					w.click();
@@ -846,6 +852,38 @@ public class ConfigurationsPage extends TestBase{
 		Select s=new Select(show_button);
 		s.selectByValue("0");
 	}
+	public void ClickOnShow10Button() {
+		Select s=new Select(show_button);
+		s.selectByValue("10");
+	}
+	public void ClickOnShow25Button() {
+		Select s=new Select(show_button);
+		s.selectByValue("25");
+	}
+	public void ClickOnShow50Button() {
+		Select s=new Select(show_button);
+		s.selectByValue("50");
+	}
+	public void ClickOnShow75Button() {
+		Select s=new Select(show_button);
+		s.selectByValue("75");
+	}
+	public void ClickOnShow100Button() {
+		Select s=new Select(show_button);
+		s.selectByValue("100");
+	}
+	public int getDispositionsCount() {
+		
+		return disp_table_list.size();
+	}//pagination
+	public boolean ispaginationDisplayed() {
+		try {
+		return pagination.isDisplayed();}
+		catch(Exception e){
+			return false;
+		}
+		
+	}
 	
 	public String Getmessagediv() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(div_message));
@@ -868,8 +906,10 @@ public class ConfigurationsPage extends TestBase{
 				EnterAgentPassword(pwd);
 				
 				try {
-				if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-5\"]/li")).isDisplayed()) 
-					return "Passed: already exist";
+					if (Agent_Id_Err.isDisplayed()) 
+						return "success "+Agent_Id_Err.getText();
+					//if (driver1.findElement(By.xpath("//*[@id=\"parsley-id-5\"]/li")).isDisplayed()) 
+					//return "Passed: already exist";
 					}catch(NoSuchElementException e) {
 				}
 								
@@ -976,11 +1016,14 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnAgentGroupMenu() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(AgentGroupMenu));
 		AgentGroupMenu.click();
 	}
 	
 	public void EnterAgentGroupName(String n) {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(AgentGroup_Name));
 		AgentGroup_Name.clear();
 		AgentGroup_Name.sendKeys(n);
 	}
@@ -1023,7 +1066,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickonPhoneNumberMenu() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ph_no_menu));
 		ph_no_menu.click();
 	}
 	
@@ -1070,18 +1115,11 @@ public class ConfigurationsPage extends TestBase{
 		if(sip.toString().equalsIgnoreCase("yes"))
 			 esip =true;
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ConfigurationMenu.click();
-		ph_no_menu.click();
+		ClickonPhoneNumberMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Phone Numbers")) {
 			EnterSerachItem(phno);
-			//ClickOnShowAllButton();
+			 //ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
 				table_data_1stRow.click();
 				String H1 =GetConfigHeader();
@@ -1108,14 +1146,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String addPhoneNo(Object name, Object phno,Object pr,Object sip) {
 		System.out.println("Adding phone no details: name: "+name+"   Phno: "+phno);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		ConfigurationMenu.click();
-		ph_no_menu.click();
+		ClickonPhoneNumberMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Phone Numbers")) {
 			ClickOnAddConfig();
@@ -1154,14 +1185,7 @@ public class ConfigurationsPage extends TestBase{
 		else np=phno.toString();
 		
 		System.out.println("Editing phone no details: name: "+name+"  New name: "+nn+"   Phno: "+phno+" new phno: "+np);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ConfigurationMenu.click();
-		ph_no_menu.click();
+		ClickonPhoneNumberMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Phone Numbers")) {
 			EnterSerachItem(phno);
@@ -1191,14 +1215,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String deletePhoneNo(String name, String phno) {
 		System.out.println("Deleting phone no details: name: "+name+"   Phno: "+phno);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ConfigurationMenu.click();
-		ph_no_menu.click();
+		ClickonPhoneNumberMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Phone Numbers")) {
 			EnterSerachItem(phno);
@@ -1235,13 +1252,14 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnTransferNoMenu() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(TransferNumberMenu));
 		TransferNumberMenu.click();
 	}
 	
 	public String AddTransferNumber(Object name, Object no, Object sip) {
-		ConfigurationMenu.click();
-		TransferNumberMenu.click();
+		ClickOnTransferNoMenu();
 		String H =GetConfigHeader();
 		if(H.contains("TransferNumbers")) {
 			ClickOnAddConfig();
@@ -1266,8 +1284,7 @@ public class ConfigurationsPage extends TestBase{
 		else np=phno.toString();
 		
 		System.out.println("Editing Transfer no details: name: "+name+"  New name: "+nn+"   Phno: "+phno+" new phno: "+np);
-		ConfigurationMenu.click();
-		TransferNumberMenu.click();
+		ClickOnTransferNoMenu();
 		String H =GetConfigHeader();
 		if(H.contains("TransferNumbers")) {
 			EnterSerachItem(phno);
@@ -1288,8 +1305,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String deleteTransferNo(String name, String phno) {
 		System.out.println("Deleting Transfer no details: name: "+name+"   Phno: "+phno);
-		ConfigurationMenu.click();
-		TransferNumberMenu.click();
+		ClickOnTransferNoMenu();
 		String H =GetConfigHeader();
 		if(H.contains("TransferNumbers")) {
 			EnterSerachItem(phno);
@@ -1323,7 +1339,9 @@ public class ConfigurationsPage extends TestBase{
 	
 	
 	public void ClickOnDispositionMenu() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(DispositionMenu));
 		DispositionMenu.click();
 	}
 	
@@ -1335,8 +1353,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String AddDispositions(String Reason) {
 		System.out.println("disposition details for Adding: reason: "+Reason);
-		ConfigurationMenu.click();
-		DispositionMenu.click();
+		ClickOnDispositionMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Dispositions")) {
 			ClickOnAddConfig();
@@ -1351,8 +1368,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String EditDispositions(String Reason, String Reason1) {
 		System.out.println("disposition details for Editing: reason: "+Reason+"  new reason: "+Reason1);
-		ConfigurationMenu.click();
-		DispositionMenu.click();
+		ClickOnDispositionMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Dispositions")) {
 			EnterSerachItem(Reason);
@@ -1369,8 +1385,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public String deleteDisposition(String reason) {
 		System.out.println("Deleting disposition details: Reason: "+reason);
-		ConfigurationMenu.click();
-		DispositionMenu.click();
+		ClickOnDispositionMenu();
 		String H =GetConfigHeader();
 		if(H.contains("Dispositions")) {
 			EnterSerachItem(reason);
@@ -1417,10 +1432,8 @@ public class ConfigurationsPage extends TestBase{
 		}}
 	
 	public void ClickOnPauseReasonMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu)).click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(PauseReasonMenu));
 		AddCampaignPage.JavaScriptClick(PauseReasonMenu);
 		
 	}
@@ -1481,13 +1494,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnSkillMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SkillMenu));
 		SkillMenu.click();
 	}
 	

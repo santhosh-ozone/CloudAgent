@@ -3,6 +3,7 @@ package com.CA.qa.TestCases;
 import java.lang.reflect.Method;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -36,6 +37,24 @@ public class AdminHomePageTest extends TestBase{
 	String AgentsIcon_title="Agents";
 	String AgentsIcon_header="Agents";
 	
+	String FwpNumberIcon_text="PHONE NUMBERS";
+	String FwpNumberIcon_tooltip="Phone Numbers";
+	String FwpNumberIcon_title="Phone Numbers";
+	String FwpNumberIcon_header="Phone Numbers";
+	
+	String SkillIcon_text="SKILLS";
+	String SkillIcon_tooltip="Skills";
+	String SkillIcon_title="Skills";
+	String SkillIcon_header="Skills";
+	
+	String PauseReasonIcon_text="PAUSE REASONS";
+	String PauseReasonIcon_tooltip="Pause Reasons";
+	String PauseReasonIcon_title="Pause Reasons";
+	String PauseReasonIcon_header="Pause Reasons";
+	
+	
+	
+	
 	
 	public AdminHomePageTest() {
 		super();
@@ -50,21 +69,14 @@ public class AdminHomePageTest extends TestBase{
 		
 	}
 	@AfterMethod
-	public void teardown() {
+	public void teardown(Method method, ITestResult result) {
+		if(ITestResult.FAILURE==result.getStatus()) 
+			Testutil.takeScreenshotAtEndOfTest(driver1, method.getName());
 		//driver.quit();
 		System.out.println(driver1.getCurrentUrl());
 		driver1.quit();
 		Printhyphens();
 	}
-
-	
-//	@Test (priority = 1) 
-//	public void verifyAdminHomePage_TitleTest() {
-//		String Act_AdminHomePageTitle = AdminHomepage.AdminHomePageTitle();
-//		Assert.assertEquals(Act_AdminHomePageTitle, Testutil.Exp_AdminhomePageTitle);
-//		//System.out.println(Act_ATBHomePageTitle);
-//		
-//	}
 	
 //	@Test (priority = 2)
 //	public void VerifyAdminHomepage_logoTest() {
@@ -80,35 +92,42 @@ public class AdminHomePageTest extends TestBase{
 //		//System.out.println(Act_AdminLoginPageLogoText);
 //		
 //	}
+
+	@Test (priority = 1) 
+	public void verifyAdminHomePage_TitleTest() {
+		String Act_AdminHomePageTitle = AdminHomepage.AdminHomePageTitle();
+		Assert.assertEquals(Act_AdminHomePageTitle, Testutil.Exp_AdminhomePageTitle);
+		//System.out.println(Act_ATBHomePageTitle);
+		
+	}
+	@Test(priority = 2)
+	public void verifyclickingoninbound() {
+		AdminHomepage.ClickOnInbound();
+		Assert.assertEquals(driver1.getTitle(), "Campaigns");
+	}
 	
-//	@Test(priority = 2)
-//	public void verifyclickingoninbound() {
-//		AdminHomepage.ClickOnInbound();
-//		Assert.assertEquals(driver1.getTitle(), "Campaigns");
-//	}
-//	
-//	@Test(priority = 3)
-//	public void verifyclickingonOutbound() {
-//		AdminHomepage.ClickOnOutbound();
-//		Assert.assertEquals(driver1.getTitle(), "Campaigns");
-//	}
-//	
-//	@Test(priority = 4)
-//	public void verifyAdminLogout() {
-//		AdminHomepage.admin_logout();
-//		Assert.assertEquals(driver1.getTitle(), "Login");
-//	}
-//	@Test(priority = 5)
-//	public void verifyOutboundAddCampaignButton() {
-//		AdminHomepage.clickOnAddCampaignButton("outbound");
-//		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
-//	}
-//	
-//	@Test(priority = 6)
-//	public void verifyInboundAddCampaignButton() {
-//		AdminHomepage.clickOnAddCampaignButton("inbound");
-//		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
-//	}
+	@Test(priority = 3)
+	public void verifyclickingonOutbound() {
+		AdminHomepage.ClickOnOutbound();
+		Assert.assertEquals(driver1.getTitle(), "Campaigns");
+	}
+	
+	@Test(priority = 4)
+	public void verifyAdminLogout() {
+		AdminHomepage.admin_logout();
+		Assert.assertEquals(driver1.getTitle(), "Login");
+	}
+	@Test(priority = 5)
+	public void verifyOutboundAddCampaignButton() {
+		AdminHomepage.clickOnAddCampaignButton("outbound");
+		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
+	}
+	
+	@Test(priority = 6)
+	public void verifyInboundAddCampaignButton() {
+		AdminHomepage.clickOnAddCampaignButton("inbound");
+		Assert.assertEquals(driver1.getTitle(), "Campaign Detail");
+	}
 //	@Test(priority = 7)
 //	public void verifywhetherRunningInboundCampaignDIDEditable() {
 //		String msg =AdminHomepage.EditDidForRunnungInboundCampaign();
@@ -131,7 +150,7 @@ public class AdminHomePageTest extends TestBase{
 //		Assert.assertEquals(msg, "delete is not available");
 //	}
 	@Test(priority = 11)
-	public void verifyEditProfileIcon() {
+	public void verifyEditProfileIcon1_17(){
 		Assert.assertEquals(AdminHomepage.getTextUnderProfileIcon(),EditProfile_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfProfileIcon(),EditProfile_toolTip);
 		AdminHomepage.ClickEditProfileMenu();
@@ -140,7 +159,7 @@ public class AdminHomePageTest extends TestBase{
 		Assert.assertEquals(AdminHomepage.GetSavedUserName().trim(), Testutil.Readexcel("AdminLogin",1).get(0));
 	}
 	@Test(priority = 12)
-	public void verifyInBoundCampaignIcon() {
+	public void verifyInBoundCampaignIcon1_17() {
 		Assert.assertEquals(AdminHomepage.getTextUnderInBoundCampaignIcon(),InBoundCampaignIcon_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfInBoundCampaignIcon(),InBoundCampaignIcon_tooltip);
 		AdminHomepage.ClickOnInBoundCampaignIcon();
@@ -149,7 +168,7 @@ public class AdminHomePageTest extends TestBase{
 		}
 	
 	@Test(priority = 13)
-	public void verifyoutBoundCampaignIcon() {
+	public void verifyoutBoundCampaignIcon1_17() {
 		Assert.assertEquals(AdminHomepage.getTextUnderoutBoundCampaignIcon(),outBoundCampaignIcon_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfoutBoundCampaignIcon(),OutBoundCampaignIcon_tooltip);
 		AdminHomepage.ClickOnoutBoundCampaignIcon();
@@ -157,16 +176,39 @@ public class AdminHomePageTest extends TestBase{
 		Assert.assertEquals(AdminHomepage.GetHeader(), Outboundcampaign_header);
 		}
 	@Test(priority = 14)
-	public void verifyAgentsIcon() {
+	public void verifyAgentsIcon1_17() {
 		Assert.assertEquals(AdminHomepage.getTextUnderAgentsIcon(),AgentsIcon_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfAgentsIcon(),AgentsIcon_tooltip);
 		AdminHomepage.ClickOnAgentsIcon();
 		Assert.assertEquals(AdminHomepage.GetTitle(), AgentsIcon_title);
 		Assert.assertEquals(AdminHomepage.GetHeader(), AgentsIcon_header);
 		}
+	@Test(priority = 15)
+	public void verifyFwpNumberIcon1_17() {
+		Assert.assertEquals(AdminHomepage.getTextUnderFwpNumberIcon(),FwpNumberIcon_text);
+		Assert.assertEquals(AdminHomepage.getToolTipOfFwpNumberIcon(),FwpNumberIcon_tooltip);
+		AdminHomepage.ClickOnFwpNumberIcon();
+		Assert.assertEquals(AdminHomepage.GetTitle(), FwpNumberIcon_title);
+		Assert.assertEquals(AdminHomepage.GetHeader(), FwpNumberIcon_header);
+		}//SkillIcon
 	
+	@Test(priority = 16)
+	public void verifySkillIcon1_17() {
+		Assert.assertEquals(AdminHomepage.getTextUnderSkillIcon(),SkillIcon_text);
+		Assert.assertEquals(AdminHomepage.getToolTipOfSkillIcon(),SkillIcon_tooltip);
+		AdminHomepage.ClickOnSkillIcon();
+		Assert.assertEquals(AdminHomepage.GetTitle(), SkillIcon_title);
+		Assert.assertEquals(AdminHomepage.GetHeader(), SkillIcon_header);
+		}
 	
-	
+	@Test(priority = 17)
+	public void verifyPauseReasonIcon1_17() {
+		Assert.assertEquals(AdminHomepage.getTextUnderPauseReasonIcon(),PauseReasonIcon_text);
+		Assert.assertEquals(AdminHomepage.getToolTipOfPauseReasonIcon(),PauseReasonIcon_tooltip);
+		AdminHomepage.ClickOnPauseReasonIcon();
+		Assert.assertEquals(AdminHomepage.GetTitle(), PauseReasonIcon_title);
+		Assert.assertEquals(AdminHomepage.GetHeader(), PauseReasonIcon_header);
+		}
 	
 	
 	

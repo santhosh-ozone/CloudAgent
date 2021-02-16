@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -50,10 +51,7 @@ public void clearExcelDatainRes() {
 		return data;
 	}
 	
-//	@Test (priority=1)
-//	public void clearExcelDatainRes() {
-//		Testutil.ClearDataInResultColumn("Campaign");
-//	}
+
 	
 //	@Test (priority=2,dataProvider = "CampaignCreationdata")
 //	public void AddCampaign(String Bound,String cname,Object ctype,Object dmethod, String did,Object Ivrflow,Object appURL,Object calls,Object pr,Object dr, Object s_time, Object e_time, Object d_int, Object prio, Object URl2P, Object URLat, Object pluginName, Object popURL,Object Script,Object tries, String offilene,String all_man, String dnd, String std, String d_cus_1st,String hold_agent, String rec_1st, String acw, Object DNC,String DT, Object CRT,String WT, String disp, String skills, Object users,Object m_name, Object path , Object hm, Object tm,Object res) {
@@ -213,7 +211,9 @@ public void clearExcelDatainRes() {
 
 	
 	@AfterMethod
-	public void nteardown() {
+	public void nteardown(Method method, ITestResult result) {
+		if(ITestResult.FAILURE==result.getStatus()) 
+			Testutil.takeScreenshotAtEndOfTest(driver1, method.getName());
 		System.out.println(driver1.getCurrentUrl());
 		AdminHomepage.admin_logout();
 		
