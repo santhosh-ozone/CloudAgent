@@ -78,7 +78,7 @@ public class Testutil extends TestBase{
 	public static void flash(WebElement element, WebDriver driver) {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         String bgcolor  = element.getCssValue("backgroundColor");
-        for (int i = 0; i <  3; i++) {
+        for (int i = 0; i <  2; i++) {
             changeColor("rgb(0,200,0)", element, js);
             changeColor(bgcolor, element, js);
         }
@@ -187,7 +187,7 @@ public class Testutil extends TestBase{
 	     FileInputStream fis = null;
 	     XSSFWorkbook wb = null;
 	     //Cell cell1=null;
-	     int res_col=0;
+	     int res_col=-1;
 		try {
 			fis = new FileInputStream(filepath);
 			wb = new XSSFWorkbook(fis);
@@ -203,6 +203,7 @@ public class Testutil extends TestBase{
 	    	 }
 	     //System.out.println("res_col is : "+res_col);
 	     //System.out.println("total rows: "+sheet.getLastRowNum());
+	     if(res_col>-1)
 	     for(int i=1;i<=sheet.getLastRowNum();i++) {
 	    	 sheet.getRow(i).createCell(res_col);
 	    	 sheet.getRow(i).getCell(res_col).setCellValue("");

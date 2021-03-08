@@ -26,6 +26,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import com.CA.qa.Util.Testutil;
 import com.CA.qa.Util.WebEventListener;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestBase {
 
 	public static WebDriver driver;
@@ -37,6 +39,8 @@ public class TestBase {
 	public static int TransNo_count=0;
 	public static int Disp_count=0;
 	public static int Pause_count=0;
+	public static int DialOutNO_count=0;
+	public static int pause_count=0;
 	
 	public static int Intial=1;
 	public static String Customer= "ca_testing";
@@ -77,7 +81,7 @@ public class TestBase {
 	public static void ATBLogin() {
 		String browserName= prop.getProperty("Browser");
 		if (browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
 			//System.setProperty("webdriver.chrome.driver", "\\CloudAgent\\src\\main\\java\\com\\CA\\qa\\TestData\\chromedriver.exe");
 			
 			Map<String, Object> prefs = new HashMap<String, Object>();
@@ -92,8 +96,8 @@ public class TestBase {
 //			options.addArguments("--disable-extensions"); // disabling extensions
 //			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 //			options.addArguments("--no-sandbox"); // Bypass OS security model
-			driver = new ChromeDriver(options);
-			
+			//driver = new ChromeDriver(options);
+			driver=getChromeDriver();
 			
 			
 
@@ -112,14 +116,19 @@ public class TestBase {
 		//driver.get(prop.getProperty("AgentToolBar_url"));
 		driver.get(URL.get(0));
 	}
-	
+	private static WebDriver getChromeDriver() {
+//      System.setProperty("webdriver.chrome.driver", DRIVER_DIR + "chromedriver.exe");
+      WebDriverManager.chromedriver().setup();
+      return new ChromeDriver();
+  }
 				
 	public static void AdminLogin() {
 		
 		String browserName= prop.getProperty("Browser");
 		if (browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
-			driver1 = new ChromeDriver();
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
+			//driver1 = new ChromeDriver();
+			driver1=getChromeDriver();
 		      }
 		e_driver1 = new EventFiringWebDriver(driver1);
 		eventlistener1 = new WebEventListener();

@@ -8,14 +8,21 @@
     <classes>
       <class name="com.CA.qa.TestCases.AdminHomePageTest">
         <methods>
-          <include name="verifyoutBoundCampaignIcon1_17"/>
-          <include name="verifySkillIcon1_17"/>
-          <include name="verifyFwpNumberIcon1_17"/>
-          <include name="verifywhetherRunningInboundCampaignDeletable"/>
-          <include name="verifyAgentsIcon1_17"/>
+          <include name="verifyOutboundAddCampaignButton"/>
+          <include name="verifyAdminHomePage_TitleTest"/>
+          <include name="verifyInboundAddCampaignButton"/>
+          <include name="verifyAdminLogout"/>
           <include name="setup"/>
           <include name="verifyPauseReasonIcon1_17"/>
           <include name="teardown"/>
+          <include name="verifyoutBoundCampaignIcon1_17"/>
+          <include name="verifySkillIcon1_17"/>
+          <include name="verifyFwpNumberIcon1_17"/>
+          <include name="verifyEditProfileIcon1_17"/>
+          <include name="verifyclickingonOutbound"/>
+          <include name="verifyAgentsIcon1_17"/>
+          <include name="verifyInBoundCampaignIcon1_17"/>
+          <include name="verifyclickingoninbound"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.AdminHomePageTest -->
     </classes>

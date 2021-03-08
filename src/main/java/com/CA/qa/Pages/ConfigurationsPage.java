@@ -1,5 +1,6 @@
 package com.CA.qa.Pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -100,6 +101,15 @@ public class ConfigurationsPage extends TestBase{
 	
 	@FindBy(xpath="//*[@id='dispositionList']/tbody/tr")
 	List<WebElement> disp_table_list;
+	
+	@FindBy(xpath="//*[@id='dialOutNumberList']/tbody/tr")
+	List<WebElement> dialOut_table_list;
+	
+	@FindBy(xpath="//*[@id='pauseReasonList']/tbody/tr")
+	List<WebElement> pauseReasonTable_list;
+	
+	@FindBy(xpath="//*[@id='blockNumbers']/tbody/tr")
+	List<WebElement> blockNumbersTable_list;
 	
 	@FindBy(className= "pagination")
 	WebElement pagination;
@@ -404,6 +414,9 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[contains(@type,'submit')]")
 	WebElement BlockNo_Block_button;
 	
+	@FindBy(xpath= "//*[@id='blockNumberForm_blockNumber_unblock']")
+	WebElement BlockNo_UnBlock_button;
+	
 	@FindBy(id= "blockNumberGroupForm_blockNumberGroup_name")
 	WebElement blockNumberGroup_name;
 	
@@ -479,6 +492,12 @@ public class ConfigurationsPage extends TestBase{
 	@FindBy(xpath= "//*[contains(@id,'save')]")
 	WebElement config_save_button;
 	
+	@FindBy(xpath= "//*[contains(@id,'cancel')]")
+	WebElement config_cancel_button;
+	
+	@FindBy(xpath= "//*[@id='skillForm']//div[contains(@class,'text-center')]/input")
+	List<WebElement> Save_div_inputs;
+	
 	@FindBy(xpath= "//*[@id='report']/tbody/tr")
 	List<WebElement> Table_report;
 	
@@ -512,6 +531,7 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnAddConfig() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(Config_Add_Button));
 		Config_Add_Button.click();
 	}
 	public void ClickOnAddConfig1() {
@@ -721,13 +741,31 @@ public class ConfigurationsPage extends TestBase{
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", config_save_button);
+		}//Save_div_inputs
+	public void ClickOnCancelforConfig() {
+		//Testutil.flash(config_save_button, driver1);
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver1;
+		js.executeScript("arguments[0].click();", config_cancel_button);
 		}
-	
+	public ArrayList<String> GetsaveDivisionoptions() {
+		 ArrayList<String> al=new ArrayList<String>();
+		for(WebElement w:Save_div_inputs)
+			al.add(w.getAttribute("value"));
+		return al;	
+	}
 	public void ClickOnBlockForBlockNumbers() {
 		//Testutil.flash(config_save_button, driver1);
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", BlockNo_Block_button);
+		}
+	
+	public void ClickOnUnBlockForBlockNumbers() {
+		//Testutil.flash(config_save_button, driver1);
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver1;
+		js.executeScript("arguments[0].click();", BlockNo_UnBlock_button);
 		}
 	
 	public String GetAgentIdErrorMessage() {
@@ -876,6 +914,18 @@ public class ConfigurationsPage extends TestBase{
 		
 		return disp_table_list.size();
 	}//pagination
+	public int getDialOutNumbersCounnt() {
+		return dialOut_table_list.size();
+	}
+	
+	public int getPauseReasonsCounnt() {
+		return pauseReasonTable_list.size();
+	}
+	
+	public int getBlockNumbersCounnt() {
+		return blockNumbersTable_list.size();
+	}
+	
 	public boolean ispaginationDisplayed() {
 		try {
 		return pagination.isDisplayed();}
@@ -1340,9 +1390,11 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void ClickOnDispositionMenu() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		ConfigurationMenu.click();
+		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		//ConfigurationMenu.click();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(DispositionMenu));
-		DispositionMenu.click();
+		AddCampaignPage.JavaScriptClick(DispositionMenu);
+		//DispositionMenu.click();
 	}
 	
 	public void Enterdispositions(String R) {
@@ -1432,7 +1484,8 @@ public class ConfigurationsPage extends TestBase{
 		}}
 	
 	public void ClickOnPauseReasonMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu)).click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
+		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(PauseReasonMenu));
 		AddCampaignPage.JavaScriptClick(PauseReasonMenu);
 		
@@ -1474,6 +1527,28 @@ public class ConfigurationsPage extends TestBase{
 			}return "no data found to edit";
 		}return " 'Pause' header is not matching";
 	}
+	public String CancelPauseReason(String reason,Object reason1,Object time) {
+		//String str ="";
+		//if(!reason1.equals(""))
+		//	str="  new reason is: "+reason1.toString();
+		//System.out.println("Editing Pause reason details: reason: "+reason+str);
+		ClickOnPauseReasonMenu();
+		String H =GetConfigHeader();
+		if(H.contains("Pause Reasons")) {
+			EnterSerachItem(reason);
+			//ClickOnShowAllButton();
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && pauseReason_reason.getAttribute("value").equalsIgnoreCase(reason.trim())) {
+					EnterPauseReason(reason1);
+					EnterPauseTime(time);
+					ClickOnCancelforConfig();
+					//ClickOnSaveforConfig();
+					return "success";
+				}return "either Edit header or reason not matching";
+			}return "no data found to edit";
+		}return " 'Pause' header is not matching";
+	}
 	
 	public String deletePauseReason(String reason) {
 		System.out.println("Deleting Pause reason details: reason: "+reason);
@@ -1495,9 +1570,11 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void ClickOnSkillMenu() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		ConfigurationMenu.click();
+		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		//ConfigurationMenu.click();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SkillMenu));
-		SkillMenu.click();
+		AddCampaignPage.JavaScriptClick(SkillMenu);
+		//SkillMenu.click();
 	}
 	
 	public String GetSkillNameErrorMsg() {
@@ -1679,13 +1756,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnLocationMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(LocationMenu));
 		LocationMenu.click();
 	}
 	
@@ -1703,13 +1776,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnURLMappingMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(UrlMapMenu));
 		UrlMapMenu.click();
 	}
 	
@@ -1751,13 +1820,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnSmsTemplateMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
 		ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SmsTemplateMenu));
 		SmsTemplateMenu.click();
 	}
 	
@@ -1786,22 +1851,25 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnDialOutNumberMenu() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ConfigurationMenu.click();
-		DialOutNumberMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
+		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		//ConfigurationMenu.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(DialOutNumberMenu));
+		AddCampaignPage.JavaScriptClick(DialOutNumberMenu);
+		//DialOutNumberMenu.click();
 	}
 	
-	public void EnterEnterDialOutName(String str) {
-		dialOutName.sendKeys(str);
+	public void EnterEnterDialOutName(Object str) {
+		if(!str.equals("")) {
+			dialOutName.clear();
+			dialOutName.sendKeys(str.toString().trim());
+		}
 	}
-	public void EnterEnterDialOutNumber(String str) {
-		dialOutNumber.sendKeys(str);
-	}
+	public void EnterEnterDialOutNumber(Object str) {
+		if(!str.equals("")) {
+			dialOutNumber.clear();	
+			dialOutNumber.sendKeys(str.toString().trim());
+	}}
 	public String GetDialOutNameErr() {
 		try{
 			if(dialOutName_err.isDisplayed())
@@ -1826,16 +1894,130 @@ public class ConfigurationsPage extends TestBase{
 			js.executeScript("arguments[0].click();", dialOutNumber_sip);
 		}
 	}
+	public void disableSipforDialOutNo() {
+		
+		if(dialOutNumber_sip.isSelected())
+		try {
+			dialOutNumber_sip.click();
+		}catch(Exception e) {
+			JavascriptExecutor js = (JavascriptExecutor)driver1;
+			js.executeScript("arguments[0].click();", dialOutNumber_sip);
+		}
+	}
+	public String AddDialOutNumber(String DoutName, String DoutN0,Object sip) {
+		System.out.println("Adding DialOutNumber details: Dialout Name: "+DoutName+ "  DialoutN0: "+DoutN0);
+		ClickOnDialOutNumberMenu();
+		String H =GetConfigHeader();
+		if(H.contains("DialOutNumbers")) {
+			ClickOnAddConfig();
+			String H1 =GetConfigHeader();
+			if(H1.contains("Add")) {
+				EnterEnterDialOutName(DoutName);
+				EnterEnterDialOutNumber(DoutN0);
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("yes"))
+				EnableSipforDialOutNo();
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("no"))
+				disableSipforDialOutNo();
+				ClickOnSaveforConfig();
+				return Getmessagediv();
+			}return " 'Add' header is not matching";
+		}return " 'DialOutNumber' header is not matching";
+	}
+	
+	public String EditDialOutNumber(String DoutName,Object DoutNameNew, String DoutN0,Object DoutN0new , Object sip) {
+		System.out.println("Editing DialOutNumber details: Dialout Name: "+DoutName+ "  DialoutN0: "+DoutN0);
+		ClickOnDialOutNumberMenu();
+		String H =GetConfigHeader();
+		if(H.contains("DialOutNumbers")) {
+			EnterSerachItem(DoutN0);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
+				EnterEnterDialOutName(DoutNameNew);
+				EnterEnterDialOutNumber(DoutN0new);
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("yes"))
+				EnableSipforDialOutNo();
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("no"))
+				disableSipforDialOutNo();
+				ClickOnSaveforConfig();
+				return Getmessagediv();
+			}return " 'Edit' header is not matching";
+		}return "not available for edit";
+			}return " 'DialOutNumber' header is not matching";
+	}
+	public String CancelDialOutNumber(String DoutName,Object DoutNameNew, String DoutN0,Object DoutN0new , Object sip) {
+		System.out.println("Cancelling DialOutNumber details: Dialout Name: "+DoutName+ "  DialoutN0: "+DoutN0);
+		ClickOnDialOutNumberMenu();
+		String H =GetConfigHeader();
+		if(H.contains("DialOutNumbers")) {
+			EnterSerachItem(DoutN0);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
+				EnterEnterDialOutName(DoutNameNew);
+				EnterEnterDialOutNumber(DoutN0new);
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("yes"))
+				EnableSipforDialOutNo();
+				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("no"))
+				disableSipforDialOutNo();
+				ClickOnCancelforConfig();
+				return "Success";
+			}return " 'Edit' header is not matching";
+		}return "not available for edit";
+			}return " 'DialOutNumber' header is not matching";
+	}
+	public String DeleteDialOutNumber(String DoutName, String DoutN0) {
+		System.out.println("Cancelling DialOutNumber details: Dialout Name: "+DoutName+ "  DialoutN0: "+DoutN0);
+		ClickOnDialOutNumberMenu();
+		String H =GetConfigHeader();
+		if(H.contains("DialOutNumbers")) {
+			EnterSerachItem(DoutN0);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
+					config_delete_button.click();	
+					driver1.switchTo().alert().accept();
+					return Getmessagediv();	
+			}return " 'Edit' header is not matching";
+		}return "not available for delete";
+			}return " 'DialOutNumber' header is not matching";
+	}
+	public String[] DialOutNumberDetails( String DoutN0) {
+		//System.out.println("Cancelling DialOutNumber details: Dialout Name: "+DoutName+ "  DialoutN0: "+DoutN0);
+		ClickOnDialOutNumberMenu();
+		String H =GetConfigHeader();
+		if(H.contains("DialOutNumbers")) {
+			EnterSerachItem(DoutN0);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				
+				if(GetConfigHeader().contains("Edit") && dialOutNumber.getAttribute("value").trim().equalsIgnoreCase(DoutN0)) {
+				String name=dialOutName.getAttribute("value");
+				String n0=dialOutNumber.getAttribute("value");
+				boolean b= dialOutNumber_sip.isSelected();
+				String esip;
+				if(b) esip="TRUE";
+				else esip="FALSE";
+				String[] details= {name,n0,esip};
+				//for(String s:details)
+				//System.out.println("=============================="+s);
+				return details;
+				}
+		}String[] str1={ "dialoutno not available" };
+		return str1;
+			}String[] str1={ "dialoutno header not matching" };
+			return str1;
+	}
 	
 	public void ClickOnBlockNumbersMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
+		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(BlockNumbersMenu));
 		AddCampaignPage.JavaScriptClick(BlockNumbersMenu);	
 	}
 	
 	public void EnterBlockNumber(String str) {
+		blockNumber_blockedNumber.clear();
 		blockNumber_blockedNumber.sendKeys(str);
 	}
 	public String GetBlockNumberErr() {
@@ -1846,12 +2028,63 @@ public class ConfigurationsPage extends TestBase{
 		
 		return "";
 	}
+	public String AddBlockNumber(String no) {
+		ClickOnBlockNumbersMenu();
+		if(GetConfigHeader().contains("Block Numbers List")) {
+			ClickOnAddConfig();
+			System.out.println("==========================clicked on add");
+			if(GetConfigHeader().contains("Add")) {
+				EnterBlockNumber(no);
+				ClickOnBlockForBlockNumbers();
+				return Getmessagediv();
+			}return "Add header not matching";
+		}return "block main header not matching";
+	}
+	public String EditBlockNumber(String no,String no1) {
+		ClickOnBlockNumbersMenu();
+		if(GetConfigHeader().contains("Block Numbers List")) {
+			EnterSerachItem(no);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && blockNumber_blockedNumber.getAttribute("value").contains(no.trim())) {
+				EnterBlockNumber(no1);
+				ClickOnBlockForBlockNumbers();
+				return Getmessagediv();
+			}return "Edit header or block num not matching";
+		}return "not available for edit";
+	}return "block main header not matching";
+	}
+	
+	public String UNBlockNumber(String no) {
+		ClickOnBlockNumbersMenu();
+		if(GetConfigHeader().contains("Block Numbers List")) {
+			EnterSerachItem(no);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") && blockNumber_blockedNumber.getAttribute("value").contains(no.trim())) {
+					ClickOnUnBlockForBlockNumbers();
+					driver1.switchTo().alert().accept();
+				return Getmessagediv();
+			}return "Edit header or block num not matching";
+		}return "not available for edit";
+	}return "block main header not matching";
+	}
+	
+	public String BlockNumberDetails(String no) {
+		ClickOnBlockNumbersMenu();
+		if(GetConfigHeader().contains("Block Numbers List")) {
+			EnterSerachItem(no);
+			if(!table_data_1stRow.getText().contains("Nothing") ) {
+				table_data_1stRow.click();
+				if(GetConfigHeader().contains("Edit") ) {
+					return blockNumber_blockedNumber.getAttribute("value");
+			}return "Edit header or block num not matching";
+		}return "not available for edit";
+	}return "block main header not matching";
+	}
 	
 	public void ClickOnBlockNumbersGroupMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(BlockNumbersGroupMenu));
 		AddCampaignPage.JavaScriptClick(BlockNumbersGroupMenu);	
 	}
 	
@@ -1888,10 +2121,7 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnIvrFlowMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(IvrFlowMenu));
 		AddCampaignPage.JavaScriptClick(IvrFlowMenu);	
 	}
 	public void EnterIvrFlowName(String str) {
@@ -1915,10 +2145,8 @@ public class ConfigurationsPage extends TestBase{
 		return "";
 	}
 	public void ClickOnFeedBackMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(FeedBackMenu));
+		
 		AddCampaignPage.JavaScriptClick(FeedBackMenu);	
 	}
 	
@@ -1934,10 +2162,8 @@ public class ConfigurationsPage extends TestBase{
 		feedBackForm_feedBack_feedbackName.sendKeys(str);
 	}
 	public void ClickOnFeedBackMasterMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(FeedBackMasterMenu));
+		
 		AddCampaignPage.JavaScriptClick(FeedBackMasterMenu);	
 	}
 	
@@ -1973,10 +2199,7 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnSipLocationsMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SipLocations));
 		AddCampaignPage.JavaScriptClick(SipLocations);	
 	}
 	
@@ -2013,10 +2236,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	
 	public void ClickOncampaignHoldMusicMenu() {
-		try {
-			Thread.sleep(1000);
-			} catch (Exception e) {
-				}
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(campaignHoldMusicMenu));
 		AddCampaignPage.JavaScriptClick(campaignHoldMusicMenu);	
 	}
 	
