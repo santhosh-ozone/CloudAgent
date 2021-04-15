@@ -125,6 +125,65 @@ public class ConfigurationPageTest extends TestBase {
 //		}
 //	}
 //	
+	@Test (priority=13)
+	public void ShowFunctionalityOfAgents() {
+		ConfigurationsPage.ClickOnAgentMenu();
+		ConfigurationsPage.ClickOnShowAllButton();
+		int count=ConfigurationsPage.getAgentsListCounnt();
+		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed");
+		//System.out.println("count: "+count);
+		
+		ConfigurationsPage.ClickOnShow10Button();
+		int count10=ConfigurationsPage.getAgentsListCounnt();
+		if(count>10) {
+			Assert.assertTrue((count10==10),"displayed morethan 10 for show10");
+			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show10");
+		}
+		else {
+			Assert.assertTrue((count10<=10),"displayed morethan 10 for show10");
+		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show10");
+		}
+		
+		ConfigurationsPage.ClickOnShow25Button();
+		int count25=ConfigurationsPage.getAgentsListCounnt();
+		if(count>25) {
+			Assert.assertTrue((count25==25),"displayed morethan 25 for show25");
+			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show25");
+		} else {
+			Assert.assertTrue((count25<=25),"displayed morethan 25 for show25");
+		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show25");
+		}
+		
+		ConfigurationsPage.ClickOnShow50Button();
+		int count50=ConfigurationsPage.getAgentsListCounnt();
+		if(count>50) {
+			Assert.assertTrue((count50==50),"displayed morethan 50 for show50");
+			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show50");
+		} else {
+			Assert.assertTrue((count50<=50),"displayed morethan 50 for show50");
+			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show50");
+		}
+		ConfigurationsPage.ClickOnShow75Button();
+		int count75=ConfigurationsPage.getAgentsListCounnt();
+		if(count>75) {
+			Assert.assertTrue((count75==75),"displayed morethan 75 for show75");
+			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show75");
+		} else {
+			Assert.assertTrue((count75<=75),"displayed morethan 75 for show75");
+			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show75");
+		}
+		ConfigurationsPage.ClickOnShow100Button();
+		int count100=ConfigurationsPage.getAgentsListCounnt();
+		if(count>100) {
+			Assert.assertTrue((count100==100),"displayed morethan 100 for show100");
+			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show100");
+		} else {
+			Assert.assertTrue((count100<=100),"displayed morethan 100 for show100");
+			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show100");
+		}
+	
+	}
+
 //	@Test (priority=2,dataProvider = "PhoneNodata")
 //	public void AddPhoneNos(String act,Object name, Object Nname,Object pno, Object Nph, Object pr, Object sip, Object res) {
 //			if (act.trim().equalsIgnoreCase("ADD")) {
@@ -270,7 +329,7 @@ public class ConfigurationPageTest extends TestBase {
 //		}
 //		
 //	}
-	
+//	
 //	@Test (priority=6,dataProvider = "Dialoutdata")
 //	public void AddDialoutNumbers(String act,String DialOutName, Object NewDialOutName, String DialOutN0, Object NewDialOutN0, Object sip,Object res) {
 //		DialOutNO_count++;
@@ -341,7 +400,7 @@ public class ConfigurationPageTest extends TestBase {
 //		
 //	}
 //	
-//	@Test (priority=5)
+//	@Test (priority=7)
 //	public void ShowFunctionalityOfDialout() {
 //		ConfigurationsPage.ClickOnDialOutNumberMenu();
 //		ConfigurationsPage.ClickOnShowAllButton();
@@ -401,7 +460,7 @@ public class ConfigurationPageTest extends TestBase {
 //	}
 //
 //	
-//	@Test (priority=5,dataProvider = "PauseReasondata")
+//	@Test (priority=8,dataProvider = "PauseReasondata")
 //	public void AddpauseReasons(String act,String reason, Object reason1, Object time, Object res) {
 //		pause_count++;
 //			if (act.trim().equalsIgnoreCase("ADD")) {
@@ -430,7 +489,7 @@ public class ConfigurationPageTest extends TestBase {
 //				Assert.assertTrue(m2.contains("success"),reason+" not able to cancel");
 //			}
 //		}
-//	@Test (priority=5)
+//	@Test (priority=9)
 //	public void ShowFunctionalityOfPauseReasons() {
 //		ConfigurationsPage.ClickOnPauseReasonMenu();
 //		ConfigurationsPage.ClickOnShowAllButton();
@@ -488,78 +547,168 @@ public class ConfigurationPageTest extends TestBase {
 //		}
 //	
 //	}
+//	
+//	@Test (priority=10)
+//	public void BlockNumberBlocking_Unblocking(){
+//		//ConfigurationsPage.ClickOnBlockNumbersMenu();
+//		String m1=ConfigurationsPage.AddBlockNumber("9553578722");
+//		//System.out.println("================"+m1);
+//		String num=ConfigurationsPage.BlockNumberDetails("9553578722");
+//		//System.out.println("============================"+num);
+//		//System.out.println("============================"+num.contains("9553578722"));
+//		Assert.assertTrue(num.contains("9553578722"), "not blocked");
+//		ConfigurationsPage.UNBlockNumber("9553578722");
+//		String num1=ConfigurationsPage.BlockNumberDetails("9553578722");
+//		Assert.assertTrue(num1.contains("not"), " blocked");
+//		}
+//	
+//	@Test (priority=11)
+//	public void ShowFunctionalityOfBlockNumber() {
+//		ConfigurationsPage.ClickOnBlockNumbersMenu();
+//		ConfigurationsPage.ClickOnShowAllButton();
+//		int count=ConfigurationsPage.getBlockNumbersCounnt();
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed");
+//		//System.out.println("count: "+count);
+//		
+//		ConfigurationsPage.ClickOnShow10Button();
+//		int count10=ConfigurationsPage.getBlockNumbersCounnt();
+//		if(count>10) {
+//			Assert.assertTrue((count10==10),"displayed morethan 10 for show10");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show10");
+//		}
+//		else {
+//			Assert.assertTrue((count10<=10),"displayed morethan 10 for show10");
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show10");
+//		}
+//		
+//		ConfigurationsPage.ClickOnShow25Button();
+//		int count25=ConfigurationsPage.getBlockNumbersCounnt();
+//		if(count>25) {
+//			Assert.assertTrue((count25==25),"displayed morethan 25 for show25");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show25");
+//		} else {
+//			Assert.assertTrue((count25<=25),"displayed morethan 25 for show25");
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show25");
+//		}
+//		
+//		ConfigurationsPage.ClickOnShow50Button();
+//		int count50=ConfigurationsPage.getBlockNumbersCounnt();
+//		if(count>50) {
+//			Assert.assertTrue((count50==50),"displayed morethan 50 for show50");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show50");
+//		} else {
+//			Assert.assertTrue((count50<=50),"displayed morethan 50 for show50");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show50");
+//		}
+//		ConfigurationsPage.ClickOnShow75Button();
+//		int count75=ConfigurationsPage.getBlockNumbersCounnt();
+//		if(count>75) {
+//			Assert.assertTrue((count75==75),"displayed morethan 75 for show75");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show75");
+//		} else {
+//			Assert.assertTrue((count75<=75),"displayed morethan 75 for show75");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show75");
+//		}
+//		ConfigurationsPage.ClickOnShow100Button();
+//		int count100=ConfigurationsPage.getBlockNumbersCounnt();
+//		if(count>100) {
+//			Assert.assertTrue((count100==100),"displayed morethan 100 for show100");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show100");
+//		} else {
+//			Assert.assertTrue((count100<=100),"displayed morethan 100 for show100");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show100");
+//		}
+//	
+//	}
+//	
+//	@Test (priority=12)
+//	public void Add_edit_delete_AgentGroup(){
+//		String m1=ConfigurationsPage.AddAgentGroup();
+//		Assert.assertTrue(m1.contains("success"), m1);
+//		
+//		String m3=ConfigurationsPage.EditAgentGroup();
+//		Assert.assertTrue(m3.contains("success"), m3);
+//		
+//		String m2=ConfigurationsPage.DeleteAgentGroup();
+//		Assert.assertTrue(m2.contains("success"), m2);
+//		}
+//	
+//	@Test (priority=13)
+//	public void ShowFunctionalityOfAgentGroup() {
+//		ConfigurationsPage.ClickOnAgentGroupMenu();
+//		ConfigurationsPage.ClickOnShowAllButton();
+//		int count=ConfigurationsPage.getAgentGroupListCounnt();
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed");
+//		//System.out.println("count: "+count);
+//		
+//		ConfigurationsPage.ClickOnShow10Button();
+//		int count10=ConfigurationsPage.getAgentGroupListCounnt();
+//		if(count>10) {
+//			Assert.assertTrue((count10==10),"displayed morethan 10 for show10");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show10");
+//		}
+//		else {
+//			Assert.assertTrue((count10<=10),"displayed morethan 10 for show10");
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show10");
+//		}
+//		
+//		ConfigurationsPage.ClickOnShow25Button();
+//		int count25=ConfigurationsPage.getAgentGroupListCounnt();
+//		if(count>25) {
+//			Assert.assertTrue((count25==25),"displayed morethan 25 for show25");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show25");
+//		} else {
+//			Assert.assertTrue((count25<=25),"displayed morethan 25 for show25");
+//		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show25");
+//		}
+//		
+//		ConfigurationsPage.ClickOnShow50Button();
+//		int count50=ConfigurationsPage.getAgentGroupListCounnt();
+//		if(count>50) {
+//			Assert.assertTrue((count50==50),"displayed morethan 50 for show50");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show50");
+//		} else {
+//			Assert.assertTrue((count50<=50),"displayed morethan 50 for show50");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show50");
+//		}
+//		ConfigurationsPage.ClickOnShow75Button();
+//		int count75=ConfigurationsPage.getAgentGroupListCounnt();
+//		if(count>75) {
+//			Assert.assertTrue((count75==75),"displayed morethan 75 for show75");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show75");
+//		} else {
+//			Assert.assertTrue((count75<=75),"displayed morethan 75 for show75");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show75");
+//		}
+//		ConfigurationsPage.ClickOnShow100Button();
+//		int count100=ConfigurationsPage.getAgentGroupListCounnt();
+//		if(count>100) {
+//			Assert.assertTrue((count100==100),"displayed morethan 100 for show100");
+//			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show100");
+//		} else {
+//			Assert.assertTrue((count100<=100),"displayed morethan 100 for show100");
+//			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show100");
+//		}
+//	
+//	}
 	
-	@Test (priority=5)
-	public void BlockNumberBlocking_Unblocking(){
-		//ConfigurationsPage.ClickOnBlockNumbersMenu();
-		String m1=ConfigurationsPage.AddBlockNumber("9553578722");
-		//System.out.println("================"+m1);
-		String num=ConfigurationsPage.BlockNumberDetails("9553578722");
-		//System.out.println("============================"+num);
-		//System.out.println("============================"+num.contains("9553578722"));
-		Assert.assertTrue(num.contains("9553578722"), "not blocked");
-		ConfigurationsPage.UNBlockNumber("9553578722");
-		String num1=ConfigurationsPage.BlockNumberDetails("9553578722");
-		Assert.assertTrue(num1.contains("not"), " blocked");
-		}
-	@Test (priority=5)
-	public void ShowFunctionalityOfPauseReasons() {
-		ConfigurationsPage.ClickOnBlockNumbersMenu();
-		ConfigurationsPage.ClickOnShowAllButton();
-		int count=ConfigurationsPage.getBlockNumbersCounnt();
-		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed");
-		//System.out.println("count: "+count);
-		
-		ConfigurationsPage.ClickOnShow10Button();
-		int count10=ConfigurationsPage.getBlockNumbersCounnt();
-		if(count>10) {
-			Assert.assertTrue((count10==10),"displayed morethan 10 for show10");
-			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show10");
-		}
-		else {
-			Assert.assertTrue((count10<=10),"displayed morethan 10 for show10");
-		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show10");
-		}
-		
-		ConfigurationsPage.ClickOnShow25Button();
-		int count25=ConfigurationsPage.getBlockNumbersCounnt();
-		if(count>25) {
-			Assert.assertTrue((count25==25),"displayed morethan 25 for show25");
-			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show25");
-		} else {
-			Assert.assertTrue((count25<=25),"displayed morethan 25 for show25");
-		Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show25");
-		}
-		
-		ConfigurationsPage.ClickOnShow50Button();
-		int count50=ConfigurationsPage.getBlockNumbersCounnt();
-		if(count>50) {
-			Assert.assertTrue((count50==50),"displayed morethan 50 for show50");
-			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show50");
-		} else {
-			Assert.assertTrue((count50<=50),"displayed morethan 50 for show50");
-			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show50");
-		}
-		ConfigurationsPage.ClickOnShow75Button();
-		int count75=ConfigurationsPage.getBlockNumbersCounnt();
-		if(count>75) {
-			Assert.assertTrue((count75==75),"displayed morethan 75 for show75");
-			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show75");
-		} else {
-			Assert.assertTrue((count75<=75),"displayed morethan 75 for show75");
-			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show75");
-		}
-		ConfigurationsPage.ClickOnShow100Button();
-		int count100=ConfigurationsPage.getBlockNumbersCounnt();
-		if(count>100) {
-			Assert.assertTrue((count100==100),"displayed morethan 100 for show100");
-			Assert.assertTrue(ConfigurationsPage.ispaginationDisplayed(),"But pagination not displayed for show100");
-		} else {
-			Assert.assertTrue((count100<=100),"displayed morethan 100 for show100");
-			Assert.assertTrue(!ConfigurationsPage.ispaginationDisplayed(),"But pagination displayed for show100");
-		}
 	
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

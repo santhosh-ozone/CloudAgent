@@ -106,31 +106,31 @@ public class AdminLoginPageTest extends TestBase{
 		String msg =Adminloginpage.InvalidError();
 		 Assert.assertEquals(msg,invalid_username_password);
 	}
-	@Test (priority = 10)
-	public void verifyForgotPasswordLinkErrorMessageTestWhen_InvalidUsernameGiven1_9() {
-		Adminloginpage.sendUserName("UN");
-		//Adminloginpage.sendPassword("pwd");
-		Adminloginpage.clickForgotPassword();
-		String msg =Adminloginpage.InvalidError();
-		Assert.assertEquals(msg,no_user);
-	}
-	
-	@Test (priority = 11)
-	public void verifyForgotPasswordLinkErrorMessageTestWhen_MTUsernameGiven1_11() {
-		//Adminloginpage.sendUserName("UN");
-		//Adminloginpage.sendPassword("pwd");
-		Adminloginpage.clickForgotPassword();
-		String msg =Adminloginpage.InvalidError();
-		Assert.assertEquals(msg,no_user);
-	}
-	@Test (priority = 12)
-	public void verifyForgotPasswordLinkErrorMessageTestWhen_ValidUserNameGiven1_12() {
-		Adminloginpage.sendUserName(Testutil.Readexcel("AdminLogin",1).get(0));
-		//Adminloginpage.sendPassword("pwd");
-		Adminloginpage.clickForgotPassword();
-		String msg =Adminloginpage.InvalidError();
-		Assert.assertEquals(msg,Email_to_user);
-	}
+//	@Test (priority = 10)
+//	public void verifyForgotPasswordLinkErrorMessageTestWhen_InvalidUsernameGiven1_9() {
+//		Adminloginpage.sendUserName("UN");
+//		//Adminloginpage.sendPassword("pwd");
+//		Adminloginpage.clickForgotPassword();
+//		String msg =Adminloginpage.InvalidError();
+//		Assert.assertEquals(msg,no_user);
+//	}
+//	
+//	@Test (priority = 11)
+//	public void verifyForgotPasswordLinkErrorMessageTestWhen_MTUsernameGiven1_11() {
+//		//Adminloginpage.sendUserName("UN");
+//		//Adminloginpage.sendPassword("pwd");
+//		Adminloginpage.clickForgotPassword();
+//		String msg =Adminloginpage.InvalidError();
+//		Assert.assertEquals(msg,no_user);
+//	}
+//	@Test (priority = 12)
+//	public void verifyForgotPasswordLinkErrorMessageTestWhen_ValidUserNameGiven1_12() {
+//		Adminloginpage.sendUserName(Testutil.Readexcel("AdminLogin",1).get(0));
+//		//Adminloginpage.sendPassword("pwd");
+//		Adminloginpage.clickForgotPassword();
+//		String msg =Adminloginpage.InvalidError();
+//		Assert.assertEquals(msg,Email_to_user);
+//	}
 	
 	@Test (priority = 13) 
 	public void verifyAdminLoginPage_TitleTest1_13() {
@@ -155,28 +155,28 @@ public class AdminLoginPageTest extends TestBase{
 //	}
 	
 
-	@Test (priority =14)
-	public void verifyRememberMeFunctionalityTest1_14() {
-		//Adminloginpage.sendUserName(Testutil.Readexcel("AdminLogin",1).get(0));
-		//Adminloginpage.sendPassword(Testutil.Readexcel("AdminLogin",2).get(0));
-		boolean b =Adminloginpage.EnableRememberMe();
-		//System.out.println("--------------------remem1 : "+b);
-		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
-		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);	
-		AdminHomepage.admin_logout();
-		Assert.assertEquals(Adminloginpage.ValidateAdminLoginPageTitle(), Testutil.Exp_AdminloginPageTitle);
-		Adminloginpage.clickLogInSubmit();
-		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);		
-	}
-	@Test (priority =15)
-	public void verifyRememberMeDisabledFunctionalityTest1_15() {
-		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
-		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);	
-		AdminHomepage.admin_logout();
-		Assert.assertEquals(Adminloginpage.ValidateAdminLoginPageTitle(), Testutil.Exp_AdminloginPageTitle);
-		Assert.assertEquals(Adminloginpage.GetUserName(),	Testutil.Readexcel("AdminLogin",1).get(0));	
-		Assert.assertEquals(Adminloginpage.GetPassword(),	"");	
-		}
+//	@Test (priority =14)
+//	public void verifyRememberMeFunctionalityTest1_14() {
+//		//Adminloginpage.sendUserName(Testutil.Readexcel("AdminLogin",1).get(0));
+//		//Adminloginpage.sendPassword(Testutil.Readexcel("AdminLogin",2).get(0));
+//		boolean b =Adminloginpage.EnableRememberMe();
+//		//System.out.println("--------------------remem1 : "+b);
+//		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
+//		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);	
+//		AdminHomepage.admin_logout();
+//		Assert.assertEquals(Adminloginpage.ValidateAdminLoginPageTitle(), Testutil.Exp_AdminloginPageTitle);
+//		Adminloginpage.clickLogInSubmit();
+//		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);		
+//	}
+//	@Test (priority =15)
+//	public void verifyRememberMeDisabledFunctionalityTest1_15() {
+//		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
+//		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);	
+//		AdminHomepage.admin_logout();
+//		Assert.assertEquals(Adminloginpage.ValidateAdminLoginPageTitle(), Testutil.Exp_AdminloginPageTitle);
+//		Assert.assertEquals(Adminloginpage.GetUserName(),	Testutil.Readexcel("AdminLogin",1).get(0));	
+//		Assert.assertEquals(Adminloginpage.GetPassword(),	"");	
+//		}
 	
 	
 	@AfterMethod

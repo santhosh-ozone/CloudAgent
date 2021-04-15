@@ -411,7 +411,7 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 			
 			if(GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16")) {
+				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16") ||  driver1.getCurrentUrl().contains("ca-test") ) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*"));
 					//System.out.println(":"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("Reset"))
@@ -435,7 +435,7 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 		
 			if(GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16")) {
+				if(driver1.getCurrentUrl().contains("getkookoo") ||  driver1.getCurrentUrl().contains("172.16") ||  driver1.getCurrentUrl().contains("ca-test") ) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*"));
 					//System.out.println(":"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("Reset"))
@@ -461,7 +461,8 @@ public class AdminHomePage extends TestBase{
 		if(result_row>0) {
 			
 			if(!GetCampaignPosition(result_row).equals("COMPLETED")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16")) {
+				
+				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16") ||  driver1.getCurrentUrl().contains("ca-test") ) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*/*"));
 					if(element.getAttribute("value").contains("ForceComplete"))
 					scrollandclick(element);
@@ -571,7 +572,7 @@ public class AdminHomePage extends TestBase{
 		int result_row = IdentifyCampaignRow(bound,cName, Di);
 		if(result_row>0) {
 			if(!GetCampaignPosition(result_row).equals("RUNNING")) {
-				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16")) {
+				if(driver1.getCurrentUrl().contains("getkookoo")||  driver1.getCurrentUrl().contains("172.16") ||  driver1.getCurrentUrl().contains("ca-test") ) {
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*/*"));
 					//System.out.println("1:"+element.getAttribute("value")+":");
 					if(element.getAttribute("value").contains("AddData"))

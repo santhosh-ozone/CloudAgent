@@ -6,8 +6,8 @@
       <class name="com.CA.qa.TestCases.ConfigurationPageTest">
         <methods>
           <include name="nteardown"/>
+          <include name="AddAgentGroup"/>
           <include name="clearExcelDatainRes"/>
-          <include name="BlockNumberBlocking_Unblocking"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.ConfigurationPageTest -->

@@ -6,25 +6,33 @@
   </listeners>
   <test thread-count="5" name="Cloud Agent Application test cases(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.AdminHomePageTest">
+      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
         <methods>
-          <include name="verifyOutboundAddCampaignButton"/>
-          <include name="verifyAdminHomePage_TitleTest"/>
-          <include name="verifyInboundAddCampaignButton"/>
-          <include name="verifyAdminLogout"/>
+          <include name="nteardown"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_13"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_12"/>
           <include name="setup"/>
-          <include name="verifyPauseReasonIcon1_17"/>
-          <include name="teardown"/>
-          <include name="verifyoutBoundCampaignIcon1_17"/>
-          <include name="verifySkillIcon1_17"/>
-          <include name="verifyFwpNumberIcon1_17"/>
-          <include name="verifyEditProfileIcon1_17"/>
-          <include name="verifyclickingonOutbound"/>
-          <include name="verifyAgentsIcon1_17"/>
-          <include name="verifyInBoundCampaignIcon1_17"/>
-          <include name="verifyclickingoninbound"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_14"/>
+          <include name="ValidatePauseReasonEmptyErrorMsg11_1"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.AdminHomePageTest -->
+      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
+      <class name="com.CA.qa.TestCases.ConfigurationPageTest">
+        <methods>
+          <include name="nteardown"/>
+          <include name="clearExcelDatainRes"/>
+          <include name="AddDialoutNumbers" invocation-numbers="0 1"/>
+          <include name="setup"/>
+          <include name="AddPhoneNos" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.CA.qa.TestCases.ConfigurationPageTest -->
+      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
+        <methods>
+          <include name="AddCampaign" invocation-numbers="10 11 12 14"/>
+          <include name="setup"/>
+          <include name="nteardown"/>
+          <include name="clearExcelDatainRes"/>
+        </methods>
+      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
     </classes>
   </test> <!-- Cloud Agent Application test cases(failed) -->
 </suite> <!-- Failed suite [Cloud Agent Application Automation Test Suite] -->
