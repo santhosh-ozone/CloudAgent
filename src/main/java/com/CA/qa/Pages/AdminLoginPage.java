@@ -117,6 +117,19 @@ public class AdminLoginPage extends TestBase{
 		return new AdminHomePage();
 		
 	}
+	public DashBoardPage LoginIntoDashBoard( String uname, String pwd) {
+		//Testutil.flash(Admin_username, driver1);
+		//System.out.println("n:"+uname+":");
+		Admin_username.sendKeys(uname);
+		//Testutil.flash(Admin_password, driver1);
+		//System.out.println("p:"+pwd+":");
+		Admin_password.sendKeys(pwd);
+		Testutil.flash(Admin_submit, driver1);
+		Admin_submit.click();
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.not(ExpectedConditions.titleContains(Testutil.Exp_AdminloginPageTitle)));
+		return new DashBoardPage();
+		
+	}
 	
 
 }

@@ -22,6 +22,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.CA.qa.Util.Testutil;
 import com.CA.qa.Util.WebEventListener;
@@ -148,8 +150,34 @@ public class TestBase {
 		
 		
 	}
-	
+public static void DashBoardLogin() {
+		
+		String browserName= prop.getProperty("Browser");
+		if (browserName.equals("chrome")){
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
+			//driver1 = new ChromeDriver();
+			driver1=getChromeDriver();
+		      }
+		e_driver1 = new EventFiringWebDriver(driver1);
+		eventlistener1 = new WebEventListener();
+		e_driver1.register(eventlistener1);
+		driver1 = e_driver1;
+		
+		driver1.manage().window().maximize();
+		driver1.manage().deleteAllCookies();
+		driver1.manage().timeouts().implicitlyWait(Testutil.IMPLICIT_WAIT_TIME_admin, TimeUnit.SECONDS);
+		driver1.manage().timeouts().pageLoadTimeout(Testutil.PAGE_LOAD_TIME, TimeUnit.SECONDS);
+		
+		ArrayList<String> URL=Testutil.Readexcel("DashBoardLogin",0);
+		//System.out.println(URL.get(0));
+		driver1.get(URL.get(0));
+		
+		//driver1.get(prop.getProperty("Admin_url"));
+		
+		
+	}
 	public void javascriptClickforAdmin(WebElement element) {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(element));
 		JavascriptExecutor js= (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", element);
 		

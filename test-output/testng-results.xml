@@ -2,35 +2,43 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-15T17:41:49 IST" name="Default suite" finished-at="2021-04-15T17:42:34 IST" duration-ms="44742">
+  <suite started-at="2021-04-28T22:35:51 IST" name="Default suite" finished-at="2021-04-28T22:36:13 IST" duration-ms="21712">
     <groups>
     </groups>
-    <test started-at="2021-04-15T17:41:49 IST" name="Default test" finished-at="2021-04-15T17:42:34 IST" duration-ms="44742">
-      <class name="com.CA.qa.TestCases.ConfigurationPageTest">
-        <test-method is-config="true" signature="clearExcelDatainRes()[pri:0, instance:com.CA.qa.TestCases.ConfigurationPageTest@3c41ed1d]" started-at="2021-04-15T17:41:49 IST" name="clearExcelDatainRes" finished-at="2021-04-15T17:41:51 IST" duration-ms="1193" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearExcelDatainRes -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.ConfigurationPageTest@3c41ed1d]" started-at="2021-04-15T17:41:51 IST" name="setup" finished-at="2021-04-15T17:41:58 IST" duration-ms="7311" status="PASS">
+    <test started-at="2021-04-28T22:35:51 IST" name="Default test" finished-at="2021-04-28T22:36:13 IST" duration-ms="21712">
+      <class name="com.CA.qa.TestCases.DashBoardPageTest">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:35:51 IST" name="setup" finished-at="2021-04-28T22:35:59 IST" duration-ms="7538" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.ConfigurationPageTest.ShowFunctionalityOfAgents()]]>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ShowFunctionalityOfAgents()[pri:13, instance:com.CA.qa.TestCases.ConfigurationPageTest@3c41ed1d]" started-at="2021-04-15T17:41:58 IST" name="ShowFunctionalityOfAgents" finished-at="2021-04-15T17:42:32 IST" duration-ms="34262" status="PASS">
+        <test-method signature="verifyTotalRecordsOnDialCountReportTest()[pri:5, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:35:59 IST" name="verifyTotalRecordsOnDialCountReportTest" finished-at="2021-04-28T22:36:12 IST" duration-ms="13430" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ShowFunctionalityOfAgents -->
-        <test-method is-config="true" signature="nteardown()[pri:0, instance:com.CA.qa.TestCases.ConfigurationPageTest@3c41ed1d]" started-at="2021-04-15T17:42:32 IST" name="nteardown" finished-at="2021-04-15T17:42:34 IST" duration-ms="1947" status="PASS">
+        </test-method> <!-- verifyTotalRecordsOnDialCountReportTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:36:12 IST" name="teardown" finished-at="2021-04-28T22:36:13 IST" duration-ms="711" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=verifyTotalRecordsOnDialCountReportTest status=SUCCESS method=DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()[pri:5, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- nteardown -->
-      </class> <!-- com.CA.qa.TestCases.ConfigurationPageTest -->
+        </test-method> <!-- teardown -->
+      </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
