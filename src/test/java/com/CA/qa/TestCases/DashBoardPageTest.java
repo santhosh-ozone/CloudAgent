@@ -27,6 +27,9 @@ public class DashBoardPageTest extends TestBase{
 	
 	String dialerCountReport_title ="Dialer Count Report";
 	String cdrPage_title="Call Details Report";
+	String EmailReport_tilte ="Email Report";
+	String MissedCallReport_tilte ="Missed Call Report";
+	String AgentDashboard_title ="Agent Dashboard";
 	
 	public DashBoardPageTest() {
 		super();
@@ -68,6 +71,9 @@ public class DashBoardPageTest extends TestBase{
 //		Assert.assertEquals(Act_PageHeading, cdrPage_title);
 //		
 //		DashBoardpage.ClickOngenerateOnCDR();
+//		String str1=DashBoardpage.GetDataFromFirstCellOnCdr();
+//		Assert.assertTrue(!str1.isBlank(), "message");
+//		
 //		String str=DashBoardpage.GetTotalCallsOnCdr();
 //		Assert.assertTrue(!str.isBlank(), "message");
 //	}
@@ -93,49 +99,144 @@ public class DashBoardPageTest extends TestBase{
 //		String str=DashBoardpage.GetTotalCallsOnDialerCountReport();
 //		Assert.assertTrue(!str.isBlank(), "message");
 //	}
+//	
+//	@Test (priority = 5) 
+//	public void verifyDateFiltersOnDialCountReportTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnDialerCountReportsMenu();
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		Assert.assertEquals(Act_PageTitle, dialerCountReport_title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		Assert.assertEquals(Act_PageHeading, dialerCountReport_title);
+//		
+//		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+//        //Date date = new Date();
+//		Calendar cal = Calendar.getInstance();
+//		cal.add(Calendar.DATE, -7);
+//        Date todate1 = cal.getTime();  
+//        String s_time = dateFormat.format(todate1);
+//       // System.out.println("============================================="+s_time);
+//		DashBoardpage.EnterFromTimeOfDialerCountReport(s_time);
+//		
+//		try {
+//			Thread.sleep(1500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		Calendar cal1 = Calendar.getInstance();
+//		cal1.add(Calendar.DATE, -1);
+//		Date todate2 = cal1.getTime();  
+//        String t_time = dateFormat.format(todate2);
+//        //System.out.println("============================================="+t_time);
+//        DashBoardpage.EnterToTimeOfDialerCountReport(t_time);
+//		try {
+//			Thread.sleep(1500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		DashBoardpage.ClickOngenerateOnCDR();
+//		String str=DashBoardpage.GetTotalCallsOnDialerCountReport();
+//		Assert.assertTrue(!str.isBlank(), "message");
+//	}
+//	@Test (priority = 6) 
+//	public void verifyEmailReportDisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnEmailReportMenu();
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		Assert.assertEquals(Act_PageTitle, EmailReport_tilte);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		Assert.assertEquals(Act_PageHeading, EmailReport_tilte);
+//		
+//		DashBoardpage.ClickOngenerateOnCDR();
+//		String str=DashBoardpage.GetTotalCallsOnEmailReport();
+//		Assert.assertTrue(!str.isBlank(), "message");
+//	}
+//	
+//	@Test (priority = 7) 
+//	public void verifyMissedCallReportDisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnMissedCallReportMenu();
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		Assert.assertEquals(Act_PageTitle, MissedCallReport_tilte);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		Assert.assertEquals(Act_PageHeading, MissedCallReport_tilte);
+//		
+//		String str=DashBoardpage.GetDataFromFirstCellOnMissedCallReport();
+//		Assert.assertTrue(!str.isBlank(), "message");
+//	}
+//	
+//	@Test (priority = 8) 
+//	public void verifyAgentDashboardtDisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnAgentDashBoardMenu();
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("======================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle, AgentDashboard_title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		Assert.assertEquals(Act_PageHeading, AgentDashboard_title);
+//		
+//		String a = DashBoardpage.GetTextFromBasedOnCallModefield();
+//		Assert.assertTrue(a.contains("Based On Call Mode"), "message");	
+//				
+//		String b = DashBoardpage.GetTextFromBasedOnCallTypefield();
+//		Assert.assertTrue(b.contains("Based On Call Type"), "message");	
+//		
+//		DashBoardpage.ClickDispositionSummeryTabOnAGDashbpard();
+//		
+//		String c = DashBoardpage.GetTextFromAgentDashBoard_dispositionSummary_Lastfetchedfield();
+//		Assert.assertTrue(c.contains("Last fetch"), "message");			
+//		
+//		DashBoardpage.ClickAgentLoginReportTabOnAGDashbpard();
+//		
+//		String d = DashBoardpage.GetTextFromAgentDashBoard_loginReport_Lastfetchedfield();
+//		Assert.assertTrue(d.contains("Last fetch"), "message");			
+//		
+//	}
 	
-	@Test (priority = 5) 
-	public void verifyTotalRecordsOnDialCountReportTest() {
+	@Test (priority = 9) 
+	public void verifyAgentDashBoardGroupWiseMenutDisplayedTest() {
 		DashBoardpage.clickOnReportsMenu();
-		DashBoardpage.clickOnDialerCountReportsMenu();
+		DashBoardpage.clickOnAgentDashBoardGroupWiseMenu();
 		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
-		Assert.assertEquals(Act_PageTitle, dialerCountReport_title);
+		System.out.println("======================"+Act_PageTitle);
+		Assert.assertEquals(Act_PageTitle, AgentDashboard_title);
 		
 		String Act_PageHeading = DashBoardpage.GetMainheading();
-		Assert.assertEquals(Act_PageHeading, dialerCountReport_title);
+		Assert.assertEquals(Act_PageHeading, AgentDashboard_title);
 		
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        //Date date = new Date();
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DATE, -7);
-        Date todate1 = cal.getTime();  
-        String s_time = dateFormat.format(todate1);
-       // System.out.println("============================================="+s_time);
-		DashBoardpage.EnterFromTimeOfDialerCountReport(s_time);
+		String a = DashBoardpage.GetTextFromBasedOnCallModefield();
+		Assert.assertTrue(a.contains("Based On Call Mode"), "message");	
+				
+		String b = DashBoardpage.GetTextFromBasedOnCallTypefield();
+		Assert.assertTrue(b.contains("Based On Call Type"), "message");	
 		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Calendar cal1 = Calendar.getInstance();
-		cal1.add(Calendar.DATE, -1);
-		Date todate2 = cal1.getTime();  
-        String t_time = dateFormat.format(todate2);
-        //System.out.println("============================================="+t_time);
-        DashBoardpage.EnterToTimeOfDialerCountReport(t_time);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		DashBoardpage.ClickDispositionSummeryTabOnAGDashbpard();
 		
-		DashBoardpage.ClickOngenerateOnCDR();
-		String str=DashBoardpage.GetTotalCallsOnDialerCountReport();
-		Assert.assertTrue(!str.isBlank(), "message");
+		String c = DashBoardpage.GetTextFromAgentDashBoard_dispositionSummary_Lastfetchedfield();
+		Assert.assertTrue(c.contains("Last fetch"), "message");			
+		
+		DashBoardpage.ClickAgentLoginReportTabOnAGDashbpard();
+		
+		String d = DashBoardpage.GetTextFromAgentDashBoard_loginReport_Lastfetchedfield();
+		Assert.assertTrue(d.contains("Last fetch"), "message");			
+		
 	}
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -1,5 +1,7 @@
 package com.CA.qa.Pages;
 
+import java.util.Set;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -49,9 +51,38 @@ public class DashBoardPage extends TestBase{
 	@FindBy(id= "wwlbl_reportForm_agentId")
 	WebElement AgentFilter_DialerCountReport;
 	
+	@FindBy(id= "EmailReportMenu")
+	WebElement EmailReportMenu;
 	
+	@FindBy(id= "AgentDashBoardMenu")
+	WebElement AgentDashBoardMenu;
 	
+	@FindBy(xpath= "//*[@id='table1']/div[1]/span")
+	WebElement AgentDashBoard_BasedOnCallType;
 	
+	@FindBy(xpath= "//*[@id='table2']/div[1]/span")
+	WebElement AgentDashBoard_BasedOnCallMode;
+	
+	@FindBy(xpath= "//*[@aria-controls='dispositionSummary']")
+	WebElement AgentDashBoard_dispositionSummary_tab;
+	
+	@FindBy(xpath= "//*[@id='dispositionReportDiv']/p")
+	WebElement AgentDashBoard_dispositionSummary_Lastfetched ;
+	
+	@FindBy(xpath= "//*[@aria-controls='loginReport']")
+	WebElement AgentDashBoard_loginReport_tab;
+	
+	@FindBy(xpath= "//*[@id='agentLoginReportDiv']/p")
+	WebElement AgentDashBoard_loginReport_Lastfetched ;
+	
+	@FindBy(id= "AgentDashBoardGroupWiseMenu")
+	WebElement AgentDashBoardGroupWiseMenu;
+	
+	@FindBy(id= "MissedCallReportMenu")
+	WebElement MissedCallReportMenu;
+	
+	@FindBy(xpath= "//*[@id='misscallReport']/tbody/tr[1]/td[1]")
+	WebElement MissedCallReport_first_record;
 	
 	
 	
@@ -122,13 +153,61 @@ public class DashBoardPage extends TestBase{
 		return str1[1].trim();
 	}
 	
+	public void clickOnEmailReportMenu() {
+		javascriptClickforAdmin(EmailReportMenu);
+	}
+	public String GetTotalCallsOnEmailReport() {
+		String str=totalCalls.getText();
+		String[] str1=str.split(":");
+		//System.out.println("============="+str1[1]+"====");
+		return str1[2].trim();
+	}
 	
+	public void clickOnAgentDashBoardMenu() {
+		String p_wh = driver1.getWindowHandle();
+		javascriptClickforAdmin(AgentDashBoardMenu);
+		Set<String> whs=driver1.getWindowHandles();
+		for(String wh:whs)
+			if(!(wh==p_wh))
+				driver1.switchTo().window(wh);
+	}
 	
+	public String GetTextFromBasedOnCallTypefield() {
+		return AgentDashBoard_BasedOnCallType.getText();
+	}
+	public String GetTextFromBasedOnCallModefield() {
+		return AgentDashBoard_BasedOnCallMode.getText();
+	}
+	public void ClickDispositionSummeryTabOnAGDashbpard() {
+		javascriptClickforAdmin(AgentDashBoard_dispositionSummary_tab);
+	}
+	public String GetTextFromAgentDashBoard_dispositionSummary_Lastfetchedfield() {
+		return AgentDashBoard_dispositionSummary_Lastfetched.getText();
+	}	
 	
+	public void ClickAgentLoginReportTabOnAGDashbpard() {
+		javascriptClickforAdmin(AgentDashBoard_loginReport_tab);
+	}
 	
+	public String GetTextFromAgentDashBoard_loginReport_Lastfetchedfield() {
+		return AgentDashBoard_loginReport_Lastfetched.getText();
+	}
 	
+	public void clickOnMissedCallReportMenu() {
+		javascriptClickforAdmin(MissedCallReportMenu);
+	}
+	public String GetDataFromFirstCellOnMissedCallReport() {
+		return MissedCallReport_first_record.getText();
+	}
 	
-	
+	public void clickOnAgentDashBoardGroupWiseMenu() {
+		String p_wh = driver1.getWindowHandle();
+		javascriptClickforAdmin(AgentDashBoardGroupWiseMenu);
+		Set<String> whs=driver1.getWindowHandles();
+		for(String wh:whs)
+			if(!(wh==p_wh))
+				driver1.switchTo().window(wh);
+	}
 	
 	
 	

@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-28T22:35:51 IST" name="Default suite" finished-at="2021-04-28T22:36:13 IST" duration-ms="21712">
+  <suite started-at="2021-05-03T20:59:36 IST" name="Default suite" finished-at="2021-05-03T20:59:46 IST" duration-ms="10239">
     <groups>
     </groups>
-    <test started-at="2021-04-28T22:35:51 IST" name="Default test" finished-at="2021-04-28T22:36:13 IST" duration-ms="21712">
+    <test started-at="2021-05-03T20:59:36 IST" name="Default test" finished-at="2021-05-03T20:59:46 IST" duration-ms="10239">
       <class name="com.CA.qa.TestCases.DashBoardPageTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:35:51 IST" name="setup" finished-at="2021-04-28T22:35:59 IST" duration-ms="7538" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-05-03T20:59:36 IST" name="setup" finished-at="2021-05-03T20:59:44 IST" duration-ms="8394" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyAgentDashBoardGroupWiseMenutDisplayedTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyTotalRecordsOnDialCountReportTest()[pri:5, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:35:59 IST" name="verifyTotalRecordsOnDialCountReportTest" finished-at="2021-04-28T22:36:12 IST" duration-ms="13430" status="PASS">
+        <test-method signature="verifyAgentDashBoardGroupWiseMenutDisplayedTest()[pri:9, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-05-03T20:59:44 IST" name="verifyAgentDashBoardGroupWiseMenutDisplayedTest" finished-at="2021-05-03T20:59:45 IST" duration-ms="838" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTotalRecordsOnDialCountReportTest -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-04-28T22:36:12 IST" name="teardown" finished-at="2021-04-28T22:36:13 IST" duration-ms="711" status="PASS">
+        </test-method> <!-- verifyAgentDashBoardGroupWiseMenutDisplayedTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689]" started-at="2021-05-03T20:59:45 IST" name="teardown" finished-at="2021-05-03T20:59:46 IST" duration-ms="981" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyAgentDashBoardGroupWiseMenutDisplayedTest()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=verifyTotalRecordsOnDialCountReportTest status=SUCCESS method=DashBoardPageTest.verifyTotalRecordsOnDialCountReportTest()[pri:5, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAgentDashBoardGroupWiseMenutDisplayedTest status=SUCCESS method=DashBoardPageTest.verifyAgentDashBoardGroupWiseMenutDisplayedTest()[pri:9, instance:com.CA.qa.TestCases.DashBoardPageTest@13c9d689] output={null}]]]>
               </value>
             </param>
           </params>

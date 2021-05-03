@@ -6,8 +6,8 @@
       <class name="com.CA.qa.TestCases.DashBoardPageTest">
         <methods>
           <include name="setup"/>
-          <include name="verifyTotalRecordsOnDialCountReportTest"/>
           <include name="teardown"/>
+          <include name="verifyDateFiltersOnDialCountReportTest"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </classes>
