@@ -7,6 +7,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.CA.qa.Base.TestBase;
 
@@ -83,6 +84,81 @@ public class DashBoardPage extends TestBase{
 	
 	@FindBy(xpath= "//*[@id='misscallReport']/tbody/tr[1]/td[1]")
 	WebElement MissedCallReport_first_record;
+	
+	@FindBy(id= "CallBackMenu")
+	WebElement AgentCallBackMenu;
+	
+	@FindBy(xpath= "//*[@id='callBackList']/tbody/tr[1]/td[1]")
+	WebElement AgentCallBack_first_record;
+
+	@FindBy(id= "AgentBreakReportMenu")
+	WebElement AgentPause_breakMenu;
+	
+	@FindBy(xpath= "//input[@type='search']")
+	WebElement AgentpauseReport_agent_search;
+
+	@FindBy(id= "reportForm_agentId")
+	WebElement AgentPause_SelectAgents;
+	
+	@FindBy(xpath= "//*[@id='agentBreakReport']/tbody/tr[1]/td[1]")
+	WebElement agentBreakReport_first_record;
+	
+	@FindBy(id= "AgentBreakReportGroupWiseMenu")
+	WebElement AgentBreakReportGroupWiseMenu;
+	
+	@FindBy(xpath= "//*[@id='agentBreakReportGroupWise']/tbody/tr[1]/td[1]")
+	WebElement agentBreakReportGroupWise_first_record;
+	
+	@FindBy(id= "CallInboundLogsReportMenu")
+	WebElement CustomerInterestReportMenu;
+	
+	@FindBy(id= "SmsOutboundLogsReportMenu")
+	WebElement CustomerInterestReportMenu_sms;
+	
+	@FindBy(id= "callInboundLogForm_campaignIds")
+	WebElement CustomerInterestReport_select;
+	
+	@FindBy(id= "callInboundLogForm_campaignIds")
+	WebElement CustomerInterestReport_search;
+	
+	@FindBy(xpath= "//*[@id='callInboundLogsList']/tbody/tr[1]/td[1]")
+	WebElement CustomerInterestReport_first_record;
+	
+	@FindBy(id= "smsOutboundLogsForm_button_search")
+	WebElement CustomerInterestReportSMS_search;
+	
+	@FindBy(xpath= "//*[@id='smsOutboundLogsList']/tbody/tr[1]/td[1]")
+	WebElement CustomerInterestReport_SMS_first_record;
+	
+	@FindBy(id= "CheckPointLogReportMenu")
+	WebElement CustomerInterestReportMenu_checkPoint;
+	
+	@FindBy(id= "checkPointLogForm_button_search")
+	WebElement CustomerInterestReport_checkPoint_search;
+	
+	@FindBy(id= "checkPointLogForm_button_search_dump")
+	WebElement CustomerInterestReport_checkPoint_searchAll;
+	
+	@FindBy(xpath= "//*[@id='checkPointLogList']/tbody/tr[1]/td[1]")
+	WebElement CustomerInterestReport_CheckPoint_first_record;
+	
+	@FindBy(id= "PriUtilizationReportMenu")
+	WebElement PriUtilizationReportMenu;
+	
+	@FindBy(id= "priUtilizationListForm_button_search")
+	WebElement PriUtilizationReport_search;
+	
+	@FindBy(xpath= "//*[@id='priUtilizationList']/tbody/tr[1]/td[1]")
+	WebElement priUtilizationReport_first_record;
+	
+	@FindBy(id= "ConferenceReportsMenu")
+	WebElement ConferenceReportsMenu;
+	
+	@FindBy(id= "conferenceReportsList_button_search")
+	WebElement ConferenceReport_search;
+	
+	@FindBy(xpath= "//*[@id='report']/tbody/tr[1]/td[1]")
+	WebElement ConferenceReport_first_record;
 	
 	
 	
@@ -208,6 +284,100 @@ public class DashBoardPage extends TestBase{
 			if(!(wh==p_wh))
 				driver1.switchTo().window(wh);
 	}
+	public void clickOnAgentCallbacksMenu() {
+		javascriptClickforAdmin(AgentCallBackMenu);
+	}
+	public String GetDataFromFirstCellOnCallBackReport() {
+		return AgentCallBack_first_record.getText();
+	}
+	
+	public void ClickOnSelectALLAgentsOnpauseReport() {
+		javascriptClickforAdmin(AgentpauseReport_agent_search);
+		Select s=new Select(AgentPause_SelectAgents);
+		s.selectByValue("0");
+	}
+	public void clickOnAgentpauseReportMenu() {
+		javascriptClickforAdmin(AgentPause_breakMenu);
+	}
+	public String GetDataFromFirstCellOnAgentBreakReport() {
+		return agentBreakReport_first_record.getText();
+	}
+	
+	public void clickOnAgentBreakReportGroupWiseMenu() {
+		javascriptClickforAdmin(AgentBreakReportGroupWiseMenu);
+	}
+	public String GetDataFromFirstCellOnAgentBreakGroupwiseReport() {
+		return agentBreakReportGroupWise_first_record.getText();
+	}
+	public void clickOnCustomerInterestReportMenu() {
+		javascriptClickforAdmin(CustomerInterestReportMenu);
+	}
+	
+	public void ClickOnSelectALLCampaignsOnCustomerInterestReport() {
+		javascriptClickforAdmin(AgentpauseReport_agent_search);
+		Select s=new Select(CustomerInterestReport_select);
+		s.selectByValue("0");
+	}
+	
+	public void clickOnCustomerInterestReport_search() {
+		javascriptClickforAdmin(CustomerInterestReport_search);
+	}
+	
+	public String GetDataFromFirstCellOnCustomerInterestReport() {
+		return CustomerInterestReport_first_record.getText();
+	}
+	
+	public void clickOnCustomerInterestReportMenu_sms() {
+		javascriptClickforAdmin(CustomerInterestReportMenu_sms);
+	}
+	
+	public void clickOnCustomerInterestReport_sms_search() {
+		javascriptClickforAdmin(CustomerInterestReportSMS_search);
+	}
+	public String GetDataFromFirstCellOnCustomerInterestReport_SMS() {
+		return CustomerInterestReport_SMS_first_record.getText();
+	}
+	
+	public void clickOnCustomerInterestReportMenu_CheckPoint() {
+		javascriptClickforAdmin(CustomerInterestReportMenu_checkPoint);
+	}
+	
+	public void clickOnCustomerInterestReport_checkPoint_search() {
+		javascriptClickforAdmin(CustomerInterestReport_checkPoint_search);
+	}
+	
+	public void clickOnCustomerInterestReport_checkPoint_searchAll() {
+		javascriptClickforAdmin(CustomerInterestReport_checkPoint_searchAll);
+	}
+	public String GetDataFromFirstCellOnCustomerInterestReport_CheckPoint() {
+		return CustomerInterestReport_CheckPoint_first_record.getText();
+	}//PriUtilizationReportMenu
+	
+	public void clickOnPriUtilizationReportMenu() {
+		javascriptClickforAdmin(PriUtilizationReportMenu);
+	}
+	
+	public void clickOnPriUtilizationReport_search() {
+		javascriptClickforAdmin(PriUtilizationReport_search);
+	}
+	public String GetDataFromFirstCellOnPriUtilizationReport() {
+		return priUtilizationReport_first_record.getText();
+	}
+	
+	public void clickOnConferenceReportMenu() {
+		javascriptClickforAdmin(ConferenceReportsMenu);
+	}
+	
+	public void clickOnConferenceReport_search() {
+		javascriptClickforAdmin(ConferenceReport_search);
+	}
+	
+	public String GetDataFromFirstCellOnConferenceReport() {
+		return ConferenceReport_first_record.getText();
+	}
+	
+	
+	
 	
 	
 	

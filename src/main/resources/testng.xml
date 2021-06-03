@@ -7,23 +7,29 @@
   <listener class-name="com.CA.qa.ExtentReportListener.ExtentReporterNG" />
   </listeners>
   
-  
+  <parameter name = "TesterName" value="Santosh"/>
   
   <test name="Cloud Agent Application test cases" >
+<!--   <groups> -->
+<!--   	<run> -->
+<!--   		<include name=".*smoke.*"  /> -->
+<!--   		<exclude name=".*func.*"  /> -->
+  		
+<!--   	</run> -->
+<!--   </groups>		 -->
+  
     <classes>
-      <class name="com.CA.qa.TestCases.AdminLoginPageTest" />
-	  <class name="com.CA.qa.TestCases.AdminHomePageTest" />
-      <class name="com.CA.qa.TestCases.AddCampaignPageTest" /> 
-       <class name="com.CA.qa.TestCases.ConfigurationPageTest" /> 
-       <class name="com.CA.qa.TestCases.ValidateConfigurationsPage" /> 
-       <class name="com.CA.qa.TestCases.ValidateInboundCampaignPageTest" /> 
-       <class name="com.CA.qa.TestCases.ValidateOutboundCampaignPageTest" />  
-       <class name="com.CA.qa.TestCases.ValidateUserPageTest" /> 
+<!--      <class name="com.CA.qa.TestCases.AdminLoginPageTest" /> -->
+<!-- 	  <class name="com.CA.qa.TestCases.AdminHomePageTest" /> -->
+<!--       <class name="com.CA.qa.TestCases.AddCampaignPageTest" />  -->
+<!--        <class name="com.CA.qa.TestCases.ConfigurationPageTest" />  -->
+<!--        <class name="com.CA.qa.TestCases.ValidateConfigurationsPage" />  -->
+<!--        <class name="com.CA.qa.TestCases.ValidateInboundCampaignPageTest" />  -->
+<!--        <class name="com.CA.qa.TestCases.ValidateOutboundCampaignPageTest" />   -->
+<!--        <class name="com.CA.qa.TestCases.ValidateUserPageTest" />  -->
+       <class name="com.CA.qa.TestCases.DashBoardPageTest" /> 
 <!--      <class name="com.CA.qa.TestCases.APITesting" />   -->
        
-       
-      
-        
     </classes>
   </test>
  

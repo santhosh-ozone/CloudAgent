@@ -308,7 +308,9 @@ public void clearExcelDatainRes() {
 		AddCampaignPage.EnableDialbyholdingAgent(hold_agent);
 		AddCampaignPage.EnableRecentFirst(rec_1st);
 		AddCampaignPage.EnableACWforUnAnsweredCalls(acw);
+		
 		AddCampaignPage.EnableDNC(DNC);
+		
 		AddCampaignPage.EnterWrapupTime(WT);
 		
 		AddCampaignPage.EnterAppURL(appURL);
@@ -344,11 +346,11 @@ public void clearExcelDatainRes() {
 		
 		AddCampaignPage.ClickOnSaveCampaign();
 		//System.out.println("first flag value: "+flag);
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		for(int i=1;i<10;i++) {
 			if(driver1.getTitle().contains("Campaign Detail")) {

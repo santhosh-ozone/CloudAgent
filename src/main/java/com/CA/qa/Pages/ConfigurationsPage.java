@@ -562,12 +562,19 @@ public class ConfigurationsPage extends TestBase{
 		//Config_Add_Button.click();
 	}
 	public void ClickOnAddConfig1() {
+		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(Config_Add_Button1));
+		//javascriptClickforAdmin(Config_Add_Button1);
 		Config_Add_Button1.click();
 	}
 	public void EnterSerachItem(Object S) {
+		//System.out.println("================p_reason:  "+S.toString());
 		if(!S.equals("")) {
+			try {
+				Thread.sleep(1500);
 		Config_search_button.sendKeys(S.toString().trim());
-		Config_search_submit.click();
+		} catch (InterruptedException e) {}
+		javascriptClickforAdmin(Config_search_submit);
+		//Config_search_submit.click();
 	}}
 	
 	public void EnterAgentId(Object id) {
@@ -578,7 +585,8 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void EnableAgentLock(Object L) {
 		if(L.toString().trim().equalsIgnoreCase("yes")) 
-			Agent_Lock.click();
+		//	Agent_Lock.click();
+		javascriptClickforAdmin(Agent_Lock);
 	}
 	public void EnterAgentPassword(Object Pwd) {
 		if(!Pwd.equals("")) {
@@ -626,14 +634,17 @@ public class ConfigurationsPage extends TestBase{
 						Skills.sendKeys(" ");
 						for (WebElement w:AllSkillsList) {
 							if(!w.getText().equals(""))
-							w.click();}
+							//w.click();
+							javascriptClickforAdmin(w);
+							}
 						break;
 					} else {
 						System.out.println(u);
 						//Skills.clear();
 						Skills.sendKeys(u);
 						for (WebElement w:AllSkillsList)
-							w.click();
+							//w.click();
+						javascriptClickforAdmin(w);
 					}
 					Skills.clear();
 				}
@@ -642,7 +653,8 @@ public class ConfigurationsPage extends TestBase{
 				Skills.sendKeys(" ");
 				for (WebElement w:AllSkillsList)
 					if(!w.getText().equals(""))
-					w.click();
+					//w.click();
+				javascriptClickforAdmin(w);
 			} else if(S.toString().trim().equalsIgnoreCase("EMPTY")) {
 				if(Selected_Skills.size()>1) {
 					//System.out.println("========================"+Selected_Skills.size());
@@ -654,7 +666,8 @@ public class ConfigurationsPage extends TestBase{
 			else {
 				Skills.sendKeys(S.toString());
 				for (WebElement w:AllSkillsList)
-					w.click();
+					//w.click();
+				javascriptClickforAdmin(w);
 			}
 		}
 	}
@@ -706,75 +719,64 @@ public class ConfigurationsPage extends TestBase{
 	public void EnableInboundforAgent(Object E) {
 		if(!E.equals("")) {
 		if(E.toString().trim().equalsIgnoreCase("YES") && !Agent_inbound.isSelected()) {
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_inbound);
+			javascriptClickforAdmin(Agent_inbound);
 			}
 		else if(E.toString().trim().equalsIgnoreCase("no") && Agent_inbound.isSelected()){
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_inbound);
+			//javascriptClickforAdmin(Agent_inbound);
+			Agent_inbound.click();
 			}
 	}}
 	
 	public void EnableManualforAgent(Object E) {
 		if(!E.equals("")) {
 		if(E.toString().trim().equalsIgnoreCase("YES") && !Agent_manual.isSelected()) {
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_manual);
+			javascriptClickforAdmin(Agent_manual);
 			}
 		else if(E.toString().trim().equalsIgnoreCase("no") && Agent_manual.isSelected()){
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_manual);
+			javascriptClickforAdmin(Agent_manual);
 			}
 	}}
 	
 	public void EnablePreviewforAgent(Object E) {
 		if(!E.equals("")) {
 		if(E.toString().trim().equalsIgnoreCase("YES") && !Agent_Preview.isSelected()) {
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_Preview);
+			javascriptClickforAdmin(Agent_Preview);
 			}
 		else if(E.toString().trim().equalsIgnoreCase("no") && Agent_Preview.isSelected()){
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_Preview);
-			}
+			javascriptClickforAdmin(Agent_Preview);	
+		}
 	}}
 	
 	public void EnableProgressiveforAgent(Object E) {
 		if(!E.equals("")) {
 		if(E.toString().trim().equalsIgnoreCase("YES") && !Agent_progressive.isSelected()) {
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_progressive);
+			javascriptClickforAdmin(Agent_progressive);	
 			}
 		else if(E.toString().trim().equalsIgnoreCase("no") && Agent_progressive.isSelected()){
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_progressive);
+			javascriptClickforAdmin(Agent_progressive);	
 			}
 	}}
 	
 	public void EnableBlendedforAgent(Object E) {
 		if(!E.equals("")) {
 		if(E.toString().trim().equalsIgnoreCase("YES") && !Agent_Blended.isSelected()) {
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_Blended);
+			javascriptClickforAdmin(Agent_Blended);
 			}
 		else if(E.toString().trim().equalsIgnoreCase("no") && Agent_Blended.isSelected()){
-			JavascriptExecutor js = (JavascriptExecutor)driver1;
-			js.executeScript("arguments[0].click();", Agent_Blended);
-		}	}
+			javascriptClickforAdmin(Agent_Blended);
+			}	}
 	}
 	
 	public void ClickOnSaveforConfig() {
 		//Testutil.flash(config_save_button, driver1);
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", config_save_button);
-		}//Save_div_inputs
+		javascriptClickforAdmin(config_save_button);
+		}
+	
 	public void ClickOnCancelforConfig() {
 		//Testutil.flash(config_save_button, driver1);
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", config_cancel_button);
+		javascriptClickforAdmin(config_cancel_button);
 		}
+	
 	public ArrayList<String> GetsaveDivisionoptions() {
 		 ArrayList<String> al=new ArrayList<String>();
 		for(WebElement w:Save_div_inputs)
@@ -783,16 +785,12 @@ public class ConfigurationsPage extends TestBase{
 	}
 	public void ClickOnBlockForBlockNumbers() {
 		//Testutil.flash(config_save_button, driver1);
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", BlockNo_Block_button);
+		javascriptClickforAdmin(BlockNo_Block_button);
 		}
 	
 	public void ClickOnUnBlockForBlockNumbers() {
 		//Testutil.flash(config_save_button, driver1);
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", BlockNo_UnBlock_button);
+		javascriptClickforAdmin(BlockNo_UnBlock_button);
 		}
 	
 	public String GetAgentIdErrorMessage() {
@@ -1043,7 +1041,8 @@ public class ConfigurationsPage extends TestBase{
 				if(!driver1.getCurrentUrl().contains("http://10.1.2.88:8080"))
 				ClickOnShowAllButton();
 				if(!Agent_table_data_1stRow.getText().contains("Nothing") ) {
-					Agent_table_data_1stRow.click();
+					javascriptClickforAdmin(Agent_table_data_1stRow);
+					//Agent_table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit Agent") && Agent_ID.getAttribute("value").trim().equals(idold.trim()) ) {
 					EnterAgentId(idnew);
 					EnableAgentLock(lock);
@@ -1080,10 +1079,12 @@ public class ConfigurationsPage extends TestBase{
 			//ClickOnShowAllButton();
 			if(Table_report.size()==1) {
 				if(!Agent_table_data_1stRow.getText().contains("Nothing") ) {
-					Agent_table_data_1stRow.click();
+					javascriptClickforAdmin(Agent_table_data_1stRow);
+					//Agent_table_data_1stRow.click();
 					//System.out.println("agent id is: "+AgentId+"     deleting is:  "+Agent_ID.getAttribute("value"));
 					if(Agent_ID.getAttribute("value").equals(AgentId.toString().trim())) {
-						config_delete_button.click();	
+						javascriptClickforAdmin(config_delete_button);
+						//config_delete_button.click();	
 						driver1.switchTo().alert().accept();
 						//driver1.switchTo().alert().dismiss();
 						//return "correct";
@@ -1091,9 +1092,9 @@ public class ConfigurationsPage extends TestBase{
 					}return "agent ids are not matching so stopped deleting agent";
 			   } return "no records found with the agentid: "+ AgentId.toString();
 			} else {
-				Agent_table_data_1stRow.click();
+				javascriptClickforAdmin(Agent_table_data_1stRow);
 				if(Agent_ID.getAttribute("value").equals(AgentId.toString().trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();
 					}return "no of rows. Agent ids are not matching so stopped deleting agent";
@@ -1187,18 +1188,18 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void EnterSIPforPhone(Object S) {
 		if(!S.equals("")) {
-			System.out.println("-------------------------------------------------1");
+			//System.out.println("-------------------------------------------------1");
 			if(S.toString().trim().equalsIgnoreCase("yes") && !Number_sip.isSelected()) {
-				System.out.println("-------------------------------------------------2");
-				Number_sip1.click();
-				System.out.println("-------------------------------------------------clicked");
+				//System.out.println("-------------------------------------------------2");
+				javascriptClickforAdmin(Number_sip1);
+				//Number_sip1.click();
+				//System.out.println("-------------------------------------------------clicked");
 			}
 			if(S.toString().trim().equalsIgnoreCase("no") && Number_sip.isSelected()) {
-				System.out.println("-------------------------------------------------3");
-				JavascriptExecutor js = (JavascriptExecutor)driver1;
-				js.executeScript("arguments[0].click();", Number_sip1);
+				//System.out.println("-------------------------------------------------3");
+				javascriptClickforAdmin(Number_sip1);
 				//Number_sip1.click();
-				System.out.println("-------------------------------------------------clicked");
+				//System.out.println("-------------------------------------------------clicked");
 			}
 		}
 	}
@@ -1215,7 +1216,8 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			 //ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				String H1 =GetConfigHeader();
 				if(H1.contains("Edit Phone Number") && Number_name.getAttribute("value").equals(name.toString().trim()) && Number_phoneNumber.getAttribute("value").equals(phno.toString().trim())) {
 					String act_name = Number_name.getAttribute("value");
@@ -1246,6 +1248,11 @@ public class ConfigurationsPage extends TestBase{
 			ClickOnAddConfig();
 			String H1 =GetConfigHeader();
 			if(H1.contains("Add")) {
+				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e1) {}
+				
 				EnterNameForPhoneNo(name);
 				EnterNoForPhone(phno);
 				EnterPriorityForPhone(pr);
@@ -1285,7 +1292,8 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				String H1 =GetConfigHeader();
 				if(H1.contains("Edit Phone Number") && Number_name.getAttribute("value").equals(name.toString().trim()) && Number_phoneNumber.getAttribute("value").equals(phno.toString().trim())) {
 					EnterNameForPhoneNo(Nname);
@@ -1315,9 +1323,11 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(Number_name.getAttribute("value").equalsIgnoreCase(name.trim()) && Number_phoneNumber.getAttribute("value").equalsIgnoreCase(phno.trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);
+					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();	
 				} return "names are not matching so not deleting";
@@ -1340,9 +1350,11 @@ public class ConfigurationsPage extends TestBase{
 	public void EnterTransferSip(Object S) {
 		if(!S.equals(""))
 			if(S.toString().trim().equalsIgnoreCase("yes") && !transferNumber_sip.isSelected())
-				transferNumber_sip1.click();
+				//transferNumber_sip1.click();
+				javascriptClickforAdmin(transferNumber_sip1);
 			if(S.toString().trim().equalsIgnoreCase("no") && transferNumber_sip.isSelected())
-				transferNumber_sip1.click();
+				javascriptClickforAdmin(transferNumber_sip1);
+				//transferNumber_sip1.click();
 	}
 	
 	public void ClickOnTransferNoMenu() {
@@ -1361,6 +1373,13 @@ public class ConfigurationsPage extends TestBase{
 			ClickOnAddConfig();
 			String H1 =GetConfigHeader();
 			if(H1.contains("Add")) {
+				
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				EnterTransfername(name);
 				EnterTransferNo(no);
 				EnterTransferSip(sip);
@@ -1386,7 +1405,8 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				String H1 =GetConfigHeader();
 				if(H1.contains("Edit") && transferName.getAttribute("value").equals(name.toString().trim()) && transferNumber.getAttribute("value").equals(phno.toString().trim())) {
 					EnterTransfername(Nname);
@@ -1407,9 +1427,11 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(transferName.getAttribute("value").equalsIgnoreCase(name.trim()) && transferNumber.getAttribute("value").equalsIgnoreCase(phno.trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);
+					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();	
 				} return "names are not matching so not deleting";
@@ -1435,11 +1457,9 @@ public class ConfigurationsPage extends TestBase{
 	
 	
 	public void ClickOnDispositionMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		javascriptClickforAdmin(ConfigurationMenu);
 		//ConfigurationMenu.click();
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(DispositionMenu));
-		AddCampaignPage.JavaScriptClick(DispositionMenu);
+		javascriptClickforAdmin(DispositionMenu);
 		//DispositionMenu.click();
 	}
 	
@@ -1471,7 +1491,8 @@ public class ConfigurationsPage extends TestBase{
 		if(H.contains("Dispositions")) {
 			EnterSerachItem(Reason);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && disposition_reason.getAttribute("value").equalsIgnoreCase(Reason.trim()) ) {
 					Enterdispositions(Reason1);
 					ClickOnSaveforConfig();
@@ -1489,9 +1510,11 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(reason);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && disposition_reason.getAttribute("value").equalsIgnoreCase(reason.trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);
+					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();	
 				} return "names are not matching so not deleting";
@@ -1524,7 +1547,8 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void EnterPauseTime(Object rTime) {
 		if(!rTime.equals("")) {
-			pauseReasonTime_clear.click();
+			javascriptClickforAdmin(pauseReasonTime_clear);
+			//pauseReasonTime_clear.click();
 			((JavascriptExecutor)driver1).executeScript("arguments[0].removeAttribute('readonly')", pauseReason_Time);
 			pauseReason_Time.sendKeys(rTime.toString().trim());
 		}}
@@ -1540,11 +1564,8 @@ public class ConfigurationsPage extends TestBase{
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 		} catch (AWTException e) {}
 		
-		
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(PauseReasonMenu));
-		AddCampaignPage.JavaScriptClick(PauseReasonMenu);
+		javascriptClickforAdmin(ConfigurationMenu);
+		javascriptClickforAdmin(PauseReasonMenu);
 		
 		//driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL,Keys.ADD));
 		
@@ -1565,6 +1586,11 @@ public class ConfigurationsPage extends TestBase{
 			ClickOnAddConfig();
 			String H1 =GetConfigHeader();
 			if(H1.contains("Add")) {
+				
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {	}
+				
 				EnterPauseReason(reason);
 				EnterPauseTime(time);
 				ClickOnSaveforConfig();
@@ -1584,7 +1610,8 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(reason);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && pauseReason_reason.getAttribute("value").equalsIgnoreCase(reason.trim())) {
 					EnterPauseReason(reason1);
 					EnterPauseTime(time);
@@ -1605,7 +1632,8 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(reason);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && pauseReason_reason.getAttribute("value").equalsIgnoreCase(reason.trim())) {
 					EnterPauseReason(reason1);
 					EnterPauseTime(time);
@@ -1625,9 +1653,11 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(reason);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && pauseReason_reason.getAttribute("value").equalsIgnoreCase(reason.trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);
+					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();	
 				} return "names are not matching so not deleting";
@@ -1637,10 +1667,10 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void ClickOnSkillMenu() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		javascriptClickforAdmin(ConfigurationMenu);
 		//ConfigurationMenu.click();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SkillMenu));
-		AddCampaignPage.JavaScriptClick(SkillMenu);
+		javascriptClickforAdmin(SkillMenu);
 		//SkillMenu.click();
 	}
 	
@@ -1924,11 +1954,9 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnDialOutNumberMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
+		javascriptClickforAdmin(ConfigurationMenu);
 		//ConfigurationMenu.click();
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(DialOutNumberMenu));
-		AddCampaignPage.JavaScriptClick(DialOutNumberMenu);
+		javascriptClickforAdmin(DialOutNumberMenu);
 		//DialOutNumberMenu.click();
 	}
 	
@@ -1985,6 +2013,9 @@ public class ConfigurationsPage extends TestBase{
 			ClickOnAddConfig();
 			String H1 =GetConfigHeader();
 			if(H1.contains("Add")) {
+				
+				try {Thread.sleep(1000);} catch (InterruptedException e) {	}
+				
 				EnterEnterDialOutName(DoutName);
 				EnterEnterDialOutNumber(DoutN0);
 				if(sip.toString().toLowerCase().trim().equalsIgnoreCase("yes"))
@@ -2004,7 +2035,8 @@ public class ConfigurationsPage extends TestBase{
 		if(H.contains("DialOutNumbers")) {
 			EnterSerachItem(DoutN0);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
 				EnterEnterDialOutName(DoutNameNew);
 				EnterEnterDialOutNumber(DoutN0new);
@@ -2025,7 +2057,8 @@ public class ConfigurationsPage extends TestBase{
 		if(H.contains("DialOutNumbers")) {
 			EnterSerachItem(DoutN0);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
 				EnterEnterDialOutName(DoutNameNew);
 				EnterEnterDialOutNumber(DoutN0new);
@@ -2046,9 +2079,11 @@ public class ConfigurationsPage extends TestBase{
 		if(H.contains("DialOutNumbers")) {
 			EnterSerachItem(DoutN0);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && dialOutName.getAttribute("value").equalsIgnoreCase(DoutName.trim())) {
-					config_delete_button.click();	
+					javascriptClickforAdmin(config_delete_button);
+					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();
 					return Getmessagediv();	
 			}return " 'Edit' header is not matching";
@@ -2062,7 +2097,8 @@ public class ConfigurationsPage extends TestBase{
 		if(H.contains("DialOutNumbers")) {
 			EnterSerachItem(DoutN0);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				
 				if(GetConfigHeader().contains("Edit") && dialOutNumber.getAttribute("value").trim().equalsIgnoreCase(DoutN0)) {
 				String name=dialOutName.getAttribute("value");
@@ -2083,10 +2119,8 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnBlockNumbersMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(BlockNumbersMenu));
-		AddCampaignPage.JavaScriptClick(BlockNumbersMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);
+		javascriptClickforAdmin(BlockNumbersMenu);	
 	}
 	
 	public void EnterBlockNumber(String str) {
@@ -2105,7 +2139,7 @@ public class ConfigurationsPage extends TestBase{
 		ClickOnBlockNumbersMenu();
 		if(GetConfigHeader().contains("Block Numbers List")) {
 			ClickOnAddConfig();
-			System.out.println("==========================clicked on add");
+			//System.out.println("==========================clicked on add");
 			if(GetConfigHeader().contains("Add")) {
 				EnterBlockNumber(no);
 				ClickOnBlockForBlockNumbers();
@@ -2118,7 +2152,8 @@ public class ConfigurationsPage extends TestBase{
 		if(GetConfigHeader().contains("Block Numbers List")) {
 			EnterSerachItem(no);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") && blockNumber_blockedNumber.getAttribute("value").contains(no.trim())) {
 				EnterBlockNumber(no1);
 				ClickOnBlockForBlockNumbers();
@@ -2144,11 +2179,19 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public String BlockNumberDetails(String no) {
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ClickOnBlockNumbersMenu();
 		if(GetConfigHeader().contains("Block Numbers List")) {
 			EnterSerachItem(no);
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				table_data_1stRow.click();
+				javascriptClickforAdmin(table_data_1stRow);
+				//table_data_1stRow.click();
 				if(GetConfigHeader().contains("Edit") ) {
 					return blockNumber_blockedNumber.getAttribute("value");
 			}return "Edit header or block num not matching";
@@ -2157,10 +2200,8 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnBlockNumbersGroupMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(BlockNumbersGroupMenu));
-		AddCampaignPage.JavaScriptClick(BlockNumbersGroupMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);	
+		javascriptClickforAdmin(BlockNumbersGroupMenu);	
 	}
 	
 	public void EnterBlockNumberGroupName(String str) {
@@ -2196,10 +2237,8 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnIvrFlowMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(IvrFlowMenu));
-		AddCampaignPage.JavaScriptClick(IvrFlowMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);	
+		javascriptClickforAdmin(IvrFlowMenu);	
 	}
 	public void EnterIvrFlowName(String str) {
 		ivrFlowForm_ivrFlow_flowName.sendKeys(str);
@@ -2222,10 +2261,8 @@ public class ConfigurationsPage extends TestBase{
 		return "";
 	}
 	public void ClickOnFeedBackMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(FeedBackMenu));
-		AddCampaignPage.JavaScriptClick(FeedBackMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);	
+		javascriptClickforAdmin(FeedBackMenu);	
 	}
 	
 	public String GetfeedbackNameErr() {
@@ -2240,10 +2277,8 @@ public class ConfigurationsPage extends TestBase{
 		feedBackForm_feedBack_feedbackName.sendKeys(str);
 	}
 	public void ClickOnFeedBackMasterMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(FeedBackMasterMenu));
-		AddCampaignPage.JavaScriptClick(FeedBackMasterMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);	
+		javascriptClickforAdmin(FeedBackMasterMenu);	
 	}
 	
 	public String GetfeedbackMasterNameErr() {
@@ -2278,10 +2313,8 @@ public class ConfigurationsPage extends TestBase{
 	}
 	
 	public void ClickOnSipLocationsMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);	
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(SipLocations));
-		AddCampaignPage.JavaScriptClick(SipLocations);	
+		javascriptClickforAdmin(ConfigurationMenu);	
+		javascriptClickforAdmin(SipLocations);	
 	}
 	
 	public void EntersipLocation_location(String str) {
@@ -2317,10 +2350,8 @@ public class ConfigurationsPage extends TestBase{
 	
 	
 	public void ClickOncampaignHoldMusicMenu() {
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(ConfigurationMenu));
-		AddCampaignPage.JavaScriptClick(ConfigurationMenu);
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(campaignHoldMusicMenu));
-		AddCampaignPage.JavaScriptClick(campaignHoldMusicMenu);	
+		javascriptClickforAdmin(ConfigurationMenu);
+		javascriptClickforAdmin(campaignHoldMusicMenu);	
 	}
 	
 	public void EnterHold_music_name(String str) {
@@ -2350,16 +2381,15 @@ public class ConfigurationsPage extends TestBase{
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(agentGroupForm_assignedAgents_search));
 		agentGroupForm_assignedAgents_search.clear();
 //		System.out.println("========clear done=========");
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(2000);
+		
 		agentGroupForm_assignedAgents_search.sendKeys(str);
 		//System.out.println("===========str entered ===========");
-		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(selectAll));
+		//selectAll.click();
 		javascriptClickforAdmin(selectAll);
+		Thread.sleep(2000);
+		} catch (InterruptedException e) {}
 		}
 	
 	public void DeSelectAllAgentsForAgentsGroup() {
@@ -2378,7 +2408,7 @@ public class ConfigurationsPage extends TestBase{
 	
 	public void DeSelectAllUsersForAgentsGroup() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(agentGroupForm_assigneUsers_search));
-		agentGroupForm_assignedAgents_search.sendKeys(" ");
+		agentGroupForm_assigneUsers_search.sendKeys(" ");
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(UnselectAll));
 		javascriptClickforAdmin(UnselectAll);
 		}
@@ -2425,13 +2455,13 @@ public class ConfigurationsPage extends TestBase{
 					EnterAgentGroupName("Selenium_test1");
 					EnterAgentGroupDecription("Selenium_test1");
 					DeSelectAllAgentsForAgentsGroup();
-					//System.out.println("de select agents done");
+					System.out.println("=================de select agents done");
 					SelectAgentsForAgentsGroup("an");
-					//System.out.println("select agents done");
+					System.out.println("========select agents done");
 					DeSelectAllUsersForAgentsGroup();
-					//System.out.println("de users");
+					System.out.println("===========de users");
 					SelectUsersForAgentsGroup("a");
-					//System.out.println("users done");
+					System.out.println("===========users done");
 					ClickOnSaveforConfig();
 					return Getmessagediv();
 					}return " edit header or group name not matching";

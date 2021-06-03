@@ -69,7 +69,8 @@ public class AdminLoginPage extends TestBase{
 	}
 	
 	public void clickForgotPassword() {
-		Forgot_Password.click();
+		javascriptClickforAdmin(Forgot_Password);
+		//Forgot_Password.click();
 	}
 	public boolean EnableRememberMe() {
 		try {
@@ -85,7 +86,8 @@ public class AdminLoginPage extends TestBase{
 	}
 	
 	public void clickLogInSubmit() {
-		Admin_submit.click();
+		javascriptClickforAdmin(Admin_submit);
+		//Admin_submit.click();
 	}
 	
 	public String UsernameError() {
@@ -112,7 +114,7 @@ public class AdminLoginPage extends TestBase{
 		//System.out.println("p:"+pwd+":");
 		Admin_password.sendKeys(pwd);
 		Testutil.flash(Admin_submit, driver1);
-		Admin_submit.click();
+		clickLogInSubmit();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.not(ExpectedConditions.titleContains(Testutil.Exp_AdminloginPageTitle)));
 		return new AdminHomePage();
 		
@@ -125,7 +127,7 @@ public class AdminLoginPage extends TestBase{
 		//System.out.println("p:"+pwd+":");
 		Admin_password.sendKeys(pwd);
 		Testutil.flash(Admin_submit, driver1);
-		Admin_submit.click();
+		clickLogInSubmit();
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.not(ExpectedConditions.titleContains(Testutil.Exp_AdminloginPageTitle)));
 		return new DashBoardPage();
 		

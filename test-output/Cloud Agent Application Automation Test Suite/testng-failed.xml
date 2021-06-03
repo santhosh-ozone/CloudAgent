@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Cloud Agent Application Automation Test Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="TesterName" value="Santosh"/>
   <listeners>
     <listener class-name="com.CA.qa.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
   <test thread-count="5" name="Cloud Agent Application test cases(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
+      <class name="com.CA.qa.TestCases.DashBoardPageTest">
         <methods>
-          <include name="nteardown"/>
-          <include name="ValidatePauseReasonRangeErrorMsg11_13"/>
-          <include name="ValidatePauseReasonRangeErrorMsg11_12"/>
           <include name="setup"/>
-          <include name="ValidatePauseReasonRangeErrorMsg11_14"/>
-          <include name="ValidatePauseReasonEmptyErrorMsg11_1"/>
+          <include name="teardown"/>
+          <include name="verifyConferenceReport_DisplayedTest"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
-      <class name="com.CA.qa.TestCases.ConfigurationPageTest">
-        <methods>
-          <include name="nteardown"/>
-          <include name="clearExcelDatainRes"/>
-          <include name="AddDialoutNumbers" invocation-numbers="0 1"/>
-          <include name="setup"/>
-          <include name="AddPhoneNos" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.CA.qa.TestCases.ConfigurationPageTest -->
-      <class name="com.CA.qa.TestCases.AddCampaignPageTest">
-        <methods>
-          <include name="AddCampaign" invocation-numbers="10 11 12 14"/>
-          <include name="setup"/>
-          <include name="nteardown"/>
-          <include name="clearExcelDatainRes"/>
-        </methods>
-      </class> <!-- com.CA.qa.TestCases.AddCampaignPageTest -->
+      </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </classes>
   </test> <!-- Cloud Agent Application test cases(failed) -->
 </suite> <!-- Failed suite [Cloud Agent Application Automation Test Suite] -->

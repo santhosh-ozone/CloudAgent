@@ -188,36 +188,41 @@ public class ValidateOutboundCampaignPageTest extends TestBase{
 	
 	@Test (priority=12)
 	public void ValidateFallbackDidRangeMaxErrorMsg26_4() {
-		AddCampaignPage.EnterfallbackDID("qa");
+		String str =AddCampaignPage.EnterfallbackDID("qa");
+		if(str.equalsIgnoreCase("yes")) {
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getfallbackDidError();
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_fallbackDID_range_error);
+		}
 	}
 	@Test (priority=13)
 	public void ValidateFallbackDidRangeMaxErrorMsg26_41() {
-		AddCampaignPage.EnterfallbackDID("12");
+		String str =AddCampaignPage.EnterfallbackDID("12");
+		if(str.equalsIgnoreCase("yes")) {
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getfallbackDidError();
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_fallbackDID_range_error);
-	}
+	}}
 	@Test (priority=14)
 	public void ValidateFallbackDidRangeMaxErrorMsg26_42() {
-		AddCampaignPage.EnterfallbackDID("@12");
+		String str =AddCampaignPage.EnterfallbackDID("@12");
+		if(str.equalsIgnoreCase("yes")) {
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getfallbackDidError();
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_fallbackDID_range_error);
-	}
+	}}
 	@Test (priority=15)
 	public void ValidateFallbackDidRangeMaxErrorMsg26_43() {
-		AddCampaignPage.EnterfallbackDID("1@2");
+		String str =AddCampaignPage.EnterfallbackDID("1@2");
+		if(str.equalsIgnoreCase("yes")) {
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getfallbackDidError();
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_fallbackDID_range_error);
-	}
+	}}
 	
 	
 	@Test (priority=16)

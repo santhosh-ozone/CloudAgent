@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="verifyDateFiltersOnDialCountReportTest"/>
+          <include name="verifyCustomerInterestReportReport_CheckPointDisplayedTest"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </classes>

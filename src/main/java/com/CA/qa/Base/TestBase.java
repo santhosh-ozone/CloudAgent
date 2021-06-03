@@ -177,9 +177,13 @@ public static void DashBoardLogin() {
 		
 	}
 	public void javascriptClickforAdmin(WebElement element) {
+		try {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.elementToBeClickable(element));
 		JavascriptExecutor js= (JavascriptExecutor)driver1;
 		js.executeScript("arguments[0].click();", element);
+		}catch(Exception e ) {
+			element.click();
+		}
 		
 	}
 	

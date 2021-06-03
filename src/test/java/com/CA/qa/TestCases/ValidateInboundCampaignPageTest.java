@@ -72,7 +72,7 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		super();
 	}
 
-	@BeforeClass
+	@BeforeClass(groups={"smoke"})
 	//public void setup(Method method) {
 		public void setup() {
 		//System.out.println("Test name: " + method.getName());
@@ -152,8 +152,9 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 		//System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, campaign_DID_range_error);
 	}
-	@Test (priority=7)
+	@Test (priority=7, groups={"smoke"})
 	public void ValidateDidDuplicateErrorMsg25_22() {
+		System.out.println("============"+existing_DID);
 		AddCampaignPage.EnterDID(existing_DID);
 		AddCampaignPage.ClickOnSaveCampaign();
 		Err_msg=AddCampaignPage.getDidError();
@@ -310,7 +311,7 @@ public class ValidateInboundCampaignPageTest extends TestBase{
 //		//Assert.assertEquals(Err_msg, mapping_tooltip);
 //	}
 			
-	@AfterClass
+	@AfterClass(groups={"smoke"})
 	public void nteardown() {
 		//System.out.println(driver1.getCurrentUrl());
 		AdminHomepage.admin_logout();

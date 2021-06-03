@@ -149,7 +149,8 @@ public class AdminUsersPage  extends TestBase {
 	
 	public void ClickOnUserMenu() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(AdminMenu));
-		AdminMenu.click();
+		javascriptClickforAdmin(AdminMenu);
+		//AdminMenu.click();
 	}
 	
 	public String GetUserHeader() {
@@ -163,12 +164,14 @@ public class AdminUsersPage  extends TestBase {
 	
 	public void ClickOnAddUserButton() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(AddUser));
-		AddUser.click();
+		javascriptClickforAdmin(AddUser);
+		//AddUser.click();
 	}
 	
 	public void ClickOnSaveOfUser() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(saveUser_button_save));
-		saveUser_button_save.click();	
+		javascriptClickforAdmin(saveUser_button_save);
+		//saveUser_button_save.click();	
 	}
 	
 	
@@ -331,7 +334,8 @@ public class AdminUsersPage  extends TestBase {
 	
 	public String GetUserAssignedModulesErr() {
 		new WebDriverWait(driver1, 20).until(ExpectedConditions.visibilityOf(Select_user_module_tab));
-		Select_user_module_tab.click();	
+		javascriptClickforAdmin(Select_user_module_tab);
+		//Select_user_module_tab.click();	
 	
 		try{
 			if(saveUser_assignedModules_err.isDisplayed())

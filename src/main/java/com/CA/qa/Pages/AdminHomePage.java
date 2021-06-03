@@ -188,55 +188,43 @@ public class AdminHomePage extends TestBase{
 	}
 	
 	public void ClickOnCAMPAIGNS() {
-		CampaignMenu.click();
+		javascriptClickforAdmin(CampaignMenu);
+		//CampaignMenu.click();
 		
 	}
 	
 	public void ClickOnInbound() {
 		try {
 			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		CampaignMenu.click();
+		} catch (InterruptedException e) {}
+		ClickOnCAMPAIGNS();
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Inboundcampaign.click();
+		} catch (InterruptedException e) {}
+		javascriptClickforAdmin(Inboundcampaign);
+		//Inboundcampaign.click();
 	}
 
 	public void ClickOnOutbound() {
 		try {
 			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		CampaignMenu.click();
+		} catch (InterruptedException e) {}
+		ClickOnCAMPAIGNS();
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		outboundcampaign.click();
+		} catch (InterruptedException e) {}
+		javascriptClickforAdmin(outboundcampaign);
+		//outboundcampaign.click();
 	}
 
 	public void admin_logout() {
 		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Admin_usericon.click();
-		Admin_signout.click();
-		
-	}
+//			javascriptClickforAdmin(Admin_usericon);
+//			javascriptClickforAdmin(Admin_signout);
+		} catch (Exception e) {
+			Admin_usericon.click();
+			Admin_signout.click();
+			}}
 	
 	public String GetFirstCampaign_nameForInbound() {
 		
@@ -294,12 +282,14 @@ public class AdminHomePage extends TestBase{
 	public AddCampaignPage clickOnAddCampaignButton(String C) {
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
 		Testutil.flash(CampaignMenu, driver1);
-		CampaignMenu.click();
+		ClickOnCAMPAIGNS();
+		//CampaignMenu.click();
 		//System.out.println("CLICKED MENU");
 		if(C.contains("inbound")|| C.equalsIgnoreCase("inbound")) {
 			new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
 			Testutil.flash(Inboundcampaign, driver1);
-			Inboundcampaign.click();
+			javascriptClickforAdmin(Inboundcampaign);
+			//Inboundcampaign.click();
 		}
 		else if(C.contains("outbound")|| C.equalsIgnoreCase("outbound")) {
 			
@@ -311,21 +301,24 @@ public class AdminHomePage extends TestBase{
 //			}
 			new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(outboundcampaign));
 			Testutil.flash(outboundcampaign, driver1);
-			outboundcampaign.click();
+			javascriptClickforAdmin(outboundcampaign);
+			//outboundcampaign.click();
 		}
 		//System.out.println("CLICKED CAMPAIGN");
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.titleIs("Campaigns"));
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Add_Campaign));
 		Testutil.flash(Add_Campaign, driver1);
-		Add_Campaign.click();
+		javascriptClickforAdmin(Add_Campaign);
+		//Add_Campaign.click();
 		//System.out.println("CLICKED ON ADD BUTTON");
 		return new AddCampaignPage();
 	}
 	public AdminUsersPage clickOnUsersMenu() {
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Users));
-		Users.click();
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", Users);
+		javascriptClickforAdmin(Users);
+		//Users.click();
+//		JavascriptExecutor js = (JavascriptExecutor)driver1;
+//		js.executeScript("arguments[0].click();", Users);
 		return new AdminUsersPage();
 				
 	}
@@ -341,16 +334,17 @@ public class AdminHomePage extends TestBase{
 	public void clickOnBound(String C) {
 		new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(CampaignMenu));
 		Testutil.flash(CampaignMenu, driver1);
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", CampaignMenu);
-		//CampaignMenu.click();
+		javascriptClickforAdmin(CampaignMenu);
+		
 		if(C.contains("inbound")|| C.equalsIgnoreCase("inbound")) {
 			new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(Inboundcampaign));
-			Inboundcampaign.click();
+			//Inboundcampaign.click();
+			javascriptClickforAdmin(Inboundcampaign);
 		}
 		else if(C.contains("outbound")|| C.equalsIgnoreCase("outbound")) {
 			new WebDriverWait(driver1, 50).until(ExpectedConditions.elementToBeClickable(outboundcampaign));
-			outboundcampaign.click();
+			javascriptClickforAdmin(outboundcampaign);
+			//outboundcampaign.click();
 		}
 	}
 	
@@ -365,7 +359,8 @@ public class AdminHomePage extends TestBase{
 		if(Bound.equalsIgnoreCase("inbound"))
 			search_did_inbound.sendKeys(D);
 		else search_did_outbound.sendKeys(D);
-		search_did_submit.click();
+		//search_did_submit.click();
+		javascriptClickforAdmin(search_did_submit);
 	}
 	
 	
@@ -422,7 +417,8 @@ public class AdminHomePage extends TestBase{
 			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Reset']")));
 			scrollandclick(element);
 				}
-			Campaign_reset_button.click();
+				javascriptClickforAdmin(Campaign_reset_button);
+				//Campaign_reset_button.click();
 
 			//System.out.println(div_message.getText());
 			return Getmessagediv();
@@ -446,8 +442,8 @@ public class AdminHomePage extends TestBase{
 			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='Reset']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Reset']")));
 			scrollandclick(element);
 				}
-			
-			Campaign_data_delete_button.click();
+			javascriptClickforAdmin(Campaign_data_delete_button);
+			//Campaign_data_delete_button.click();
 			driver1.switchTo().alert().accept();
 
 			//System.out.println(div_message.getText());
@@ -466,7 +462,8 @@ public class AdminHomePage extends TestBase{
 					WebElement element= driver1.findElement(By.xpath(first+result_row+second+AllTablerHeaders.size()+third+"/*/*"));
 					if(element.getAttribute("value").contains("ForceComplete"))
 					scrollandclick(element);
-
+					//*[@id='campaignList']/tbody/tr[1]/td[11]/*/*
+					
 				} else {
 			WebElement element= driver1.findElement(By.xpath((first+result_row+second+AllTablerHeaders.size()+third+"/*[@value='ForceComplete']")+" | "+(first+result_row+second+AllTablerHeaders.size()+third+"/*[@title='Force Complete']")));
 				
@@ -608,7 +605,8 @@ public class AdminHomePage extends TestBase{
 				((JavascriptExecutor)driver1).executeScript("arguments[0].removeAttribute('style')", uploadFile);
 				//System.out.println(path.toString());
 				uploadFile.sendKeys(path.toString());
-				Save_button.click();
+				javascriptClickforAdmin(Save_button);
+				//Save_button.click();
 				return Getmessagediv();
 				
 				}
@@ -655,7 +653,9 @@ public class AdminHomePage extends TestBase{
 				
 				if(CampaignName.getAttribute("value").trim().equals(cName.trim())) {
 					try {
-				Campaign_delete_button.click();}
+						javascriptClickforAdmin(Campaign_delete_button);
+				//Campaign_delete_button.click();
+						}
 					catch(Exception e) {
 						return "delete is not available";
 					}
@@ -686,7 +686,8 @@ public class AdminHomePage extends TestBase{
 				
 				if(CampaignName.getAttribute("value").trim().equals(cName.trim())) {
 					try {
-				Campaign_delete_button.click();}
+				//Campaign_delete_button.click();
+				javascriptClickforAdmin(Campaign_delete_button);}
 					catch(Exception e) {
 						return "delete is not available";
 					}
@@ -713,7 +714,8 @@ public class AdminHomePage extends TestBase{
 	}
 	
 	public void ClickEditProfileMenu() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
+		//Admin_home.click();
 		AdminHomePageTitle();
 		javascriptClickforAdmin(EditProfileIcon);
 		//EditProfileIcon.click();
@@ -737,7 +739,8 @@ public class AdminHomePage extends TestBase{
 		return user_username.getAttribute("value").trim();
 	}
 	public void ClickOnInBoundCampaignIcon() {
-		Admin_home.click();
+		//Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(InBoundCampaignIcon);
 		//InBoundCampaignIcon.click();
@@ -750,7 +753,7 @@ public class AdminHomePage extends TestBase{
 		return InBoundCampaignIcon_text.getText().trim();
 	}
 	public void ClickOnoutBoundCampaignIcon() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(outBoundCampaignIcon);
 		//outBoundCampaignIcon.click();
@@ -763,7 +766,7 @@ public class AdminHomePage extends TestBase{
 		return outBoundCampaignIcon_text.getText().trim();
 	}
 	public void ClickOnAgentsIcon() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(AgentsIcon);
 		//AgentsIcon.click();
@@ -776,7 +779,7 @@ public class AdminHomePage extends TestBase{
 		return AgentsIcon_text.getText().trim();
 	}
 	public void ClickOnFwpNumberIcon() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(FwpNumberIcon);
 		//FwpNumberIcon.click();
@@ -789,7 +792,7 @@ public class AdminHomePage extends TestBase{
 		return FwpNumberIcon_text.getText().trim();
 	}
 	public void ClickOnSkillIcon() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(SkillIcon);
 		//SkillIcon.click();
@@ -802,7 +805,7 @@ public class AdminHomePage extends TestBase{
 		return SkillIcon_text.getText().trim();
 	}
 	public void ClickOnPauseReasonIcon() {
-		Admin_home.click();
+		javascriptClickforAdmin(Admin_home);
 		AdminHomePageTitle();
 		javascriptClickforAdmin(PauseReasonIcon);
 		//PauseReasonIcon.click();

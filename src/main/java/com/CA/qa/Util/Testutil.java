@@ -69,7 +69,10 @@ public class Testutil extends TestBase{
 			//FileUtils.copyFile(scrfile, new File(currentDir+"/screenshots/"+System.currentTimeMillis()+".png"));
 			DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy H-m-s");
 	        Date date = new Date();
-			FileUtils.copyFile(scrfile, new File(currentDir+"/screenshots/"+testcaseName+"_"+dateFormat.format(date)+".png"));
+			//FileUtils.copyFile(scrfile, new File(currentDir+"/screenshots/"+testcaseName+"_"+dateFormat.format(date)+".png"));
+		
+			FileUtils.copyFile(scrfile, new File(currentDir+"/screenshots/"+dateFormat.format(date)+"_"+testcaseName+".png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

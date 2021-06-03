@@ -21,17 +21,17 @@ public class ValidateConfigurationsPage extends TestBase{
 	static int cou=1;
 	
 	String Agent_id_Empty_err ="Agent Id is required.";
-	String Agent_id_Range_err ="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
+	String Agent_id_Range_err ="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -";
 	String Agent_id_SplRange_err ="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
 	String Agent_pwd_empty_err ="Password is required.";
 	String Agent_pwd_Range_err ="The password must not contain spaces. The password must be 7 characters, including an uppercase letter, a lowercase letter, and alphanumeric characters.";
 	String Agent_name_Empty_err ="Agent Name is required.";
-	String Agent_name_Range_err ="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent name cannot start and end with Special characters.";
+	String Agent_name_Range_err ="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, -.";
 	String Agent_name_SplRange_err ="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent name cannot start and end with Special characters.";
 	String Agent_priority_Empty_err ="Priority is required.";
 	String Agent_priority_range_err ="Priority should be between 1 and 999.";
 	String Agent_email_err ="Email should be a valid email.";
-	String Agent_Data_range_err ="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, - and agent data cannot start and end with Special characters.";
+	String Agent_Data_range_err ="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, -.";
 	String Agent_Data_Splrange_err = Agent_Data_range_err;
 	String Agent_mode_empty_err ="Agent Modes is required.";
 	
@@ -126,11 +126,11 @@ public class ValidateConfigurationsPage extends TestBase{
 	String feedback_master_Audiofile1__err="AudioFile should be between 5 to 50 characters.";
 	
 	String sip_location_empty_err="Location Name is required.";
-	String sip_location_range_err="Location Name should be between 3 to 50 characters.";
+	String sip_location_range_err="Location Name should be between 3 to 50 alphanumeric characters long and allows special characters like _ and Name cannot start and end with Special characters.";
 	String sip_location_range1_err="Location Name should be between 3 to 50 alphanumeric characters only";
 	String sip_serverUrl_empty_err="SIP Server URL is required.";
-	String sip_serviceURL_range_err="SIP Server URL should be between 3 to 500 characters.";
-	String sip_serviceURL_space_err="SIP Server URL should not allow spaces";
+	String sip_serviceURL_range_err="SIP Server URL should start with http:// or https://";
+	String sip_serviceURL_space_err=sip_serviceURL_range_err;
 	String sip_assigned_agents_err="Assign Agents is required.";
 	
 	String music_name_empty_err ="Name is required.";
@@ -184,6 +184,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_id_Range_err="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_id_Range_err);
 	}
 	
@@ -196,6 +198,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_id_Range_err="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_id_Range_err);
 	}
 	
@@ -207,6 +211,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_id_Range_err="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_id_Range_err);
 	}
 	
@@ -218,6 +224,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentIdErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_id_Range_err="The agent identifier must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent identifier cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_id_Range_err);
 	}
 	
@@ -292,6 +300,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_name_Range_err="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent name cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_name_Range_err);
 	}
 	
@@ -303,6 +313,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentNameErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_name_Range_err="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent name cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_name_Range_err);
 	}
 	
@@ -346,6 +358,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_name_Range_err="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, - and agent data cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_Data_range_err);
 	}
 	
@@ -357,6 +371,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentDataErrorMessage();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			Agent_name_Range_err="Agent data must be between 2 and 100 alphanumeric characters and allow special characters such as., @, _, - and agent data cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_Data_range_err);
 	}
 	
@@ -1631,6 +1647,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationErr();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_location_range_err="Location Name should be between 3 to 50 characters.";
 		Assert.assertEquals(Err_msg, sip_location_range_err);
 	}
 	@Test (priority=141)
@@ -1641,7 +1659,9 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, sip_location_range1_err);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_location_range_err="Location Name should be between 3 to 50 characters.";
+		Assert.assertEquals(Err_msg, sip_location_range_err);
 	}
 	@Test (priority=142)
 	public void ValidateSipLOcationNameRangeErrorMsg17_14() {
@@ -1651,7 +1671,9 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, sip_location_range1_err);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_location_range_err="Location Name should be between 3 to 50 characters.";
+		Assert.assertEquals(Err_msg, sip_location_range_err);
 	}
 	@Test (priority=143)
 	public void ValidateSipLOcationNameRangeErrorMsg17_15() {
@@ -1661,7 +1683,9 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationErr();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, sip_location_range1_err);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_location_range_err="Location Name should be between 3 to 50 characters.";
+		Assert.assertEquals(Err_msg, sip_location_range_err);
 	}
 	@Test (priority=144)
 	public void ValidateSipServerURLEmptyErrorMsg17_2() {
@@ -1680,6 +1704,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_serviceURL_range_err="SIP Server URL should be between 3 to 500 characters.";
 		Assert.assertEquals(Err_msg, sip_serviceURL_range_err);
 	}
 
@@ -1691,6 +1717,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_serviceURL_space_err="SIP Server URL should not allow spaces";
 		Assert.assertEquals(Err_msg, sip_serviceURL_space_err);
 	}
 	@Test (priority=147)
@@ -1701,6 +1729,8 @@ public class ValidateConfigurationsPage extends TestBase{
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetSipLocationURLErr();
 		System.out.println("err msg is: "+Err_msg);
+		if(driver1.getCurrentUrl().contains("ca-stg"))
+			sip_serviceURL_space_err="SIP Server URL should not allow spaces";
 		Assert.assertEquals(Err_msg, sip_serviceURL_space_err);
 	}
 	@Test (priority=148)

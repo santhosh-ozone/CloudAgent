@@ -1,11 +1,15 @@
 package com.CA.qa.Pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -210,7 +214,10 @@ public class AddCampaignPage extends TestBase{
 	
 	@FindBy(id= "select2-campaignForm_campaign_previewDataMap_id-container")
 	WebElement Mapping;
-
+	
+	@FindBy(xpath= "//*[@id='select2-campaignForm_campaign_previewDataMap_id-container']//following-sibling::*")
+	WebElement Mapping_arrow;
+	
 	@FindBy(id= "campaignForm_campaign_blockNumber")
 	WebElement campaignform_blockNumber;
 
@@ -370,14 +377,19 @@ public class AddCampaignPage extends TestBase{
 			try {
 				if(CampaignType.isDisplayed())
 				CampaignType.click();
+				//javascriptClickforAdmin(CampaignType);
 		if(ctype.toString().contains("Preview")|| ctype.toString().equalsIgnoreCase("preview") )
 			PreviewCampaign.click();
+			//javascriptClickforAdmin(PreviewCampaign);
 		else if(ctype.toString().contains("Progressive") || ctype.toString().equalsIgnoreCase("progressive"))
 			ProgressiveCampaign.click();
+			//javascriptClickforAdmin(ProgressiveCampaign);
 		else if(ctype.toString().contains("IVR") || ctype.toString().equalsIgnoreCase("ivr"))
 			IvrCampaign.click();
+			//javascriptClickforAdmin(IvrCampaign);
 		else if(ctype.toString().contains("Predictive") || ctype.toString().equalsIgnoreCase("predictive")) {
 			PredictiveCampaign.click();
+			//javascriptClickforAdmin(PredictiveCampaign);
 			//driver1.findElement(By.id("campaignForm_campaign_customerRingingTime")).sendKeys("30");
 		}
 		}catch(NoSuchElementException e) {
@@ -390,11 +402,15 @@ public class AddCampaignPage extends TestBase{
 		try {
 		if(CampaigndialMethod.isDisplayed()) {
 		CampaigndialMethod.click();
+		//javascriptClickforAdmin(CampaigndialMethod);
 		if(dmethod.toString().contains("Nonagentwise") || dmethod.toString().equalsIgnoreCase("nonagentwise"))
 			Nonagentwise.click();
+			//javascriptClickforAdmin(Nonagentwise);
 		else if(dmethod.toString().contains("Agentwise")|| dmethod.toString().equalsIgnoreCase("agentwise"))
+			//javascriptClickforAdmin(Agentwise);
 			Agentwise.click();
 		else if(dmethod.toString().contains("Skillwise") || dmethod.toString().equalsIgnoreCase("skillwise"))
+			//javascriptClickforAdmin(Skillwise);
 			Skillwise.click();
 		}	}catch(NoSuchElementException e) {
 		}
@@ -412,23 +428,24 @@ public class AddCampaignPage extends TestBase{
 		return "success";
 		}
 	
-	public void EnterfallbackDID(String did) {
-		if(!did.equals("")) {
+	public String EnterfallbackDID(String did) {
+		if(!did.equals("") && fallbackDID.isDisplayed()) {
 			fallbackDID.clear();
 			fallbackDID.sendKeys(did);
-	}}
+			return "yes";
+	}return "no";
+			}
 	
 	public void ClickOnADDMapping() {
 	try {
 		Thread.sleep(1000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	} catch (InterruptedException e) {}
+	
 		JavascriptExecutor jse = (JavascriptExecutor)driver1;
 		jse.executeScript("scroll(0,500)");
+		javascriptClickforAdmin(map_create);
 		//jse.executeScript("return document.getElementsByClassName('am-scroll-top')[0].remove();");
-		JavaScriptClick(map_create);
+		//JavaScriptClick(map_create);
 		//map_create.click();
 	}
 	
@@ -440,7 +457,8 @@ public class AddCampaignPage extends TestBase{
 	
 	public void CloseOnADDMapping() {
 		//driver1.switchTo().frame("modal_iframe");
-		JavaScriptClick(map_close_button);
+		javascriptClickforAdmin(map_close_button);
+		//JavaScriptClick(map_close_button);
 		//map_close_button.click();
 		//driver1.switchTo().defaultContent();
 	}
@@ -458,9 +476,11 @@ public class AddCampaignPage extends TestBase{
 		if(!I.equals("")) {
 			try {
 				if(IvrFlow.isDisplayed()) {
-					IvrFlow.click();
+					javascriptClickforAdmin(IvrFlow);
+					//IvrFlow.click();
 					OnHold_input.sendKeys(I.toString().trim());
-					select_highlighted.click();
+					javascriptClickforAdmin(select_highlighted);
+					//select_highlighted.click();
 				}
 			}catch(NoSuchElementException e) {
 			}
@@ -633,14 +653,14 @@ public class AddCampaignPage extends TestBase{
 		try {
 		if(offLineMode.isDisplayed()&& !offLineMode.isSelected())
 		{
-			JavaScriptClick(offLineMode);
+			javascriptClickforAdmin(offLineMode);
 		}
 			//offLineMode.click();
 		}catch(NoSuchElementException e) {
 		} else if (E.equalsIgnoreCase("no"))
 		try {
 			if(offLineMode.isDisplayed()&& offLineMode.isSelected())
-				JavaScriptClick(offLineMode);
+				javascriptClickforAdmin(offLineMode);
 				//offLineMode.click();
 		}catch(NoSuchElementException e) {
 		}
@@ -660,14 +680,14 @@ public class AddCampaignPage extends TestBase{
 		try {
 		if(allowedManual.isDisplayed() && !allowedManual.isSelected() )
 		{	
-			JavaScriptClick(allowedManual);
+		javascriptClickforAdmin(allowedManual);
 		}
 			//allowedManual.click();
 		}catch(NoSuchElementException e) {
 		} else if (E.equalsIgnoreCase("No"))
 			try {
 				if(allowedManual.isDisplayed() && allowedManual.isSelected() )
-					JavaScriptClick(allowedManual);
+					javascriptClickforAdmin(allowedManual);
 					//allowedManual.click();
 				}catch(NoSuchElementException e) {
 				}
@@ -680,12 +700,12 @@ public class AddCampaignPage extends TestBase{
 		if(E.equalsIgnoreCase("YES"))
 			try {
 				if(DND_Enabled_label.isDisplayed() && !DND_Enabled_checkbox.isSelected())	
-					JavaScriptClick(DND_Enabled_checkbox);
+					javascriptClickforAdmin(DND_Enabled_checkbox);
 		}catch(NoSuchElementException e) {
 			}else if(E.equalsIgnoreCase("no"))
 				try {
 					if(DND_Enabled_label.isDisplayed() && DND_Enabled_checkbox.isSelected())	
-						JavaScriptClick(DND_Enabled_checkbox);
+						javascriptClickforAdmin(DND_Enabled_checkbox);
 					}catch(NoSuchElementException e) {
 						}
 		//System.out.println("dnd status: "+DND_Enabled_checkbox.isSelected());	
@@ -696,12 +716,12 @@ public class AddCampaignPage extends TestBase{
 		if(E.equalsIgnoreCase("YES"))
 		try {
 		if(STD_Enabled_label.isDisplayed() && !STD_Enabled_checkbox.isSelected())	
-			JavaScriptClick(STD_Enabled_checkbox);
+			javascriptClickforAdmin(STD_Enabled_checkbox);
 		}catch(NoSuchElementException e) {
 		}else if(E.equalsIgnoreCase("no"))
 			try {
 				if(STD_Enabled_label.isDisplayed() && STD_Enabled_checkbox.isSelected())	
-					JavaScriptClick(STD_Enabled_checkbox);
+					javascriptClickforAdmin(STD_Enabled_checkbox);
 				}catch(NoSuchElementException e) {
 				} 
 		
@@ -711,12 +731,12 @@ public class AddCampaignPage extends TestBase{
 		if(E.equalsIgnoreCase("YES"))
 		try {
 		if(DaialcustomerFirst.isDisplayed() && !DaialcustomerFirst.isSelected())
-			JavaScriptClick(DaialcustomerFirst);
+			javascriptClickforAdmin(DaialcustomerFirst);
 		}catch(NoSuchElementException e) {
 		}else if(E.equalsIgnoreCase("no"))
 			try {
 				if(DaialcustomerFirst.isDisplayed() && DaialcustomerFirst.isSelected())	
-					JavaScriptClick(DaialcustomerFirst);
+					javascriptClickforAdmin(DaialcustomerFirst);
 				}catch(NoSuchElementException e) {
 				} 
 		
@@ -726,12 +746,12 @@ public class AddCampaignPage extends TestBase{
 		if(E.equalsIgnoreCase("YES"))
 		try {
 		if(Dial_by_holding_agent.isDisplayed() && !Dial_by_holding_agent.isSelected() )	
-			JavaScriptClick(Dial_by_holding_agent);
+			javascriptClickforAdmin(Dial_by_holding_agent);
 		}catch(NoSuchElementException e) {
 		}else if(E.equalsIgnoreCase("no"))
 			try {
 				if(Dial_by_holding_agent.isDisplayed() && Dial_by_holding_agent.isSelected() )	
-					JavaScriptClick(Dial_by_holding_agent);
+					javascriptClickforAdmin(Dial_by_holding_agent);
 				}catch(NoSuchElementException e) {
 				}
 		
@@ -741,21 +761,15 @@ public class AddCampaignPage extends TestBase{
 		if(E.equalsIgnoreCase("YES"))
 		try {
 		if(recentFirst.isDisplayed() && !recentFirst.isSelected() )
-			JavaScriptClick(recentFirst);
+			javascriptClickforAdmin(recentFirst);
 		}catch(NoSuchElementException e) {
 		}else if(E.equalsIgnoreCase("no"))
 			try {
 				if(recentFirst.isDisplayed() && recentFirst.isSelected() )
-					JavaScriptClick(recentFirst);
+					javascriptClickforAdmin(recentFirst);
 			}catch(NoSuchElementException e) {
 				}
 		
-	}
-	
-	public static void JavaScriptClick(WebElement element) {
-		
-		JavascriptExecutor js = (JavascriptExecutor)driver1;
-		js.executeScript("arguments[0].click();", element);
 	}
 	
 	public void EnableACWforUnAnsweredCalls(String E) {
@@ -763,7 +777,7 @@ public class AddCampaignPage extends TestBase{
 		try {
 		if(ACW_for_UnAnsweredCalls.isDisplayed())
 			//ACW_for_UnAnsweredCalls.click();
-			JavaScriptClick(ACW_for_UnAnsweredCalls);
+			javascriptClickforAdmin(ACW_for_UnAnsweredCalls);
 	}catch(NoSuchElementException e) {
 		}
 		
@@ -774,7 +788,8 @@ public class AddCampaignPage extends TestBase{
 		if(D.toString().trim().contains("YES") || D.toString().trim().equalsIgnoreCase("yes"))
 		try {
 		if(Apply_DNC_lable.isDisplayed()) 
-			JavaScriptClick(Apply_DNC_checkbox);
+			//Apply_DNC_checkbox.click();
+			javascriptClickforAdmin(Apply_DNC_lable);
 	}catch(NoSuchElementException e) {
 		}
 		
@@ -821,8 +836,8 @@ public class AddCampaignPage extends TestBase{
 	
 	public void SelectDisposition(String D) {
 		if(!D.equals("")) {
-			JavaScriptClick(Dispositions);
-			JavaScriptClick(UnselectAll);
+			javascriptClickforAdmin(Dispositions);
+			javascriptClickforAdmin(UnselectAll);
 			//Dispositions.click();
 			//UnselectAll.click();
 		if(D.contains(",")) {
@@ -830,7 +845,7 @@ public class AddCampaignPage extends TestBase{
 			for (String u: words) {
 				if(u.trim().equalsIgnoreCase("all")) {
 					Dispositions.sendKeys(" ");
-					JavaScriptClick(selectAll);
+					javascriptClickforAdmin(selectAll);
 //					for (WebElement w:AllDispositionsList) {
 //						if(!w.getText().equals(""))
 //							JavaScriptClick(w);	
@@ -839,7 +854,7 @@ public class AddCampaignPage extends TestBase{
 					break;
 				} else {
 					Dispositions.sendKeys(u);
-					JavaScriptClick(selectAll);
+					javascriptClickforAdmin(selectAll);
 //					for (WebElement w:AllDispositionsList)
 //						JavaScriptClick(w);	
 //						//w.click();
@@ -849,7 +864,7 @@ public class AddCampaignPage extends TestBase{
 		}
 			else if(D.equalsIgnoreCase("all")){
 				Dispositions.sendKeys(" ");
-				JavaScriptClick(selectAll);
+				javascriptClickforAdmin(selectAll);
 				
 //			//Dispositions.click();
 //			for (WebElement w:AllDispositionsList) {
@@ -862,7 +877,7 @@ public class AddCampaignPage extends TestBase{
 		}
 		else {
 			Dispositions.sendKeys(D);
-			JavaScriptClick(selectAll);
+			javascriptClickforAdmin(selectAll);
 //			for (WebElement w:AllDispositionsList)
 //				JavaScriptClick(w);	
 				//w.click();
@@ -874,8 +889,8 @@ public class AddCampaignPage extends TestBase{
 	public void SelectSkills(String S) {
 			
 		if(!S.equals("")) {
-			JavaScriptClick(Skills);
-			JavaScriptClick(UnselectAll);
+			javascriptClickforAdmin(Skills);
+			javascriptClickforAdmin(UnselectAll);
 			//Skills.click();
 			//UnselectAll.click();
 		if(S.contains(",")) {
@@ -885,7 +900,7 @@ public class AddCampaignPage extends TestBase{
 					//System.out.println(u);
 					//Skills.clear();
 					Skills.sendKeys(" ");
-					JavaScriptClick(selectAll);
+					javascriptClickforAdmin(selectAll);
 //					for (WebElement w:AllSkillsList) {
 //						if(!w.getText().equals(""))
 //							JavaScriptClick(w);
@@ -896,7 +911,7 @@ public class AddCampaignPage extends TestBase{
 					//System.out.println(u);
 					//Skills.clear();
 					Skills.sendKeys(u);
-					JavaScriptClick(selectAll);
+					javascriptClickforAdmin(selectAll);
 //					for (WebElement w:AllSkillsList)
 //						JavaScriptClick(w);
 //						//w.click();
@@ -906,7 +921,7 @@ public class AddCampaignPage extends TestBase{
 			}
 		else if(S.equalsIgnoreCase("all")) {
 			Skills.sendKeys(" ");
-			JavaScriptClick(selectAll);
+			javascriptClickforAdmin(selectAll);
 			//selectAll.click();
 //			for (WebElement w:AllSkillsList)
 //				if(!w.getText().equals(""))
@@ -914,7 +929,7 @@ public class AddCampaignPage extends TestBase{
 					//w.click();
 		} else {
 			Skills.sendKeys(S);
-			JavaScriptClick(selectAll);
+			javascriptClickforAdmin(selectAll);
 //			for (WebElement w:AllSkillsList)
 //				JavaScriptClick(w);
 				//w.click();
@@ -972,7 +987,8 @@ public class AddCampaignPage extends TestBase{
 					
 					//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", moveRight1);	
 					System.out.println("scroll over");
-					w.click();
+					javascriptClickforAdmin(w);
+					//w.click();
 					//System.out.println("skill click over");
 					((JavascriptExecutor) driver1).executeScript("window.scrollBy(0,-2000)", "");
 					moveRight1.click();
@@ -994,7 +1010,7 @@ public class AddCampaignPage extends TestBase{
 						Users_assigned.sendKeys(" ");
 						for (WebElement w:AllUsersList) {
 							if(!w.getText().equals(""))
-								JavaScriptClick(w);
+								javascriptClickforAdmin(w);
 								//w.click();
 							}
 						break;
@@ -1002,7 +1018,7 @@ public class AddCampaignPage extends TestBase{
 						//Users_assigned.clear();		
 						Users_assigned.sendKeys(u.trim());
 						for (WebElement w:AllUsersList)
-							JavaScriptClick(w);
+							javascriptClickforAdmin(w);
 							//w.click();
 					}
 					Users_assigned.clear();}
@@ -1011,7 +1027,7 @@ public class AddCampaignPage extends TestBase{
 				Users_assigned.clear();	
 				Users_assigned.sendKeys(" ");
 				for (WebElement w:AllUsersList)
-					JavaScriptClick(w);
+					javascriptClickforAdmin(w);
 					//w.click();
 			}else {
 				Users_assigned.clear();		
@@ -1020,7 +1036,7 @@ public class AddCampaignPage extends TestBase{
 					Users_assigned.sendKeys(Keys.TAB);
 				}
 				else for (WebElement w:AllUsersList)
-					JavaScriptClick(w);
+					javascriptClickforAdmin(w);
 				//w.click();
 				
 			}
@@ -1036,27 +1052,32 @@ public class AddCampaignPage extends TestBase{
 			try {
 				if(Mapping.isDisplayed()) {
 					JavascriptExecutor jse = (JavascriptExecutor)driver1;
-					jse.executeScript("scroll(0,500)");
-					//Testutil.flash(Mapping, driver1);	
-					//JavaScriptClick(Mapping);
+//					jse.executeScript("scroll(0,1000)");
+					jse.executeScript("arguments[0].scrollIntoView(false);", Mapping);
+					Testutil.flash(Mapping, driver1);	
+					
+					//javascriptClickforAdmin(Mapping_arrow);
 					Mapping.click();
-					System.out.println("mapping clicked");
-		//Mapping.click();
-		MappingText.sendKeys(M.toString());
-		System.out.println("maapping text entered");
+					//Mapping_arrow.click();
+					//System.out.println("============================================mapping clicked");
+					MappingText.sendKeys(M.toString());
+					//System.out.println("==============================maapping text entered");
 		
-		//Testutil.flash(MappingText, driver1);	
-		//JavaScriptClick(select_highlighted);
-		System.out.println("selected hilighted");
-		select_highlighted.click();
-		}
-	}catch(Exception e) {
-		JavascriptExecutor jse = (JavascriptExecutor)driver1;
-		jse.executeScript("scroll(0,-1000)");
-		Mapping.click();
-		MappingText.sendKeys(M.toString());
-		select_highlighted.click();
-	}
+					Testutil.flash(MappingText, driver1);	
+					//JavaScriptClick(select_highlighted);
+					//System.out.println("selected hilighted");
+					//javascriptClickforAdmin(select_highlighted);
+					select_highlighted.click();
+				}
+			}catch(Exception e) {
+				JavascriptExecutor jse = (JavascriptExecutor)driver1;
+				jse.executeScript("scroll(0,-500)");
+				javascriptClickforAdmin(Mapping);
+				//Mapping.click();
+				MappingText.sendKeys(M.toString());
+				javascriptClickforAdmin(select_highlighted);
+				//select_highlighted.click();
+			}
 		}			
 }
 	
@@ -1080,7 +1101,8 @@ public class AddCampaignPage extends TestBase{
 			try {
 				if(uploadText.isDisplayed()) {
 		((JavascriptExecutor)driver1).executeScript("arguments[0].removeAttribute('style')", uploadFile);
-		//System.out.println(path.toString());
+		System.out.println("============="+driver1.switchTo().activeElement().getLocation().getY());
+		
 		uploadFile.sendKeys(path.toString());
 		}
 	}catch(NoSuchElementException e) {
@@ -1125,21 +1147,18 @@ public class AddCampaignPage extends TestBase{
 		JavascriptExecutor js = (JavascriptExecutor) driver1;
 
 		js.executeScript("arguments[0].style.height = '50px'", script);
-		JavaScriptClick(Save_button);
+		javascriptClickforAdmin(Save_button);
 		
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (InterruptedException e) {}
 		//Save_button.click();
 		//document.getElementById(script).style.height = "50px";
 		//System.out.println("clicked save");
 	}
 	
 	public void ClickOnCancelCampaign() {
-		JavaScriptClick(Cancel_button);
+		javascriptClickforAdmin(Cancel_button);
 		//Cancel_button.click();
 	}
 

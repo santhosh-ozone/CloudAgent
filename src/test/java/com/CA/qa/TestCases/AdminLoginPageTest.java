@@ -46,6 +46,7 @@ public class AdminLoginPageTest extends TestBase{
 		//AdminHomepage = Adminloginpage.LoginAsAdmin(prop.getProperty("Admin_UserName"), prop.getProperty("Admin_password"));
 		AdminHomepage = Adminloginpage.LoginAsAdmin(Testutil.Readexcel("AdminLogin",1).get(0),Testutil.Readexcel("AdminLogin",2).get(0));
 		Assert.assertEquals(AdminHomepage.AdminHomePageTitle(),	Testutil.Exp_AdminhomePageTitle);	
+		
 	}
 	@Test (priority = 2)
 	public void verifyAdminLoginInvalidUserErrorMessageTest1_2() {
