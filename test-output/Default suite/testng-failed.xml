@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="verifyCustomerInterestReportReport_CheckPointDisplayedTest"/>
+          <include name="verifyAgentLogReport_DisplayedTest"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </classes>

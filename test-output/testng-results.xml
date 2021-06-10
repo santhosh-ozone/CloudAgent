@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-03T11:19:02 IST" name="Cloud Agent Application Automation Test Suite" finished-at="2021-06-03T11:19:11 IST" duration-ms="8805">
+  <suite started-at="2021-06-09T21:49:31 IST" name="Cloud Agent Application Automation Test Suite" finished-at="2021-06-09T21:49:44 IST" duration-ms="12497">
     <groups>
     </groups>
-    <test started-at="2021-06-03T11:19:02 IST" name="Cloud Agent Application test cases" finished-at="2021-06-03T11:19:11 IST" duration-ms="8805">
+    <test started-at="2021-06-09T21:49:31 IST" name="Cloud Agent Application test cases" finished-at="2021-06-09T21:49:44 IST" duration-ms="12497">
       <class name="com.CA.qa.TestCases.DashBoardPageTest">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method, java.lang.String)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@75d4a5c2]" started-at="2021-06-03T11:19:02 IST" name="setup" finished-at="2021-06-03T11:19:09 IST" duration-ms="6591" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method, java.lang.String)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@557caf28]" started-at="2021-06-09T21:49:31 IST" name="setup" finished-at="2021-06-09T21:49:41 IST" duration-ms="9428" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyConferenceReport_DisplayedTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifySkillReport_DisplayedTest()]]>
               </value>
             </param>
             <param index="1">
@@ -23,20 +23,20 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyConferenceReport_DisplayedTest()[pri:17, instance:com.CA.qa.TestCases.DashBoardPageTest@75d4a5c2]" started-at="2021-06-03T11:19:09 IST" name="verifyConferenceReport_DisplayedTest" finished-at="2021-06-03T11:19:10 IST" duration-ms="1489" status="PASS">
+        <test-method signature="verifySkillReport_DisplayedTest()[pri:23, instance:com.CA.qa.TestCases.DashBoardPageTest@557caf28]" started-at="2021-06-09T21:49:41 IST" name="verifySkillReport_DisplayedTest" finished-at="2021-06-09T21:49:43 IST" duration-ms="2348" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyConferenceReport_DisplayedTest -->
-        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@75d4a5c2]" started-at="2021-06-03T11:19:10 IST" name="teardown" finished-at="2021-06-03T11:19:11 IST" duration-ms="678" status="PASS">
+        </test-method> <!-- verifySkillReport_DisplayedTest -->
+        <test-method is-config="true" signature="teardown(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.CA.qa.TestCases.DashBoardPageTest@557caf28]" started-at="2021-06-09T21:49:43 IST" name="teardown" finished-at="2021-06-09T21:49:44 IST" duration-ms="692" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifyConferenceReport_DisplayedTest()]]>
+                <![CDATA[public void com.CA.qa.TestCases.DashBoardPageTest.verifySkillReport_DisplayedTest()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=verifyConferenceReport_DisplayedTest status=SUCCESS method=DashBoardPageTest.verifyConferenceReport_DisplayedTest()[pri:17, instance:com.CA.qa.TestCases.DashBoardPageTest@75d4a5c2] output={null}]]]>
+                <![CDATA[[TestResult name=verifySkillReport_DisplayedTest status=SUCCESS method=DashBoardPageTest.verifySkillReport_DisplayedTest()[pri:23, instance:com.CA.qa.TestCases.DashBoardPageTest@557caf28] output={null}]]]>
               </value>
             </param>
           </params>

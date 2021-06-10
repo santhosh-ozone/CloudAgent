@@ -11,7 +11,7 @@
         <methods>
           <include name="setup"/>
           <include name="teardown"/>
-          <include name="verifyConferenceReport_DisplayedTest"/>
+          <include name="verifySkillReport_DisplayedTest"/>
         </methods>
       </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
     </classes>

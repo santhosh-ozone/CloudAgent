@@ -41,7 +41,18 @@ public class DashBoardPageTest extends TestBase{
 	String CustomerInterestReport_CheckPoint_header ="Customer Interaction report (Check Point)";
 	String PriUtilizationReport_header ="PriUtilization Report";
 	String PriUtilizationReport_Title ="PRI Utilization";
+	
 	String ConfernceReport_Title ="Conference Report";
+	String IVRHangupReport_Title ="IVR Hangups Report";
+	String AgentLogReport_Title ="Agent Log";
+	String AgentLogReport_Header ="Agent Log Report";
+	String ChatDetailReport_Header ="Chat Detail Report";
+	String ChatDetailReport_Title ="Chat Detail";
+	String CustomerHoldReport_Title ="Customer Hold Report";
+	String PredictivePermormanceReport_Title ="Predictive Performance Report";
+	String SLAReport_Title ="SLA Report";
+	String SkillReport_Title ="Skill Report";
+	
 	
 	
 	
@@ -374,26 +385,171 @@ public class DashBoardPageTest extends TestBase{
 //		Assert.assertTrue(!str.isBlank(), "message");
 //		
 //		}
+//	
+//	@Test (priority = 17) 
+//	public void verifyConferenceReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnConferenceReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,ConfernceReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, ConfernceReport_Title);
+//		
+//		DashBoardpage.clickOnConferenceReport_search();
+//		String str=DashBoardpage.GetDataFromFirstCellOnConferenceReport();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		
+//		}
+//	
+//	@Test (priority = 18) 
+//	public void verifyIVRHangupReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnIVRHangupsReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,IVRHangupReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, IVRHangupReport_Title);
+//		
+//		DashBoardpage.clickOnIVRHangupsReportMenu_generate();
+//		String str=DashBoardpage.GetDataFromFirstCellOnIVRHangupReport();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		
+//		}
+//	
+//	@Test (priority = 19) 
+//	public void verifyAgentLogReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnAgentLogMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,AgentLogReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, AgentLogReport_Header);
+//		
+//		DashBoardpage.clickOnagentLogReport_search();
+//		String str=DashBoardpage.GetDataFromFirstCellOnAgentLogReport();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		
+//		}
+//	@Test (priority = 20) 
+//	public void verifyChatDetailReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnChatDetailReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,ChatDetailReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, ChatDetailReport_Header);
+//		
+//		DashBoardpage.clickOnChatDetailReport_search();
+//		String str=DashBoardpage.GetDataFromFirstCellOnchatDetailReport();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		}//CustomerHoldReport_Title
+//	
+//	@Test (priority = 21) 
+//	public void verifyCustomerHoldReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnCustomerHoldReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,CustomerHoldReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, CustomerHoldReport_Title);
+//		
+//		DashBoardpage.ClickOngenerateOnCDR();
+//		String str=DashBoardpage.GetDataFromFirstCellOnCdr();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		}
+//	@Test (priority = 21) 
+//	public void verifyPredictivePerformanceReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnPredictivePerformanceReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,PredictivePermormanceReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, PredictivePermormanceReport_Title);
+//		
+//		DashBoardpage.ClickOngenerateOnCDR();
+//		String str=DashBoardpage.GetDataFromFirstCellOnCdr();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		}
+//	@Test (priority = 22) 
+//	public void verifySLAReport_DisplayedTest() {
+//		DashBoardpage.clickOnReportsMenu();
+//		DashBoardpage.clickOnSLAReportMenu();
+//		
+//		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
+//		System.out.println("Title================"+Act_PageTitle);
+//		Assert.assertEquals(Act_PageTitle,SLAReport_Title);
+//		
+//		String Act_PageHeading = DashBoardpage.GetMainheading();
+//		System.out.println("Header=================="+Act_PageHeading);
+//		Assert.assertEquals(Act_PageHeading, SLAReport_Title);
+//		
+//		DashBoardpage.ClickOnSelectALLCampaignsOnSLAReport();
+//		DashBoardpage.ClickOnSelectALLSkillsOnSLAReport();
+//		DashBoardpage.ClickOngenerateOnCDR();
+//		String str=DashBoardpage.GetDataFromFirstCellOnCdr();
+//		System.out.println("first Cell====================="+str);
+//		Assert.assertTrue(!str.isBlank(), "message");
+//		}
 	
-	@Test (priority = 17) 
-	public void verifyConferenceReport_DisplayedTest() {
+	@Test (priority = 23) 
+	public void verifySkillReport_DisplayedTest() {
 		DashBoardpage.clickOnReportsMenu();
-		DashBoardpage.clickOnConferenceReportMenu();
+		DashBoardpage.clickOnSkillReportMenu();
 		
 		String Act_PageTitle = DashBoardpage.dashboardpageTitle();
 		System.out.println("Title================"+Act_PageTitle);
-		Assert.assertEquals(Act_PageTitle,ConfernceReport_Title);
+		Assert.assertEquals(Act_PageTitle,SkillReport_Title);
 		
 		String Act_PageHeading = DashBoardpage.GetMainheading();
 		System.out.println("Header=================="+Act_PageHeading);
-		Assert.assertEquals(Act_PageHeading, ConfernceReport_Title);
+		Assert.assertEquals(Act_PageHeading, SkillReport_Title);
 		
-		DashBoardpage.clickOnConferenceReport_search();
-		String str=DashBoardpage.GetDataFromFirstCellOnConferenceReport();
+		DashBoardpage.ClickOnSelectALLSkillsOnSkillReport();
+		DashBoardpage.clickOnSkillReport_generate();
+		String str=DashBoardpage.GetDataFromFirstCellOnSkillReportAgentStatus();
 		System.out.println("first Cell====================="+str);
 		Assert.assertTrue(!str.isBlank(), "message");
 		
+		String str1=DashBoardpage.GetDataFromFirstCellOnSkillReportSkillwise();
+		System.out.println("first Cell====================="+str);
+		Assert.assertTrue(!str1.isBlank(), "message");
+				
 		}
+	
+	
+	
+	
+	
 	
 	
 	

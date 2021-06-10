@@ -20,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -34,6 +35,10 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static WebDriver driver1;
+	
+//	public static WebDriver driver;
+//	public WebDriver driver1;
+	public WebDriver driver2;
 	public static int count=40;
 	public static int row_no= 0;
 	public static int Agents_count=0;
@@ -123,14 +128,34 @@ public class TestBase {
       WebDriverManager.chromedriver().setup();
       return new ChromeDriver();
   }
-				
-	public static void AdminLogin() {
+	private static WebDriver getEdgeDriver() {
+      WebDriverManager.edgedriver().setup();
+      return new EdgeDriver();
+  }			
+	
+	public void AdminLogin() {
+		AdminLogin("chrome");
+		//return driver1;
+	}
+	
+	public WebDriver AdminLogin1() {
+		driver2 = getChromeDriver();;
+		ArrayList<String> URL=Testutil.Readexcel("AdminLogin",0);
+		driver2.get(URL.get(0));
+		return driver2;
+	}
+	
+	public void AdminLogin(String browserName) {
 		
-		String browserName= prop.getProperty("Browser");
-		if (browserName.equals("chrome")){
+		//String browserName= prop.getProperty("Browser");
+		if (browserName.equalsIgnoreCase("chrome")){
 			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\santosh\\chrome driver\\chromedriver.exe");
 			//driver1 = new ChromeDriver();
 			driver1=getChromeDriver();
+		      }
+		else if (browserName.equalsIgnoreCase("Edge")){
+			//driver1 = new ChromeDriver();
+			driver1=getEdgeDriver();
 		      }
 		e_driver1 = new EventFiringWebDriver(driver1);
 		eventlistener1 = new WebEventListener();
@@ -148,9 +173,9 @@ public class TestBase {
 		
 		//driver1.get(prop.getProperty("Admin_url"));
 		
-		
+		//return driver1;
 	}
-public static void DashBoardLogin() {
+public void DashBoardLogin() {
 		
 		String browserName= prop.getProperty("Browser");
 		if (browserName.equals("chrome")){

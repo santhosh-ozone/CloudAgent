@@ -9,7 +9,7 @@
   
   <parameter name = "TesterName" value="Santosh"/>
   
-  <test name="Cloud Agent Application test cases" >
+  <test name="Cloud Agent Application test cases">
 <!--   <groups> -->
 <!--   	<run> -->
 <!--   		<include name=".*smoke.*"  /> -->

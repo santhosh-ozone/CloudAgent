@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.CA.qa.Base.TestBase;
+import com.CA.qa.Util.Testutil;
 
 public class DashBoardPage extends TestBase{
 	
@@ -159,6 +160,63 @@ public class DashBoardPage extends TestBase{
 	
 	@FindBy(xpath= "//*[@id='report']/tbody/tr[1]/td[1]")
 	WebElement ConferenceReport_first_record;
+	
+	@FindBy(id= "IVRHangupsReportMenu")
+	WebElement IVRHangupsReportMenu;
+	
+	@FindBy(id= "reportForm_button_generate")
+	WebElement IVRHangupsReportMenu_generate;
+	
+	@FindBy(xpath= "//*[@id='ivrhangupReportList  ']/tbody/tr[1]/td[1]")
+	WebElement IVRHangupsReport_first_record;
+	
+	@FindBy(id= "AgentLogMenu")
+	WebElement AgentLogMenu;
+	
+	@FindBy(id= "agentLogForm_button_search")
+	WebElement agentLogReport_search;
+	
+	@FindBy(xpath= "//*[@id='agentLogList']/tbody/tr[1]/td[1]")
+	WebElement AgentLogReport_first_record;
+	
+	@FindBy(id= "ChatDetailReportMenu")
+	WebElement ChatDetailReportMenu;
+	
+	@FindBy(id= "chatReportForm_button_search")
+	WebElement chatDetailReport_search;
+	
+	@FindBy(xpath= "//*[@id='chatDetailReportList']/tbody/tr[1]/td[1]")
+	WebElement ChatDetailReport_first_record;
+	
+	@FindBy(id= "CustomerHoldReport")
+	WebElement CustomerHoldReport;
+	
+	@FindBy(id= "PredictivePerformanceReport")
+	WebElement PredictivePerformanceReportMenu;
+	
+	@FindBy(id= "slaReport")
+	WebElement slaReportMenu;
+	
+	@FindBy(id= "reportForm_campaignIds")
+	WebElement select_campaignIds_slaReport;
+	
+	@FindBy(id= "reportForm_skillIds")
+	WebElement select_Skills_slaReport;
+	
+	@FindBy(id= "InboundProcessDashBoardMenu")
+	WebElement SkillReportMenu;
+	
+	@FindBy(id= "form1_skillIds")
+	WebElement select_Skills_skillReport;
+	
+	@FindBy(xpath= "//*[@value='Generate']")
+	WebElement SkillReport_generate;
+	
+	@FindBy(xpath= "//*[@id='agentReport']/tbody/tr[1]/td[1]")
+	WebElement SkillReport_agwise_first_record;
+	
+	@FindBy(xpath= "//*[@id='skillReport']/tbody/tr[1]/td[1]")
+	WebElement SkillReport_skillwise_first_record;
 	
 	
 	
@@ -376,6 +434,81 @@ public class DashBoardPage extends TestBase{
 		return ConferenceReport_first_record.getText();
 	}
 	
+	public void clickOnIVRHangupsReportMenu() {
+		javascriptClickforAdmin(IVRHangupsReportMenu);
+	}
+	
+	public void clickOnIVRHangupsReportMenu_generate() {
+		//Testutil.flash(IVRHangupsReportMenu_generate, driver1);
+		javascriptClickforAdmin(IVRHangupsReportMenu_generate);
+	}
+	
+	public String GetDataFromFirstCellOnIVRHangupReport() {
+		return IVRHangupsReport_first_record.getText();
+	}
+	
+	public void clickOnAgentLogMenu() {
+		javascriptClickforAdmin(AgentLogMenu);
+	}
+	
+	public void clickOnagentLogReport_search() {
+		//Testutil.flash(IVRHangupsReportMenu_generate, driver1);
+		javascriptClickforAdmin(agentLogReport_search);
+	}
+	
+	public String GetDataFromFirstCellOnAgentLogReport() {
+		return AgentLogReport_first_record.getText();
+	}
+	
+	public void clickOnChatDetailReportMenu() {
+		javascriptClickforAdmin(ChatDetailReportMenu);
+	}
+	
+	public void clickOnChatDetailReport_search() {
+		//Testutil.flash(IVRHangupsReportMenu_generate, driver1);
+		javascriptClickforAdmin(chatDetailReport_search);
+	}
+	
+	public String GetDataFromFirstCellOnchatDetailReport() {
+		return ChatDetailReport_first_record.getText();
+	}
+	public void clickOnCustomerHoldReportMenu() {
+		javascriptClickforAdmin(CustomerHoldReport);
+	}
+	public void clickOnPredictivePerformanceReportMenu() {
+		javascriptClickforAdmin(PredictivePerformanceReportMenu);
+	}
+	public void clickOnSLAReportMenu() {
+		javascriptClickforAdmin(slaReportMenu);
+	}
+	public void ClickOnSelectALLCampaignsOnSLAReport() {
+		//javascriptClickforAdmin(AgentpauseReport_agent_search);
+		Select s=new Select(select_campaignIds_slaReport);
+		s.selectByValue("0");
+	}
+	public void ClickOnSelectALLSkillsOnSLAReport() {
+		//javascriptClickforAdmin(AgentpauseReport_agent_search);
+		Select s=new Select(select_Skills_slaReport);
+		s.selectByValue("0");
+	}
+	
+	public void clickOnSkillReportMenu() {
+		javascriptClickforAdmin(SkillReportMenu);
+	}
+	public void ClickOnSelectALLSkillsOnSkillReport() {
+		//javascriptClickforAdmin(AgentpauseReport_agent_search);
+		Select s=new Select(select_Skills_skillReport);
+		s.selectByValue("0");
+	}
+	public String GetDataFromFirstCellOnSkillReportAgentStatus() {
+		return SkillReport_agwise_first_record.getText();
+	}
+	public String GetDataFromFirstCellOnSkillReportSkillwise() {
+		return SkillReport_skillwise_first_record.getText();
+	}
+	public void clickOnSkillReport_generate() {
+		javascriptClickforAdmin(SkillReport_generate);
+	}
 	
 	
 	

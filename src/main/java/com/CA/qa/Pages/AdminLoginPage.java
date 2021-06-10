@@ -121,7 +121,7 @@ public class AdminLoginPage extends TestBase{
 	}
 	public DashBoardPage LoginIntoDashBoard( String uname, String pwd) {
 		//Testutil.flash(Admin_username, driver1);
-		//System.out.println("n:"+uname+":");
+		System.out.println("==================n:"+uname+":");
 		Admin_username.sendKeys(uname);
 		//Testutil.flash(Admin_password, driver1);
 		//System.out.println("p:"+pwd+":");

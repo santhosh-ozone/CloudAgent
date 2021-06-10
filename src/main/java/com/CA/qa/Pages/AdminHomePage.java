@@ -219,11 +219,12 @@ public class AdminHomePage extends TestBase{
 
 	public void admin_logout() {
 		try {
+			Admin_usericon.click();
+			Admin_signout.click();
 //			javascriptClickforAdmin(Admin_usericon);
 //			javascriptClickforAdmin(Admin_signout);
 		} catch (Exception e) {
-			Admin_usericon.click();
-			Admin_signout.click();
+			
 			}}
 	
 	public String GetFirstCampaign_nameForInbound() {
