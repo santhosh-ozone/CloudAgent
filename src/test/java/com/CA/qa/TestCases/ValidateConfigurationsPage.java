@@ -317,28 +317,28 @@ public class ValidateConfigurationsPage extends TestBase{
 			Agent_name_Range_err="The agent name must be between 2 and 50 alphanumeric characters and allow special characters such as., @, _, - and agent name cannot start and end with Special characters.";
 		Assert.assertEquals(Err_msg, Agent_name_Range_err);
 	}
-	
-	@Test (priority=14)
-	public void ValidateAgentPriorityEmptyErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
-	}
-	
-	@Test (priority=15)
-	public void ValidateAgentPriorityRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentMenu();
-		ConfigurationsPage.ClickOnAddConfig();
-		ConfigurationsPage.EnterPriorityforAgent("0");
-		ConfigurationsPage.ClickOnSaveforConfig();
-		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
-		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, Agent_priority_range_err);
-	}
-	
+//	
+//	@Test (priority=14)
+//	public void ValidateAgentPriorityEmptyErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_Empty_err);
+//	}
+//	
+//	@Test (priority=15)
+//	public void ValidateAgentPriorityRangeErrorMsg() {
+//		ConfigurationsPage.ClickOnAgentMenu();
+//		ConfigurationsPage.ClickOnAddConfig();
+//		ConfigurationsPage.EnterPriorityforAgent("0");
+//		ConfigurationsPage.ClickOnSaveforConfig();
+//		Err_msg =ConfigurationsPage.GetAgentPriorityErrorMessage();
+//		System.out.println("err msg is: "+Err_msg);
+//		Assert.assertEquals(Err_msg, Agent_priority_range_err);
+//	}
+//	
 	@Test (priority=16)
 	public void ValidateAgentEmailErrorMsg() {
 		ConfigurationsPage.ClickOnAgentMenu();
@@ -387,48 +387,60 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, Agent_mode_empty_err);
 	}
-	@Test (priority=20)
-	public void ValidateAgentGroupNameEmptyErrorMsg() {
+	
+	@Test (priority=19)
+	public void ValidateAgentGroupMenuClickable() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
+	    String s =driver1.getTitle();
+		Assert.assertEquals(s, "Agent Groups");
+	}
+	
+	@Test (priority=20, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
+	public void ValidateAgentGroupNameEmptyErrorMsg() {
+		String s=ConfigurationsPage.ClickOnAgentGroupMenu();
+		if(s.contains("success")) {
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_empty_err);
+		Assert.assertEquals(Err_msg, AgentGroup_name_empty_err);}
 	}
-	@Test (priority=21)
+	@Test (priority=21, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupNameNumberErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
+		String s=ConfigurationsPage.ClickOnAgentGroupMenu();
+		if(s.contains("success")) {
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.EnterAgentGroupName("11");
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);}
 	}
 	
-	@Test (priority=22)
+	@Test (priority=22, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupNameRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
+		String s=ConfigurationsPage.ClickOnAgentGroupMenu();
+		if(s.contains("success")) {
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.EnterAgentGroupName("s");
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_Range_err);
+		Assert.assertEquals(Err_msg, AgentGroup_name_Range_err);}
 	}
 	
-	@Test (priority=23)
+	@Test (priority=23, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupNameSplRangeErrorMsg() {
-		ConfigurationsPage.ClickOnAgentGroupMenu();
+		String s=ConfigurationsPage.ClickOnAgentGroupMenu();
+		if(s.contains("success")) {
 		ConfigurationsPage.ClickOnAddConfig();
 		ConfigurationsPage.EnterAgentGroupName("@");
 		ConfigurationsPage.ClickOnSaveforConfig();
 		Err_msg =ConfigurationsPage.GetAgentGroupNameError();
 		System.out.println("err msg is: "+Err_msg);
-		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
+		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);}
 	}
-	@Test (priority=24)
+	@Test (priority=24, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupNameSplErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -439,7 +451,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_name_SplRange_err);
 	}
 	
-	@Test (priority=25)
+	@Test (priority=25, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupDesriptionEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -449,7 +461,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_description_empty_err);
 	}
 	
-	@Test (priority=26)
+	@Test (priority=26, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupDesriptionRangeErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -460,7 +472,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_description_range_err);
 	}
 	
-	@Test (priority=27)
+	@Test (priority=27, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupAssignedAgentsEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -470,7 +482,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, AgentGroup_AssignedAgnets_empty_err);
 	}
 	
-	@Test (priority=28)
+	@Test (priority=28, dependsOnMethods= {"ValidateAgentGroupMenuClickable"})
 	public void ValidateAgentGroupAssignedUsersEmptyErrorMsg() {
 		ConfigurationsPage.ClickOnAgentGroupMenu();
 		ConfigurationsPage.ClickOnAddConfig();
@@ -845,7 +857,6 @@ public class ValidateConfigurationsPage extends TestBase{
 		Assert.assertEquals(Err_msg, skill_hunting_no_empty_err);
 	}
 	
-	//Dialout   Skill     IVR
 	
 	@Test (priority=63)
 	public void ValidateSkillFallbackDialOutEmptyErrorMsg5_9() {
@@ -1490,6 +1501,7 @@ public class ValidateConfigurationsPage extends TestBase{
 		System.out.println("err msg is: "+Err_msg);
 		Assert.assertEquals(Err_msg, IvrFlow_Type_err);
 	}	
+	
 //	@Test (priority=125)
 //	public void ValidateFeedBackNameEmptyErrorMsg15_1() {
 //		ConfigurationsPage.ClickOnFeedBackMenu();
@@ -1630,6 +1642,7 @@ public class ValidateConfigurationsPage extends TestBase{
 //		System.out.println("err msg is: "+Err_msg);
 //		Assert.assertEquals(Err_msg, feedback_master_Audiofile__err);
 //	}	
+	
 	@Test (priority=139)
 	public void ValidateSipLOcationNameemptyErrorMsg17_1() {
 		ConfigurationsPage.ClickOnSipLocationsMenu();

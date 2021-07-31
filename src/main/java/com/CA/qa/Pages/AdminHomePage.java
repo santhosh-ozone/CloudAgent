@@ -253,16 +253,20 @@ public class AdminHomePage extends TestBase{
 	public String EditDidForRunnungInboundCampaign() {
 		String cam_name=GetFirstCampaign_nameForInbound();
 		//String cam_position=GetCampaignPosition(1);
-		RunCampaign("Inbound", cam_name);
+		String str1=RunCampaign("Inbound", cam_name);
+		
 		AddCampaignPage = ClickOnSelectedCampaign("InBound", cam_name,"" );
 		return AddCampaignPage.EnterDID("10000001");
 	}
 	public String EditDidForRunnungOutboundCampaign() {
 		String cam_name=GetFirstCampaign_nameForOutbound();
 		//String cam_position=GetCampaignPosition(1);
-		RunCampaign("Outbound", cam_name);
+		String str1=RunCampaign("Outbound", cam_name);
+		//System.out.println("======================"+str1);
+		if(str1.contains("success")) {
 		AddCampaignPage = ClickOnSelectedCampaign("outBound", cam_name,"" );
-		return AddCampaignPage.EnterDID("10000001");
+		return AddCampaignPage.EnterDID("10000001");}
+		return "campaign not found or not running";
 	}
 	public String DeleteRunnungOutboundCampaign() {
 		String cam_name=GetFirstCampaign_nameForOutbound();
@@ -395,7 +399,7 @@ public class AdminHomePage extends TestBase{
 				scrollandclick(element);
 				return Getmessagediv();
 				}
-			//if(GetCampaignPosition(result_row).equals("RUNNING")) {
+			if(GetCampaignPosition(result_row).equals("RUNNING")) 
 			
 			return "success: no need to started: campaign is already running";
 		}

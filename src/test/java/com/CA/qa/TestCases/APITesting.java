@@ -73,6 +73,7 @@ public class APITesting extends TestBase {
 			else flag = false;
 		Assert.assertTrue(flag, "Api not worked");
 		}
+	
 //	@Test
 //	public void RegistrationSuccessful()
 //	{ 

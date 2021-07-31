@@ -53,6 +53,8 @@ public class Testutil extends TestBase{
 	
 	public static String Exp_Admin_logoText = "Cloud Agent";
 	
+	public int i;
+	
 	static AgentToolBarLoginPage ATBloginpage ;
 	static AgentToolBarHomePage  ATBHomePage;
 	
@@ -78,10 +80,12 @@ public class Testutil extends TestBase{
 		}
 		
 	}
-	public static void flash(WebElement element, WebDriver driver) {
-        JavascriptExecutor js = ((JavascriptExecutor) driver);
+	
+	public static  void flash(WebElement element, WebDriver driver) {
+		
+	    JavascriptExecutor js = ((JavascriptExecutor) driver);
         String bgcolor  = element.getCssValue("backgroundColor");
-        for (int i = 0; i <3; i++) {
+        for ( int i = 0; i <3; i++) {
             changeColor("rgb(0,200,0)", element, js);
             changeColor(bgcolor, element, js);
         }

@@ -27,7 +27,7 @@
 <!--        <class name="com.CA.qa.TestCases.ValidateInboundCampaignPageTest" />  -->
 <!--        <class name="com.CA.qa.TestCases.ValidateOutboundCampaignPageTest" />   -->
 <!--        <class name="com.CA.qa.TestCases.ValidateUserPageTest" />  -->
-       <class name="com.CA.qa.TestCases.DashBoardPageTest" /> 
+<!--        <class name="com.CA.qa.TestCases.DashBoardPageTest" />  -->
 <!--      <class name="com.CA.qa.TestCases.APITesting" />   -->
        
     </classes>

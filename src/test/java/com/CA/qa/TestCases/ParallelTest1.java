@@ -10,13 +10,15 @@ import com.CA.qa.Base.TestBase;
 public class ParallelTest1 extends TestBase{
 	WebDriver driver_A;
 	
+	
 	@BeforeMethod
 	public void setup() {
 		System.out.println("beforemethod in class1");
-		//driver_A=AdminLogin();
+		driver_A=AdminLogin1();
 	}
 	@Test
 	public void verifyAdminloginTest1_1() {
+		//driver_A.findElement)
 		System.out.println("Test 1");
 		System.out.println(driver_A.getCurrentUrl()+"   :1");
 	}

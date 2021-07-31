@@ -567,10 +567,10 @@ public class ConfigurationsPage extends TestBase{
 		Config_Add_Button1.click();
 	}
 	public void EnterSerachItem(Object S) {
-		//System.out.println("================p_reason:  "+S.toString());
+		System.out.println("================p_reason:  "+S.toString());
 		if(!S.equals("")) {
 			try {
-				Thread.sleep(1500);
+				Thread.sleep(5000);
 		Config_search_button.sendKeys(S.toString().trim());
 		} catch (InterruptedException e) {}
 		javascriptClickforAdmin(Config_search_submit);
@@ -1405,10 +1405,12 @@ public class ConfigurationsPage extends TestBase{
 			EnterSerachItem(phno);
 			//ClickOnShowAllButton();
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
-				javascriptClickforAdmin(table_data_1stRow);
-				//table_data_1stRow.click();
+				//javascriptClickforAdmin(table_data_1stRow);
+				table_data_1stRow.click();
 				String H1 =GetConfigHeader();
-				if(H1.contains("Edit") && transferName.getAttribute("value").equals(name.toString().trim()) && transferNumber.getAttribute("value").equals(phno.toString().trim())) {
+				System.out.println("=============="+transferName.getAttribute("value"));
+				System.out.println("==============="+transferNumber.getAttribute("value"));
+				if(H1.contains("Edit") && transferName.getAttribute("value").equals(name.toString().trim()) && transferNumber.getAttribute("value").equals("0"+phno.toString().trim())) {
 					EnterTransfername(Nname);
 					EnterTransferNo(Nphno);
 					EnterTransferSip(sip);
@@ -1429,7 +1431,7 @@ public class ConfigurationsPage extends TestBase{
 			if(!table_data_1stRow.getText().contains("Nothing") ) {
 				javascriptClickforAdmin(table_data_1stRow);
 				//table_data_1stRow.click();
-				if(transferName.getAttribute("value").equalsIgnoreCase(name.trim()) && transferNumber.getAttribute("value").equalsIgnoreCase(phno.trim())) {
+				if(transferName.getAttribute("value").equalsIgnoreCase(name.trim()) && transferNumber.getAttribute("value").equalsIgnoreCase("0"+phno.trim())) {
 					javascriptClickforAdmin(config_delete_button);
 					//config_delete_button.click();	
 					driver1.switchTo().alert().accept();

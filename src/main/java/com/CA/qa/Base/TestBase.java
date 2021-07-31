@@ -39,6 +39,7 @@ public class TestBase {
 //	public static WebDriver driver;
 //	public WebDriver driver1;
 	public WebDriver driver2;
+	public int i;
 	public static int count=40;
 	public static int row_no= 0;
 	public static int Agents_count=0;
@@ -138,7 +139,7 @@ public class TestBase {
 		//return driver1;
 	}
 	
-	public WebDriver AdminLogin1() {
+	 public WebDriver AdminLogin1() {
 		driver2 = getChromeDriver();;
 		ArrayList<String> URL=Testutil.Readexcel("AdminLogin",0);
 		driver2.get(URL.get(0));

@@ -7,13 +7,73 @@
   </listeners>
   <test thread-count="5" name="Cloud Agent Application test cases(failed)">
     <classes>
-      <class name="com.CA.qa.TestCases.DashBoardPageTest">
+      <class name="com.CA.qa.TestCases.ValidateConfigurationsPage">
         <methods>
+          <include name="ValidateURLMappingNameRangeErrorMsg7_13"/>
+          <include name="ValidateMusicUrlEmptyErrorMsg18_2"/>
+          <include name="ValidateSkillAssignedAgentsEmptyErrorMsg5_7"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_25"/>
+          <include name="ValidatedialOutNameRangeErrorMsg10_14"/>
+          <include name="nteardown"/>
+          <include name="ValidateMusicNameRangeErrorMsg18_15"/>
+          <include name="ValidateSkillNameRangeErrorMsg5_11"/>
+          <include name="ValidateURLMappingNameEmptyErrorMsg7_1"/>
+          <include name="ValidateMusicNameRangeErrorMsg18_12"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_13"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_12"/>
+          <include name="ValidateMusicNameRangeErrorMsg18_13"/>
+          <include name="ValidateSipServerURLRangeErrorMsg17_23"/>
+          <include name="ValidateMusicNameRangeErrorMsg18_14"/>
+          <include name="ValidateSipServerURLRangeErrorMsg17_21"/>
+          <include name="ValidatedialOutNameRangeErrorMsg10_13"/>
+          <include name="ValidatedialOutNameRangeErrorMsg10_12"/>
+          <include name="ValidateSipServerURLRangeErrorMsg17_22"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_24"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_26"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_21"/>
+          <include name="ValidateSkillNameSplRangeErrorMsg5_13"/>
+          <include name="ValidateSkillNameSplRangeErrorMsg5_12"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_23"/>
+          <include name="ValidateMusicUrlRangeErrorMsg18_22"/>
+          <include name="ValidatedispositionRangeErrorMsg9_11"/>
+          <include name="ValidatePauseReasonRangeErrorMsg11_14"/>
+          <include name="ValidateURLMappingNameRangeErrorMsg7_11"/>
+          <include name="ValidateSipLOcationNameRangeErrorMsg17_14"/>
+          <include name="ValidateSipLOcationNameRangeErrorMsg17_15"/>
+          <include name="ValidateSipLOcationNameRangeErrorMsg17_12"/>
+          <include name="ValidateURLMappingNameRangeErrorMsg7_12"/>
+          <include name="ValidateSipLOcationNameRangeErrorMsg17_13"/>
+          <include name="ValidateURLMappingDomainNameRangeErrorMsg7_24"/>
+          <include name="ValidateTransferNameSplRangeErrorMsg"/>
+          <include name="ValidateURLMappingDomainNameRangeErrorMsg7_23"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_31"/>
+          <include name="ValidateLocationRangeErrorMsg6_12"/>
+          <include name="ValidateURLMappingDomainNameRangeErrorMsg7_22"/>
+          <include name="ValidateMusicNameEmptyErrorMsg18_1"/>
+          <include name="ValidateSkillFallbackIvrTransferEmptyErrorMsg5_12"/>
           <include name="setup"/>
-          <include name="teardown"/>
-          <include name="verifySkillReport_DisplayedTest"/>
+          <include name="ValidateLocationRangeErrorMsg6_11"/>
+          <include name="ValidateSkillFallbackDialOutEmptyErrorMsg5_9"/>
+          <include name="ValidateLocationRangeErrorMsg6_13"/>
+          <include name="ValidateURLMappingLocalIpEmptyErrorMsg7_3"/>
+          <include name="ValidateURLMappingDomainNameEmptyErrorMsg7_21"/>
+          <include name="ValidateSmsTemplateNameRangeErrorMsg8_11"/>
+          <include name="ValidateIvrFlowNameRangeErrorMsg14_12"/>
+          <include name="ValidatedispositionSplRangeErrorMsg9_13"/>
+          <include name="ValidateAgentModeNotEnabledErrorMsg"/>
+          <include name="ValidateIvrFlowNameRangeErrorMsg14_14"/>
+          <include name="ValidatedispositionSplRangeErrorMsg9_12"/>
+          <include name="ValidatePhoneNameSplRangeErrorMsg"/>
+          <include name="ValidateIvrFlowNameRangeErrorMsg14_15"/>
+          <include name="ValidateIvrFlowNameRangeErrorMsg14_13"/>
+          <include name="ValidatePhoneNameRangeErrorMsg"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_32"/>
+          <include name="ValidateSmsTemplateNameRangeErrorMsg8_13"/>
+          <include name="ValidateSmsTemplateNameRangeErrorMsg8_12"/>
+          <include name="ValidateTransferNameRangeErrorMsg"/>
+          <include name="ValidateURLMappingLocalIpRangeErrorMsg7_33"/>
         </methods>
-      </class> <!-- com.CA.qa.TestCases.DashBoardPageTest -->
+      </class> <!-- com.CA.qa.TestCases.ValidateConfigurationsPage -->
     </classes>
   </test> <!-- Cloud Agent Application test cases(failed) -->
 </suite> <!-- Failed suite [Cloud Agent Application Automation Test Suite] -->

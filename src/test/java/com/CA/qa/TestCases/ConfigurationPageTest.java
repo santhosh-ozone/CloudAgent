@@ -39,7 +39,7 @@ public class ConfigurationPageTest extends TestBase {
 		
 	}
 
-	@BeforeMethod
+	@BeforeMethod(groups= {"smoke"})
 	public void setup(Method method) {
 		System.out.println("Test name: " + method.getName());
 		AdminLogin();
@@ -48,7 +48,7 @@ public class ConfigurationPageTest extends TestBase {
 		ConfigurationsPage = new ConfigurationsPage();
 		}
 
-	@AfterMethod
+	@AfterMethod(groups= {"smoke"})
 	public void nteardown() {
 		System.out.println(driver1.getCurrentUrl());
 		Printhyphens();
@@ -227,7 +227,7 @@ public class ConfigurationPageTest extends TestBase {
 			
 	}
 	
-	@Test (priority=3,dataProvider = "TransferNodata")
+	@Test (priority=3,dataProvider = "TransferNodata",groups= {"smoke"})
 	public void AddTransferNos(String act,Object name, Object Nname,Object pno, Object Nph, Object sip, Object res) {
 		TransNo_count++;
 			if (act.trim().equalsIgnoreCase("ADD")) {

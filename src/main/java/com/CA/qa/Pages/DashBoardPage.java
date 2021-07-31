@@ -4,7 +4,9 @@ import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -439,7 +441,7 @@ public class DashBoardPage extends TestBase{
 	}
 	
 	public void clickOnIVRHangupsReportMenu_generate() {
-		//Testutil.flash(IVRHangupsReportMenu_generate, driver1);
+		Testutil.flash(IVRHangupsReportMenu_generate, driver1);
 		javascriptClickforAdmin(IVRHangupsReportMenu_generate);
 	}
 	

@@ -1,7 +1,11 @@
 package com.CA.qa.TestCases;
 
 import java.lang.reflect.Method;
+import java.util.List;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -151,6 +155,7 @@ public class AdminHomePageTest extends TestBase{
 	}
 	@Test(priority = 11)
 	public void verifyEditProfileIcon1_17(){
+		
 		Assert.assertEquals(AdminHomepage.getTextUnderProfileIcon(),EditProfile_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfProfileIcon(),EditProfile_toolTip);
 		AdminHomepage.ClickEditProfileMenu();
@@ -169,6 +174,7 @@ public class AdminHomePageTest extends TestBase{
 	
 	@Test(priority = 13)
 	public void verifyoutBoundCampaignIcon1_17() {
+		
 		Assert.assertEquals(AdminHomepage.getTextUnderoutBoundCampaignIcon(),outBoundCampaignIcon_text);
 		Assert.assertEquals(AdminHomepage.getToolTipOfoutBoundCampaignIcon(),OutBoundCampaignIcon_tooltip);
 		AdminHomepage.ClickOnoutBoundCampaignIcon();
